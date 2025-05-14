@@ -1,0 +1,14 @@
+Loading - E:\PRB_0\prb_0.alb
+   Loading library default timing values
+Info 9240: The following node is sourceless:
+   NODE: CLK, L6.CLOCK.
+Loading - CJ4CE
+   Loading library default timing values
+Loading - D2_4E
+   Loading library default timing values
+Loading - DIV124
+   Forcing zero-delay default timing values
+Info 9240: The following node is sourceless:
+   NODE: FLOP.RST, lfsr_counter1/FLOP0.RST, lfsr_counter1/FLOP1.RST, lfsr_counter1/FLOP2.RST, lfsr_counter1/FLOP3.SET, lfsr_counter1/FLOP4.RST, lfsr_counter1/FLOP5.SET, lfsr_counter1/TERMFLOP.RST, lfsr_counter2/FLOP0.RST, lfsr_counter2/FLOP1.RST, lfsr_counter2/FLOP2.RST, lfsr_counter2/FLOP3.RST, lfsr_counter2/FLOP4.RST, lfsr_counter2/FLOP5.RST, lfsr_counter2/TERMFLOP.RST, GSR.
+Info 9240: The following node is sourceless:
+   NODE:       CLK,       L6/CLOCK

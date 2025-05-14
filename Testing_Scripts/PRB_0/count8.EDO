@@ -1,0 +1,555 @@
+(edif count8
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timestamp 2024 9 20 16 20 21)
+      (program "Xilinx NGD2EDIF" (version "M1.5.19"))
+      (comment "Command line: -v fndtn -w -n C:/WINDOWS/TEMP/count8.ngd count8 ")))
+  (external SIMPRIMS
+    (edifLevel 0)
+    (technology (numberDefinition
+      (scale 1 (E 1 -12) (unit TIME))))
+    (cell x_inv
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+    (cell x_and2
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN0
+            (direction INPUT))
+          (port IN1
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+    (cell x_or2
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN0
+            (direction INPUT))
+          (port IN1
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+    (cell x_zero
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port OUT
+            (direction OUTPUT))
+      )))
+    (cell x_xor2
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN0
+            (direction INPUT))
+          (port IN1
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+    (cell x_ff
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN
+            (direction INPUT))
+          (port CLK
+            (direction INPUT))
+          (port CE
+            (direction INPUT))
+          (port SET
+            (direction INPUT))
+          (port RST
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+  )
+  (library count8_lib
+    (edifLevel 0)
+    (technology (numberDefinition
+      (scale 1 (E 1 -12) (unit TIME))))
+    (cell count8
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port (rename D_IN_0_ "D_IN<0>")
+            (direction INPUT)
+            )
+          (port (rename D_IN_1_ "D_IN<1>")
+            (direction INPUT)
+            )
+          (port (rename D_IN_2_ "D_IN<2>")
+            (direction INPUT)
+            )
+          (port (rename D_IN_3_ "D_IN<3>")
+            (direction INPUT)
+            )
+          (port LOAD
+            (direction INPUT)
+            )
+          (port CLOCK
+            (direction INPUT)
+            )
+          (port (rename Q_OUT_0_ "Q_OUT<0>")
+            (direction OUTPUT)
+            )
+          (port (rename Q_OUT_1_ "Q_OUT<1>")
+            (direction OUTPUT)
+            )
+          (port (rename Q_OUT_2_ "Q_OUT<2>")
+            (direction OUTPUT)
+            )
+          (port (rename Q_OUT_3_ "Q_OUT<3>")
+            (direction OUTPUT)
+            )
+          (port TERM_CNT
+            (direction OUTPUT)
+            )
+          (designator "spartan")
+        )
+        (contents
+          (instance TCINV3
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (instance REGININV
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (instance TCANDUP0
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance TCANDUP1
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance TCANDUP2
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance TCANDUP3
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance AND1BINLD0
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance INVBINLD0
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (instance AND2BINLD0
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance ORBINLD0
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance AND1BINLD1
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance INVBINLD1
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (instance AND2BINLD1
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance ORBINLD1
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance AND1BINLD2
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance INVBINLD2
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (instance AND2BINLD2
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance ORBINLD2
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance AND1BINLD3
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance INVBINLD3
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (instance AND2BINLD3
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance ORBINLD3
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename binaryincdec_LOGIC0 "binaryincdec/LOGIC0")
+            (viewRef view_1 (cellRef x_zero (libraryRef SIMPRIMS)))
+          )
+          (instance (rename binaryincdec_XOR0 "binaryincdec/XOR0")
+            (viewRef view_1 (cellRef x_xor2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename binaryincdec_OR0 "binaryincdec/OR0")
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename binaryincdec_XOR1 "binaryincdec/XOR1")
+            (viewRef view_1 (cellRef x_xor2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename binaryincdec_AND1 "binaryincdec/AND1")
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename binaryincdec_XOR2 "binaryincdec/XOR2")
+            (viewRef view_1 (cellRef x_xor2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename binaryincdec_AND2 "binaryincdec/AND2")
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename binaryincdec_XOR3 "binaryincdec/XOR3")
+            (viewRef view_1 (cellRef x_xor2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename tcand_tcand_0 "tcand/tcand_0")
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename tcand_tcand_1 "tcand/tcand_1")
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename tcand_tcand_2 "tcand/tcand_2")
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename count8_FLOP0 "count8/FLOP0")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename count8_FLOP1 "count8/FLOP1")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename count8_FLOP2 "count8/FLOP2")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename count8_FLOP3 "count8/FLOP3")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename binaryincdec_XOR0_2_INV "binaryincdec/XOR0_2_INV")
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (net LOAD
+            (joined
+              (portRef LOAD)
+              (portRef IN1 (instanceRef AND1BINLD0))
+              (portRef IN (instanceRef INVBINLD0))
+              (portRef IN1 (instanceRef AND1BINLD1))
+              (portRef IN (instanceRef INVBINLD1))
+              (portRef IN1 (instanceRef AND1BINLD2))
+              (portRef IN (instanceRef INVBINLD2))
+              (portRef IN1 (instanceRef AND1BINLD3))
+              (portRef IN (instanceRef INVBINLD3))
+            )
+          )
+          (net (rename D_IN_0_ "D_IN<0>")
+            (joined
+              (portRef D_IN_0_)
+              (portRef IN0 (instanceRef AND1BINLD0))
+            )
+          )
+          (net (rename D_IN_1_ "D_IN<1>")
+            (joined
+              (portRef D_IN_1_)
+              (portRef IN0 (instanceRef AND1BINLD1))
+            )
+          )
+          (net (rename D_IN_2_ "D_IN<2>")
+            (joined
+              (portRef D_IN_2_)
+              (portRef IN0 (instanceRef AND1BINLD2))
+            )
+          )
+          (net (rename D_IN_3_ "D_IN<3>")
+            (joined
+              (portRef D_IN_3_)
+              (portRef IN0 (instanceRef AND1BINLD3))
+            )
+          )
+          (net CLOCK
+            (joined
+              (portRef CLOCK)
+              (portRef CLK (instanceRef count8_FLOP0))
+              (portRef CLK (instanceRef count8_FLOP1))
+              (portRef CLK (instanceRef count8_FLOP2))
+              (portRef CLK (instanceRef count8_FLOP3))
+            )
+          )
+          (net (rename Q_OUT_0_ "Q_OUT<0>")
+            (joined
+              (portRef Q_OUT_0_)
+              (portRef IN0 (instanceRef binaryincdec_XOR0))
+              (portRef IN0 (instanceRef binaryincdec_OR0))
+              (portRef IN0 (instanceRef tcand_tcand_0))
+              (portRef OUT (instanceRef count8_FLOP0))
+            )
+          )
+          (net (rename Q_OUT_1_ "Q_OUT<1>")
+            (joined
+              (portRef Q_OUT_1_)
+              (portRef IN0 (instanceRef binaryincdec_XOR1))
+              (portRef IN0 (instanceRef binaryincdec_AND1))
+              (portRef IN1 (instanceRef tcand_tcand_0))
+              (portRef OUT (instanceRef count8_FLOP1))
+            )
+          )
+          (net (rename Q_OUT_2_ "Q_OUT<2>")
+            (joined
+              (portRef Q_OUT_2_)
+              (portRef IN0 (instanceRef binaryincdec_XOR2))
+              (portRef IN0 (instanceRef binaryincdec_AND2))
+              (portRef IN0 (instanceRef tcand_tcand_1))
+              (portRef OUT (instanceRef count8_FLOP2))
+            )
+          )
+          (net (rename Q_OUT_3_ "Q_OUT<3>")
+            (joined
+              (portRef Q_OUT_3_)
+              (portRef IN (instanceRef TCINV3))
+              (portRef IN0 (instanceRef binaryincdec_XOR3))
+              (portRef OUT (instanceRef count8_FLOP3))
+            )
+          )
+          (net (rename SUM_0_ "SUM<0>")
+            (joined
+              (portRef IN1 (instanceRef TCANDUP0))
+              (portRef OUT (instanceRef binaryincdec_XOR0_2_INV))
+            )
+          )
+          (net (rename SUM_1_ "SUM<1>")
+            (joined
+              (portRef IN1 (instanceRef TCANDUP1))
+              (portRef OUT (instanceRef binaryincdec_XOR1))
+            )
+          )
+          (net (rename SUM_2_ "SUM<2>")
+            (joined
+              (portRef IN1 (instanceRef TCANDUP2))
+              (portRef OUT (instanceRef binaryincdec_XOR2))
+            )
+          )
+          (net (rename SUM_3_ "SUM<3>")
+            (joined
+              (portRef IN1 (instanceRef TCANDUP3))
+              (portRef OUT (instanceRef binaryincdec_XOR3))
+            )
+          )
+          (net TCINV3_OUT
+            (joined
+              (portRef OUT (instanceRef TCINV3))
+              (portRef IN1 (instanceRef tcand_tcand_1))
+            )
+          )
+          (net TERM_CNTUP
+            (joined
+              (portRef TERM_CNT)
+              (portRef IN (instanceRef REGININV))
+              (portRef OUT (instanceRef tcand_tcand_2))
+            )
+          )
+          (net REGININV_OUT
+            (joined
+              (portRef OUT (instanceRef REGININV))
+              (portRef IN0 (instanceRef TCANDUP0))
+              (portRef IN0 (instanceRef TCANDUP1))
+              (portRef IN0 (instanceRef TCANDUP2))
+              (portRef IN0 (instanceRef TCANDUP3))
+            )
+          )
+          (net TCANDUP0_OUT
+            (joined
+              (portRef OUT (instanceRef TCANDUP0))
+              (portRef IN0 (instanceRef AND2BINLD0))
+            )
+          )
+          (net TCANDUP1_OUT
+            (joined
+              (portRef OUT (instanceRef TCANDUP1))
+              (portRef IN0 (instanceRef AND2BINLD1))
+            )
+          )
+          (net TCANDUP2_OUT
+            (joined
+              (portRef OUT (instanceRef TCANDUP2))
+              (portRef IN0 (instanceRef AND2BINLD2))
+            )
+          )
+          (net TCANDUP3_OUT
+            (joined
+              (portRef OUT (instanceRef TCANDUP3))
+              (portRef IN0 (instanceRef AND2BINLD3))
+            )
+          )
+          (net AND1BINLD0_OUT
+            (joined
+              (portRef OUT (instanceRef AND1BINLD0))
+              (portRef IN0 (instanceRef ORBINLD0))
+            )
+          )
+          (net INVBINLD0_OUT
+            (joined
+              (portRef OUT (instanceRef INVBINLD0))
+              (portRef IN1 (instanceRef AND2BINLD0))
+            )
+          )
+          (net AND2BINLD0_OUT
+            (joined
+              (portRef OUT (instanceRef AND2BINLD0))
+              (portRef IN1 (instanceRef ORBINLD0))
+            )
+          )
+          (net ORBINLD0_OUT
+            (joined
+              (portRef OUT (instanceRef ORBINLD0))
+              (portRef IN (instanceRef count8_FLOP0))
+            )
+          )
+          (net AND1BINLD1_OUT
+            (joined
+              (portRef OUT (instanceRef AND1BINLD1))
+              (portRef IN0 (instanceRef ORBINLD1))
+            )
+          )
+          (net INVBINLD1_OUT
+            (joined
+              (portRef OUT (instanceRef INVBINLD1))
+              (portRef IN1 (instanceRef AND2BINLD1))
+            )
+          )
+          (net AND2BINLD1_OUT
+            (joined
+              (portRef OUT (instanceRef AND2BINLD1))
+              (portRef IN1 (instanceRef ORBINLD1))
+            )
+          )
+          (net ORBINLD1_OUT
+            (joined
+              (portRef OUT (instanceRef ORBINLD1))
+              (portRef IN (instanceRef count8_FLOP1))
+            )
+          )
+          (net AND1BINLD2_OUT
+            (joined
+              (portRef OUT (instanceRef AND1BINLD2))
+              (portRef IN0 (instanceRef ORBINLD2))
+            )
+          )
+          (net INVBINLD2_OUT
+            (joined
+              (portRef OUT (instanceRef INVBINLD2))
+              (portRef IN1 (instanceRef AND2BINLD2))
+            )
+          )
+          (net AND2BINLD2_OUT
+            (joined
+              (portRef OUT (instanceRef AND2BINLD2))
+              (portRef IN1 (instanceRef ORBINLD2))
+            )
+          )
+          (net ORBINLD2_OUT
+            (joined
+              (portRef OUT (instanceRef ORBINLD2))
+              (portRef IN (instanceRef count8_FLOP2))
+            )
+          )
+          (net AND1BINLD3_OUT
+            (joined
+              (portRef OUT (instanceRef AND1BINLD3))
+              (portRef IN0 (instanceRef ORBINLD3))
+            )
+          )
+          (net INVBINLD3_OUT
+            (joined
+              (portRef OUT (instanceRef INVBINLD3))
+              (portRef IN1 (instanceRef AND2BINLD3))
+            )
+          )
+          (net AND2BINLD3_OUT
+            (joined
+              (portRef OUT (instanceRef AND2BINLD3))
+              (portRef IN1 (instanceRef ORBINLD3))
+            )
+          )
+          (net ORBINLD3_OUT
+            (joined
+              (portRef OUT (instanceRef ORBINLD3))
+              (portRef IN (instanceRef count8_FLOP3))
+            )
+          )
+          (net GSR
+            (joined
+              (portRef RST (instanceRef count8_FLOP0))
+              (portRef RST (instanceRef count8_FLOP1))
+              (portRef RST (instanceRef count8_FLOP2))
+              (portRef RST (instanceRef count8_FLOP3))
+            )
+            (property INITSTATE (string "0") (owner "Xilinx"))
+            (property GLOBAL (boolean (true)) (owner "Xilinx"))
+          )
+          (net (rename binaryincdec_LB_GND "binaryincdec/LB_GND")
+            (joined
+              (portRef OUT (instanceRef binaryincdec_LOGIC0))
+              (portRef IN1 (instanceRef binaryincdec_XOR0))
+              (portRef IN1 (instanceRef binaryincdec_OR0))
+            )
+          )
+          (net (rename binaryincdec_OR0_OUT "binaryincdec/OR0_OUT")
+            (joined
+              (portRef OUT (instanceRef binaryincdec_OR0))
+              (portRef IN1 (instanceRef binaryincdec_XOR1))
+              (portRef IN1 (instanceRef binaryincdec_AND1))
+            )
+          )
+          (net (rename binaryincdec_AND1_OUT "binaryincdec/AND1_OUT")
+            (joined
+              (portRef OUT (instanceRef binaryincdec_AND1))
+              (portRef IN1 (instanceRef binaryincdec_XOR2))
+              (portRef IN1 (instanceRef binaryincdec_AND2))
+            )
+          )
+          (net (rename binaryincdec_AND2_OUT "binaryincdec/AND2_OUT")
+            (joined
+              (portRef OUT (instanceRef binaryincdec_AND2))
+              (portRef IN1 (instanceRef binaryincdec_XOR3))
+            )
+          )
+          (net (rename tcand_tcand_0_OUT "tcand/tcand_0_OUT")
+            (joined
+              (portRef OUT (instanceRef tcand_tcand_0))
+              (portRef IN0 (instanceRef tcand_tcand_2))
+            )
+          )
+          (net (rename tcand_tcand_1_OUT "tcand/tcand_1_OUT")
+            (joined
+              (portRef OUT (instanceRef tcand_tcand_1))
+              (portRef IN1 (instanceRef tcand_tcand_2))
+            )
+          )
+          (net (rename binaryincdec_XOR0_2_INV "binaryincdec/XOR0_2_INV")
+            (joined
+              (portRef IN (instanceRef binaryincdec_XOR0_2_INV))
+              (portRef OUT (instanceRef binaryincdec_XOR0))
+            )
+          )
+        )
+    ))
+  )
+  (design count8
+    (cellRef count8
+      (libraryRef count8_lib))
+  )
+)

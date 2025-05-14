@@ -1,0 +1,255 @@
+PAR: Xilinx Place And Route M1.5.19.
+Copyright (c) 1995-1998 Xilinx, Inc.  All rights reserved.
+
+Tue Sep 24 11:13:57 2024
+
+par -w -ol 2 -d 0 map.ncd prb_0.ncd prb_0.pcf
+
+
+Constraints file: prb_0.pcf
+
+Loading device database for application par from file "map.ncd".
+   "prb_0" is an NCD, version 2.27, device xcs20, package tq144, speed -3
+Loading device for application par from file '4010e.nph' in environment
+C:/fndtn.
+Device speed data version:  x1_0.14 1.6 PRELIMINARY.
+
+
+Resolved that IOB <$Net00001_> must be placed at site P84.
+   Place IOB $Net00001_ in site P84.
+Resolved that IOB <$Net00003_> must be placed at site P56.
+   Place IOB $Net00003_ in site P56.
+Resolved that IOB <$Net00004_> must be placed at site P9.
+   Place IOB $Net00004_ in site P9.
+Resolved that IOB <$Net00013_> must be placed at site P86.
+   Place IOB $Net00013_ in site P86.
+Resolved that IOB <$Net00014_> must be placed at site P58.
+   Place IOB $Net00014_ in site P58.
+Resolved that IOB <$Net00019_> must be placed at site P87.
+   Place IOB $Net00019_ in site P87.
+Resolved that IOB <$Net00020_> must be placed at site P59.
+   Place IOB $Net00020_ in site P59.
+Resolved that IOB <$Net00039_> must be placed at site P10.
+   Place IOB $Net00039_ in site P10.
+Resolved that IOB <$Net00040_> must be placed at site P12.
+   Place IOB $Net00040_ in site P12.
+Resolved that IOB <$Net00043_> must be placed at site P13.
+   Place IOB $Net00043_ in site P13.
+Resolved that IOB <$Net00046_> must be placed at site P14.
+   Place IOB $Net00046_ in site P14.
+Resolved that IOB <$Net00048_> must be placed at site P15.
+   Place IOB $Net00048_ in site P15.
+Resolved that IOB <$Net00049_> must be placed at site P16.
+   Place IOB $Net00049_ in site P16.
+Resolved that IOB <$Net00050_> must be placed at site P19.
+   Place IOB $Net00050_ in site P19.
+Resolved that IOB <$Net00063_> must be placed at site P49.
+   Place IOB $Net00063_ in site P49.
+Resolved that IOB <$Net00116_> must be placed at site P85.
+   Place IOB $Net00116_ in site P85.
+Resolved that IOB <$Net00117_> must be placed at site P57.
+   Place IOB $Net00117_ in site P57.
+Resolved that IOB <$Net00120_> must be placed at site P76.
+   Place IOB $Net00120_ in site P76.
+Resolved that IOB <$Net00124_> must be placed at site P21.
+   Place IOB $Net00124_ in site P21.
+Resolved that IOB <$Net00125_> must be placed at site P22.
+   Place IOB $Net00125_ in site P22.
+Resolved that IOB <$Net00127_> must be placed at site P23.
+   Place IOB $Net00127_ in site P23.
+Resolved that IOB <$Net00128_> must be placed at site P68.
+   Place IOB $Net00128_ in site P68.
+Resolved that IOB <$Net00129_> must be placed at site P24.
+   Place IOB $Net00129_ in site P24.
+Resolved that IOB <$Net00130_> must be placed at site P63.
+   Place IOB $Net00130_ in site P63.
+Resolved that IOB <$Net00136_> must be placed at site P42.
+   Place IOB $Net00136_ in site P42.
+Resolved that IOB <$Net00137_> must be placed at site P43.
+   Place IOB $Net00137_ in site P43.
+Resolved that IOB <COUNT> must be placed at site P44.
+   Place IOB COUNT in site P44.
+Resolved that IOB <SW0_0> must be placed at site P124.
+   Place IOB SW0_0 in site P124.
+Resolved that IOB <SW0_1> must be placed at site P125.
+   Place IOB SW0_1 in site P125.
+Resolved that IOB <SW0_2> must be placed at site P126.
+   Place IOB SW0_2 in site P126.
+Resolved that IOB <SW0_3> must be placed at site P129.
+   Place IOB SW0_3 in site P129.
+Resolved that IOB <SW0_4> must be placed at site P130.
+   Place IOB SW0_4 in site P130.
+Resolved that IOB <SW0_5> must be placed at site P131.
+   Place IOB SW0_5 in site P131.
+Resolved that IOB <SW0_6> must be placed at site P132.
+   Place IOB SW0_6 in site P132.
+Resolved that IOB <SW0_7> must be placed at site P133.
+   Place IOB SW0_7 in site P133.
+Resolved that IOB <SW1_0> must be placed at site P134.
+   Place IOB SW1_0 in site P134.
+Resolved that IOB <SW1_1> must be placed at site P135.
+   Place IOB SW1_1 in site P135.
+Resolved that IOB <SW1_2> must be placed at site P136.
+   Place IOB SW1_2 in site P136.
+Resolved that IOB <SW1_3> must be placed at site P138.
+   Place IOB SW1_3 in site P138.
+Resolved that IOB <SW1_4> must be placed at site P139.
+   Place IOB SW1_4 in site P139.
+Resolved that IOB <SW1_5> must be placed at site P140.
+   Place IOB SW1_5 in site P140.
+Resolved that IOB <SW1_6> must be placed at site P141.
+   Place IOB SW1_6 in site P141.
+Resolved that IOB <SW1_7> must be placed at site P142.
+   Place IOB SW1_7 in site P142.
+Resolved that IOB <SW2_0> must be placed at site P123.
+   Place IOB SW2_0 in site P123.
+Resolved that IOB <SW2_1> must be placed at site P122.
+   Place IOB SW2_1 in site P122.
+Resolved that IOB <SW2_2> must be placed at site P121.
+   Place IOB SW2_2 in site P121.
+Resolved that IOB <SW2_3> must be placed at site P120.
+   Place IOB SW2_3 in site P120.
+Resolved that IOB <SW2_4> must be placed at site P119.
+   Place IOB SW2_4 in site P119.
+Resolved that IOB <SW2_5> must be placed at site P117.
+   Place IOB SW2_5 in site P117.
+Resolved that IOB <SW2_6> must be placed at site P116.
+   Place IOB SW2_6 in site P116.
+Resolved that IOB <SW2_7> must be placed at site P115.
+   Place IOB SW2_7 in site P115.
+Resolved that IOB <SW3_0> must be placed at site P104.
+   Place IOB SW3_0 in site P104.
+Resolved that IOB <SW3_1> must be placed at site P103.
+   Place IOB SW3_1 in site P103.
+Resolved that IOB <SW3_2> must be placed at site P102.
+   Place IOB SW3_2 in site P102.
+Resolved that IOB <SW3_3> must be placed at site P101.
+   Place IOB SW3_3 in site P101.
+Resolved that IOB <SW3_4> must be placed at site P99.
+   Place IOB SW3_4 in site P99.
+Resolved that IOB <SW3_5> must be placed at site P98.
+   Place IOB SW3_5 in site P98.
+Resolved that IOB <SW3_6> must be placed at site P97.
+   Place IOB SW3_6 in site P97.
+Resolved that IOB <SW3_7> must be placed at site P96.
+   Place IOB SW3_7 in site P96.
+
+
+Device utilization summary:
+
+   Number of External IOBs            59 out of 113    52%
+      Flops:                           0
+      Latches:                         0
+
+   Number of CLBs                     25 out of 400     6%
+      Total CLB Flops:                35 out of 800     4%
+      4 input LUTs:                   25 out of 800     3%
+      3 input LUTs:                   11 out of 400     2%
+
+   Number of OSCILLATORs               1 out of 1     100%
+   Number of TBUFs                    35 out of 880     3%
+
+
+
+Overall effort level (-ol):   2 (set by user)
+Placer effort level (-pl):    2 (default)
+Placer cost table entry (-t): 1
+Router effort level (-rl):    2 (default)
+
+Starting initial Placement phase.  REAL time: 0 secs 
+Finished initial Placement phase.  REAL time: 0 secs 
+
+Starting Constructive Placer.  REAL time: 0 secs 
+Placer score = 103140
+Placer score = 80540
+Placer score = 58840
+Placer score = 53400
+Placer score = 46100
+Placer score = 38300
+Placer score = 35920
+Placer score = 34860
+Placer score = 34460
+Placer score = 34260
+Placer score = 32140
+Placer score = 32100
+Placer score = 31860
+Placer score = 31760
+Placer score = 31560
+Finished Constructive Placer.  REAL time: 0 secs 
+
+Writing design to file "prb_0.ncd".
+
+Starting Optimizing Placer.  REAL time: 0 secs 
+Optimizing  
+Swapped 8 comps.
+Xilinx Placer [1]   30720   REAL time: 0 secs 
+
+Finished Optimizing Placer.  REAL time: 0 secs 
+
+Writing design to file "prb_0.ncd".
+
+Total REAL time to Placer completion: 0 secs 
+Total CPU time to Placer completion: 0 secs 
+
+0 connection(s) routed; 228 unrouted.
+Starting router resource preassignment
+Completed router resource preassignment. REAL time: 0 secs 
+Starting iterative routing. 
+Routing active signals.
+End of iteration 1 
+228 successful; 0 unrouted; (0) REAL time: 0 secs 
+Constraints are met. 
+Routing PWR/GND nets.
+Power and ground nets completely routed. 
+Writing design to file "prb_0.ncd".
+Starting cleanup 
+Improving routing.
+End of cleanup iteration 1 
+228 successful; 0 unrouted; (0) REAL time: 0 secs 
+Writing design to file "prb_0.ncd".
+Total REAL time: 0 secs 
+Total CPU  time: 0 secs 
+End of route.  228 routed (100.00%); 0 unrouted.
+No errors found. 
+Completely routed. 
+
+This design was run without timing constraints.  It is likely that much better
+circuit performance can be obtained by trying either or both of the following:
+
+  - Enabling the Delay Based Cleanup router pass, if not already enabled
+  - Supplying timing constraints in the input design
+
+
+Total REAL time to Router completion: 0 secs 
+Total CPU time to Router completion: 1 secs 
+
+Generating PAR statistics.
+
+   The Delay Summary Report
+
+   The Score for this design is: 531
+
+
+The Number of signals not completely routed for this design is: 0
+
+   The Average Connection Delay for this design is:        3.501 ns
+   The Average Connection Delay on critical nets is:       0.000 ns
+   The Average Clock Skew for this design is:              1.515 ns
+   The Maximum Pin Delay is:                              13.267 ns
+   The Average Connection Delay on the 10 Worst Nets is:   9.066 ns
+
+   Listing Pin Delays by value: (ns)
+
+    d <= 10    < d <= 20   < d <= 30   < d <= 40   < d <= 50    d > 50
+   ---------   ---------   ---------   ---------   ---------   ---------
+         190          12           0           0           0           0
+
+Writing design to file "prb_0.ncd".
+
+
+All signals are completely routed.
+
+Total REAL time to PAR completion: 0 secs 
+Total CPU time to PAR completion: 1 secs 
+
+PAR done.

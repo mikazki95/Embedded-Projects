@@ -1,0 +1,323 @@
+PAR: Xilinx Place And Route M1.5.19.
+Copyright (c) 1995-1998 Xilinx, Inc.  All rights reserved.
+Tue Sep 24 11:13:58 2024
+
+Xilinx PAD Specification File
+*****************************
+
+Input file:       map.ncd
+Output file:      prb_0.ncd
+Part type:        xcs20
+Speed grade:      -3
+Package:          tq144
+
+Tue Sep 24 11:13:58 2024
+
+Pinout by Pin Name:
++------------------------------------------------+-----------+--------------+
+|                    Pin Name                    | Direction |  Pin Number  |
++------------------------------------------------+-----------+--------------+
+| $Net00001_                                     |  INPUT    | P84          |
+| $Net00003_                                     |  OUTPUT   | P56          |
+| $Net00004_                                     |  OUTPUT   | P9           |
+| $Net00013_                                     |  INPUT    | P86          |
+| $Net00014_                                     |  OUTPUT   | P58          |
+| $Net00019_                                     |  INPUT    | P87          |
+| $Net00020_                                     |  OUTPUT   | P59          |
+| $Net00039_                                     |  OUTPUT   | P10          |
+| $Net00040_                                     |  OUTPUT   | P12          |
+| $Net00043_                                     |  OUTPUT   | P13          |
+| $Net00046_                                     |  OUTPUT   | P14          |
+| $Net00048_                                     |  OUTPUT   | P15          |
+| $Net00049_                                     |  OUTPUT   | P16          |
+| $Net00050_                                     |  OUTPUT   | P19          |
+| $Net00063_                                     |  OUTPUT   | P49          |
+| $Net00116_                                     |  INPUT    | P85          |
+| $Net00117_                                     |  OUTPUT   | P57          |
+| $Net00120_                                     |  INPUT    | P76          |
+| $Net00124_                                     |  OUTPUT   | P21          |
+| $Net00125_                                     |  OUTPUT   | P22          |
+| $Net00127_                                     |  OUTPUT   | P23          |
+| $Net00128_                                     |  INPUT    | P68          |
+| $Net00129_                                     |  OUTPUT   | P24          |
+| $Net00130_                                     |  OUTPUT   | P63          |
+| $Net00136_                                     |  INPUT    | P42          |
+| $Net00137_                                     |  INPUT    | P43          |
+| COUNT                                          |  OUTPUT   | P44          |
+| SW0_0                                          |  INPUT    | P124         |
+| SW0_1                                          |  INPUT    | P125         |
+| SW0_2                                          |  INPUT    | P126         |
+| SW0_3                                          |  INPUT    | P129         |
+| SW0_4                                          |  INPUT    | P130         |
+| SW0_5                                          |  INPUT    | P131         |
+| SW0_6                                          |  INPUT    | P132         |
+| SW0_7                                          |  INPUT    | P133         |
+| SW1_0                                          |  INPUT    | P134         |
+| SW1_1                                          |  INPUT    | P135         |
+| SW1_2                                          |  INPUT    | P136         |
+| SW1_3                                          |  INPUT    | P138         |
+| SW1_4                                          |  INPUT    | P139         |
+| SW1_5                                          |  INPUT    | P140         |
+| SW1_6                                          |  INPUT    | P141         |
+| SW1_7                                          |  INPUT    | P142         |
+| SW2_0                                          |  INPUT    | P123         |
+| SW2_1                                          |  INPUT    | P122         |
+| SW2_2                                          |  INPUT    | P121         |
+| SW2_3                                          |  INPUT    | P120         |
+| SW2_4                                          |  INPUT    | P119         |
+| SW2_5                                          |  INPUT    | P117         |
+| SW2_6                                          |  INPUT    | P116         |
+| SW2_7                                          |  INPUT    | P115         |
+| SW3_0                                          |  INPUT    | P104         |
+| SW3_1                                          |  INPUT    | P103         |
+| SW3_2                                          |  INPUT    | P102         |
+| SW3_3                                          |  INPUT    | P101         |
+| SW3_4                                          |  INPUT    | P99          |
+| SW3_5                                          |  INPUT    | P98          |
+| SW3_6                                          |  INPUT    | P97          |
+| SW3_7                                          |  INPUT    | P96          |
++------------------------------------------------+-----------+--------------+
+|                Dedicated or Special Pin Name               |  Pin Number  |
++------------------------------------------------------------+--------------+
+| /PROG                                                      | P74          |
+| CCLK                                                       | P107         |
+| DONE                                                       | P72          |
+| GND                                                        | P81          |
+| GND                                                        | P71          |
+| GND                                                        | P55          |
+| GND                                                        | P118         |
+| GND                                                        | P1           |
+| GND                                                        | P17          |
+| GND                                                        | P100         |
+| GND                                                        | P91          |
+| GND                                                        | P110         |
+| GND                                                        | P45          |
+| GND                                                        | P64          |
+| GND                                                        | P137         |
+| GND                                                        | P35          |
+| GND                                                        | P127         |
+| GND                                                        | P27          |
+| GND                                                        | P8           |
+| VCC                                                        | P90          |
+| VCC                                                        | P73          |
+| VCC                                                        | P54          |
+| VCC                                                        | P108         |
+| VCC                                                        | P128         |
+| VCC                                                        | P37          |
+| VCC                                                        | P144         |
+| VCC                                                        | P18          |
++------------------------------------------------------------+--------------+
+
+Pinout by Pin Number:
++--------------+-----------------------------------+-----------+------------+
+|  Pin Number  |            Pin Name               | Direction | Constraint |
++--------------+-----------------------------------+-----------+------------+
+| P1           | GND                               |           |            |
+| P2           |                                   |           |            |
+| P3           |                                   |           |            |
+| P4           |                                   |           |            |
+| P5           |                                   |           |            |
+| P6           |                                   |           |            |
+| P7           |                                   |           |            |
+| P8           | GND                               |           |            |
+| P9           | $Net00004_                        |  OUTPUT   | LOCATED    |
+| P10          | $Net00039_                        |  OUTPUT   | LOCATED    |
+| P11          |                                   |           |            |
+| P12          | $Net00040_                        |  OUTPUT   | LOCATED    |
+| P13          | $Net00043_                        |  OUTPUT   | LOCATED    |
+| P14          | $Net00046_                        |  OUTPUT   | LOCATED    |
+| P15          | $Net00048_                        |  OUTPUT   | LOCATED    |
+| P16          | $Net00049_                        |  OUTPUT   | LOCATED    |
+| P17          | GND                               |           |            |
+| P18          | VCC                               |           |            |
+| P19          | $Net00050_                        |  OUTPUT   | LOCATED    |
+| P20          |                                   |           |            |
+| P21          | $Net00124_                        |  OUTPUT   | LOCATED    |
+| P22          | $Net00125_                        |  OUTPUT   | LOCATED    |
+| P23          | $Net00127_                        |  OUTPUT   | LOCATED    |
+| P24          | $Net00129_                        |  OUTPUT   | LOCATED    |
+| P25          |                                   |           |            |
+| P26          |                                   |           |            |
+| P27          | GND                               |           |            |
+| P28          |                                   |           |            |
+| P29          |                                   |           |            |
+| P30          |                                   |           |            |
+| P31          |                                   |           |            |
+| P32          |                                   |           |            |
+| P33          |                                   |           |            |
+| P35          | GND                               |           |            |
+| P37          | VCC                               |           |            |
+| P39          |                                   |           |            |
+| P40          |                                   |           |            |
+| P41          |                                   |           |            |
+| P42          | $Net00136_                        |  INPUT    | LOCATED    |
+| P43          | $Net00137_                        |  INPUT    | LOCATED    |
+| P44          | COUNT                             |  OUTPUT   | LOCATED    |
+| P45          | GND                               |           |            |
+| P46          |                                   |           |            |
+| P47          |                                   |           |            |
+| P48          |                                   |           |            |
+| P49          | $Net00063_                        |  OUTPUT   | LOCATED    |
+| P50          |                                   |           |            |
+| P51          |                                   |           |            |
+| P52          |                                   |           |            |
+| P53          |                                   |           |            |
+| P54          | VCC                               |           |            |
+| P55          | GND                               |           |            |
+| P56          | $Net00003_                        |  OUTPUT   | LOCATED    |
+| P57          | $Net00117_                        |  OUTPUT   | LOCATED    |
+| P58          | $Net00014_                        |  OUTPUT   | LOCATED    |
+| P59          | $Net00020_                        |  OUTPUT   | LOCATED    |
+| P60          |                                   |           |            |
+| P61          |                                   |           |            |
+| P62          |                                   |           |            |
+| P63          | $Net00130_                        |  OUTPUT   | LOCATED    |
+| P64          | GND                               |           |            |
+| P65          |                                   |           |            |
+| P66          |                                   |           |            |
+| P67          |                                   |           |            |
+| P68          | $Net00128_                        |  INPUT    | LOCATED    |
+| P69          |                                   |           |            |
+| P70          |                                   |           |            |
+| P71          | GND                               |           |            |
+| P72          | DONE                              |           |            |
+| P73          | VCC                               |           |            |
+| P74          | /PROG                             |           |            |
+| P75          |                                   |           |            |
+| P76          | $Net00120_                        |  INPUT    | LOCATED    |
+| P77          |                                   |           |            |
+| P78          |                                   |           |            |
+| P79          |                                   |           |            |
+| P80          |                                   |           |            |
+| P81          | GND                               |           |            |
+| P82          |                                   |           |            |
+| P83          |                                   |           |            |
+| P84          | $Net00001_                        |  INPUT    | LOCATED    |
+| P85          | $Net00116_                        |  INPUT    | LOCATED    |
+| P86          | $Net00013_                        |  INPUT    | LOCATED    |
+| P87          | $Net00019_                        |  INPUT    | LOCATED    |
+| P88          |                                   |           |            |
+| P89          |                                   |           |            |
+| P90          | VCC                               |           |            |
+| P91          | GND                               |           |            |
+| P92          |                                   |           |            |
+| P93          |                                   |           |            |
+| P94          |                                   |           |            |
+| P95          |                                   |           |            |
+| P96          | SW3_7                             |  INPUT    | LOCATED    |
+| P97          | SW3_6                             |  INPUT    | LOCATED    |
+| P98          | SW3_5                             |  INPUT    | LOCATED    |
+| P99          | SW3_4                             |  INPUT    | LOCATED    |
+| P100         | GND                               |           |            |
+| P101         | SW3_3                             |  INPUT    | LOCATED    |
+| P102         | SW3_2                             |  INPUT    | LOCATED    |
+| P103         | SW3_1                             |  INPUT    | LOCATED    |
+| P104         | SW3_0                             |  INPUT    | LOCATED    |
+| P105         |                                   |           |            |
+| P106         |                                   |           |            |
+| P107         | CCLK                              |           |            |
+| P108         | VCC                               |           |            |
+| P110         | GND                               |           |            |
+| P111         |                                   |           |            |
+| P112         |                                   |           |            |
+| P113         |                                   |           |            |
+| P114         |                                   |           |            |
+| P115         | SW2_7                             |  INPUT    | LOCATED    |
+| P116         | SW2_6                             |  INPUT    | LOCATED    |
+| P117         | SW2_5                             |  INPUT    | LOCATED    |
+| P118         | GND                               |           |            |
+| P119         | SW2_4                             |  INPUT    | LOCATED    |
+| P120         | SW2_3                             |  INPUT    | LOCATED    |
+| P121         | SW2_2                             |  INPUT    | LOCATED    |
+| P122         | SW2_1                             |  INPUT    | LOCATED    |
+| P123         | SW2_0                             |  INPUT    | LOCATED    |
+| P124         | SW0_0                             |  INPUT    | LOCATED    |
+| P125         | SW0_1                             |  INPUT    | LOCATED    |
+| P126         | SW0_2                             |  INPUT    | LOCATED    |
+| P127         | GND                               |           |            |
+| P128         | VCC                               |           |            |
+| P129         | SW0_3                             |  INPUT    | LOCATED    |
+| P130         | SW0_4                             |  INPUT    | LOCATED    |
+| P131         | SW0_5                             |  INPUT    | LOCATED    |
+| P132         | SW0_6                             |  INPUT    | LOCATED    |
+| P133         | SW0_7                             |  INPUT    | LOCATED    |
+| P134         | SW1_0                             |  INPUT    | LOCATED    |
+| P135         | SW1_1                             |  INPUT    | LOCATED    |
+| P136         | SW1_2                             |  INPUT    | LOCATED    |
+| P137         | GND                               |           |            |
+| P138         | SW1_3                             |  INPUT    | LOCATED    |
+| P139         | SW1_4                             |  INPUT    | LOCATED    |
+| P140         | SW1_5                             |  INPUT    | LOCATED    |
+| P141         | SW1_6                             |  INPUT    | LOCATED    |
+| P142         | SW1_7                             |  INPUT    | LOCATED    |
+| P143         |                                   |           |            |
+| P144         | VCC                               |           |            |
++--------------+-----------------------------------+-----------+------------+
+
+#
+# Pinout constraints listing
+# These constraints are in PCF grammar format
+# and may be cut and pasted into the PCF file
+# after the "SCHEMATIC END ;" statement to
+# preserve this pinout for future design iterations.
+#
+COMP "$Net00001_" LOCATE = SITE "P84" ; 
+COMP "$Net00003_" LOCATE = SITE "P56" ; 
+COMP "$Net00004_" LOCATE = SITE "P9" ; 
+COMP "$Net00013_" LOCATE = SITE "P86" ; 
+COMP "$Net00014_" LOCATE = SITE "P58" ; 
+COMP "$Net00019_" LOCATE = SITE "P87" ; 
+COMP "$Net00020_" LOCATE = SITE "P59" ; 
+COMP "$Net00039_" LOCATE = SITE "P10" ; 
+COMP "$Net00040_" LOCATE = SITE "P12" ; 
+COMP "$Net00043_" LOCATE = SITE "P13" ; 
+COMP "$Net00046_" LOCATE = SITE "P14" ; 
+COMP "$Net00048_" LOCATE = SITE "P15" ; 
+COMP "$Net00049_" LOCATE = SITE "P16" ; 
+COMP "$Net00050_" LOCATE = SITE "P19" ; 
+COMP "$Net00063_" LOCATE = SITE "P49" ; 
+COMP "$Net00116_" LOCATE = SITE "P85" ; 
+COMP "$Net00117_" LOCATE = SITE "P57" ; 
+COMP "$Net00120_" LOCATE = SITE "P76" ; 
+COMP "$Net00124_" LOCATE = SITE "P21" ; 
+COMP "$Net00125_" LOCATE = SITE "P22" ; 
+COMP "$Net00127_" LOCATE = SITE "P23" ; 
+COMP "$Net00128_" LOCATE = SITE "P68" ; 
+COMP "$Net00129_" LOCATE = SITE "P24" ; 
+COMP "$Net00130_" LOCATE = SITE "P63" ; 
+COMP "$Net00136_" LOCATE = SITE "P42" ; 
+COMP "$Net00137_" LOCATE = SITE "P43" ; 
+COMP "COUNT" LOCATE = SITE "P44" ; 
+COMP "SW0_0" LOCATE = SITE "P124" ; 
+COMP "SW0_1" LOCATE = SITE "P125" ; 
+COMP "SW0_2" LOCATE = SITE "P126" ; 
+COMP "SW0_3" LOCATE = SITE "P129" ; 
+COMP "SW0_4" LOCATE = SITE "P130" ; 
+COMP "SW0_5" LOCATE = SITE "P131" ; 
+COMP "SW0_6" LOCATE = SITE "P132" ; 
+COMP "SW0_7" LOCATE = SITE "P133" ; 
+COMP "SW1_0" LOCATE = SITE "P134" ; 
+COMP "SW1_1" LOCATE = SITE "P135" ; 
+COMP "SW1_2" LOCATE = SITE "P136" ; 
+COMP "SW1_3" LOCATE = SITE "P138" ; 
+COMP "SW1_4" LOCATE = SITE "P139" ; 
+COMP "SW1_5" LOCATE = SITE "P140" ; 
+COMP "SW1_6" LOCATE = SITE "P141" ; 
+COMP "SW1_7" LOCATE = SITE "P142" ; 
+COMP "SW2_0" LOCATE = SITE "P123" ; 
+COMP "SW2_1" LOCATE = SITE "P122" ; 
+COMP "SW2_2" LOCATE = SITE "P121" ; 
+COMP "SW2_3" LOCATE = SITE "P120" ; 
+COMP "SW2_4" LOCATE = SITE "P119" ; 
+COMP "SW2_5" LOCATE = SITE "P117" ; 
+COMP "SW2_6" LOCATE = SITE "P116" ; 
+COMP "SW2_7" LOCATE = SITE "P115" ; 
+COMP "SW3_0" LOCATE = SITE "P104" ; 
+COMP "SW3_1" LOCATE = SITE "P103" ; 
+COMP "SW3_2" LOCATE = SITE "P102" ; 
+COMP "SW3_3" LOCATE = SITE "P101" ; 
+COMP "SW3_4" LOCATE = SITE "P99" ; 
+COMP "SW3_5" LOCATE = SITE "P98" ; 
+COMP "SW3_6" LOCATE = SITE "P97" ; 
+COMP "SW3_7" LOCATE = SITE "P96" ; 
+#

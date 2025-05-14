@@ -1,0 +1,36 @@
+[/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc_tmp] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00000040 bytes
+Found section 1 with adddress 0x00000040, size 0x00000c20 bytes
+Found section 2 with adddress 0x00000c60, size 0x000004a0 bytes
+Found section 3 with adddress 0x00001100, size 0x000002c0 bytes
+Found section 4 with adddress 0x000013c0, size 0x00000160 bytes
+Found section 5 with adddress 0x00001520, size 0x00000008 bytes
+Found section 6 with adddress 0xa0101000, size 0x001a1958 bytes
+Found section 7 with adddress 0xa02ba820, size 0x00010ed0 bytes
+Found section 8 with adddress 0xa02cb6f0, size 0x00001e20 bytes
+[/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc_tmp] Found 9 sections. 9 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+Merging section @ 0x00000040 of size 0x00000c20, with section @ 0x00000000 of size 0x00000040
+Merging section @ 0x00000c60 of size 0x000004a0, with section @ 0x00000000 of size 0x00000c60
+Merging section @ 0x00001100 of size 0x000002c0, with section @ 0x00000000 of size 0x00001100
+Merging section @ 0x000013c0 of size 0x00000160, with section @ 0x00000000 of size 0x000013c0
+Merging section @ 0x00001520 of size 0x00000008, with section @ 0x00000000 of size 0x00001520
+Merging section @ 0xa02cb6f0 of size 0x00001e20, with section @ 0xa02ba820 of size 0x00010ed0
+Writing section header  #0, adddress 0x00000000, size 0x00001528 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section data with adddress 0x00000000, size 0x00000040 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section data with adddress 0x00000040, size 0x00000c20 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section data with adddress 0x00000c60, size 0x000004a0 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section data with adddress 0x00001100, size 0x000002c0 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section data with adddress 0x000013c0, size 0x00000160 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section data with adddress 0x00001520, size 0x00000008 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section header  #1, adddress 0xa0101000, size 0x001a1958 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section data with adddress 0xa0101000, size 0x001a1958 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section header  #2, adddress 0xa02ba820, size 0x00012cf0 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section data with adddress 0xa02ba820, size 0x00010ed0 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+Writing section data with adddress 0xa02cb6f0, size 0x00001e20 bytes to file [/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc]
+[/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00001528 bytes
+Found section 1 with adddress 0xa0101000, size 0x001a1958 bytes
+Found section 2 with adddress 0xa02ba820, size 0x00012cf0 bytes
+[/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc] Found 3 sections. 3 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+[/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc_xip] Parsing file ...
+[/home/gabriela/workspace_v12/Arritmias_01/Debug/Arritmias_01.rprc_xip] Found 0 sections. 0 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000

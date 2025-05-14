@@ -1,0 +1,204 @@
+
+                Xilinx Mapping Report File for Design "prb_0"
+          Copyright (c) 1995-1998 Xilinx, Inc.  All rights reserved.
+
+Design Information
+------------------
+Command Line   : map -p xcs20-3-tq144 -o map.ncd prb_0.ngd prb_0.pcf 
+Target Device  : xs20
+Target Package : tq144
+Target Speed   : -3
+Mapper Version : spartan -- M1.5.19
+Mapped Date    : Tue Sep 24 11:13:56 2024
+
+Design Summary
+--------------
+   Number of errors:        0
+   Number of warnings:      1
+   Number of CLBs:             25 out of   400    6%
+      CLB Flip Flops:      35
+      4 input LUTs:        25
+      3 input LUTs:        11 (8 used as route-throughs)
+   Number of bonded IOBs:      59 out of   113   52%
+      IOB Flops:            0
+      IOB Latches:          0
+   Number of TBUFs:            35 out of   880    3%
+   Number of oscillators:       1
+Total equivalent gate count for design: 478
+Additional JTAG gate count for IOBs:    2832
+
+Table of Contents
+-----------------
+Section 1 - Errors
+Section 2 - Warnings
+Section 3 - Design Attributes
+Section 4 - Removed Logic Summary
+Section 5 - Removed Logic
+Section 6 - Added Logic
+Section 7 - Expanded Logic
+Section 8 - Signal Cross-Reference
+Section 9 - Symbol Cross-Reference
+Section 10 - IOB Properties
+Section 11 - RPMs
+Section 12 - Guide Report
+
+Section 1 - Errors
+------------------
+
+Section 2 - Warnings
+--------------------
+WARNING:baste:24 - All of the external outputs in this design are using
+   slew-rate-limited output drivers.  The delay on speed critical outputs can be
+   dramatically reduced by designating them as fast outputs in the original
+   design.  Please see your vendor interface documentation for specific
+   information on how to do this within your design-entry tool.
+   Note: You should be careful not to designate too many outputs which switch
+   together as fast, because this can cause excessive ground bounce.  For more
+   information on this subject, please refer to the IOB switching characteristic
+   guidelines for the device you are using in the Programmable Logic Data Book.
+
+Section 3 - Design Attributes
+-----------------------------
+ Attribute LOC
+   "P9" for signal(s) $Net00004_ on symbol "$I11"
+   "P125" on symbol "$I16"
+   "P126" on symbol "$I21"
+   "P10" for signal(s) $Net00039_ on symbol "$I210"
+   "P12" for signal(s) $Net00040_ on symbol "$I211"
+   "P13" for signal(s) $Net00043_ on symbol "$I212"
+   "P14" for signal(s) $Net00046_ on symbol "$I213"
+   "P15" for signal(s) $Net00048_ on symbol "$I214"
+   "P16" for signal(s) $Net00049_ on symbol "$I215"
+   "P19" for signal(s) $Net00050_ on symbol "$I216"
+   "P134" on symbol "$I232"
+   "P135" on symbol "$I235"
+   "P136" on symbol "$I238"
+   "P138" on symbol "$I242"
+   "P139" on symbol "$I246"
+   "P140" on symbol "$I249"
+   "P141" on symbol "$I251"
+   "P142" on symbol "$I253"
+   "P123" on symbol "$I256"
+   "P122" on symbol "$I259"
+   "P129" on symbol "$I26"
+   "P121" on symbol "$I262"
+   "P120" on symbol "$I266"
+   "P119" on symbol "$I270"
+   "P117" on symbol "$I273"
+   "P116" on symbol "$I275"
+   "P115" on symbol "$I277"
+   "P104" on symbol "$I280"
+   "P103" on symbol "$I283"
+   "P102" on symbol "$I286"
+   "P101" on symbol "$I290"
+   "P99" on symbol "$I294"
+   "P98" on symbol "$I297"
+   "P97" on symbol "$I299"
+   "P96" on symbol "$I301"
+   "P130" on symbol "$I31"
+   "P76" on symbol "$I312"
+   "P84" on symbol "$I325"
+   "P56" for signal(s) $Net00003_ on symbol "$I329"
+   "P86" on symbol "$I335"
+   "P58" for signal(s) $Net00014_ on symbol "$I339"
+   "P87" on symbol "$I340"
+   "P59" for signal(s) $Net00020_ on symbol "$I344"
+   "P85" on symbol "$I348"
+   "P57" for signal(s) $Net00117_ on symbol "$I352"
+   "P44" for signal(s) COUNT on symbol "$I357"
+   "P131" on symbol "$I36"
+   "P21" for signal(s) $Net00124_ on symbol "$I360"
+   "P22" for signal(s) $Net00125_ on symbol "$I362"
+   "P23" for signal(s) $Net00127_ on symbol "$I364"
+   "P24" for signal(s) $Net00129_ on symbol "$I366"
+   "P49" for signal(s) $Net00063_ on symbol "$I390"
+   "P68" on symbol "$I391"
+   "P63" for signal(s) $Net00130_ on symbol "$I395"
+   "P132" on symbol "$I41"
+   "P43" on symbol "$I416"
+   "P42" on symbol "$I421"
+   "P133" on symbol "$I46"
+   "P124" on symbol "$I7"
+
+Section 4 - Removed Logic Summary
+---------------------------------
+   2 block(s) removed
+   8 signal(s) removed
+
+Section 5 - Removed Logic
+-------------------------
+
+The trimmed logic report below shows the logic removed from your design due to
+sourceless or loadless signals, and VCC or ground connections.  If the removal
+of a signal or symbol results in the subsequent removal of an additional signal
+or symbol, the message explaining that second removal will be indented.  This
+indentation will be repeated as a chain of related logic is removed.
+
+To quickly locate the original cause for the removal of a chain of logic, look
+above the place where that logic is listed in the trimming report, then locate
+the lines that are least indented (begin at the leftmost edge).
+
+The signal "$I381/D3" is loadless and has been removed.
+ Loadless block "$I381/$1I30/$I381/D3" (X_AND2) removed.
+  The signal "$I381/D3/2.0" is loadless and has been removed.
+   Loadless block "$I381/$1I30/$I381/D3/2.0" (X_AND2) removed.
+    The signal "$I381/E" is loadless and has been removed.
+The signal "$I57/E" is sourceless and has been removed.
+The signal "$I66/CE" is sourceless and has been removed.
+The signal "$I66/CLR" is sourceless and has been removed.
+The signal "$I319/CE" is sourceless and has been removed.
+The signal "$I319/CLR" is sourceless and has been removed.
+
+To enable printing of redundant blocks removed and signals merged, set the
+environment variable MAP_REPORT_DETAIL to TRUE and rerun map.
+
+Section 6 - Added Logic
+-----------------------
+
+Section 7 - Expanded Logic
+--------------------------
+To enable this section, set the environment variable MAP_REPORT_DETAIL to TRUE
+and rerun MAP.
+
+Section 8 - Signal Cross-Reference
+----------------------------------
+To enable this section, set the environment variable MAP_REPORT_DETAIL to TRUE
+and rerun MAP.
+
+Section 9 - Symbol Cross-Reference
+----------------------------------
+To enable this section, set the environment variable MAP_REPORT_DETAIL to TRUE
+and rerun MAP.
+
+Section 10 - IOB Properties
+---------------------------
+$Net00001_ (IOB) : PULLUP
+$Net00003_ (IOB) : SLEW=SLOW
+$Net00004_ (IOB) : SLEW=SLOW
+$Net00013_ (IOB) : PULLUP
+$Net00014_ (IOB) : SLEW=SLOW
+$Net00019_ (IOB) : PULLUP
+$Net00020_ (IOB) : SLEW=SLOW
+$Net00039_ (IOB) : SLEW=SLOW
+$Net00040_ (IOB) : SLEW=SLOW
+$Net00043_ (IOB) : SLEW=SLOW
+$Net00046_ (IOB) : SLEW=SLOW
+$Net00048_ (IOB) : SLEW=SLOW
+$Net00049_ (IOB) : SLEW=SLOW
+$Net00050_ (IOB) : SLEW=SLOW
+$Net00063_ (IOB) : SLEW=SLOW
+$Net00116_ (IOB) : PULLUP
+$Net00117_ (IOB) : SLEW=SLOW
+$Net00124_ (IOB) : SLEW=SLOW
+$Net00125_ (IOB) : SLEW=SLOW
+$Net00127_ (IOB) : SLEW=SLOW
+$Net00129_ (IOB) : SLEW=SLOW
+$Net00130_ (IOB) : SLEW=SLOW
+COUNT (IOB) : SLEW=SLOW
+
+Section 11 - RPMs
+-----------------
+
+Section 12 - Guide Report
+-------------------------
+Guide not run on this design.

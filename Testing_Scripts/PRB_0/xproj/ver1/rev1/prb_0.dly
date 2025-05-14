@@ -1,0 +1,568 @@
+Tue Sep 24 11:13:58 2024
+
+File: prb_0.dly
+
+ The 20 Worst Net Delays are:
+-------------------------------
+| Max Delay (ns)  | Netname   |
+-------------------------------
+  13.267            $Net00121_
+  13.068            EN_IN_1
+   9.058            $Net00005_
+   8.733            A0
+   8.652            $Net00056_
+   8.503            EN_IN_0
+   8.464            $Net00060_
+   7.878            $Net00058_
+   6.912            OSC1
+   6.806            A5
+   6.709            EN_FO
+   6.709            EN_OP_0
+   6.702            A6
+   6.675            $Net00118_
+   6.486            $Net00095_
+   6.372            $Net00016_
+   6.330            A1
+   6.221            $Net00126_
+   5.939            $Net00082_
+   5.535            EN3
+---------------------------------
+
+-------------------------------------------------------------------------------
+                               Net Delays
+-------------------------------------------------------------------------------
+
+$I319/Q1
+   $I319/Q1.YQ
+         1.031  $I319/Q1.C3
+
+$I319/Q2
+   $I319/Q1.XQ
+         1.010  $Net00095_.C4
+
+$I319/Q3
+   $Net00095_.YQ
+         1.031  $Net00095_.F3
+
+$I66/Q2
+   EN1.YQ
+         1.031  EN1.C3
+
+$I66/Q3
+   EN1.XQ
+         1.010  EN3.G4
+
+$Net00002_
+   SW0_1.I2
+         1.137  $I225.I
+
+$Net00005_
+   $Net00001_.I2
+         9.058  $Net00003_.O
+
+$Net00006_
+   SW0_2.I2
+         3.680  $I226.I
+
+$Net00009_
+   L7/AUX_FF_IN.XQ
+         4.604  COUNT.O
+         1.104  L7/AUX_FF_IN.F1
+         1.104  L7/AUX_FF_IN.G1
+
+$Net00010_
+   SW0_3.I2
+         4.159  $I227.I
+
+$Net00015_
+   SW0_4.I2
+         3.708  $I228.I
+
+$Net00016_
+   $Net00013_.I2
+         6.372  $Net00014_.O
+
+$Net00018_
+   SW0_0.I2
+         1.121  $I208.I
+
+$Net00021_
+   $Net00019_.I1
+         4.305  $Net00020_.O
+
+$Net00022_
+   SW0_5.I1
+         1.087  $I229.I
+
+$Net00027_
+   SW0_6.I2
+         4.193  $I230.I
+
+$Net00044_
+   EN3.YQ
+         1.040  EN2.F1
+         1.095  EN0.F4
+         1.095  EN3.F4
+         1.095  EN3.C4
+         1.095  EN1.F2
+
+$Net00045_
+   EN3.XQ
+         1.104  EN1.F1
+         1.104  EN1.C1
+         1.094  EN3.F2
+         1.115  EN2.F2
+         1.104  EN0.F3
+
+$Net00052_
+   SW1_0.I2
+         4.854  $I244.I
+
+$Net00054_
+   SW1_1.I1
+         3.992  $I255.I
+
+$Net00056_
+   SW1_2.I2
+         8.652  $I245.I
+
+$Net00058_
+   SW1_3.I2
+         7.878  $I234.I
+
+$Net00060_
+   SW1_4.I1
+         8.464  $I248.I
+
+$Net00062_
+   SW1_5.I2
+         4.704  $I241.I
+
+$Net00064_
+   SW1_6.I2
+         5.296  $I240.I
+
+$Net00068_
+   SW2_0.I2
+         0.995  $I268.I
+
+$Net00070_
+   SW2_1.I1
+         1.170  $I279.I
+
+$Net00072_
+   SW2_2.I2
+         3.710  $I269.I
+
+$Net00074_
+   SW2_3.I2
+         4.193  $I258.I
+
+$Net00076_
+   SW2_4.I2
+         3.387  $I272.I
+
+$Net00078_
+   SW2_5.I1
+         3.088  $I265.I
+
+$Net00080_
+   SW2_6.I1
+         4.157  $I264.I
+
+$Net00082_
+   SW2_7.I2
+         5.939  $I261.I
+
+$Net00084_
+   SW3_0.I1
+         0.605  $I292.I
+
+$Net00086_
+   SW3_1.I2
+         0.041  $I303.I
+
+$Net00088_
+   SW3_2.I2
+         0.041  $I293.I
+
+$Net00090_
+   SW3_3.I1
+         0.548  $I282.I
+
+$Net00092_
+   SW3_4.I1
+         1.052  $I296.I
+
+$Net00094_
+   SW3_5.I2
+         2.670  $I289.I
+
+$Net00095_
+   $Net00095_.XQ
+         1.058  $I319/Q1.C1
+         6.486  EN1.K
+         6.341  EN3.K
+
+$Net00096_
+   SW3_6.I1
+         2.207  $I288.I
+
+$Net00098_
+   SW3_7.I1
+         0.548  $I285.I
+
+$Net00118_
+   $Net00116_.I2
+         6.675  $Net00117_.O
+
+$Net00121_
+   $Net00120_.I1
+         9.331  L7/lfsr_counter1/Q_OUT0.K
+        10.098  L7/lfsr_counter1/Q_OUT2.K
+         9.026  L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.K
+         9.288  L7/lfsr_counter1/Q_OUT6.K
+         9.637  L7/TERM_CNT.K
+        10.285  L7/AUX_FF_IN.K
+        11.595  L8/lfsr_counter1/ANDREGIN0_OUT.K
+        10.377  L8/lfsr_counter1/ANDREGIN2_OUT.K
+        10.034  L8/lfsr_counter1/Q_OUT5.K
+         9.548  L8/lfsr_counter1/ORREGIN5_OUT.K
+        13.049  L8/lfsr_counter2/Q_OUT0.K
+         9.831  L8/lfsr_counter2/Q_OUT2.K
+         9.831  L8/lfsr_counter2/Q_OUT4.K
+        13.267  L8/TERM_CNT2.K
+        12.243  L8/INV_OUT.K
+
+$Net00126_
+   L8/INV_OUT.XQ
+         1.625  L8/INV_OUT.F1
+         1.625  L8/INV_OUT.G1
+         2.274  L8/lfsr_counter2/Q_OUT0.C1
+         2.819  L8/lfsr_counter2/Q_OUT2.C1
+         2.815  L8/lfsr_counter2/Q_OUT4.C2
+         2.620  L8/TERM_CNT2.C2
+         2.794  $Net00063_.O
+         6.221  $Net00124_.O
+         6.221  $Net00125_.O
+         5.782  $Net00127_.O
+         5.782  $Net00129_.O
+
+$Net00131_
+   $Net00128_.I1
+         1.614  $I393.I
+
+$Net00132_
+   $I423.O
+   $I418.O
+   $I393.O
+         4.749  $Net00130_.O
+
+$Net00139_
+   $Net00137_.I1
+         1.120  $I418.I
+
+$Net00142_
+   $Net00136_.I1
+         1.087  $I423.I
+
+A0
+   $I292.O
+   $I268.O
+   $I244.O
+   $I208.O
+         8.733  $Net00004_.O
+
+A1
+   $I303.O
+   $I279.O
+   $I255.O
+   $I225.O
+         6.330  $Net00039_.O
+
+A2
+   $I293.O
+   $I269.O
+   $I245.O
+   $I226.O
+         5.327  $Net00040_.O
+
+A3
+   $I282.O
+   $I258.O
+   $I234.O
+   $I227.O
+         5.419  $Net00043_.O
+
+A4
+   $I296.O
+   $I272.O
+   $I248.O
+   $I228.O
+         4.976  $Net00046_.O
+
+A5
+   $I289.O
+   $I265.O
+   $I241.O
+   $I229.O
+         6.806  $Net00048_.O
+
+A6
+   $I288.O
+   $I264.O
+   $I240.O
+   $I230.O
+         6.702  $Net00049_.O
+
+A7
+   $I285.O
+   $I261.O
+   $I237.O
+   $I231.O
+         5.416  $Net00050_.O
+
+EN0
+   EN0.X
+         2.126  $I208.T
+         2.126  $I225.T
+         2.126  $I226.T
+         2.126  $I227.T
+         2.126  $I228.T
+         2.126  $I229.T
+         2.126  $I230.T
+         2.126  $I231.T
+
+EN1
+   EN1.X
+         2.126  $I234.T
+         2.126  $I237.T
+         2.126  $I240.T
+         2.126  $I241.T
+         2.126  $I244.T
+         2.126  $I245.T
+         2.126  $I248.T
+         2.126  $I255.T
+
+EN2
+   EN2.X
+         2.126  $I258.T
+         2.126  $I261.T
+         2.126  $I264.T
+         2.126  $I265.T
+         2.126  $I268.T
+         2.126  $I269.T
+         2.126  $I272.T
+         2.126  $I279.T
+
+EN3
+   EN3.X
+         5.535  $I282.T
+         5.535  $I285.T
+         5.535  $I288.T
+         5.535  $I289.T
+         5.535  $I292.T
+         5.535  $I293.T
+         5.535  $I296.T
+         5.535  $I303.T
+
+EN_FO
+   EN_FO.X
+         6.709  $I393.T
+
+EN_IN_0
+   SW0_7.I2
+         3.937  EN_OP_1.F1
+         8.503  EN_FO.F4
+         8.078  $I231.I
+         5.565  EN_OP_0.F2
+
+EN_IN_1
+   SW1_7.I2
+        10.403  EN_OP_0.F3
+        13.068  $I237.I
+        10.403  EN_OP_1.F3
+        11.461  EN_FO.F3
+
+EN_OP_0
+   EN_OP_0.X
+         6.709  $I423.T
+
+EN_OP_1
+   EN_OP_1.X
+         1.397  $I418.T
+
+L7/AUX_FF_IN
+   L7/AUX_FF_IN.X
+         3.044  L7/lfsr_counter1/Q_OUT0.C2
+         3.044  L7/lfsr_counter1/Q_OUT2.C2
+         1.980  L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.C1
+         1.862  L7/lfsr_counter1/Q_OUT6.C1
+         3.044  L7/TERM_CNT.C2
+
+L7/AUX_FF_OUT
+   L7/AUX_FF_IN.YQ
+         0.990  L7/AUX_FF_IN.G3
+
+L7/TERM_CNT
+   L7/TERM_CNT.XQ
+         1.178  L7/AUX_FF_IN.G4
+
+L7/XOR_OUT
+   L7/AUX_FF_IN.Y
+         1.019  L7/AUX_FF_IN.F3
+
+L7/lfsr_counter1/Q_OUT0
+   L7/lfsr_counter1/Q_OUT0.XQ
+         0.994  L7/TERM_CNT.F3
+
+L7/lfsr_counter1/Q_OUT1
+   L7/lfsr_counter1/Q_OUT0.YQ
+         1.067  L7/lfsr_counter1/Q_OUT0.C4
+         1.067  L7/TERM_CNT.G4
+
+L7/lfsr_counter1/Q_OUT2
+   L7/lfsr_counter1/Q_OUT2.XQ
+         1.181  L7/TERM_CNT.G2
+         1.317  L7/lfsr_counter1/Q_OUT0.C1
+
+L7/lfsr_counter1/Q_OUT3
+   L7/lfsr_counter1/Q_OUT2.YQ
+         0.990  L7/lfsr_counter1/Q_OUT2.C3
+         0.990  L7/TERM_CNT.G1
+
+L7/lfsr_counter1/Q_OUT4
+   L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.XQ
+         1.291  L7/TERM_CNT.G3
+         2.882  L7/lfsr_counter1/Q_OUT2.C4
+
+L7/lfsr_counter1/Q_OUT5
+   L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.YQ
+         1.086  L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.F3
+         1.225  L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.C4
+         1.362  L7/TERM_CNT.F1
+
+L7/lfsr_counter1/Q_OUT6
+   L7/lfsr_counter1/Q_OUT6.XQ
+         1.041  L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.F2
+         1.041  L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.C2
+
+L7/lfsr_counter1/Q_OUT7
+   L7/lfsr_counter1/Q_OUT6.YQ
+         1.031  L7/lfsr_counter1/Q_OUT6.C3
+         1.031  L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.F1
+
+L7/lfsr_counter1/Q_OUT8
+   L7/TERM_CNT.YQ
+         1.236  L7/lfsr_counter1/Q_OUT6.C2
+         1.655  L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.F4
+
+L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT
+   L7/lfsr_counter1/lfsrnor/lfsrnor_5_OUT.X
+         1.025  L7/TERM_CNT.C3
+
+L8/INV_OUT
+   L8/INV_OUT.X
+         1.175  L8/lfsr_counter1/ANDREGIN0_OUT.C4
+         1.909  L8/lfsr_counter1/ANDREGIN2_OUT.C1
+         1.780  L8/lfsr_counter1/Q_OUT5.C3
+         1.632  L8/lfsr_counter1/ORREGIN5_OUT.C4
+
+L8/TERM_CNT1
+   L8/lfsr_counter1/ORREGIN5_OUT.YQ
+         1.153  L8/lfsr_counter1/ORREGIN5_OUT.F4
+         1.060  L8/lfsr_counter1/ORREGIN5_OUT.G3
+         2.321  L8/lfsr_counter1/ANDREGIN0_OUT.F3
+         2.321  L8/lfsr_counter1/ANDREGIN0_OUT.G3
+         2.076  L8/lfsr_counter1/ANDREGIN2_OUT.F3
+         2.076  L8/lfsr_counter1/ANDREGIN2_OUT.G3
+         2.321  L8/INV_OUT.G3
+
+L8/TERM_CNT2
+   L8/TERM_CNT2.YQ
+         2.740  L8/INV_OUT.G4
+
+L8/lfsr_counter1/ANDREGIN0_OUT
+   L8/lfsr_counter1/ANDREGIN0_OUT.X
+         2.824  L8/lfsr_counter1/lfsrnor/lfsrnor_3_OUT.F4
+
+L8/lfsr_counter1/ANDREGIN1_OUT
+   L8/lfsr_counter1/ANDREGIN0_OUT.Y
+         1.035  L8/lfsr_counter1/lfsrnor/lfsrnor_3_OUT.F1
+
+L8/lfsr_counter1/ANDREGIN2_OUT
+   L8/lfsr_counter1/ANDREGIN2_OUT.X
+         1.317  L8/lfsr_counter1/lfsrnor/lfsrnor_3_OUT.F3
+
+L8/lfsr_counter1/ORREGIN3_OUT
+   L8/lfsr_counter1/ANDREGIN2_OUT.Y
+         0.980  L8/lfsr_counter1/lfsrnor/lfsrnor_3_OUT.F2
+
+L8/lfsr_counter1/ORREGIN5_OUT
+   L8/lfsr_counter1/ORREGIN5_OUT.Y
+         2.828  L8/lfsr_counter1/Q_OUT5.C4
+
+L8/lfsr_counter1/Q_OUT0
+   L8/lfsr_counter1/ANDREGIN0_OUT.YQ
+         1.395  L8/lfsr_counter1/ORREGIN5_OUT.G4
+
+L8/lfsr_counter1/Q_OUT1
+   L8/lfsr_counter1/ANDREGIN0_OUT.XQ
+         0.988  L8/lfsr_counter1/ANDREGIN0_OUT.F1
+
+L8/lfsr_counter1/Q_OUT2
+   L8/lfsr_counter1/ANDREGIN2_OUT.YQ
+         1.067  L8/lfsr_counter1/ANDREGIN0_OUT.G2
+
+L8/lfsr_counter1/Q_OUT3
+   L8/lfsr_counter1/ANDREGIN2_OUT.XQ
+         0.988  L8/lfsr_counter1/ANDREGIN2_OUT.F1
+
+L8/lfsr_counter1/Q_OUT4
+   L8/lfsr_counter1/ORREGIN5_OUT.XQ
+         1.267  L8/lfsr_counter1/ANDREGIN2_OUT.G4
+
+L8/lfsr_counter1/Q_OUT5
+   L8/lfsr_counter1/Q_OUT5.YQ
+         1.014  L8/lfsr_counter1/ORREGIN5_OUT.F2
+         1.014  L8/lfsr_counter1/ORREGIN5_OUT.G2
+
+L8/lfsr_counter1/lfsrnor/lfsrnor_3_OUT
+   L8/lfsr_counter1/lfsrnor/lfsrnor_3_OUT.X
+         1.173  L8/lfsr_counter1/ORREGIN5_OUT.C1
+
+L8/lfsr_counter2/Q_OUT0
+   L8/lfsr_counter2/Q_OUT0.XQ
+         1.756  L8/TERM_CNT2.F3
+
+L8/lfsr_counter2/Q_OUT1
+   L8/lfsr_counter2/Q_OUT0.YQ
+         1.040  L8/lfsr_counter2/Q_OUT0.C3
+         1.095  L8/TERM_CNT2.G2
+
+L8/lfsr_counter2/Q_OUT2
+   L8/lfsr_counter2/Q_OUT2.XQ
+         1.124  L8/TERM_CNT2.G3
+         1.267  L8/lfsr_counter2/Q_OUT0.C4
+
+L8/lfsr_counter2/Q_OUT3
+   L8/lfsr_counter2/Q_OUT2.YQ
+         1.040  L8/lfsr_counter2/Q_OUT2.C3
+         1.095  L8/TERM_CNT2.G4
+
+L8/lfsr_counter2/Q_OUT4
+   L8/lfsr_counter2/Q_OUT4.YQ
+         1.016  L8/TERM_CNT2.G1
+         2.843  L8/lfsr_counter2/Q_OUT2.C4
+
+L8/lfsr_counter2/Q_OUT5
+   L8/TERM_CNT2.XQ
+         0.988  L8/lfsr_counter2/Q_OUT4.C3
+         0.988  L8/TERM_CNT2.F1
+         0.988  L8/TERM_CNT2.C1
+
+OSC1
+   $I188.F15
+         6.912  $Net00095_.K
+         6.753  $I319/Q1.K
+

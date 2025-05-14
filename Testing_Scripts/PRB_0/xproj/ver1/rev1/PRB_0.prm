@@ -1,0 +1,14 @@
+PROMGEN: Xilinx Prom Generator M1.5.19
+Copyright (c) 1995-1998 Xilinx, Inc.  All rights reserved.
+
+promgen -p mcs -x XC17256D -o \\vboxsrv\winxp\PRB_0\xproj\ver1\rev1\PRB_0.mcs -u 0 E:\PRB_0\XPROJ\ver1\rev1\prb_0.bit 
+
+PROM \\vboxsrv\winxp\PRB_0\xproj\ver1\rev1\PRB_0.prm map: Tue Sep 24 11:14:20 2024
+
+Format       Mcs86
+Size         32K
+PROM start   0000:0000
+PROM end     0000:7fff
+
+        Addr1        Addr2 File(s)
+    0000:0000    0000:56fb E:/PRB_0/XPROJ/ver1/rev1/prb_0.bit

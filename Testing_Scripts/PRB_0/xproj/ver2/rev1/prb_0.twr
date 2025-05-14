@@ -1,0 +1,49 @@
+--------------------------------------------------------------------------------
+Xilinx TRACE, Version M1.5.19
+Copyright (c) 1995-1998 Xilinx, Inc.  All rights reserved.
+
+Design file:              prb_0.ncd
+Physical constraint file: prb_0.pcf
+Device,speed:             xcs20,-3 (x1_0.14 1.6 PRELIMINARY)
+Report level:             error report, limited to 3 items per constraint
+--------------------------------------------------------------------------------
+
+WARNING:bastw:170 - No timing constraints found, doing default enumeration.
+
+================================================================================
+Timing constraint: Default period analysis
+ 282 items analyzed, 0 timing errors detected.
+ Minimum period is  15.598ns.
+ Maximum delay is  35.089ns.
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: Default net enumeration
+ 102 items analyzed, 0 timing errors detected.
+ Maximum net delay is  13.267ns.
+--------------------------------------------------------------------------------
+
+
+All constraints were met.
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0
+
+Constraints cover 282 paths, 102 nets, and 228 connections (100.0% coverage)
+
+Design statistics:
+   Minimum period:  15.598ns (Maximum frequency:  64.111MHz)
+   Maximum combinational path delay:  35.089ns
+   Maximum net delay:  13.267ns
+
+WARNING:bastw:544 - Clock nets using non-dedicated resources were found in this
+   design. Clock skew on these resources will not be automatically addressed
+   during path analysis. To create a timing report that analyzes clock skew for
+   these paths, run trce with the '-skew' option.
+
+Analysis completed Thu Mar 06 09:20:03 2025
+--------------------------------------------------------------------------------
+

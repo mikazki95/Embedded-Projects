@@ -1,0 +1,11 @@
+ERROR ANTES DE CAMBIAR EL linker.cmd
+
+Description	Resource	Path	Location	Type
+<a href="file:/home/gabriela/ti/ccs1220/ccs/tools/compiler/dmed/HTML/10099.html">#10099-D</a>  program will not fit into available memory, or the section contains a call site that requires a trampoline that can't be generated for this section. placement with alignment fails for section "GROUP_1" size 0x14bb.  Available memory ranges:	linker.cmd	/Arritmias_01	line 44	C/C++ Problem
+
+
+Después de cambiar linker.cmd
+
+Se programa con la tarea 2 completa pero el uP ya no corre, cuando la tarea 2 esta vacía el uP trabaja sin problema, 
+responde todos los comandos que se introducen por la UART de la Raspberry.  06/12/2023
+

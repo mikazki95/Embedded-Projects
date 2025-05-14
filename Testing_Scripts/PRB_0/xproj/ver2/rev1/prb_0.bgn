@@ -1,0 +1,20 @@
+
+Loading device database for application Bitgen from file "prb_0.ncd".
+   "prb_0" is an NCD, version 2.27, device xcs20, package tq144, speed -3
+Loading device for application Bitgen from file '4010e.nph' in environment
+C:/fndtn.
+Opened constraints file prb_0.pcf.
+
+
+BITGEN: Xilinx Bitstream Generator M1.5.19
+Copyright (c) 1995-1998 Xilinx, Inc.  All rights reserved.
+
+Thu Mar 06 09:20:04 2025
+
+bitgen -l -w -g ConfigRate:SLOW -g TdoPin:PULLNONE -g DonePin:PULLUP -g CRC:enable -g StartUpClk:CCLK -g SyncToDone:no -g DoneActive:C1 -g OutputsActive:C3 -g GSRInactive:C4 -g ReadClk:CCLK -g ReadCapture:enable -g ReadAbort:disable prb_0.ncd 
+
+Running DRC.
+DRC detected 0 errors and 0 warnings.
+Saving ll file in "prb_0.ll".
+Creating bit map...
+Saving bit stream in "prb_0.bit".

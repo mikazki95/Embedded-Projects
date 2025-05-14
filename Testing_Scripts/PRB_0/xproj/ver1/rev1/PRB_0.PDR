@@ -1,0 +1,14 @@
+# Created 2024/09/24 11:14:20
+BeginProm
+  Type   Serial
+  Format MCS-86
+  Info MaxAddress 0x000056FB
+  Device XC17256D
+  BeginChain
+    StartAddress    0x00000000
+    Direction       UP
+    Info EndAddress 0x000056FB
+    Info Size       0x000056FC
+    File "\\vboxsrv\winxp\PRB_0\XPROJ\ver1\rev1\prb_0.bit"
+  EndChain
+EndProm

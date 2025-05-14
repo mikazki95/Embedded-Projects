@@ -1,0 +1,414 @@
+(edif div1024
+  (edifVersion 2 0 0)
+  (edifLevel 0)
+  (keywordMap (keywordLevel 0))
+  (status
+    (written
+      (timestamp 2024 9 20 17 28 14)
+      (program "Xilinx NGD2EDIF" (version "M1.5.19"))
+      (comment "Command line: -v fndtn -w -n C:/WINDOWS/TEMP/div1024.ngd div1024 ")))
+  (external SIMPRIMS
+    (edifLevel 0)
+    (technology (numberDefinition
+      (scale 1 (E 1 -12) (unit TIME))))
+    (cell x_ff
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN
+            (direction INPUT))
+          (port CLK
+            (direction INPUT))
+          (port CE
+            (direction INPUT))
+          (port SET
+            (direction INPUT))
+          (port RST
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+    (cell x_and2
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN0
+            (direction INPUT))
+          (port IN1
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+    (cell x_xor2
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN0
+            (direction INPUT))
+          (port IN1
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+    (cell x_inv
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+    (cell x_or2
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port IN0
+            (direction INPUT))
+          (port IN1
+            (direction INPUT))
+          (port OUT
+            (direction OUTPUT))
+      )))
+  )
+  (library div1024_lib
+    (edifLevel 0)
+    (technology (numberDefinition
+      (scale 1 (E 1 -12) (unit TIME))))
+    (cell div1024
+      (cellType GENERIC)
+      (view view_1
+        (viewType NETLIST)
+        (interface
+          (port CLOCK
+            (direction INPUT)
+            )
+          (port CLK_OUT
+            (direction OUTPUT)
+            )
+          (designator "spartan")
+        )
+        (contents
+          (instance AUX_FLOP
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance AND1
+            (viewRef view_1 (cellRef x_and2 (libraryRef SIMPRIMS)))
+          )
+          (instance XOR1
+            (viewRef view_1 (cellRef x_xor2 (libraryRef SIMPRIMS)))
+          )
+          (instance FLOP
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance BUF1
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (instance OR1
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_XNORFEED "lfsr_counter1/XNORFEED")
+            (viewRef view_1 (cellRef x_xor2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_FLOP0 "lfsr_counter1/FLOP0")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_FLOP1 "lfsr_counter1/FLOP1")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_FLOP2 "lfsr_counter1/FLOP2")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_FLOP3 "lfsr_counter1/FLOP3")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_FLOP4 "lfsr_counter1/FLOP4")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_FLOP5 "lfsr_counter1/FLOP5")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_FLOP6 "lfsr_counter1/FLOP6")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_FLOP7 "lfsr_counter1/FLOP7")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_FLOP8 "lfsr_counter1/FLOP8")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_REGININV0 "lfsr_counter1/REGININV0")
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_TERMFLOP "lfsr_counter1/TERMFLOP")
+            (viewRef view_1 (cellRef x_ff (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_lfsrnor_lfsrnor_0 "lfsr_counter1/lfsrnor/lfsrnor_0")
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_lfsrnor_lfsrnor_1 "lfsr_counter1/lfsrnor/lfsrnor_1")
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_lfsrnor_lfsrnor_2 "lfsr_counter1/lfsrnor/lfsrnor_2")
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_lfsrnor_lfsrnor_3 "lfsr_counter1/lfsrnor/lfsrnor_3")
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_lfsrnor_lfsrnor_4 "lfsr_counter1/lfsrnor/lfsrnor_4")
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_lfsrnor_lfsrnor_5 "lfsr_counter1/lfsrnor/lfsrnor_5")
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_lfsrnor_lfsrnor_6 "lfsr_counter1/lfsrnor/lfsrnor_6")
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_lfsrnor_lfsrnor_7 "lfsr_counter1/lfsrnor/lfsrnor_7")
+            (viewRef view_1 (cellRef x_or2 (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_XNORFEED_2_INV "lfsr_counter1/XNORFEED_2_INV")
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (instance (rename lfsr_counter1_lfsrnor_lfsrnor_7_2_INV "lfsr_counter1/lfsrnor/lfsrnor_7_2_INV")
+            (viewRef view_1 (cellRef x_inv (libraryRef SIMPRIMS)))
+          )
+          (net CLK_OUT
+            (joined
+              (portRef CLK_OUT)
+              (portRef IN1 (instanceRef XOR1))
+              (portRef OUT (instanceRef FLOP))
+              (portRef IN (instanceRef BUF1))
+            )
+          )
+          (net CLOCK
+            (joined
+              (portRef CLOCK)
+              (portRef CLK (instanceRef AUX_FLOP))
+              (portRef CLK (instanceRef FLOP))
+              (portRef CLK (instanceRef lfsr_counter1_FLOP0))
+              (portRef CLK (instanceRef lfsr_counter1_FLOP1))
+              (portRef CLK (instanceRef lfsr_counter1_FLOP2))
+              (portRef CLK (instanceRef lfsr_counter1_FLOP3))
+              (portRef CLK (instanceRef lfsr_counter1_FLOP4))
+              (portRef CLK (instanceRef lfsr_counter1_FLOP5))
+              (portRef CLK (instanceRef lfsr_counter1_FLOP6))
+              (portRef CLK (instanceRef lfsr_counter1_FLOP7))
+              (portRef CLK (instanceRef lfsr_counter1_FLOP8))
+              (portRef CLK (instanceRef lfsr_counter1_TERMFLOP))
+            )
+          )
+          (net AUX_FF_OUT
+            (joined
+              (portRef OUT (instanceRef AUX_FLOP))
+              (portRef IN1 (instanceRef AND1))
+            )
+          )
+          (net AUX_FF_IN
+            (joined
+              (portRef IN (instanceRef AUX_FLOP))
+              (portRef OUT (instanceRef OR1))
+              (portRef CE (instanceRef lfsr_counter1_FLOP0))
+              (portRef CE (instanceRef lfsr_counter1_FLOP1))
+              (portRef CE (instanceRef lfsr_counter1_FLOP2))
+              (portRef CE (instanceRef lfsr_counter1_FLOP3))
+              (portRef CE (instanceRef lfsr_counter1_FLOP4))
+              (portRef CE (instanceRef lfsr_counter1_FLOP5))
+              (portRef CE (instanceRef lfsr_counter1_FLOP6))
+              (portRef CE (instanceRef lfsr_counter1_FLOP7))
+              (portRef CE (instanceRef lfsr_counter1_FLOP8))
+              (portRef CE (instanceRef lfsr_counter1_TERMFLOP))
+            )
+          )
+          (net TERM_CNT
+            (joined
+              (portRef IN0 (instanceRef AND1))
+              (portRef OUT (instanceRef lfsr_counter1_TERMFLOP))
+            )
+          )
+          (net AND_OUT
+            (joined
+              (portRef OUT (instanceRef AND1))
+              (portRef IN0 (instanceRef XOR1))
+            )
+          )
+          (net XOR_OUT
+            (joined
+              (portRef OUT (instanceRef XOR1))
+              (portRef IN (instanceRef FLOP))
+              (portRef IN1 (instanceRef OR1))
+            )
+          )
+          (net INV_OUT
+            (joined
+              (portRef OUT (instanceRef BUF1))
+              (portRef IN0 (instanceRef OR1))
+            )
+          )
+          (net GSR
+            (joined
+              (portRef RST (instanceRef AUX_FLOP))
+              (portRef RST (instanceRef FLOP))
+              (portRef SET (instanceRef lfsr_counter1_FLOP0))
+              (portRef RST (instanceRef lfsr_counter1_FLOP1))
+              (portRef RST (instanceRef lfsr_counter1_FLOP2))
+              (portRef RST (instanceRef lfsr_counter1_FLOP3))
+              (portRef RST (instanceRef lfsr_counter1_FLOP4))
+              (portRef RST (instanceRef lfsr_counter1_FLOP5))
+              (portRef RST (instanceRef lfsr_counter1_FLOP6))
+              (portRef RST (instanceRef lfsr_counter1_FLOP7))
+              (portRef RST (instanceRef lfsr_counter1_FLOP8))
+              (portRef SET (instanceRef lfsr_counter1_TERMFLOP))
+            )
+            (property INITSTATE (string "0") (owner "Xilinx"))
+            (property GLOBAL (boolean (true)) (owner "Xilinx"))
+          )
+          (net (rename lfsr_counter1_Q_OUT0 "lfsr_counter1/Q_OUT0")
+            (joined
+              (portRef IN0 (instanceRef lfsr_counter1_XNORFEED))
+              (portRef OUT (instanceRef lfsr_counter1_FLOP0))
+            )
+          )
+          (net (rename lfsr_counter1_Q_OUT1 "lfsr_counter1/Q_OUT1")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_FLOP0))
+              (portRef OUT (instanceRef lfsr_counter1_FLOP1))
+              (portRef IN (instanceRef lfsr_counter1_REGININV0))
+            )
+          )
+          (net (rename lfsr_counter1_Q_OUT2 "lfsr_counter1/Q_OUT2")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_FLOP1))
+              (portRef OUT (instanceRef lfsr_counter1_FLOP2))
+              (portRef IN1 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_0))
+            )
+          )
+          (net (rename lfsr_counter1_Q_OUT3 "lfsr_counter1/Q_OUT3")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_FLOP2))
+              (portRef OUT (instanceRef lfsr_counter1_FLOP3))
+              (portRef IN0 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_1))
+            )
+          )
+          (net (rename lfsr_counter1_Q_OUT4 "lfsr_counter1/Q_OUT4")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_FLOP3))
+              (portRef OUT (instanceRef lfsr_counter1_FLOP4))
+              (portRef IN1 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_1))
+            )
+          )
+          (net (rename lfsr_counter1_Q_OUT5 "lfsr_counter1/Q_OUT5")
+            (joined
+              (portRef IN1 (instanceRef lfsr_counter1_XNORFEED))
+              (portRef IN (instanceRef lfsr_counter1_FLOP4))
+              (portRef OUT (instanceRef lfsr_counter1_FLOP5))
+              (portRef IN0 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_2))
+            )
+          )
+          (net (rename lfsr_counter1_Q_OUT6 "lfsr_counter1/Q_OUT6")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_FLOP5))
+              (portRef OUT (instanceRef lfsr_counter1_FLOP6))
+              (portRef IN1 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_2))
+            )
+          )
+          (net (rename lfsr_counter1_Q_OUT7 "lfsr_counter1/Q_OUT7")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_FLOP6))
+              (portRef OUT (instanceRef lfsr_counter1_FLOP7))
+              (portRef IN0 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_3))
+            )
+          )
+          (net (rename lfsr_counter1_Q_OUT8 "lfsr_counter1/Q_OUT8")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_FLOP7))
+              (portRef OUT (instanceRef lfsr_counter1_FLOP8))
+              (portRef IN1 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_3))
+            )
+          )
+          (net (rename lfsr_counter1_XNORFEED_OUT "lfsr_counter1/XNORFEED_OUT")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_FLOP8))
+              (portRef IN0 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_7))
+              (portRef OUT (instanceRef lfsr_counter1_XNORFEED_2_INV))
+            )
+          )
+          (net (rename lfsr_counter1_LFSRTERM "lfsr_counter1/LFSRTERM")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_TERMFLOP))
+              (portRef OUT (instanceRef lfsr_counter1_lfsrnor_lfsrnor_7_2_INV))
+            )
+          )
+          (net (rename lfsr_counter1_REGININV0_OUT "lfsr_counter1/REGININV0_OUT")
+            (joined
+              (portRef OUT (instanceRef lfsr_counter1_REGININV0))
+              (portRef IN0 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_0))
+            )
+          )
+          (net (rename lfsr_counter1_lfsrnor_lfsrnor_0_OUT "lfsr_counter1/lfsrnor/lfsrnor_0_OUT")
+            (joined
+              (portRef OUT (instanceRef lfsr_counter1_lfsrnor_lfsrnor_0))
+              (portRef IN0 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_4))
+            )
+          )
+          (net (rename lfsr_counter1_lfsrnor_lfsrnor_1_OUT "lfsr_counter1/lfsrnor/lfsrnor_1_OUT")
+            (joined
+              (portRef OUT (instanceRef lfsr_counter1_lfsrnor_lfsrnor_1))
+              (portRef IN1 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_4))
+            )
+          )
+          (net (rename lfsr_counter1_lfsrnor_lfsrnor_2_OUT "lfsr_counter1/lfsrnor/lfsrnor_2_OUT")
+            (joined
+              (portRef OUT (instanceRef lfsr_counter1_lfsrnor_lfsrnor_2))
+              (portRef IN0 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_5))
+            )
+          )
+          (net (rename lfsr_counter1_lfsrnor_lfsrnor_3_OUT "lfsr_counter1/lfsrnor/lfsrnor_3_OUT")
+            (joined
+              (portRef OUT (instanceRef lfsr_counter1_lfsrnor_lfsrnor_3))
+              (portRef IN1 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_5))
+            )
+          )
+          (net (rename lfsr_counter1_lfsrnor_lfsrnor_4_OUT "lfsr_counter1/lfsrnor/lfsrnor_4_OUT")
+            (joined
+              (portRef OUT (instanceRef lfsr_counter1_lfsrnor_lfsrnor_4))
+              (portRef IN0 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_6))
+            )
+          )
+          (net (rename lfsr_counter1_lfsrnor_lfsrnor_5_OUT "lfsr_counter1/lfsrnor/lfsrnor_5_OUT")
+            (joined
+              (portRef OUT (instanceRef lfsr_counter1_lfsrnor_lfsrnor_5))
+              (portRef IN1 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_6))
+            )
+          )
+          (net (rename lfsr_counter1_lfsrnor_lfsrnor_6_OUT "lfsr_counter1/lfsrnor/lfsrnor_6_OUT")
+            (joined
+              (portRef OUT (instanceRef lfsr_counter1_lfsrnor_lfsrnor_6))
+              (portRef IN1 (instanceRef lfsr_counter1_lfsrnor_lfsrnor_7))
+            )
+          )
+          (net (rename lfsr_counter1_XNORFEED_2_INV "lfsr_counter1/XNORFEED_2_INV")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_XNORFEED_2_INV))
+              (portRef OUT (instanceRef lfsr_counter1_XNORFEED))
+            )
+          )
+          (net (rename lfsr_counter1_lfsrnor_lfsrnor_7_2_INV "lfsr_counter1/lfsrnor/lfsrnor_7_2_INV")
+            (joined
+              (portRef IN (instanceRef lfsr_counter1_lfsrnor_lfsrnor_7_2_INV))
+              (portRef OUT (instanceRef lfsr_counter1_lfsrnor_lfsrnor_7))
+            )
+          )
+        )
+    ))
+  )
+  (design div1024
+    (cellRef div1024
+      (libraryRef div1024_lib))
+  )
+)
