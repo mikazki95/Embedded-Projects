@@ -1,8 +1,6 @@
 /*
  * I2C.h
  *
- * Created: 30/11/2018 13:11:03
- *  Author: F1
  */ 
 
 
@@ -20,7 +18,7 @@
 #define I2C_BYTE	2		// bit 2: timeout byte-transmission
 
 
-void i2c_inicio()	//Inicializa módulo TWI	//		i2c_init
+void i2c_inicio()	//Inicializa mï¿½dulo TWI	//		i2c_init
 {
 	TWBR=10;		//Para vel 400kHz,Fosc 14.74568MHz, prescaler de 1  antes 10
 	TWCR|=(1<<TWEN);

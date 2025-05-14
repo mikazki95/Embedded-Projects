@@ -2,7 +2,6 @@
  * Sensores.h
  *
  * Created: 22/02/2021 09:37:29 a.m.
- *  Author: Gaby Morales
  */ 
 
 
