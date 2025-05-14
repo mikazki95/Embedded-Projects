@@ -1,0 +1,59 @@
+[Directories]
+Include=C:\Program Files (x86)\PICC\PICC\devices\;C:\Program Files (x86)\PICC\PICC\drivers\;
+Library=
+LinkerScript=
+[defines]
+enabled=0
+D1=
+V1=
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+[PROJECT]
+Target=usb_2.hex
+Development_Mode=
+Processor=0x4550
+Processor_Text=PIC18F4550
+ToolSuite=CCS
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+[usb_2.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=C:\Users\tonat\OneDrive\Documents\Microcontroladores\USB\USB_2\usb_2.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0
+[Units]
+Link=0
+Count=1
+1=usb_2.c
+[Opened Files]
+1=usb_2.c
+2=..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\drivers\usb_desc_cdc.h
+3=..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\drivers\usb_cdc.h
+4=
+5=..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\drivers\usb.h
+6=..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\drivers\usb_desc_cdc.h
+7=..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\drivers\pic18_usb.c
+8=..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\drivers\usb_hw_layer.h
+9=..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\drivers\pic18_usb.h
+10=..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\drivers\usb_cdc.h
+11=

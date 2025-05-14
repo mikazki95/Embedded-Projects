@@ -1,0 +1,117 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Wed May 27 15:07:25 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x000002
+                   .org_3       code   0x000018    program   0x000342
+                   .org_4       code   0x000404    program   0x00000e
+   .config_300000_P_4_4.O    romdata   0x300000    program   0x000001
+   .config_300001_P_4_4.O    romdata   0x300001    program   0x000001
+   .config_300002_P_4_4.O    romdata   0x300002    program   0x000001
+   .config_300003_P_4_4.O    romdata   0x300003    program   0x000001
+   .config_300005_P_4_4.O    romdata   0x300005    program   0x000001
+   .config_300006_P_4_4.O    romdata   0x300006    program   0x000001
+   .config_300008_P_4_4.O    romdata   0x300008    program   0x000001
+   .config_300009_P_4_4.O    romdata   0x300009    program   0x000001
+   .config_30000A_P_4_4.O    romdata   0x30000a    program   0x000001
+   .config_30000B_P_4_4.O    romdata   0x30000b    program   0x000001
+   .config_30000C_P_4_4.O    romdata   0x30000c    program   0x000001
+   .config_30000D_P_4_4.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x000009      
+                            0x000018    0x000359      
+                            0x000404    0x000411      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            866 out of 33048 program addresses used, program memory utilization is 2%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      KBD   0x000308    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     RSRB   0x00014e    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     RST0   0x000142    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      cod   0x000078    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       dh   0x0001ac    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     dmin   0x000178    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      dos   0x000126    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                   espera   0x00013a    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     exit   0x0002dc    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       h0   0x00020c    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       h1   0x000244    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                   inicio   0x00005c    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                  inicio2   0x00001a    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      ldm   0x0001f8    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      lim   0x0000e0    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     nada   0x00012e    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      nom   0x0000aa    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       op   0x0001ca    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      op1   0x0001d8    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      op2   0x00025a    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      op3   0x0002da    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p20   0x000278    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p30   0x000284    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p40   0x000290    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p50   0x00029c    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p60   0x0002a8    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p70   0x0002b4    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p80   0x0002c0    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p90   0x0002cc    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                   presc2   0x000266    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                  retardo   0x00012e    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       uh   0x000190    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      vis   0x0000a2    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  inicio2   0x00001a    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                   inicio   0x00005c    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      cod   0x000078    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      vis   0x0000a2    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      nom   0x0000aa    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      lim   0x0000e0    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      dos   0x000126    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     nada   0x00012e    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                  retardo   0x00012e    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                   espera   0x00013a    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     RST0   0x000142    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     RSRB   0x00014e    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     dmin   0x000178    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       uh   0x000190    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       dh   0x0001ac    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       op   0x0001ca    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      op1   0x0001d8    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      ldm   0x0001f8    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       h0   0x00020c    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                       h1   0x000244    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      op2   0x00025a    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                   presc2   0x000266    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p20   0x000278    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p30   0x000284    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p40   0x000290    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p50   0x00029c    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p60   0x0002a8    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p70   0x0002b4    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p80   0x0002c0    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      p90   0x0002cc    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      op3   0x0002da    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                     exit   0x0002dc    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+                      KBD   0x000308    program     static C:\Users\tonat\OneDrive\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_4.asm
+
+

@@ -1,0 +1,62 @@
+000     @SCRATCH
+001     @SCRATCH
+001     _RETURN_
+002     @SCRATCH
+003     @SCRATCH
+005     @delay_ms1.P1
+F83     PSP_DATA
+FB4.6   C1OUT
+FB4.7   C2OUT
+FBB     CCP_2
+FBB     CCP_2_LOW
+FBC     CCP_2_HIGH
+FBE     CCP_1
+FBE     CCP_1_LOW
+FBF     CCP_1_HIGH
+FE1-FE2 @READ_PACKED_MEMORY.P1
+FE1-FE2 @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PACKED_MEMORY.P1
+FE9-FEA @WRITE_PACKED_MEMORY.P2
+FE9-FEA @READ_PROGRAM_MEMORY.P3
+FE9-FEA @WRITE_PROGRAM_MEMORY.P4
+FF6-FF8 @WRITE_PROGRAM_MEMORY.P1
+FF6-FF8 @READ_PROGRAM_MEMORY.P2
+
+ROM Allocation:
+0004  @delay_ms1
+002E  main
+002E  @cinit
+
+
+User Memory space: 
+
+User Memory space: 
+
+Project Directory:
+    C:\Users\tonat\OneDrive\Documents\Microcontroladores\USB\usb_3\
+
+Project Files:
+    USB.c
+    ..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\devices\18f4550.h
+
+Units:
+    C:\Users\tonat\OneDrive\Documents\Microcontroladores\USB\usb_3\USB (main)
+
+Compiler Settings:
+    Processor:      PIC18F4550
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+
+Output Files:
+    Errors:      USB.err
+    Ext Symbols: USB.esym
+    INHX32:      USB.hex
+    Symbols:     USB.sym
+    List:        USB.lst
+    Debug/COFF:  USB.cof
+    Project:     USB.PJT
+    Call Tree:   USB.tre
+    Statistics:  USB.sta

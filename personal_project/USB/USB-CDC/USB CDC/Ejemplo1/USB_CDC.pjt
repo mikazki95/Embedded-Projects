@@ -1,0 +1,53 @@
+[Units]
+Count=1
+1=USB_CDC.ccspjt.c
+Link=0
+[Opened Files]
+1=USB_CDC.c
+2=
+3=
+4=..\..\..\..\..\..\..\..\..\Program Files (x86)\PICC\PICC\drivers\pic18_usb.c
+5=
+[PROJECT]
+Processor=0x4550
+Processor_Text=PIC18F4550
+Target=USB_CDC.hex
+Development_Mode=
+ToolSuite=CCS
+[Directories]
+Include=C:\Program Files (x86)\PICC\PICC\devices\;C:\Program Files (x86)\PICC\PICC\drivers\;
+Library=
+LinkerScript=
+[defines]
+enabled=0
+D1=
+V1=
+[fileformats]
+forcecoff=0
+debug=4
+error=2
+object=0
+list=0
+scratch=0
+sta=1
+tre=1
+allerrors=1
+allwarnings=1
+stayupne=3
+stayupoe=0
+[Target Data]
+BuildTool=C-COMPILER
+OptionString=+FH
+AdditionalOptionString=
+BuildRequired=1
+[USB_CDC.ccspjt.c]
+Type=4
+Path=
+FileList=
+BuildTool=
+OptionString=
+AdditionalOptionString=
+[mru-list]
+1=USB_CDC.ccspjt.c
+[Windows]
+0=0000 %S 0 0 796 451 3 0

@@ -1,0 +1,93 @@
+CCS PCH C Compiler, Version 4.104, 5967               29-may.-20 14:27
+
+               Filename: C:\Users\tonat\OneDrive\Documents\Microcontroladores\USB\usb_3\USB.lst
+
+               ROM used: 104 bytes (0%)
+                         Largest free fragment is 32664
+               RAM used: 4 (0%) at main() level
+                         5 (0%) worst case
+               Stack:    1 locations
+
+*
+0000:  GOTO   002E
+.................... #include <18f4550.h>          // la librería del PIC 
+.................... //////// Standard Header file for the PIC18F4550 device //////////////// 
+.................... #device PIC18F4550 
+.................... #list 
+....................  
+.................... #Fuses HSPLL, NOWDT, NOPROTECT, NOLVP, NODEBUG, USBDIV, PLL2, CPUDIV1, VREGEN 
+.................... #use delay (clock=48M)        //Seleccionamos la frecuencia de reloj de 48MHz 
+0004:  CLRF   FEA
+0006:  MOVLW  05
+0008:  MOVWF  FE9
+000A:  MOVF   FEF,W
+000C:  BZ    002A
+000E:  MOVLW  0F
+0010:  MOVWF  01
+0012:  CLRF   00
+0014:  DECFSZ 00,F
+0016:  BRA    0014
+0018:  DECFSZ 01,F
+001A:  BRA    0012
+001C:  MOVLW  8F
+001E:  MOVWF  00
+0020:  DECFSZ 00,F
+0022:  BRA    0020
+0024:  NOP   
+0026:  DECFSZ FEF,F
+0028:  BRA    000E
+002A:  GOTO   005E (RETURN)
+.................... #use standard_io(C)        //Preconfiguramos el puerto C 
+.................... #use standard_io(e)        //Preconfiguramos el puerto E 
+.................... void main(){               //Inicio de la función principal 
+002E:  CLRF   FF8
+0030:  BCF    FD0.7
+0032:  CLRF   FEA
+0034:  CLRF   FE9
+0036:  MOVF   FC1,W
+0038:  ANDLW  C0
+003A:  IORLW  0F
+003C:  MOVWF  FC1
+003E:  MOVLW  07
+0040:  MOVWF  FB4
+....................    set_tris_e(0x00);       //Configuramos puerto E como salida  
+0042:  MOVLW  00
+0044:  MOVWF  F96
+....................    set_tris_C(0x01);       //Configuramos pin C0 como entrada 
+0046:  MOVLW  01
+0048:  MOVWF  F94
+....................    output_e(0x07);         //Apagamos el LED RGB 
+004A:  CLRF   F96
+004C:  MOVLW  07
+004E:  MOVWF  F8D
+....................    while(true){            //Inicia ciclo infinito 
+....................       if (input_state(PIN_C0)){  //Revisamos el estado del PIN_C0 
+0050:  BTFSS  F82.0
+0052:  BRA    0060
+....................          output_low(PIN_E1);     //Encender LED 
+0054:  BCF    F96.1
+0056:  BCF    F8D.1
+....................          delay_ms(100);          //Esperamos 100 milisegundos 
+0058:  MOVLW  64
+005A:  MOVWF  05
+005C:  BRA    0004
+....................       } 
+....................       else{                      //Si no se presionó el pulsador 
+005E:  BRA    0064
+....................          output_high(PIN_E1);    //Apagar LED 
+0060:  BCF    F96.1
+0062:  BSF    F8D.1
+....................       } 
+....................    } 
+0064:  BRA    0050
+.................... } 
+0066:  SLEEP 
+
+Configuration Fuses:
+   Word  1: CE21   IESO FCMEN HSPLL PLL2 CPUDIV1 USBDIV
+   Word  2: 1E3E   BROWNOUT NOWDT BORV20 PUT WDT32768 VREGEN
+   Word  3: 8700   PBADEN CCP2C1 MCLR LPT1OSC
+   Word  4: 0081   STVREN NODEBUG NOLVP NOXINST NOICPRT
+   Word  5: C00F   NOPROTECT NOCPD NOCPB
+   Word  6: E00F   NOWRT NOWRTD NOWRTC NOWRTB
+   Word  7: 400F   NOEBTR NOEBTRB

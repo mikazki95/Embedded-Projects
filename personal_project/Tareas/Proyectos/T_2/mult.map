@@ -1,0 +1,31 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Tue Aug 30 09:50:30 2016
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x00001c
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00001b      
+            28 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     mult   0x00000c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\mult.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     mult   0x00000c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\mult.asm
+
+

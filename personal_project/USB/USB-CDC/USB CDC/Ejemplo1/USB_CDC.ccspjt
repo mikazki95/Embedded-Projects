@@ -1,0 +1,75 @@
+[PROJECT]
+Target=USB_CDC.hex
+Processor_Text=PIC18F4550
+CCSVersion=5.076
+Compiler=PCH
+[Target Data]
+FileList=USB_CDC.c
+[Directories]
+Include=C:\Program Files (x86)\PICC\Devices\;C:\Program Files (x86)\PICC\Drivers\
+[USB_CDC.c]
+Type=4
+[mru-list]
+1=USB_CDC.c
+[Opened Files]
+1=USB_CDC.c
+2=..\..\..\..\..\..\Program Files (x86)\PICC\Devices\18F4550.h
+3=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\usb_cdc.h
+4=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\pic18_usb.h
+5=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\usb_hw_layer.h
+6=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\usb_desc_cdc.h
+7=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\usb.h
+8=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\usb.c
+9=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\pic18_usb.c
+10=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h
+11=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h
+12=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h
+13=..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdlib.h
+14=..\..\..\..\..\..\Program Files (x86)\PICC\Examples\ex_usb_serial3.c
+15=
+t1=79
+Count=14
+t2=1
+t3=73
+t4=1
+t5=1
+t6=1
+t7=1
+t8=1
+t9=1
+t10=1
+t11=1
+t12=1
+t13=1
+t14=49
+
+[fileformats]
+forcecoff=0
+
+[ProjectLog]
+Days=1
+D1=16-02-2020
+D1_L=17
+D1_L1=[27465]Project Opened.
+D1_L2=[29083]Started Editing.
+D1_L3=[29385]Stopped Editing.
+D1_L4=[33509]Started Editing.
+D1_L5=[35040]Stopped Editing.
+D1_L6=[37756]Started Editing.
+D1_L7=[38632]Stopped Editing.
+D1_L8=[39463]Started Editing.
+D1_L9=[40558]Stopped Editing.
+D1_L10=[48578]Started Editing.
+D1_L11=[48979]Stopped Editing.
+D1_L12=[52796]Started Editing.
+D1_L13=[53123]Stopped Editing.
+D1_L14=[62028]Started Editing.
+D1_L15=[62465]Stopped Editing.
+D1_L16=[66721]Started Editing.
+D1_L17=[67034]Stopped Editing.
+
+[defines]
+buildcount=16
+[Units]
+Count=1
+1=USB_CDC (main)

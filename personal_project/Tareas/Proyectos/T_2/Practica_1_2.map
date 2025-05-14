@@ -1,0 +1,67 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Thu Sep 08 10:38:56 2016
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x0000d4
+.config_300000_PRACTICA_1_2.O    romdata   0x300000    program   0x000001
+.config_300001_PRACTICA_1_2.O    romdata   0x300001    program   0x000001
+.config_300002_PRACTICA_1_2.O    romdata   0x300002    program   0x000001
+.config_300003_PRACTICA_1_2.O    romdata   0x300003    program   0x000001
+.config_300005_PRACTICA_1_2.O    romdata   0x300005    program   0x000001
+.config_300006_PRACTICA_1_2.O    romdata   0x300006    program   0x000001
+.config_300008_PRACTICA_1_2.O    romdata   0x300008    program   0x000001
+.config_300009_PRACTICA_1_2.O    romdata   0x300009    program   0x000001
+.config_30000A_PRACTICA_1_2.O    romdata   0x30000a    program   0x000001
+.config_30000B_PRACTICA_1_2.O    romdata   0x30000b    program   0x000001
+.config_30000C_PRACTICA_1_2.O    romdata   0x30000c    program   0x000001
+.config_30000D_PRACTICA_1_2.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x0000d3      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            224 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  ascenso   0x00004a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                   corred   0x000034    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                   correi   0x000022    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                    corrs   0x00001e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                     dec1   0x00006e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                     inc1   0x000052    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                   inicio   0x00000c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                     inve   0x000092    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                     nada   0x0000cc    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                  retardo   0x0000c8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                      tog   0x000090    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   inicio   0x00000c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                    corrs   0x00001e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                   correi   0x000022    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                   corred   0x000034    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                  ascenso   0x00004a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                     inc1   0x000052    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                     dec1   0x00006e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                      tog   0x000090    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                     inve   0x000092    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                  retardo   0x0000c8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+                     nada   0x0000cc    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\T_2\Practica_1_2.asm
+
+

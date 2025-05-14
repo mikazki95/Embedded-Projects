@@ -1,0 +1,71 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Thu Nov 10 09:48:19 2016
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x000002
+                   .org_3       code   0x000018    program   0x000132
+                   .org_4       code   0x000304    program   0x00000a
+   .config_300000_P_4_1.O    romdata   0x300000    program   0x000001
+   .config_300001_P_4_1.O    romdata   0x300001    program   0x000001
+   .config_300002_P_4_1.O    romdata   0x300002    program   0x000001
+   .config_300003_P_4_1.O    romdata   0x300003    program   0x000001
+   .config_300005_P_4_1.O    romdata   0x300005    program   0x000001
+   .config_300006_P_4_1.O    romdata   0x300006    program   0x000001
+   .config_300008_P_4_1.O    romdata   0x300008    program   0x000001
+   .config_300009_P_4_1.O    romdata   0x300009    program   0x000001
+   .config_30000A_P_4_1.O    romdata   0x30000a    program   0x000001
+   .config_30000B_P_4_1.O    romdata   0x30000b    program   0x000001
+   .config_30000C_P_4_1.O    romdata   0x30000c    program   0x000001
+   .config_30000D_P_4_1.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x000009      
+                            0x000018    0x000149      
+                            0x000304    0x00030d      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            334 out of 33048 program addresses used, program memory utilization is 1%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   RSINT0   0x000144    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                     RST0   0x00013a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                      asc   0x0000f4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                      cod   0x000058    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                   espera   0x000132    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                   inicio   0x000040    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                  inicio2   0x00001a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                     nada   0x000126    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                  retardo   0x000126    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                      vis   0x000082    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  inicio2   0x00001a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                   inicio   0x000040    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                      cod   0x000058    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                      vis   0x000082    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                      asc   0x0000f4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                     nada   0x000126    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                  retardo   0x000126    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                   espera   0x000132    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                     RST0   0x00013a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+                   RSINT0   0x000144    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_4\P_4_1.asm
+
+

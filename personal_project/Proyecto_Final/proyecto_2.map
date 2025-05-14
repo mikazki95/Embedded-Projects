@@ -1,0 +1,165 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Wed Dec 28 19:33:24 2016
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x000002
+                   .org_3       code   0x000018    program   0x000644
+                   .org_4       code   0x000800    program   0x000026
+.config_300000_PROYECTO_2.O    romdata   0x300000    program   0x000001
+.config_300001_PROYECTO_2.O    romdata   0x300001    program   0x000001
+.config_300002_PROYECTO_2.O    romdata   0x300002    program   0x000001
+.config_300003_PROYECTO_2.O    romdata   0x300003    program   0x000001
+.config_300005_PROYECTO_2.O    romdata   0x300005    program   0x000001
+.config_300006_PROYECTO_2.O    romdata   0x300006    program   0x000001
+.config_300008_PROYECTO_2.O    romdata   0x300008    program   0x000001
+.config_300009_PROYECTO_2.O    romdata   0x300009    program   0x000001
+.config_30000A_PROYECTO_2.O    romdata   0x30000a    program   0x000001
+.config_30000B_PROYECTO_2.O    romdata   0x30000b    program   0x000001
+.config_30000C_PROYECTO_2.O    romdata   0x30000c    program   0x000001
+.config_30000D_PROYECTO_2.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x000009      
+                            0x000018    0x00065b      
+                            0x000800    0x000825      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            1660 out of 33048 program addresses used, program memory utilization is 5%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                      KBD   0x0005ee    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     RSAD   0x0004b4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     RSRB   0x00052a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     RST0   0x000640    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     bini   0x00005e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    ccasa   0x00050c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      cen   0x000566    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    comp2   0x000382    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    comp3   0x0003b4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     datw   0x0004d2    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      dec   0x000552    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     exit   0x0005ea    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    igcon   0x000390    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   igcon2   0x0003be    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    igdon   0x0003a2    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   igdon2   0x0003d0    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                  inicio2   0x00001a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    inlcd   0x0004e4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    instw   0x0004c6    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   limpia   0x0004f6    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    ltemc   0x00035a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    ltiem   0x00045c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       mc   0x000334    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       md   0x000348    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     nada   0x000650    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      off   0x0003e2    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     off1   0x0003ea    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       on   0x0003f4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      on1   0x0003fe    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       op   0x0005c0    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      op1   0x0005da    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      op2   0x0005e8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     prog   0x0001c8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      rdt   0x00033e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      reg   0x000234    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                  retardo   0x00064e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       rj   0x000436    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      rut   0x000352    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     sdec   0x000314    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      seg   0x00041e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   stconv   0x0002b0    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      sum   0x0002e8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     suni   0x00030e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    tdmin   0x000594    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     temc   0x0002c0    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     temd   0x0002ce    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     temu   0x0002dc    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    ttiem   0x00057e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                  tuhoras   0x0005a8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      vis   0x000488    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     vis0   0x000476    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     visr   0x00049e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    wconv   0x00031a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    wtemp   0x0001c8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    wtemr   0x000234    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   wtiemp   0x0001fa    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   wtiemr   0x000266    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  inicio2   0x00001a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     bini   0x00005e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     prog   0x0001c8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    wtemp   0x0001c8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   wtiemp   0x0001fa    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    wtemr   0x000234    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      reg   0x000234    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   wtiemr   0x000266    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   stconv   0x0002b0    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     temc   0x0002c0    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     temd   0x0002ce    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     temu   0x0002dc    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      sum   0x0002e8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     suni   0x00030e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     sdec   0x000314    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    wconv   0x00031a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       mc   0x000334    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      rdt   0x00033e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       md   0x000348    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      rut   0x000352    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    ltemc   0x00035a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    comp2   0x000382    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    igcon   0x000390    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    igdon   0x0003a2    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    comp3   0x0003b4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   igcon2   0x0003be    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   igdon2   0x0003d0    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      off   0x0003e2    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     off1   0x0003ea    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       on   0x0003f4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      on1   0x0003fe    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      seg   0x00041e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       rj   0x000436    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    ltiem   0x00045c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     vis0   0x000476    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      vis   0x000488    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     visr   0x00049e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     RSAD   0x0004b4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    instw   0x0004c6    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     datw   0x0004d2    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    inlcd   0x0004e4    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                   limpia   0x0004f6    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    ccasa   0x00050c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     RSRB   0x00052a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      dec   0x000552    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      cen   0x000566    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    ttiem   0x00057e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                    tdmin   0x000594    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                  tuhoras   0x0005a8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                       op   0x0005c0    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      op1   0x0005da    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      op2   0x0005e8    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     exit   0x0005ea    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                      KBD   0x0005ee    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     RST0   0x000640    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                  retardo   0x00064e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+                     nada   0x000650    program     static C:\Users\tonatiuh\Documents\Microcontroladores\proyecto\proyecto_2.asm
+
+

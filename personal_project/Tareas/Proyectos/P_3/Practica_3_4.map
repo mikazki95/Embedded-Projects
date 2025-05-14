@@ -1,0 +1,61 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Thu Sep 29 09:11:43 2016
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x000066
+                   .org_3       code   0x000304    program   0x000010
+.config_300000_PRACTICA_3_4.O    romdata   0x300000    program   0x000001
+.config_300001_PRACTICA_3_4.O    romdata   0x300001    program   0x000001
+.config_300002_PRACTICA_3_4.O    romdata   0x300002    program   0x000001
+.config_300003_PRACTICA_3_4.O    romdata   0x300003    program   0x000001
+.config_300005_PRACTICA_3_4.O    romdata   0x300005    program   0x000001
+.config_300006_PRACTICA_3_4.O    romdata   0x300006    program   0x000001
+.config_300008_PRACTICA_3_4.O    romdata   0x300008    program   0x000001
+.config_300009_PRACTICA_3_4.O    romdata   0x300009    program   0x000001
+.config_30000A_PRACTICA_3_4.O    romdata   0x30000a    program   0x000001
+.config_30000B_PRACTICA_3_4.O    romdata   0x30000b    program   0x000001
+.config_30000C_PRACTICA_3_4.O    romdata   0x30000c    program   0x000001
+.config_30000D_PRACTICA_3_4.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x00006d      
+                            0x000304    0x000313      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            134 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     RST0   0x000064    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                     cero   0x00004c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                      cod   0x000032    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                   espera   0x00005c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                   inicio   0x000028    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                  inicio2   0x00000a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                  inicio2   0x00000a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                   inicio   0x000028    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                      cod   0x000032    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                     cero   0x00004c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                   espera   0x00005c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+                     RST0   0x000064    program     static C:\Users\tonatiuh\Documents\Microcontroladores\Tareas\Proyectos\P_3\Practica_3_4.asm
+
+
