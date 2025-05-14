@@ -1,0 +1,69 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Wed Nov 16 20:22:47 2016
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x0000b0
+ .config_300000_PWM_ADC.O    romdata   0x300000    program   0x000001
+ .config_300001_PWM_ADC.O    romdata   0x300001    program   0x000001
+ .config_300002_PWM_ADC.O    romdata   0x300002    program   0x000001
+ .config_300003_PWM_ADC.O    romdata   0x300003    program   0x000001
+ .config_300005_PWM_ADC.O    romdata   0x300005    program   0x000001
+ .config_300006_PWM_ADC.O    romdata   0x300006    program   0x000001
+ .config_300008_PWM_ADC.O    romdata   0x300008    program   0x000001
+ .config_300009_PWM_ADC.O    romdata   0x300009    program   0x000001
+ .config_30000A_PWM_ADC.O    romdata   0x30000a    program   0x000001
+ .config_30000B_PWM_ADC.O    romdata   0x30000b    program   0x000001
+ .config_30000C_PWM_ADC.O    romdata   0x30000c    program   0x000001
+ .config_30000D_PWM_ADC.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x0000b7      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            192 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     RSAD   0x0000a6    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                      cen   0x000042    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                      dec   0x000050    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                   inicio   0x00000c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                     nada   0x000038    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                     sdec   0x000092    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                   stconv   0x000030    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                      sum   0x000076    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                     suni   0x00008c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                      uni   0x000064    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                    wconv   0x000098    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   inicio   0x00000c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                   stconv   0x000030    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                     nada   0x000038    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                      cen   0x000042    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                      dec   0x000050    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                      uni   0x000064    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                      sum   0x000076    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                     suni   0x00008c    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                     sdec   0x000092    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                    wconv   0x000098    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+                     RSAD   0x0000a6    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_adc.asm
+
+

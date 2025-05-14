@@ -1,0 +1,55 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Tue Dec 10 16:04:27 2024
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000004
+                   .org_2       code   0x000008    program   0x00003c
+     .config_300000_ADC.O    romdata   0x300000    program   0x000001
+     .config_300001_ADC.O    romdata   0x300001    program   0x000001
+     .config_300002_ADC.O    romdata   0x300002    program   0x000001
+     .config_300003_ADC.O    romdata   0x300003    program   0x000001
+     .config_300005_ADC.O    romdata   0x300005    program   0x000001
+     .config_300006_ADC.O    romdata   0x300006    program   0x000001
+     .config_300008_ADC.O    romdata   0x300008    program   0x000001
+     .config_300009_ADC.O    romdata   0x300009    program   0x000001
+     .config_30000A_ADC.O    romdata   0x30000a    program   0x000001
+     .config_30000B_ADC.O    romdata   0x30000b    program   0x000001
+     .config_30000C_ADC.O    romdata   0x30000c    program   0x000001
+     .config_30000D_ADC.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000003      
+                            0x000008    0x000043      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            76 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     RSAD   0x00002c    program     static D:\tonatiuh\personal\Microcontroladores\ejercicios clase\adc.asm
+                     RST0   0x000038    program     static D:\tonatiuh\personal\Microcontroladores\ejercicios clase\adc.asm
+                   inicio   0x00000c    program     static D:\tonatiuh\personal\Microcontroladores\ejercicios clase\adc.asm
+                   stconv   0x000028    program     static D:\tonatiuh\personal\Microcontroladores\ejercicios clase\adc.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                   inicio   0x00000c    program     static D:\tonatiuh\personal\Microcontroladores\ejercicios clase\adc.asm
+                   stconv   0x000028    program     static D:\tonatiuh\personal\Microcontroladores\ejercicios clase\adc.asm
+                     RSAD   0x00002c    program     static D:\tonatiuh\personal\Microcontroladores\ejercicios clase\adc.asm
+                     RST0   0x000038    program     static D:\tonatiuh\personal\Microcontroladores\ejercicios clase\adc.asm
+
+

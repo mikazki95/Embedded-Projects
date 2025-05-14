@@ -1,0 +1,53 @@
+MPLINK 4.37, Linker
+Linker Map File - Created Thu Nov 03 17:17:16 2016
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000036
+.config_300000_PWM_FSR0.O    romdata   0x300000    program   0x000001
+.config_300001_PWM_FSR0.O    romdata   0x300001    program   0x000001
+.config_300002_PWM_FSR0.O    romdata   0x300002    program   0x000001
+.config_300003_PWM_FSR0.O    romdata   0x300003    program   0x000001
+.config_300005_PWM_FSR0.O    romdata   0x300005    program   0x000001
+.config_300006_PWM_FSR0.O    romdata   0x300006    program   0x000001
+.config_300008_PWM_FSR0.O    romdata   0x300008    program   0x000001
+.config_300009_PWM_FSR0.O    romdata   0x300009    program   0x000001
+.config_30000A_PWM_FSR0.O    romdata   0x30000a    program   0x000001
+.config_30000B_PWM_FSR0.O    romdata   0x30000b    program   0x000001
+.config_30000C_PWM_FSR0.O    romdata   0x30000c    program   0x000001
+.config_30000D_PWM_FSR0.O    romdata   0x30000d    program   0x000001
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000035      
+                            0x300000    0x300003      
+                            0x300005    0x300006      
+                            0x300008    0x30000d      
+            66 out of 33048 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     NEXT   0x000022    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_FSR0.asm
+                     aqui   0x000032    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_FSR0.asm
+                     limp   0x00002a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_FSR0.asm
+                     nada   0x00001e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_FSR0.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     nada   0x00001e    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_FSR0.asm
+                     NEXT   0x000022    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_FSR0.asm
+                     limp   0x00002a    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_FSR0.asm
+                     aqui   0x000032    program     static C:\Users\tonatiuh\Documents\Microcontroladores\ejercicios clase\pwm_FSR0.asm
+
+
