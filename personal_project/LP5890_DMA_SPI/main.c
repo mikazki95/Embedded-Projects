@@ -272,7 +272,7 @@ main(void)
     //
     // Display indication that the SSI is transmitting data.
     //
-    UARTprintf("Sent:\n  ");
+    UARTprintf("Sent:01 \n  ");
 
     //
     // Send 3 bytes of data.
