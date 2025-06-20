@@ -1,0 +1,12 @@
+"./CCSI_Socket.obj"
+"./TLC698x_LP589x_APIs.obj"
+"./dma.obj"
+"./frames.obj"
+"./main.obj"
+"./spi.obj"
+"./system_info.obj"
+"./ucs.obj"
+"./void LED_Write_RGB_Custom_ALL.obj"
+"../lnk_msp430f5529.cmd"
+-llibmath.a
+-llibc.a

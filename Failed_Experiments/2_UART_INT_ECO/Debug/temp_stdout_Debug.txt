@@ -1,0 +1,36 @@
+[C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc_tmp] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00000040 bytes
+Found section 1 with adddress 0x7008d8f0, size 0x00007c20 bytes
+Found section 2 with adddress 0x70095510, size 0x000007c8 bytes
+Found section 3 with adddress 0x70095ce0, size 0x00000ae0 bytes
+Found section 4 with adddress 0x700967c0, size 0x000004a0 bytes
+Found section 5 with adddress 0x70096c60, size 0x000002c0 bytes
+Found section 6 with adddress 0x70096f20, size 0x00000140 bytes
+Found section 7 with adddress 0x70097060, size 0x00000008 bytes
+Found section 8 with adddress 0x70097068, size 0x00000410 bytes
+[C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc_tmp] Found 9 sections. 9 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+Merging section @ 0x70095510 of size 0x000007c8, with section @ 0x7008d8f0 of size 0x00007c20
+Merging section @ 0x700967c0 of size 0x000004a0, with section @ 0x70095ce0 of size 0x00000ae0
+Merging section @ 0x70096c60 of size 0x000002c0, with section @ 0x70095ce0 of size 0x00000f80
+Merging section @ 0x70096f20 of size 0x00000140, with section @ 0x70095ce0 of size 0x00001240
+Merging section @ 0x70097060 of size 0x00000008, with section @ 0x70095ce0 of size 0x00001380
+Merging section @ 0x70097068 of size 0x00000410, with section @ 0x70095ce0 of size 0x00001388
+Writing section header  #0, adddress 0x00000000, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section data with adddress 0x00000000, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section header  #1, adddress 0x7008d8f0, size 0x000083e8 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section data with adddress 0x7008d8f0, size 0x00007c20 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section data with adddress 0x70095510, size 0x000007c8 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section header  #2, adddress 0x70095ce0, size 0x00001798 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section data with adddress 0x70095ce0, size 0x00000ae0 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section data with adddress 0x700967c0, size 0x000004a0 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section data with adddress 0x70096c60, size 0x000002c0 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section data with adddress 0x70096f20, size 0x00000140 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section data with adddress 0x70097060, size 0x00000008 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+Writing section data with adddress 0x70097068, size 0x00000410 bytes to file [C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc]
+[C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00000040 bytes
+Found section 1 with adddress 0x7008d8f0, size 0x000083e8 bytes
+Found section 2 with adddress 0x70095ce0, size 0x00001798 bytes
+[C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc] Found 3 sections. 3 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+[C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc_xip] Parsing file ...
+[C:/Users/TONA/workspace_v12/UART_INT_1/Debug/UART_INT_1.rprc_xip] Found 0 sections. 0 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000

@@ -1,0 +1,649 @@
+[C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc_tmp] Parsing file ...
+Found section 0 with adddress 0x80000000, size 0x000007a0 bytes
+Found section 1 with adddress 0x800007c0, size 0x000001ec bytes
+Found section 2 with adddress 0x800009ac, size 0x00000018 bytes
+Found section 3 with adddress 0x800009c4, size 0x00000018 bytes
+Found section 4 with adddress 0x800009dc, size 0x00000014 bytes
+Found section 5 with adddress 0x800009f0, size 0x0000001c bytes
+Found section 6 with adddress 0x80000a10, size 0x00000060 bytes
+Found section 7 with adddress 0x80000a70, size 0x00000004 bytes
+Found section 8 with adddress 0x80000a78, size 0x00000030 bytes
+Found section 9 with adddress 0x80000aa8, size 0x000000c0 bytes
+Found section 10 with adddress 0x80000b68, size 0x00000038 bytes
+Found section 11 with adddress 0x80000ba0, size 0x00000014 bytes
+Found section 12 with adddress 0x80000bb8, size 0x00000040 bytes
+Found section 13 with adddress 0x80000bf8, size 0x00000058 bytes
+Found section 14 with adddress 0x80000c50, size 0x00000058 bytes
+Found section 15 with adddress 0x80000ca8, size 0x00000078 bytes
+Found section 16 with adddress 0x80000d20, size 0x00000018 bytes
+Found section 17 with adddress 0x80000d38, size 0x00000014 bytes
+Found section 18 with adddress 0x80000d4c, size 0x00000014 bytes
+Found section 19 with adddress 0x80000d60, size 0x00000014 bytes
+Found section 20 with adddress 0x80000d74, size 0x00000018 bytes
+Found section 21 with adddress 0x80000d8c, size 0x00000014 bytes
+Found section 22 with adddress 0x80000da0, size 0x00000078 bytes
+Found section 23 with adddress 0x80000e18, size 0x00000060 bytes
+Found section 24 with adddress 0x80000e78, size 0x00000208 bytes
+Found section 25 with adddress 0x80001080, size 0x000000e8 bytes
+Found section 26 with adddress 0x80001168, size 0x00000048 bytes
+Found section 27 with adddress 0x800011b0, size 0x0000002c bytes
+Found section 28 with adddress 0x800011dc, size 0x0000006c bytes
+Found section 29 with adddress 0x80001248, size 0x0000005c bytes
+Found section 30 with adddress 0x800012a4, size 0x00000020 bytes
+Found section 31 with adddress 0x800012c4, size 0x0000001c bytes
+Found section 32 with adddress 0x800012e0, size 0x000002f0 bytes
+Found section 33 with adddress 0x800015d0, size 0x00000070 bytes
+Found section 34 with adddress 0x80001640, size 0x000000d8 bytes
+Found section 35 with adddress 0x80001718, size 0x00000040 bytes
+Found section 36 with adddress 0x80001758, size 0x000000d8 bytes
+Found section 37 with adddress 0x80001830, size 0x000000a0 bytes
+Found section 38 with adddress 0x800018d0, size 0x000001d0 bytes
+Found section 39 with adddress 0x80001aa0, size 0x000002f0 bytes
+Found section 40 with adddress 0x80001d90, size 0x00000050 bytes
+Found section 41 with adddress 0x80001de0, size 0x00000128 bytes
+Found section 42 with adddress 0x80001f08, size 0x00000088 bytes
+Found section 43 with adddress 0x80001f90, size 0x000000c8 bytes
+Found section 44 with adddress 0x80002058, size 0x00000128 bytes
+Found section 45 with adddress 0x80002180, size 0x00000028 bytes
+Found section 46 with adddress 0x800021a8, size 0x00000458 bytes
+Found section 47 with adddress 0x80002600, size 0x00000078 bytes
+Found section 48 with adddress 0x80002678, size 0x000000e0 bytes
+Found section 49 with adddress 0x80002758, size 0x000000bc bytes
+Found section 50 with adddress 0x80002814, size 0x00000184 bytes
+Found section 51 with adddress 0x80002998, size 0x00000178 bytes
+Found section 52 with adddress 0x80002b10, size 0x000000e0 bytes
+Found section 53 with adddress 0x80002bf0, size 0x00000030 bytes
+Found section 54 with adddress 0x80002c20, size 0x0000004c bytes
+Found section 55 with adddress 0x80002c70, size 0x00000160 bytes
+Found section 56 with adddress 0x80002dd0, size 0x00000078 bytes
+Found section 57 with adddress 0x80002e48, size 0x00000120 bytes
+Found section 58 with adddress 0x80002f68, size 0x000000d8 bytes
+Found section 59 with adddress 0x80003040, size 0x00000064 bytes
+Found section 60 with adddress 0x800030a8, size 0x00000428 bytes
+Found section 61 with adddress 0x800034d0, size 0x00000100 bytes
+Found section 62 with adddress 0x800035d0, size 0x00000068 bytes
+Found section 63 with adddress 0x80003638, size 0x00000078 bytes
+Found section 64 with adddress 0x800036b0, size 0x00000190 bytes
+Found section 65 with adddress 0x80003840, size 0x000001b0 bytes
+Found section 66 with adddress 0x800039f0, size 0x00000044 bytes
+Found section 67 with adddress 0x80003a34, size 0x00000020 bytes
+Found section 68 with adddress 0x80003a54, size 0x00000038 bytes
+Found section 69 with adddress 0x80003a8c, size 0x0000005c bytes
+Found section 70 with adddress 0x80003ae8, size 0x0000003c bytes
+Found section 71 with adddress 0x80003b24, size 0x0000006c bytes
+Found section 72 with adddress 0x80003b90, size 0x00000148 bytes
+Found section 73 with adddress 0x80003cd8, size 0x0000032c bytes
+Found section 74 with adddress 0x80004004, size 0x0000015c bytes
+Found section 75 with adddress 0x80004160, size 0x0000015c bytes
+Found section 76 with adddress 0x800042c0, size 0x00000660 bytes
+Found section 77 with adddress 0x80004920, size 0x00000500 bytes
+Found section 78 with adddress 0x80004e20, size 0x00001268 bytes
+Found section 79 with adddress 0x80006088, size 0x000000d0 bytes
+Found section 80 with adddress 0x80006158, size 0x00000070 bytes
+Found section 81 with adddress 0x800061c8, size 0x00000030 bytes
+Found section 82 with adddress 0x800061f8, size 0x000000a8 bytes
+Found section 83 with adddress 0x800062a0, size 0x00000048 bytes
+Found section 84 with adddress 0x800062e8, size 0x00000014 bytes
+Found section 85 with adddress 0x800062fc, size 0x00000150 bytes
+Found section 86 with adddress 0x8000644c, size 0x000000a0 bytes
+Found section 87 with adddress 0x800064ec, size 0x00000060 bytes
+Found section 88 with adddress 0x80006550, size 0x00000468 bytes
+Found section 89 with adddress 0x800069b8, size 0x00000038 bytes
+Found section 90 with adddress 0x800069f0, size 0x00000038 bytes
+Found section 91 with adddress 0x80006a28, size 0x00000028 bytes
+Found section 92 with adddress 0x80006a50, size 0x00000028 bytes
+Found section 93 with adddress 0x80006a78, size 0x0000005c bytes
+Found section 94 with adddress 0x80006ad8, size 0x000002e8 bytes
+Found section 95 with adddress 0x80006dc0, size 0x00000030 bytes
+Found section 96 with adddress 0x80006df0, size 0x00000028 bytes
+Found section 97 with adddress 0x80006e18, size 0x00000008 bytes
+Found section 98 with adddress 0x80006e20, size 0x0000008c bytes
+Found section 99 with adddress 0x80006eac, size 0x0000001c bytes
+Found section 100 with adddress 0x80006ec8, size 0x00000018 bytes
+Found section 101 with adddress 0x80006ee0, size 0x00000014 bytes
+Found section 102 with adddress 0x80006ef4, size 0x00000028 bytes
+Found section 103 with adddress 0x80006f20, size 0x00000038 bytes
+Found section 104 with adddress 0x80006f58, size 0x0000000c bytes
+Found section 105 with adddress 0x80006f70, size 0x00000010 bytes
+Found section 106 with adddress 0x80006f80, size 0x00000010 bytes
+Found section 107 with adddress 0x80006f90, size 0x00000010 bytes
+Found section 108 with adddress 0x80006fa0, size 0x00000024 bytes
+Found section 109 with adddress 0x80006fc4, size 0x00000008 bytes
+Found section 110 with adddress 0x80006fcc, size 0x00000008 bytes
+Found section 111 with adddress 0x80006fd8, size 0x00000110 bytes
+Found section 112 with adddress 0x800070e8, size 0x00000150 bytes
+Found section 113 with adddress 0x80007238, size 0x000000d8 bytes
+Found section 114 with adddress 0x80007310, size 0x00000110 bytes
+Found section 115 with adddress 0x80007420, size 0x00000038 bytes
+Found section 116 with adddress 0x80007458, size 0x00000020 bytes
+Found section 117 with adddress 0x80007478, size 0x00000038 bytes
+Found section 118 with adddress 0x800074b0, size 0x0000003c bytes
+Found section 119 with adddress 0x800074f0, size 0x00000080 bytes
+Found section 120 with adddress 0x80007570, size 0x00000128 bytes
+Found section 121 with adddress 0x80007698, size 0x000000a0 bytes
+Found section 122 with adddress 0x80007738, size 0x000000e0 bytes
+Found section 123 with adddress 0x80007818, size 0x00000130 bytes
+Found section 124 with adddress 0x80007948, size 0x00000044 bytes
+Found section 125 with adddress 0x80007990, size 0x000000b8 bytes
+Found section 126 with adddress 0x80007a48, size 0x000000b8 bytes
+Found section 127 with adddress 0x80007b00, size 0x00000040 bytes
+Found section 128 with adddress 0x80007b40, size 0x00000040 bytes
+Found section 129 with adddress 0x80007b80, size 0x0000003c bytes
+Found section 130 with adddress 0x80007bbc, size 0x00000048 bytes
+Found section 131 with adddress 0x80007c04, size 0x00000060 bytes
+Found section 132 with adddress 0x80007c64, size 0x00000060 bytes
+Found section 133 with adddress 0x80007cc4, size 0x00000060 bytes
+Found section 134 with adddress 0x80007d28, size 0x000000f0 bytes
+Found section 135 with adddress 0x80007e18, size 0x00000110 bytes
+Found section 136 with adddress 0x80007f28, size 0x00000028 bytes
+Found section 137 with adddress 0x80007f50, size 0x00000198 bytes
+Found section 138 with adddress 0x800080e8, size 0x00000170 bytes
+Found section 139 with adddress 0x80008258, size 0x000000c8 bytes
+Found section 140 with adddress 0x80008320, size 0x00000080 bytes
+Found section 141 with adddress 0x800083a0, size 0x00000080 bytes
+Found section 142 with adddress 0x80008420, size 0x0000006c bytes
+Found section 143 with adddress 0x80008490, size 0x000006f0 bytes
+Found section 144 with adddress 0x80008b80, size 0x00000170 bytes
+Found section 145 with adddress 0x80008cf0, size 0x00000020 bytes
+Found section 146 with adddress 0x80008d10, size 0x00000028 bytes
+Found section 147 with adddress 0x80008d38, size 0x00000150 bytes
+Found section 148 with adddress 0x80008e88, size 0x00000108 bytes
+Found section 149 with adddress 0x80008f90, size 0x00000048 bytes
+Found section 150 with adddress 0x80008fd8, size 0x000000f8 bytes
+Found section 151 with adddress 0x800090d0, size 0x000000a4 bytes
+Found section 152 with adddress 0x80009174, size 0x0000014c bytes
+Found section 153 with adddress 0x800092c0, size 0x00000018 bytes
+Found section 154 with adddress 0x800092d8, size 0x00000044 bytes
+Found section 155 with adddress 0x8000931c, size 0x00000050 bytes
+Found section 156 with adddress 0x80009370, size 0x00000170 bytes
+Found section 157 with adddress 0x800094e0, size 0x00000014 bytes
+Found section 158 with adddress 0x800094f8, size 0x000004d8 bytes
+Found section 159 with adddress 0x800099d0, size 0x000000f0 bytes
+Found section 160 with adddress 0x80009ac0, size 0x00000248 bytes
+Found section 161 with adddress 0x80009d08, size 0x00000188 bytes
+Found section 162 with adddress 0x80009e90, size 0x00000240 bytes
+Found section 163 with adddress 0x8000a0d0, size 0x00000038 bytes
+Found section 164 with adddress 0x8000a108, size 0x00000058 bytes
+Found section 165 with adddress 0x8000a160, size 0x00000028 bytes
+Found section 166 with adddress 0x8000a188, size 0x0000003c bytes
+Found section 167 with adddress 0x8000a1c4, size 0x0000006c bytes
+Found section 168 with adddress 0x8000a230, size 0x00000070 bytes
+Found section 169 with adddress 0x8000a2a0, size 0x00000174 bytes
+Found section 170 with adddress 0x8000a414, size 0x000000e4 bytes
+Found section 171 with adddress 0x8000a4f8, size 0x000000e8 bytes
+Found section 172 with adddress 0x8000a5e0, size 0x00000268 bytes
+Found section 173 with adddress 0x8000a848, size 0x00000060 bytes
+Found section 174 with adddress 0x8000a8a8, size 0x00000038 bytes
+Found section 175 with adddress 0x8000a8e0, size 0x000000e8 bytes
+Found section 176 with adddress 0x8000a9c8, size 0x000000e8 bytes
+Found section 177 with adddress 0x8000aab0, size 0x000000a0 bytes
+Found section 178 with adddress 0x8000ab50, size 0x00000114 bytes
+Found section 179 with adddress 0x8000ac64, size 0x0000016c bytes
+Found section 180 with adddress 0x8000add0, size 0x00000164 bytes
+Found section 181 with adddress 0x8000af34, size 0x00000170 bytes
+Found section 182 with adddress 0x8000b0a4, size 0x0000017c bytes
+Found section 183 with adddress 0x8000b220, size 0x000002ac bytes
+Found section 184 with adddress 0x8000b4cc, size 0x000002cc bytes
+Found section 185 with adddress 0x8000b798, size 0x00000180 bytes
+Found section 186 with adddress 0x8000b918, size 0x000004c0 bytes
+Found section 187 with adddress 0x8000bdd8, size 0x00000033 bytes
+Found section 188 with adddress 0x8000be10, size 0x0000000c bytes
+Found section 189 with adddress 0x8000be20, size 0x00000152 bytes
+Found section 190 with adddress 0x8000bf78, size 0x0000008c bytes
+Found section 191 with adddress 0x8000c008, size 0x00000020 bytes
+Found section 192 with adddress 0x8000c028, size 0x00000022 bytes
+Found section 193 with adddress 0x8000c050, size 0x0000000c bytes
+Found section 194 with adddress 0x8000c060, size 0x00000018 bytes
+Found section 195 with adddress 0x8000c078, size 0x00000150 bytes
+Found section 196 with adddress 0x8000c1c8, size 0x00000050 bytes
+Found section 197 with adddress 0x8000c218, size 0x00000015 bytes
+Found section 198 with adddress 0x8000c230, size 0x0000000d bytes
+Found section 199 with adddress 0x8000c240, size 0x00000011 bytes
+Found section 200 with adddress 0x8000c258, size 0x00000012 bytes
+Found section 201 with adddress 0x8000c270, size 0x0000000f bytes
+Found section 202 with adddress 0x8000c280, size 0x0000012c bytes
+Found section 203 with adddress 0x8000c3b0, size 0x000002d8 bytes
+[C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc_tmp] Found 204 sections. 204 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x80006ad8
+Merging section @ 0x800009ac of size 0x00000018, with section @ 0x800007c0 of size 0x000001ec
+Merging section @ 0x800009c4 of size 0x00000018, with section @ 0x800007c0 of size 0x00000204
+Merging section @ 0x800009dc of size 0x00000014, with section @ 0x800007c0 of size 0x0000021c
+Merging section @ 0x800009f0 of size 0x0000001c, with section @ 0x800007c0 of size 0x00000230
+Merging section @ 0x80000a70 of size 0x00000004, with section @ 0x80000a10 of size 0x00000060
+Merging section @ 0x80000aa8 of size 0x000000c0, with section @ 0x80000a78 of size 0x00000030
+Merging section @ 0x80000b68 of size 0x00000038, with section @ 0x80000a78 of size 0x000000f0
+Merging section @ 0x80000ba0 of size 0x00000014, with section @ 0x80000a78 of size 0x00000128
+Merging section @ 0x80000bf8 of size 0x00000058, with section @ 0x80000bb8 of size 0x00000040
+Merging section @ 0x80000c50 of size 0x00000058, with section @ 0x80000bb8 of size 0x00000098
+Merging section @ 0x80000ca8 of size 0x00000078, with section @ 0x80000bb8 of size 0x000000f0
+Merging section @ 0x80000d20 of size 0x00000018, with section @ 0x80000bb8 of size 0x00000168
+Merging section @ 0x80000d38 of size 0x00000014, with section @ 0x80000bb8 of size 0x00000180
+Merging section @ 0x80000d4c of size 0x00000014, with section @ 0x80000bb8 of size 0x00000194
+Merging section @ 0x80000d60 of size 0x00000014, with section @ 0x80000bb8 of size 0x000001a8
+Merging section @ 0x80000d74 of size 0x00000018, with section @ 0x80000bb8 of size 0x000001bc
+Merging section @ 0x80000d8c of size 0x00000014, with section @ 0x80000bb8 of size 0x000001d4
+Merging section @ 0x80000da0 of size 0x00000078, with section @ 0x80000bb8 of size 0x000001e8
+Merging section @ 0x80000e18 of size 0x00000060, with section @ 0x80000bb8 of size 0x00000260
+Merging section @ 0x80000e78 of size 0x00000208, with section @ 0x80000bb8 of size 0x000002c0
+Merging section @ 0x80001080 of size 0x000000e8, with section @ 0x80000bb8 of size 0x000004c8
+Merging section @ 0x80001168 of size 0x00000048, with section @ 0x80000bb8 of size 0x000005b0
+Merging section @ 0x800011b0 of size 0x0000002c, with section @ 0x80000bb8 of size 0x000005f8
+Merging section @ 0x800011dc of size 0x0000006c, with section @ 0x80000bb8 of size 0x00000624
+Merging section @ 0x80001248 of size 0x0000005c, with section @ 0x80000bb8 of size 0x00000690
+Merging section @ 0x800012a4 of size 0x00000020, with section @ 0x80000bb8 of size 0x000006ec
+Merging section @ 0x800012c4 of size 0x0000001c, with section @ 0x80000bb8 of size 0x0000070c
+Merging section @ 0x800012e0 of size 0x000002f0, with section @ 0x80000bb8 of size 0x00000728
+Merging section @ 0x800015d0 of size 0x00000070, with section @ 0x80000bb8 of size 0x00000a18
+Merging section @ 0x80001640 of size 0x000000d8, with section @ 0x80000bb8 of size 0x00000a88
+Merging section @ 0x80001718 of size 0x00000040, with section @ 0x80000bb8 of size 0x00000b60
+Merging section @ 0x80001758 of size 0x000000d8, with section @ 0x80000bb8 of size 0x00000ba0
+Merging section @ 0x80001830 of size 0x000000a0, with section @ 0x80000bb8 of size 0x00000c78
+Merging section @ 0x800018d0 of size 0x000001d0, with section @ 0x80000bb8 of size 0x00000d18
+Merging section @ 0x80001aa0 of size 0x000002f0, with section @ 0x80000bb8 of size 0x00000ee8
+Merging section @ 0x80001d90 of size 0x00000050, with section @ 0x80000bb8 of size 0x000011d8
+Merging section @ 0x80001de0 of size 0x00000128, with section @ 0x80000bb8 of size 0x00001228
+Merging section @ 0x80001f08 of size 0x00000088, with section @ 0x80000bb8 of size 0x00001350
+Merging section @ 0x80001f90 of size 0x000000c8, with section @ 0x80000bb8 of size 0x000013d8
+Merging section @ 0x80002058 of size 0x00000128, with section @ 0x80000bb8 of size 0x000014a0
+Merging section @ 0x80002180 of size 0x00000028, with section @ 0x80000bb8 of size 0x000015c8
+Merging section @ 0x800021a8 of size 0x00000458, with section @ 0x80000bb8 of size 0x000015f0
+Merging section @ 0x80002600 of size 0x00000078, with section @ 0x80000bb8 of size 0x00001a48
+Merging section @ 0x80002678 of size 0x000000e0, with section @ 0x80000bb8 of size 0x00001ac0
+Merging section @ 0x80002758 of size 0x000000bc, with section @ 0x80000bb8 of size 0x00001ba0
+Merging section @ 0x80002814 of size 0x00000184, with section @ 0x80000bb8 of size 0x00001c5c
+Merging section @ 0x80002998 of size 0x00000178, with section @ 0x80000bb8 of size 0x00001de0
+Merging section @ 0x80002b10 of size 0x000000e0, with section @ 0x80000bb8 of size 0x00001f58
+Merging section @ 0x80002bf0 of size 0x00000030, with section @ 0x80000bb8 of size 0x00002038
+Merging section @ 0x80002c20 of size 0x0000004c, with section @ 0x80000bb8 of size 0x00002068
+Merging section @ 0x80002dd0 of size 0x00000078, with section @ 0x80002c70 of size 0x00000160
+Merging section @ 0x80002e48 of size 0x00000120, with section @ 0x80002c70 of size 0x000001d8
+Merging section @ 0x80002f68 of size 0x000000d8, with section @ 0x80002c70 of size 0x000002f8
+Merging section @ 0x80003040 of size 0x00000064, with section @ 0x80002c70 of size 0x000003d0
+Merging section @ 0x800034d0 of size 0x00000100, with section @ 0x800030a8 of size 0x00000428
+Merging section @ 0x800035d0 of size 0x00000068, with section @ 0x800030a8 of size 0x00000528
+Merging section @ 0x80003638 of size 0x00000078, with section @ 0x800030a8 of size 0x00000590
+Merging section @ 0x800036b0 of size 0x00000190, with section @ 0x800030a8 of size 0x00000608
+Merging section @ 0x80003840 of size 0x000001b0, with section @ 0x800030a8 of size 0x00000798
+Merging section @ 0x800039f0 of size 0x00000044, with section @ 0x800030a8 of size 0x00000948
+Merging section @ 0x80003a34 of size 0x00000020, with section @ 0x800030a8 of size 0x0000098c
+Merging section @ 0x80003a54 of size 0x00000038, with section @ 0x800030a8 of size 0x000009ac
+Merging section @ 0x80003a8c of size 0x0000005c, with section @ 0x800030a8 of size 0x000009e4
+Merging section @ 0x80003ae8 of size 0x0000003c, with section @ 0x800030a8 of size 0x00000a40
+Merging section @ 0x80003b24 of size 0x0000006c, with section @ 0x800030a8 of size 0x00000a7c
+Merging section @ 0x80003b90 of size 0x00000148, with section @ 0x800030a8 of size 0x00000ae8
+Merging section @ 0x80003cd8 of size 0x0000032c, with section @ 0x800030a8 of size 0x00000c30
+Merging section @ 0x80004004 of size 0x0000015c, with section @ 0x800030a8 of size 0x00000f5c
+Merging section @ 0x80004160 of size 0x0000015c, with section @ 0x800030a8 of size 0x000010b8
+Merging section @ 0x80004920 of size 0x00000500, with section @ 0x800042c0 of size 0x00000660
+Merging section @ 0x80004e20 of size 0x00001268, with section @ 0x800042c0 of size 0x00000b60
+Merging section @ 0x80006088 of size 0x000000d0, with section @ 0x800042c0 of size 0x00001dc8
+Merging section @ 0x80006158 of size 0x00000070, with section @ 0x800042c0 of size 0x00001e98
+Merging section @ 0x800061c8 of size 0x00000030, with section @ 0x800042c0 of size 0x00001f08
+Merging section @ 0x800061f8 of size 0x000000a8, with section @ 0x800042c0 of size 0x00001f38
+Merging section @ 0x800062a0 of size 0x00000048, with section @ 0x800042c0 of size 0x00001fe0
+Merging section @ 0x800062e8 of size 0x00000014, with section @ 0x800042c0 of size 0x00002028
+Merging section @ 0x800062fc of size 0x00000150, with section @ 0x800042c0 of size 0x0000203c
+Merging section @ 0x8000644c of size 0x000000a0, with section @ 0x800042c0 of size 0x0000218c
+Merging section @ 0x800064ec of size 0x00000060, with section @ 0x800042c0 of size 0x0000222c
+Merging section @ 0x800069b8 of size 0x00000038, with section @ 0x80006550 of size 0x00000468
+Merging section @ 0x800069f0 of size 0x00000038, with section @ 0x80006550 of size 0x000004a0
+Merging section @ 0x80006a28 of size 0x00000028, with section @ 0x80006550 of size 0x000004d8
+Merging section @ 0x80006a50 of size 0x00000028, with section @ 0x80006550 of size 0x00000500
+Merging section @ 0x80006a78 of size 0x0000005c, with section @ 0x80006550 of size 0x00000528
+Merging section @ 0x80006dc0 of size 0x00000030, with section @ 0x80006ad8 of size 0x000002e8
+Merging section @ 0x80006df0 of size 0x00000028, with section @ 0x80006ad8 of size 0x00000318
+Merging section @ 0x80006e18 of size 0x00000008, with section @ 0x80006ad8 of size 0x00000340
+Merging section @ 0x80006e20 of size 0x0000008c, with section @ 0x80006ad8 of size 0x00000348
+Merging section @ 0x80006eac of size 0x0000001c, with section @ 0x80006ad8 of size 0x000003d4
+Merging section @ 0x80006ec8 of size 0x00000018, with section @ 0x80006ad8 of size 0x000003f0
+Merging section @ 0x80006ee0 of size 0x00000014, with section @ 0x80006ad8 of size 0x00000408
+Merging section @ 0x80006ef4 of size 0x00000028, with section @ 0x80006ad8 of size 0x0000041c
+Merging section @ 0x80006f58 of size 0x0000000c, with section @ 0x80006f20 of size 0x00000038
+Merging section @ 0x80006f80 of size 0x00000010, with section @ 0x80006f70 of size 0x00000010
+Merging section @ 0x80006f90 of size 0x00000010, with section @ 0x80006f70 of size 0x00000020
+Merging section @ 0x80006fa0 of size 0x00000024, with section @ 0x80006f70 of size 0x00000030
+Merging section @ 0x80006fc4 of size 0x00000008, with section @ 0x80006f70 of size 0x00000054
+Merging section @ 0x80006fcc of size 0x00000008, with section @ 0x80006f70 of size 0x0000005c
+Merging section @ 0x800070e8 of size 0x00000150, with section @ 0x80006fd8 of size 0x00000110
+Merging section @ 0x80007238 of size 0x000000d8, with section @ 0x80006fd8 of size 0x00000260
+Merging section @ 0x80007310 of size 0x00000110, with section @ 0x80006fd8 of size 0x00000338
+Merging section @ 0x80007420 of size 0x00000038, with section @ 0x80006fd8 of size 0x00000448
+Merging section @ 0x80007458 of size 0x00000020, with section @ 0x80006fd8 of size 0x00000480
+Merging section @ 0x80007478 of size 0x00000038, with section @ 0x80006fd8 of size 0x000004a0
+Merging section @ 0x800074b0 of size 0x0000003c, with section @ 0x80006fd8 of size 0x000004d8
+Merging section @ 0x80007570 of size 0x00000128, with section @ 0x800074f0 of size 0x00000080
+Merging section @ 0x80007698 of size 0x000000a0, with section @ 0x800074f0 of size 0x000001a8
+Merging section @ 0x80007738 of size 0x000000e0, with section @ 0x800074f0 of size 0x00000248
+Merging section @ 0x80007818 of size 0x00000130, with section @ 0x800074f0 of size 0x00000328
+Merging section @ 0x80007948 of size 0x00000044, with section @ 0x800074f0 of size 0x00000458
+Merging section @ 0x80007a48 of size 0x000000b8, with section @ 0x80007990 of size 0x000000b8
+Merging section @ 0x80007b00 of size 0x00000040, with section @ 0x80007990 of size 0x00000170
+Merging section @ 0x80007b40 of size 0x00000040, with section @ 0x80007990 of size 0x000001b0
+Merging section @ 0x80007b80 of size 0x0000003c, with section @ 0x80007990 of size 0x000001f0
+Merging section @ 0x80007bbc of size 0x00000048, with section @ 0x80007990 of size 0x0000022c
+Merging section @ 0x80007c04 of size 0x00000060, with section @ 0x80007990 of size 0x00000274
+Merging section @ 0x80007c64 of size 0x00000060, with section @ 0x80007990 of size 0x000002d4
+Merging section @ 0x80007cc4 of size 0x00000060, with section @ 0x80007990 of size 0x00000334
+Merging section @ 0x80007e18 of size 0x00000110, with section @ 0x80007d28 of size 0x000000f0
+Merging section @ 0x80007f28 of size 0x00000028, with section @ 0x80007d28 of size 0x00000200
+Merging section @ 0x80007f50 of size 0x00000198, with section @ 0x80007d28 of size 0x00000228
+Merging section @ 0x800080e8 of size 0x00000170, with section @ 0x80007d28 of size 0x000003c0
+Merging section @ 0x80008258 of size 0x000000c8, with section @ 0x80007d28 of size 0x00000530
+Merging section @ 0x80008320 of size 0x00000080, with section @ 0x80007d28 of size 0x000005f8
+Merging section @ 0x800083a0 of size 0x00000080, with section @ 0x80007d28 of size 0x00000678
+Merging section @ 0x80008420 of size 0x0000006c, with section @ 0x80007d28 of size 0x000006f8
+Merging section @ 0x80008b80 of size 0x00000170, with section @ 0x80008490 of size 0x000006f0
+Merging section @ 0x80008cf0 of size 0x00000020, with section @ 0x80008490 of size 0x00000860
+Merging section @ 0x80008d10 of size 0x00000028, with section @ 0x80008490 of size 0x00000880
+Merging section @ 0x80008d38 of size 0x00000150, with section @ 0x80008490 of size 0x000008a8
+Merging section @ 0x80008e88 of size 0x00000108, with section @ 0x80008490 of size 0x000009f8
+Merging section @ 0x80008f90 of size 0x00000048, with section @ 0x80008490 of size 0x00000b00
+Merging section @ 0x80008fd8 of size 0x000000f8, with section @ 0x80008490 of size 0x00000b48
+Merging section @ 0x800090d0 of size 0x000000a4, with section @ 0x80008490 of size 0x00000c40
+Merging section @ 0x80009174 of size 0x0000014c, with section @ 0x80008490 of size 0x00000ce4
+Merging section @ 0x800092c0 of size 0x00000018, with section @ 0x80008490 of size 0x00000e30
+Merging section @ 0x800092d8 of size 0x00000044, with section @ 0x80008490 of size 0x00000e48
+Merging section @ 0x8000931c of size 0x00000050, with section @ 0x80008490 of size 0x00000e8c
+Merging section @ 0x800094e0 of size 0x00000014, with section @ 0x80009370 of size 0x00000170
+Merging section @ 0x800099d0 of size 0x000000f0, with section @ 0x800094f8 of size 0x000004d8
+Merging section @ 0x80009ac0 of size 0x00000248, with section @ 0x800094f8 of size 0x000005c8
+Merging section @ 0x80009d08 of size 0x00000188, with section @ 0x800094f8 of size 0x00000810
+Merging section @ 0x80009e90 of size 0x00000240, with section @ 0x800094f8 of size 0x00000998
+Merging section @ 0x8000a0d0 of size 0x00000038, with section @ 0x800094f8 of size 0x00000bd8
+Merging section @ 0x8000a108 of size 0x00000058, with section @ 0x800094f8 of size 0x00000c10
+Merging section @ 0x8000a160 of size 0x00000028, with section @ 0x800094f8 of size 0x00000c68
+Merging section @ 0x8000a188 of size 0x0000003c, with section @ 0x800094f8 of size 0x00000c90
+Merging section @ 0x8000a1c4 of size 0x0000006c, with section @ 0x800094f8 of size 0x00000ccc
+Merging section @ 0x8000a230 of size 0x00000070, with section @ 0x800094f8 of size 0x00000d38
+Merging section @ 0x8000a2a0 of size 0x00000174, with section @ 0x800094f8 of size 0x00000da8
+Merging section @ 0x8000a414 of size 0x000000e4, with section @ 0x800094f8 of size 0x00000f1c
+Merging section @ 0x8000a4f8 of size 0x000000e8, with section @ 0x800094f8 of size 0x00001000
+Merging section @ 0x8000a5e0 of size 0x00000268, with section @ 0x800094f8 of size 0x000010e8
+Merging section @ 0x8000a848 of size 0x00000060, with section @ 0x800094f8 of size 0x00001350
+Merging section @ 0x8000a8a8 of size 0x00000038, with section @ 0x800094f8 of size 0x000013b0
+Merging section @ 0x8000a8e0 of size 0x000000e8, with section @ 0x800094f8 of size 0x000013e8
+Merging section @ 0x8000a9c8 of size 0x000000e8, with section @ 0x800094f8 of size 0x000014d0
+Merging section @ 0x8000aab0 of size 0x000000a0, with section @ 0x800094f8 of size 0x000015b8
+Merging section @ 0x8000ab50 of size 0x00000114, with section @ 0x800094f8 of size 0x00001658
+Merging section @ 0x8000ac64 of size 0x0000016c, with section @ 0x800094f8 of size 0x0000176c
+Merging section @ 0x8000add0 of size 0x00000164, with section @ 0x800094f8 of size 0x000018d8
+Merging section @ 0x8000af34 of size 0x00000170, with section @ 0x800094f8 of size 0x00001a3c
+Merging section @ 0x8000b0a4 of size 0x0000017c, with section @ 0x800094f8 of size 0x00001bac
+Merging section @ 0x8000b220 of size 0x000002ac, with section @ 0x800094f8 of size 0x00001d28
+Merging section @ 0x8000b4cc of size 0x000002cc, with section @ 0x800094f8 of size 0x00001fd4
+Merging section @ 0x8000b798 of size 0x00000180, with section @ 0x800094f8 of size 0x000022a0
+Merging section @ 0x8000b918 of size 0x000004c0, with section @ 0x800094f8 of size 0x00002420
+Merging section @ 0x8000bdd8 of size 0x00000033, with section @ 0x800094f8 of size 0x000028e0
+Merging section @ 0x8000c028 of size 0x00000022, with section @ 0x8000c008 of size 0x00000020
+Merging section @ 0x8000c078 of size 0x00000150, with section @ 0x8000c060 of size 0x00000018
+Merging section @ 0x8000c1c8 of size 0x00000050, with section @ 0x8000c060 of size 0x00000168
+Merging section @ 0x8000c218 of size 0x00000015, with section @ 0x8000c060 of size 0x000001b8
+Writing section header  #0, adddress 0x80000000, size 0x000007a0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000000, size 0x000007a0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #1, adddress 0x800007c0, size 0x0000024c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800007c0, size 0x000001ec bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800009ac, size 0x00000018 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800009c4, size 0x00000018 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800009dc, size 0x00000014 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800009f0, size 0x0000001c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #2, adddress 0x80000a10, size 0x00000064 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000a10, size 0x00000060 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000a70, size 0x00000004 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #3, adddress 0x80000a78, size 0x0000013c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000a78, size 0x00000030 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000aa8, size 0x000000c0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000b68, size 0x00000038 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000ba0, size 0x00000014 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #4, adddress 0x80000bb8, size 0x000020b4 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000bb8, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000bf8, size 0x00000058 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000c50, size 0x00000058 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000ca8, size 0x00000078 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000d20, size 0x00000018 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000d38, size 0x00000014 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000d4c, size 0x00000014 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000d60, size 0x00000014 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000d74, size 0x00000018 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000d8c, size 0x00000014 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000da0, size 0x00000078 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000e18, size 0x00000060 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80000e78, size 0x00000208 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001080, size 0x000000e8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001168, size 0x00000048 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800011b0, size 0x0000002c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800011dc, size 0x0000006c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001248, size 0x0000005c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800012a4, size 0x00000020 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800012c4, size 0x0000001c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800012e0, size 0x000002f0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800015d0, size 0x00000070 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001640, size 0x000000d8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001718, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001758, size 0x000000d8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001830, size 0x000000a0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800018d0, size 0x000001d0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001aa0, size 0x000002f0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001d90, size 0x00000050 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001de0, size 0x00000128 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001f08, size 0x00000088 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80001f90, size 0x000000c8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002058, size 0x00000128 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002180, size 0x00000028 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800021a8, size 0x00000458 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002600, size 0x00000078 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002678, size 0x000000e0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002758, size 0x000000bc bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002814, size 0x00000184 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002998, size 0x00000178 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002b10, size 0x000000e0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002bf0, size 0x00000030 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002c20, size 0x0000004c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #5, adddress 0x80002c70, size 0x00000434 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002c70, size 0x00000160 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002dd0, size 0x00000078 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002e48, size 0x00000120 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80002f68, size 0x000000d8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003040, size 0x00000064 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #6, adddress 0x800030a8, size 0x00001214 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800030a8, size 0x00000428 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800034d0, size 0x00000100 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800035d0, size 0x00000068 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003638, size 0x00000078 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800036b0, size 0x00000190 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003840, size 0x000001b0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800039f0, size 0x00000044 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003a34, size 0x00000020 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003a54, size 0x00000038 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003a8c, size 0x0000005c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003ae8, size 0x0000003c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003b24, size 0x0000006c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003b90, size 0x00000148 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80003cd8, size 0x0000032c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80004004, size 0x0000015c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80004160, size 0x0000015c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #7, adddress 0x800042c0, size 0x0000228c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800042c0, size 0x00000660 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80004920, size 0x00000500 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80004e20, size 0x00001268 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006088, size 0x000000d0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006158, size 0x00000070 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800061c8, size 0x00000030 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800061f8, size 0x000000a8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800062a0, size 0x00000048 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800062e8, size 0x00000014 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800062fc, size 0x00000150 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000644c, size 0x000000a0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800064ec, size 0x00000060 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #8, adddress 0x80006550, size 0x00000584 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006550, size 0x00000468 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800069b8, size 0x00000038 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800069f0, size 0x00000038 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006a28, size 0x00000028 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006a50, size 0x00000028 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006a78, size 0x0000005c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #9, adddress 0x80006ad8, size 0x00000444 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006ad8, size 0x000002e8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006dc0, size 0x00000030 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006df0, size 0x00000028 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006e18, size 0x00000008 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006e20, size 0x0000008c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006eac, size 0x0000001c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006ec8, size 0x00000018 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006ee0, size 0x00000014 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006ef4, size 0x00000028 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #10, adddress 0x80006f20, size 0x00000044 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006f20, size 0x00000038 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006f58, size 0x0000000c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #11, adddress 0x80006f70, size 0x00000064 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006f70, size 0x00000010 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006f80, size 0x00000010 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006f90, size 0x00000010 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006fa0, size 0x00000024 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006fc4, size 0x00000008 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006fcc, size 0x00000008 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #12, adddress 0x80006fd8, size 0x00000514 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80006fd8, size 0x00000110 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800070e8, size 0x00000150 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007238, size 0x000000d8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007310, size 0x00000110 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007420, size 0x00000038 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007458, size 0x00000020 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007478, size 0x00000038 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800074b0, size 0x0000003c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #13, adddress 0x800074f0, size 0x0000049c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800074f0, size 0x00000080 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007570, size 0x00000128 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007698, size 0x000000a0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007738, size 0x000000e0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007818, size 0x00000130 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007948, size 0x00000044 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #14, adddress 0x80007990, size 0x00000394 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007990, size 0x000000b8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007a48, size 0x000000b8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007b00, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007b40, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007b80, size 0x0000003c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007bbc, size 0x00000048 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007c04, size 0x00000060 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007c64, size 0x00000060 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007cc4, size 0x00000060 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #15, adddress 0x80007d28, size 0x00000764 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007d28, size 0x000000f0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007e18, size 0x00000110 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007f28, size 0x00000028 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80007f50, size 0x00000198 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800080e8, size 0x00000170 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008258, size 0x000000c8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008320, size 0x00000080 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800083a0, size 0x00000080 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008420, size 0x0000006c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #16, adddress 0x80008490, size 0x00000edc bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008490, size 0x000006f0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008b80, size 0x00000170 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008cf0, size 0x00000020 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008d10, size 0x00000028 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008d38, size 0x00000150 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008e88, size 0x00000108 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008f90, size 0x00000048 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80008fd8, size 0x000000f8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800090d0, size 0x000000a4 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80009174, size 0x0000014c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800092c0, size 0x00000018 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800092d8, size 0x00000044 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000931c, size 0x00000050 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #17, adddress 0x80009370, size 0x00000184 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80009370, size 0x00000170 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800094e0, size 0x00000014 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #18, adddress 0x800094f8, size 0x00002913 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800094f8, size 0x000004d8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x800099d0, size 0x000000f0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80009ac0, size 0x00000248 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80009d08, size 0x00000188 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x80009e90, size 0x00000240 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a0d0, size 0x00000038 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a108, size 0x00000058 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a160, size 0x00000028 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a188, size 0x0000003c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a1c4, size 0x0000006c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a230, size 0x00000070 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a2a0, size 0x00000174 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a414, size 0x000000e4 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a4f8, size 0x000000e8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a5e0, size 0x00000268 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a848, size 0x00000060 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a8a8, size 0x00000038 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a8e0, size 0x000000e8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000a9c8, size 0x000000e8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000aab0, size 0x000000a0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000ab50, size 0x00000114 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000ac64, size 0x0000016c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000add0, size 0x00000164 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000af34, size 0x00000170 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000b0a4, size 0x0000017c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000b220, size 0x000002ac bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000b4cc, size 0x000002cc bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000b798, size 0x00000180 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000b918, size 0x000004c0 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000bdd8, size 0x00000033 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #19, adddress 0x8000be10, size 0x0000000c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000be10, size 0x0000000c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #20, adddress 0x8000be20, size 0x00000152 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000be20, size 0x00000152 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #21, adddress 0x8000bf78, size 0x0000008c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000bf78, size 0x0000008c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #22, adddress 0x8000c008, size 0x00000042 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c008, size 0x00000020 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c028, size 0x00000022 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #23, adddress 0x8000c050, size 0x0000000c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c050, size 0x0000000c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #24, adddress 0x8000c060, size 0x000001cd bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c060, size 0x00000018 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c078, size 0x00000150 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c1c8, size 0x00000050 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c218, size 0x00000015 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #25, adddress 0x8000c230, size 0x0000000d bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c230, size 0x0000000d bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #26, adddress 0x8000c240, size 0x00000011 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c240, size 0x00000011 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #27, adddress 0x8000c258, size 0x00000012 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c258, size 0x00000012 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #28, adddress 0x8000c270, size 0x0000000f bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c270, size 0x0000000f bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #29, adddress 0x8000c280, size 0x0000012c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c280, size 0x0000012c bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section header  #30, adddress 0x8000c3b0, size 0x000002d8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+Writing section data with adddress 0x8000c3b0, size 0x000002d8 bytes to file [C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc]
+[C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc] Parsing file ...
+Found section 0 with adddress 0x80000000, size 0x000007a0 bytes
+Found section 1 with adddress 0x800007c0, size 0x0000024c bytes
+Found section 2 with adddress 0x80000a10, size 0x00000064 bytes
+Found section 3 with adddress 0x80000a78, size 0x0000013c bytes
+Found section 4 with adddress 0x80000bb8, size 0x000020b4 bytes
+Found section 5 with adddress 0x80002c70, size 0x00000434 bytes
+Found section 6 with adddress 0x800030a8, size 0x00001214 bytes
+Found section 7 with adddress 0x800042c0, size 0x0000228c bytes
+Found section 8 with adddress 0x80006550, size 0x00000584 bytes
+Found section 9 with adddress 0x80006ad8, size 0x00000444 bytes
+Found section 10 with adddress 0x80006f20, size 0x00000044 bytes
+Found section 11 with adddress 0x80006f70, size 0x00000064 bytes
+Found section 12 with adddress 0x80006fd8, size 0x00000514 bytes
+Found section 13 with adddress 0x800074f0, size 0x0000049c bytes
+Found section 14 with adddress 0x80007990, size 0x00000394 bytes
+Found section 15 with adddress 0x80007d28, size 0x00000764 bytes
+Found section 16 with adddress 0x80008490, size 0x00000edc bytes
+Found section 17 with adddress 0x80009370, size 0x00000184 bytes
+Found section 18 with adddress 0x800094f8, size 0x00002913 bytes
+Found section 19 with adddress 0x8000be10, size 0x0000000c bytes
+Found section 20 with adddress 0x8000be20, size 0x00000152 bytes
+Found section 21 with adddress 0x8000bf78, size 0x0000008c bytes
+Found section 22 with adddress 0x8000c008, size 0x00000042 bytes
+Found section 23 with adddress 0x8000c050, size 0x0000000c bytes
+Found section 24 with adddress 0x8000c060, size 0x000001cd bytes
+Found section 25 with adddress 0x8000c230, size 0x0000000d bytes
+Found section 26 with adddress 0x8000c240, size 0x00000011 bytes
+Found section 27 with adddress 0x8000c258, size 0x00000012 bytes
+Found section 28 with adddress 0x8000c270, size 0x0000000f bytes
+Found section 29 with adddress 0x8000c280, size 0x0000012c bytes
+Found section 30 with adddress 0x8000c3b0, size 0x000002d8 bytes
+[C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc] Found 31 sections. 31 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x80006ad8
+[C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc_xip] Parsing file ...
+[C:/Users/TONA/workspace_v12/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64/Debug/ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64.rprc_xip] Found 0 sections. 0 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000

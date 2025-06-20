@@ -1,0 +1,36 @@
+[C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc_tmp] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00000040 bytes
+Found section 1 with adddress 0x7009dd80, size 0x0000fc80 bytes
+Found section 2 with adddress 0x700ada00, size 0x00001e30 bytes
+Found section 3 with adddress 0x700af830, size 0x000062e8 bytes
+Found section 4 with adddress 0x700b5b20, size 0x00000c20 bytes
+Found section 5 with adddress 0x700b6740, size 0x000004a0 bytes
+Found section 6 with adddress 0x700b6be0, size 0x000002c0 bytes
+Found section 7 with adddress 0x700b6ea0, size 0x00000140 bytes
+Found section 8 with adddress 0x700b6fe0, size 0x00000008 bytes
+[C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc_tmp] Found 9 sections. 9 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+Merging section @ 0x700ada00 of size 0x00001e30, with section @ 0x7009dd80 of size 0x0000fc80
+Merging section @ 0x700af830 of size 0x000062e8, with section @ 0x7009dd80 of size 0x00011ab0
+Merging section @ 0x700b6740 of size 0x000004a0, with section @ 0x700b5b20 of size 0x00000c20
+Merging section @ 0x700b6be0 of size 0x000002c0, with section @ 0x700b5b20 of size 0x000010c0
+Merging section @ 0x700b6ea0 of size 0x00000140, with section @ 0x700b5b20 of size 0x00001380
+Merging section @ 0x700b6fe0 of size 0x00000008, with section @ 0x700b5b20 of size 0x000014c0
+Writing section header  #0, adddress 0x00000000, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x00000000, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section header  #1, adddress 0x7009dd80, size 0x00017d98 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x7009dd80, size 0x0000fc80 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x700ada00, size 0x00001e30 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x700af830, size 0x000062e8 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section header  #2, adddress 0x700b5b20, size 0x000014c8 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x700b5b20, size 0x00000c20 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x700b6740, size 0x000004a0 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x700b6be0, size 0x000002c0 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x700b6ea0, size 0x00000140 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+Writing section data with adddress 0x700b6fe0, size 0x00000008 bytes to file [C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc]
+[C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00000040 bytes
+Found section 1 with adddress 0x7009dd80, size 0x00017d98 bytes
+Found section 2 with adddress 0x700b5b20, size 0x000014c8 bytes
+[C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc] Found 3 sections. 3 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+[C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc_xip] Parsing file ...
+[C:/Users/TONA/workspace_v12/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang/Debug/uart_echo_callback_am64x-evm_r5fss0-0_freertos_ti-arm-clang.rprc_xip] Found 0 sections. 0 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000

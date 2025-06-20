@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="12.2.0"/>
+	<deviceVariant value="Cortex R.AM64x"/>
+	<deviceFamily value="TMS470"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="TICLANG_2.1.2.LTS"/>
+	<isElfFormat value="true"/>
+	<connection value="common/targetdb/connections/TIXDS110_Connection.xml"/>
+	<rts value=""/>
+	<createSlaveProjects value=""/>
+	<ignoreDefaultDeviceSettings value="true"/>
+	<ignoreDefaultCCSSettings value="true"/>
+	<templateProperties value="id=example.projectspec.ddr_ecc_test_main_esm_am64x-evm_r5fss0-0_nortos_ti-arm-clang"/>
+	<origin value="C:\ti\mcu_plus_sdk_am64x_09_00_00_35\examples\drivers\ddr\ddr_ecc_test_main_esm\am64x-evm\r5fss0-0_nortos\ti-arm-clang\example.projectspec"/>
+	<filesToOpen value=""/>
+</projectOptions>

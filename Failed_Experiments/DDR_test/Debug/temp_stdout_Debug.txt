@@ -1,0 +1,36 @@
+[C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc_tmp] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00000040 bytes
+Found section 1 with adddress 0x7008d620, size 0x0000b8b0 bytes
+Found section 2 with adddress 0x70098ed0, size 0x00000e08 bytes
+Found section 3 with adddress 0x70099cd8, size 0x00002460 bytes
+Found section 4 with adddress 0x7009c140, size 0x00000ae0 bytes
+Found section 5 with adddress 0x7009cc20, size 0x000004a0 bytes
+Found section 6 with adddress 0x7009d0c0, size 0x000002c0 bytes
+Found section 7 with adddress 0x7009d380, size 0x00000140 bytes
+Found section 8 with adddress 0x7009d4c0, size 0x00000008 bytes
+[C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc_tmp] Found 9 sections. 9 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+Merging section @ 0x70098ed0 of size 0x00000e08, with section @ 0x7008d620 of size 0x0000b8b0
+Merging section @ 0x70099cd8 of size 0x00002460, with section @ 0x7008d620 of size 0x0000c6b8
+Merging section @ 0x7009cc20 of size 0x000004a0, with section @ 0x7009c140 of size 0x00000ae0
+Merging section @ 0x7009d0c0 of size 0x000002c0, with section @ 0x7009c140 of size 0x00000f80
+Merging section @ 0x7009d380 of size 0x00000140, with section @ 0x7009c140 of size 0x00001240
+Merging section @ 0x7009d4c0 of size 0x00000008, with section @ 0x7009c140 of size 0x00001380
+Writing section header  #0, adddress 0x00000000, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section data with adddress 0x00000000, size 0x00000040 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section header  #1, adddress 0x7008d620, size 0x0000eb18 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section data with adddress 0x7008d620, size 0x0000b8b0 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section data with adddress 0x70098ed0, size 0x00000e08 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section data with adddress 0x70099cd8, size 0x00002460 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section header  #2, adddress 0x7009c140, size 0x00001388 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section data with adddress 0x7009c140, size 0x00000ae0 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section data with adddress 0x7009cc20, size 0x000004a0 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section data with adddress 0x7009d0c0, size 0x000002c0 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section data with adddress 0x7009d380, size 0x00000140 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+Writing section data with adddress 0x7009d4c0, size 0x00000008 bytes to file [C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc]
+[C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc] Parsing file ...
+Found section 0 with adddress 0x00000000, size 0x00000040 bytes
+Found section 1 with adddress 0x7008d620, size 0x0000eb18 bytes
+Found section 2 with adddress 0x7009c140, size 0x00001388 bytes
+[C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc] Found 3 sections. 3 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000
+[C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc_xip] Parsing file ...
+[C:/Users/TONA/workspace_v12/DDR_test/Debug/DDR_test.rprc_xip] Found 0 sections. 0 are non-XIP sections, 0 are XIP sections, NON-XIP entryPoint = 0x00000000

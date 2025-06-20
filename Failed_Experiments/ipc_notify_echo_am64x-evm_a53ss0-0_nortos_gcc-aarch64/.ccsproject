@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?ccsproject version="1.0"?>
+<projectOptions>
+	<ccsVersion value="12.2.0"/>
+	<deviceVariant value="Cortex A.AM64x"/>
+	<deviceFamily value="TMS470"/>
+	<deviceEndianness value="little"/>
+	<codegenToolVersion value="GNU_9.2.1:null aarch64"/>
+	<isElfFormat value="true"/>
+	<connection value="common/targetdb/connections/TIXDS110_Connection.xml"/>
+	<rts value=""/>
+	<createSlaveProjects value=""/>
+	<ignoreDefaultDeviceSettings value="true"/>
+	<templateProperties value="id=example.projectspec.ipc_notify_echo_am64x-evm_a53ss0-0_nortos_gcc-aarch64"/>
+	<origin value="C:\ti\mcu_plus_sdk_am64x_08_06_00_43\examples\drivers\ipc\ipc_notify_echo\am64x-evm\a53ss0-0_nortos\gcc-aarch64\example.projectspec"/>
+	<filesToOpen value=""/>
+</projectOptions>
