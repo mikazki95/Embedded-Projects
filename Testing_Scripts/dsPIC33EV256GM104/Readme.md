@@ -1,1 +1,1 @@
-R
+En este proyecto se muestra como a partir de un esquematico se diseño una prueba para corrovorar la funcionalidad de la tarjeta y como se detectan fallas, mostrando habilidades de creacion de scrips, analisis, mediciones y deteccion de fallas
