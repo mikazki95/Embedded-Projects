@@ -4,7 +4,7 @@
 Conjunto de pruebas avanzadas para periféricos críticos, demostrando competencia en:  
 **Verificación de hardware** · **Diseño de drivers** · **Solución de problemas a bajo nivel**
 
-![Hardware Demo](docs/demo.gif) *(Recomendado: añadir GIF corto mostrando pruebas en acción)*
+![Hardware Demo](docs/demo.gif) 
 
 ## 💻 Habilidades Demostradas
 ```diff
