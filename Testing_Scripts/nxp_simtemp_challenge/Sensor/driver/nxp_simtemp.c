@@ -15,9 +15,20 @@ static dev_t dev_number;
 static struct class *simtemp_class;
 static struct nxp_simtemp_data *device_data;
 
+
+static int triangular_wave(int counter)
+{
+    int phase = counter % 400;  // 0-399
+    if (phase < 100) return phase;           // Subida 0→100
+    if (phase < 300) return 200 - phase;     // Bajada 100→-100  
+    return phase - 400;                      // Subida -100→0
+}
+
+
 /* Función para simular temperatura con onda sinusoidal */
 static int simulate_temperature(struct nxp_simtemp_data *data)
 {
+    __s32 variation;
     if (data->amplitude_mC == 0) 
         return data->base_temp;
     
@@ -25,7 +36,7 @@ static int simulate_temperature(struct nxp_simtemp_data *data)
     data->wave_counter += data->frequency_hz * data->update_interval_ms / 1000;
     
     // Onda triangular entre -100 y +100
-    __s32 variation = data->amplitude_mC * triangular_wave(data->wave_counter) / 100;
+    variation = data->amplitude_mC * triangular_wave(data->wave_counter) / 100;
     
     return data->base_temp + variation;
 }
@@ -312,14 +323,6 @@ static void __exit nxp_simtemp_exit(void)
     unregister_chrdev_region(dev_number, 1);
     
     printk(KERN_INFO "NXP SimTemp: Driver descargado correctamente\n");
-}
-
-static int triangular_wave(int counter)
-{
-    int phase = counter % 400;  // 0-399
-    if (phase < 100) return phase;           // Subida 0→100
-    if (phase < 300) return 200 - phase;     // Bajada 100→-100  
-    return phase - 400;                      // Subida -100→0
 }
 
 module_init(nxp_simtemp_init);
