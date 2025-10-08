@@ -8,22 +8,23 @@
 #include <linux/cdev.h>
 
 /* Constantes */
-#define DEFAULT_BASE_TEMP         25000   // 25.0°C
-#define DEFAULT_AMPLITUDE         5000    // ±5°C
-#define DEFAULT_FREQUENCY         0.1     // 0.1 Hz (10 segundos por ciclo)
-#define DEFAULT_ALARM_HIGH        30000   // 30.0°C
-#define DEFAULT_ALARM_LOW         20000   // 20.0°C  
+#define DEFAULT_BASE_TEMP       25000   // 25.0°C
+#define DEFAULT_AMPLITUDE       0    // ±5°C
+#define DEFAULT_FREQUENCY       100     // 0.1 Hz (10 segundos por ciclo)
+#define DEFAULT_ALARM_HIGH      30000   // 30.0°C
+#define DEFAULT_ALARM_LOW       20000   // 20.0°C  
 #define DEFAULT_UPDATE_MS         1000    // 1 segundo
 
 /* Estructura de datos del dispositivo */
 struct nxp_simtemp_data {
     /* Configuración */
     int base_temp;
-    int amplitude;
-    float frequency;
+    int amplitude_mC;
+    int frequency_hz;
     int alarm_high;
     int alarm_low;
     unsigned int update_interval_ms;
+    int wave_counter;        // Contador interno
     
     /* Estado actual */
     int current_temp;

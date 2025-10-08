@@ -18,24 +18,18 @@ static struct nxp_simtemp_data *device_data;
 /* Función para simular temperatura con onda sinusoidal */
 static int simulate_temperature(struct nxp_simtemp_data *data)
 {
-    unsigned long current_jiffies = jiffies;
-    unsigned long elapsed_seconds = (current_jiffies - data->last_update) / HZ;
+    if (data->amplitude_mC == 0) 
+        return data->base_temp;
     
-    /* Variación simple de temperatura: oscila entre base_temp ± amplitude */
-    int cycle_position = elapsed_seconds % 20;  // Ciclo de 20 segundos
-    int temp_variation;
+    // wave_counter incrementa según frecuencia
+    data->wave_counter += data->frequency_hz * data->update_interval_ms / 1000;
     
-    if (cycle_position < 10) {
-        // Subiendo: 0 a amplitude
-        temp_variation = (data->amplitude * cycle_position) / 10;
-    } else {
-        // Bajando: amplitude a 0  
-        temp_variation = (data->amplitude * (20 - cycle_position)) / 10;
-    }
+    // Onda triangular entre -100 y +100
+    __s32 variation = data->amplitude_mC * triangular_wave(data->wave_counter) / 100;
     
-    // Centrar la variación alrededor de base_temp
-    return data->base_temp + temp_variation - (data->amplitude / 2);
+    return data->base_temp + variation;
 }
+
 
 /* Timer callback - actualiza temperatura y verifica alarmas */
 static void update_temperature(struct timer_list *t)
@@ -237,8 +231,8 @@ static int __init nxp_simtemp_init(void)
     
     /* Inicializar con valores por defecto */
     device_data->base_temp = DEFAULT_BASE_TEMP;
-    device_data->amplitude = DEFAULT_AMPLITUDE;
-    device_data->frequency = DEFAULT_FREQUENCY;
+    device_data->amplitude_mC = DEFAULT_AMPLITUDE;
+    device_data->frequency_hz = DEFAULT_FREQUENCY;
     device_data->alarm_high = DEFAULT_ALARM_HIGH;
     device_data->alarm_low = DEFAULT_ALARM_LOW;
     device_data->update_interval_ms = DEFAULT_UPDATE_MS;
@@ -318,6 +312,14 @@ static void __exit nxp_simtemp_exit(void)
     unregister_chrdev_region(dev_number, 1);
     
     printk(KERN_INFO "NXP SimTemp: Driver descargado correctamente\n");
+}
+
+static int triangular_wave(int counter)
+{
+    int phase = counter % 400;  // 0-399
+    if (phase < 100) return phase;           // Subida 0→100
+    if (phase < 300) return 200 - phase;     // Bajada 100→-100  
+    return phase - 400;                      // Subida -100→0
 }
 
 module_init(nxp_simtemp_init);
