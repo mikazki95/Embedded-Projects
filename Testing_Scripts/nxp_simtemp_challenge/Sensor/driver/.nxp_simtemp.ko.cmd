@@ -1,0 +1,1 @@
+cmd_/home/tona/Escritorio/Sensor/driver/nxp_simtemp.ko := ld -r -m elf_i386  --build-id  -T ./scripts/module-common.lds -o /home/tona/Escritorio/Sensor/driver/nxp_simtemp.ko /home/tona/Escritorio/Sensor/driver/nxp_simtemp.o /home/tona/Escritorio/Sensor/driver/nxp_simtemp.mod.o;  true

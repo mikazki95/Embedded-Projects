@@ -1,0 +1,2 @@
+/home/tona/Escritorio/Sensor/driver/nxp_simtemp.o
+
