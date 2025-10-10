@@ -174,6 +174,29 @@ static ssize_t threshold_high_store(struct device *dev, struct device_attribute 
 }
 static DEVICE_ATTR_RW(threshold_high);
 
+static ssize_t threshold_low_show(struct device *dev, struct device_attribute *attr, char *buf)
+{
+    struct nxp_simtemp_data *data = device_data;
+    return sprintf(buf, "%d\n", data->alarm_low);
+}
+
+static ssize_t threshold_low_store(struct device *dev, struct device_attribute *attr,
+                                   const char *buf, size_t count)
+{
+    struct nxp_simtemp_data *data = device_data;
+    int new_threshold;
+    
+    if (kstrtoint(buf, 10, &new_threshold))
+        return -EINVAL;
+    
+    mutex_lock(&data->lock);
+    data->alarm_low = new_threshold;
+    mutex_unlock(&data->lock);
+    
+    return count;
+}
+static DEVICE_ATTR_RW(threshold_low);
+
 static ssize_t sampling_ms_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
     struct nxp_simtemp_data *data = device_data;
@@ -200,10 +223,59 @@ static ssize_t sampling_ms_store(struct device *dev, struct device_attribute *at
 }
 static DEVICE_ATTR_RW(sampling_ms);
 
+static ssize_t amplitude_show(struct device *dev, struct device_attribute *attr, char *buf)
+{
+    struct nxp_simtemp_data *data = device_data;
+    return sprintf(buf, "%d\n", data->amplitude_mC);
+}
+
+static ssize_t amplitude_store(struct device *dev, struct device_attribute *attr,
+                              const char *buf, size_t count)
+{
+    struct nxp_simtemp_data *data = device_data;
+    int new_amplitude;
+    
+    if (kstrtoint(buf, 10, &new_amplitude) || new_amplitude < 0)
+        return -EINVAL;
+    
+    mutex_lock(&data->lock);
+    data->amplitude_mC = new_amplitude;
+    mutex_unlock(&data->lock);
+    
+    return count;
+}
+static DEVICE_ATTR_RW(amplitude);
+
+static ssize_t frequency_show(struct device *dev, struct device_attribute *attr, char *buf)
+{
+    struct nxp_simtemp_data *data = device_data;
+    return sprintf(buf, "%d\n", data->frequency_hz);
+}
+
+static ssize_t frequency_store(struct device *dev, struct device_attribute *attr,
+                              const char *buf, size_t count)
+{
+    struct nxp_simtemp_data *data = device_data;
+    int new_frequency;
+    
+    if (kstrtoint(buf, 10, &new_frequency) || new_frequency < 0)
+        return -EINVAL;
+    
+    mutex_lock(&data->lock);
+    data->frequency_hz = new_frequency;
+    mutex_unlock(&data->lock);
+    
+    return count;
+}
+static DEVICE_ATTR_RW(frequency);
+
 static struct attribute *nxp_simtemp_attrs[] = {
     &dev_attr_temperature.attr,
     &dev_attr_threshold_high.attr,
+    &dev_attr_threshold_low.attr,
     &dev_attr_sampling_ms.attr,
+    &dev_attr_amplitude.attr,
+    &dev_attr_frequency.attr,
     NULL,
 };
 
