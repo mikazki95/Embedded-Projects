@@ -25,6 +25,8 @@ struct nxp_simtemp_data {
     int alarm_low;
     unsigned int update_interval_ms;
     int wave_counter;        // Contador interno
+    u64 wave_start_ns;        
+    u32 wave_period_us;       
     
     /* Estado actual */
     int current_temp;

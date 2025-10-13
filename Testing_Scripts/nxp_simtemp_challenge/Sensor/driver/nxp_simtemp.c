@@ -16,32 +16,32 @@ static struct class *simtemp_class;
 static struct nxp_simtemp_data *device_data;
 
 
-static int triangular_wave(int counter)
-{
-    int phase = counter % 400;  // 0-399
-    if (phase < 100) return phase;           // Subida 0→100
-    if (phase < 300) return 200 - phase;     // Bajada 100→-100  
-    return phase - 400;                      // Subida -100→0
-}
-
-
 /* Función para simular temperatura con onda sinusoidal */
 static int simulate_temperature(struct nxp_simtemp_data *data)
 {
-    __s32 variation;
+    u64 now_ns, elapsed_us, position;
+    int half_period, variation;
+    
     if (data->amplitude_mC == 0) 
         return data->base_temp;
     
-    // wave_counter incrementa según frecuencia
-    data->wave_counter += data->frequency_hz * data->update_interval_ms / 1000;
+    now_ns = ktime_get_ns();
     
-    // Onda triangular entre -100 y +100
-    variation = data->amplitude_mC * triangular_wave(data->wave_counter) / 100;
+    // Convertir nanosegundos a MICROSEGUNDOS (consistencia)
+    elapsed_us = div_u64(now_ns - data->wave_start_ns, 1000);
+    
+    // Usar wave_period_US (no ms)
+    position = elapsed_us;
+    do_div(position, data->wave_period_us);  
+    
+    half_period = data->wave_period_us / 2;
+    if (half_period == 0) {
+    half_period = 1;  // Evitar división por cero
+    }
+    variation = data->amplitude_mC * ((int)position - half_period) / half_period;
     
     return data->base_temp + variation;
 }
-
-
 /* Timer callback - actualiza temperatura y verifica alarmas */
 static void update_temperature(struct timer_list *t)
 {
@@ -258,13 +258,18 @@ static ssize_t frequency_store(struct device *dev, struct device_attribute *attr
     struct nxp_simtemp_data *data = device_data;
     int new_frequency;
     
-    if (kstrtoint(buf, 10, &new_frequency) || new_frequency < 0)
+    if (kstrtoint(buf, 10, &new_frequency) || new_frequency <= 0)
         return -EINVAL;
     
     mutex_lock(&data->lock);
     data->frequency_hz = new_frequency;
-    mutex_unlock(&data->lock);
     
+    data->wave_period_us = 1000000 / new_frequency;  // CAMBIAR: Hz → us
+    
+    // Reiniciar contador de onda
+    data->wave_start_ns = ktime_get_ns();
+    
+    mutex_unlock(&data->lock);
     return count;
 }
 static DEVICE_ATTR_RW(frequency);
@@ -313,6 +318,8 @@ static int __init nxp_simtemp_init(void)
     }
     
     /* Inicializar con valores por defecto */
+    device_data->wave_start_ns = ktime_get_ns();  
+    device_data->wave_period_us = 1000000 / DEFAULT_FREQUENCY;  // CAMBIAR: Hz → us
     device_data->base_temp = DEFAULT_BASE_TEMP;
     device_data->amplitude_mC = DEFAULT_AMPLITUDE;
     device_data->frequency_hz = DEFAULT_FREQUENCY;
