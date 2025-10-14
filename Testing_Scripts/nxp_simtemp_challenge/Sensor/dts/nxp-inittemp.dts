@@ -1,22 +1,20 @@
-NXP Simulated Temperature Sensor
-================================
+/dts-v1/;
+/plugin/;
 
-Required properties:
-- compatible: Must be "nxp,simtemp"
-- temp-base: Base temperature in degrees mCelsius
-- amplitude: Temperature variation amplitude
-- frequency: Variation frequency in centihertz
-- alarm-high: High temperature alarm threshold
-- alarm-low: Low temperature alarm threshold  
-- update-interval: Sensor update interval in milliseconds
-
-Example:
-nxp_simtemp: nxp-simtemp@0 {
-    compatible = "nxp,simtemp";
-    temp-base = <25000>;
-    amplitude = <10000>;
-    frequency = <100>;
-    alarm-high = <30000>;
-    alarm-low = <20000>;
-    update-interval = <1000>;
+/ {
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            nxp_simtemp: nxp-simtemp@0 {
+                compatible = "nxp,simtemp";
+                temp-base = <25000>;
+                amplitude = <0>;
+                frequency = <100>;
+                alarm-high = <30000>;
+                alarm-low = <20000>;
+                update-interval = <1000>;
+                status = "okay";
+            };
+        };
+    };
 };
