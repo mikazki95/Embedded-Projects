@@ -1,6 +1,7 @@
 #!/bin/bash
 echo "=== NXP SimTemp Demo ==="
 cd ../driver
+sudo rmmod nxp_simtemp 2>/dev/null || true
 sudo insmod nxp_simtemp.ko
 echo "✅ Module loaded"
 sleep 1
