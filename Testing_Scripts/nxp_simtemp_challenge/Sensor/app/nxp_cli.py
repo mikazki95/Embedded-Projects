@@ -10,79 +10,54 @@ import sys
 from datetime import datetime
 
 class SimTempSystem:
-    def __init__(self, simulation_mode=True):
-        self.simulation_mode = simulation_mode
+    def __init__(self):
         self.sysfs_base = "/sys/class/nxp_simtemp/simtemp"
         self.device_path = "/dev/simtemp"
         
-        # Parámetros de simulación (atributos de instancia)
-        self.base_temp = 25000
-        self.amplitude = 5000
-        self.frequency = 0.1
-        self.threshold_high = 30000  # ← threshold_high en mC
-        self.sampling_ms = 1000      # ← sampling_ms en milisegundos
+        # PARÁMETROS MODIFICADOS SEGÚN LO QUE PEDISTE
+        self.base_temp = 25000      # 25°C base
+        self.amplitude = 10000      # ±10°C variación (antes 5000)
+        self.frequency = 50         # 50 Hz frecuencia (antes 0.1)
+        self.threshold_high = 30000 # 30°C alarma alta
+        self.threshold_low = 20000  # 20°C alarma baja (NUEVO)
+        self.sampling_ms = 1000     # 1 segundo sampling
         self.start_time = time.time()
-    
-    def detect_mode(self):
-        """Detectar si el driver real está disponible"""
-        if os.path.exists(self.sysfs_base):
-            self.simulation_mode = False
-            print("✅ Modo REAL: Driver del kernel detectado")
-        else:
-            self.simulation_mode = True
-            print("🔧 Modo SIMULACIÓN: Usando simulador interno")
-        return self.simulation_mode
     
     def config_sampling(self, sampling_ms):
         """Configurar periodo de sampling"""
-        if not self.simulation_mode:
-            try:
-                with open(f"{self.sysfs_base}/sampling_ms", 'w') as f:
-                    f.write(str(sampling_ms))
-                print(f"Sampling configurado a: {sampling_ms} ms (via sysfs)")
-                return True
-            except:
-                print("Error escribiendo a sysfs, cambiando a modo simulación")
-                self.simulation_mode = True
-        
-        # MODO SIMULACIÓN: Actualizar atributo de instancia
         self.sampling_ms = sampling_ms
-        print(f"Sampling configurado a: {sampling_ms} ms (simulación)")
-        return True
+        print(f"Sampling configurado a: {sampling_ms} ms")
+        return
     
-    def config_threshold(self, threshold_c):
-        """Configurar threshold"""
+    def config_threshold_high(self, threshold_c):
+        """Configurar threshold alto"""
         threshold_mC = int(threshold_c * 1000)
-        
-        if not self.simulation_mode:
-            try:
-                with open(f"{self.sysfs_base}/threshold_mC", 'w') as f:
-                    f.write(str(threshold_mC))
-                print(f"Threshold configurado a: {threshold_c}°C (via sysfs)")
-                return True
-            except:
-                print("Error escribiendo a sysfs, cambiando a modo simulación")
-                self.simulation_mode = True
-        
-        # MODO SIMULACIÓN: Actualizar atributo de instancia
         self.threshold_high = threshold_mC
-        print(f"Threshold configurado a: {threshold_c}°C (simulación)")
-        return True
+        print(f"Threshold ALTO configurado a: {threshold_c}°C")
+        return
     
+    def config_threshold_low(self, threshold_c):
+        """Configurar threshold bajo"""
+        threshold_mC = int(threshold_c * 1000)
+        self.threshold_low = threshold_mC
+        print(f"Threshold BAJO configurado a: {threshold_c}°C")
+        return
+    
+    def config_amplitude(self, amplitude_c):
+        """Configurar amplitud"""
+        amplitude_mC = int(amplitude_c * 1000)
+        self.amplitude = amplitude_mC
+        print(f"Amplitud configurada a: ±{amplitude_c}°C")
+        return
+    
+    def config_frequency(self, frequency_hz):
+        """Configurar frecuencia"""
+        self.frequency = frequency_hz
+        print(f"Frecuencia configurada a: {frequency_hz} Hz")
+        return
+
     def generate_sample(self):
         """Generar muestra (compatible con ambos modos)"""
-        if not self.simulation_mode:
-            try:
-                with open(self.device_path, 'rb') as f:
-                    data = f.read(16)
-                    if len(data) == 16:
-                        timestamp_ns, temp_mC, flags = struct.unpack("<QII", data)
-                        return timestamp_ns, temp_mC, flags
-            except:
-                print("Error leyendo dispositivo, cambiando a simulación")
-                self.simulation_mode = True
-        
-        # MODO SIMULACIÓN: Generar muestra usando los atributos actuales
         import math
         current_time = time.time()
         elapsed = current_time - self.start_time
@@ -92,22 +67,23 @@ class SimTempSystem:
         current_temp = self.base_temp + int(temp_variation)
         
         flags = 0x1  # NEW_SAMPLE
-        if current_temp >= self.threshold_high:  # Usar self.threshold_high
+        if current_temp >= self.threshold_high:  # Alarma por alto
+            flags |= 0x2  # THRESHOLD_CROSSED
+        elif current_temp <= self.threshold_low:  # Alarma por bajo (NUEVO)
             flags |= 0x2  # THRESHOLD_CROSSED
         
         return int(current_time * 1e9), current_temp, flags
     
-    def read_continuous(self, duration=10):
-        """Leer muestras continuamente"""
-        self.detect_mode()
-        
+    def read_continuous(self, duration=30):  # 30 SEGUNDOS POR DEFECTO
+        """Leer muestras continuamente"""        
         print(f"=== Leyendo sensor por {duration} segundos ===")
-        print(f"Modo: {'SIMULACIÓN' if self.simulation_mode else 'REAL'}")
-        print(f"Config: sampling={self.sampling_ms}ms, threshold={self.threshold_high/1000}°C")
-        print("-" * 60)
+        print(f"Config: sampling={self.sampling_ms}ms, threshold_high={self.threshold_high/1000}°C, threshold_low={self.threshold_low/1000}°C")
+        print(f"Amplitud: ±{self.amplitude/1000}°C, Frecuencia: {self.frequency} Hz")
+        print("-" * 80)
         
         start_time = time.time()
         sample_count = 0
+        alert_count = 0
         
         try:
             while time.time() - start_time < duration:
@@ -119,7 +95,16 @@ class SimTempSystem:
                     timestamp_s = timestamp_ns / 1e9
                     human_time = datetime.fromtimestamp(timestamp_s).strftime("%Y-%m-%dT%H:%M:%S.%fZ")
                     
-                    alert_status = "ALERT" if (flags & 0x2) else "OK"
+                    # Determinar tipo de alerta
+                    if temp_mC >= self.threshold_high:
+                        alert_status = "HIGH_ALERT"
+                        alert_count += 1
+                    elif temp_mC <= self.threshold_low:
+                        alert_status = "LOW_ALERT" 
+                        alert_count += 1
+                    else:
+                        alert_status = "OK"
+                    
                     print(f"{human_time} temp={temp_c:.1f}C alert={alert_status}")
                 
                 # Usar el sampling configurado
@@ -129,19 +114,20 @@ class SimTempSystem:
         except KeyboardInterrupt:
             print("\nLectura interrumpida")
         
-        print("-" * 60)
-        print(f"Muestras leídas: {sample_count}")
+        print("-" * 80)
+        print(f"RESUMEN: Muestras={sample_count}, Alertas={alert_count}")
+        print(f"Rango de temperatura: {self.base_temp/1000 - self.amplitude/1000:.1f}°C a {self.base_temp/1000 + self.amplitude/1000:.1f}°C")
     
     def show_info(self):
         """Mostrar información CORREGIDA"""
-        self.detect_mode()
-        print(f"Modo actual: {'SIMULACIÓN' if self.simulation_mode else 'REAL'}")
-        if self.simulation_mode:
-            print(f"Base temp: {self.base_temp/1000}°C")
-            print(f"Amplitud: ±{self.amplitude/1000}°C")
-            print(f"Frecuencia: {self.frequency} Hz")
-            print(f"Sampling: {self.sampling_ms} ms")
-            print(f"Threshold: {self.threshold_high/1000}°C")
+        print("=== CONFIGURACIÓN ACTUAL ===")
+        print(f"Base temp: {self.base_temp/1000}°C")
+        print(f"Amplitud: ±{self.amplitude/1000}°C")
+        print(f"Frecuencia: {self.frequency} Hz")
+        print(f"Sampling: {self.sampling_ms} ms")
+        print(f"Threshold ALTO: {self.threshold_high/1000}°C")
+        print(f"Threshold BAJO: {self.threshold_low/1000}°C")
+        print(f"Rango esperado: {self.base_temp/1000 - self.amplitude/1000:.1f}°C a {self.base_temp/1000 + self.amplitude/1000:.1f}°C")
 
 def main():
     system = SimTempSystem()
@@ -150,7 +136,7 @@ def main():
         command = sys.argv[1]
         
         if command == "read":
-            duration = int(sys.argv[2]) if len(sys.argv) > 2 else 10
+            duration = int(sys.argv[2]) if len(sys.argv) > 2 else 30  # 30s por defecto
             system.read_continuous(duration)
             
         elif command == "config":
@@ -160,25 +146,37 @@ def main():
                 
                 if param == "sampling_ms":
                     system.config_sampling(int(value))
-                elif param == "threshold":
-                    system.config_threshold(float(value))
+                elif param == "threshold_high":
+                    system.config_threshold_high(float(value))
+                elif param == "threshold_low":
+                    system.config_threshold_low(float(value))
+                elif param == "amplitude":
+                    system.config_amplitude(float(value))
+                elif param == "frequency":
+                    system.config_frequency(float(value))
                 else:
-                    print("Parámetro desconocido. Usa: sampling_ms, threshold")
+                    print("Parámetros válidos: sampling_ms, threshold_high, threshold_low, amplitude, frequency")
                     
         elif command == "info":
             system.show_info()
             
         elif command == "test":
             print("=== Test de Alertas ===")
-            system.config_threshold(26.0)  # Threshold bajo
-            system.read_continuous(5)
+            # Configurar según lo que pediste
+            system.config_amplitude(10.0)     # ±10°C
+            system.config_frequency(50)       # 50 Hz
+            system.config_threshold_high(30.0) # 30°C
+            system.config_threshold_low(20.0)  # 20°C
+            system.read_continuous(30)        # 30 segundos
             
     else:
-        print("NXP SimTemp CLI - Modo automático (real/simulación)")
-        print("Comandos:")
+        print("NXP SimTemp CLI - Configuración actual:")
+        print("  Amplitud: ±10°C, Frecuencia: 50 Hz")
+        print("  Thresholds: 20°C (bajo) - 30°C (alto)")
+        print("  Duración lectura: 30 segundos")
+        print("\nComandos:")
         print("  python3 nxp_cli.py info")
-        print("  python3 nxp_cli.py config sampling_ms 500")
-        print("  python3 nxp_cli.py config threshold 26.0")
+        print("  python3 nxp_cli.py config <param> <value>")
         print("  python3 nxp_cli.py read [seconds]")
         print("  python3 nxp_cli.py test")
 
