@@ -20,6 +20,8 @@ Diagrama de Bloques
                       │  Simulación de   │
                       │  Temperatura     │
                       └──────────────────┘
+
+
 🔧 Diseño del Driver del Kernel
 Componentes Principales
 1. Infraestructura Platform Driver
@@ -213,4 +215,5 @@ Tasas de sampling máximas
 Cambios rápidos de configuración
 
 Operación de larga duración
+
 
