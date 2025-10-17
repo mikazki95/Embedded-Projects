@@ -226,6 +226,29 @@ static ssize_t amplitude_store(struct device *dev, struct device_attribute *attr
 }
 static DEVICE_ATTR_RW(amplitude);
 
+static ssize_t base_temp_show(struct device *dev, struct device_attribute *attr, char *buf)
+{
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
+    return sprintf(buf, "%d\n", data->base_temp);
+}
+
+static ssize_t base_temp_store(struct device *dev, struct device_attribute *attr,
+                              const char *buf, size_t count)
+{
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
+    int new_base_temp;
+    
+    if (kstrtoint(buf, 10, &new_base_temp))
+        return -EINVAL;
+    
+    mutex_lock(&data->lock);
+    data->base_temp = new_base_temp;
+    mutex_unlock(&data->lock);
+    
+    return count;
+}
+static DEVICE_ATTR_RW(base_temp);
+
 static ssize_t frequency_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
     struct nxp_simtemp_data *data = dev_get_drvdata(dev);
@@ -257,6 +280,7 @@ static struct attribute *nxp_simtemp_attrs[] = {
     &dev_attr_sampling_ms.attr,
     &dev_attr_amplitude.attr,
     &dev_attr_frequency.attr,
+    &dev_attr_base_temp.attr,
     NULL,
 };
 
