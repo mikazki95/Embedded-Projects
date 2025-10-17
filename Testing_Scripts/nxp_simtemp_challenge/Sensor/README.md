@@ -42,7 +42,7 @@ simtemp/
 │   ├── nxp_simtemp.h      # Header file
 │   ├── Makefile
 │   └── dts/               # Device Tree sources
-├── user/app/              # User space application
+├── /app/              # User space application
 │   └── nxp_cli.py         # Python CLI tool
 ├── scripts/               # Build and demo scripts
 │   ├── build.sh
@@ -136,3 +136,4 @@ Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
