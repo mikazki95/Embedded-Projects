@@ -1,6 +1,7 @@
 🏗️ Arquitectura del Sistema
+
 Diagrama de Bloques
-text
+
 ┌─────────────────┐    ┌──────────────────┐    ┌──────────────────┐
 │   Espacio de    │    │   Espacio del    │    │  Configuración   │
 │    Usuario      │    │     Kernel       │    │                  │
@@ -212,3 +213,4 @@ Tasas de sampling máximas
 Cambios rápidos de configuración
 
 Operación de larga duración
+
