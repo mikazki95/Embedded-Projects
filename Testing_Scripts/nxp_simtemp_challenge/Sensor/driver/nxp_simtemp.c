@@ -283,7 +283,8 @@ static int nxp_simtemp_probe(struct platform_device *pdev)
         return ret;
     }
 
-    simtemp_class = class_create(THIS_MODULE, "nxp_simtemp");
+    //simtemp_class = class_create(THIS_MODULE, "nxp_simtemp");
+    simtemp_class = class_create("nxp_simtemp");
     if (IS_ERR(simtemp_class)) {
         ret = PTR_ERR(simtemp_class);
         goto error_class;
@@ -394,7 +395,8 @@ error_class:
 static int nxp_simtemp_remove(struct platform_device *pdev)
 {
     struct nxp_simtemp_data *device_data = platform_get_drvdata(pdev);
-    struct class *simtemp_class = device_data->device->class;
+    //struct class *simtemp_class = device_data->device->class;
+    struct class *simtemp_class = (struct class *)device_data->device->class;
 
     printk(KERN_INFO "NXP SimTemp: Removing device...\n");
 
