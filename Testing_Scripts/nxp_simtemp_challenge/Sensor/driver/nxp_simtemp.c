@@ -10,11 +10,29 @@
 #include <linux/poll.h>  
 #include "nxp_simtemp.h"
 
+static int nxp_simtemp_probe(struct platform_device *pdev);
+static int nxp_simtemp_remove(struct platform_device *pdev);
+
+/* Platform Driver Components === */
 static const struct of_device_id nxp_simtemp_of_match[] = {
     { .compatible = "nxp,simtemp" },
     { } /* Sentinel */
 };
 MODULE_DEVICE_TABLE(of, nxp_simtemp_of_match);
+
+static struct platform_driver nxp_simtemp_driver = {
+    .probe = nxp_simtemp_probe,
+    .remove = nxp_simtemp_remove,
+    .driver = {
+        .name = "nxp-simtemp",
+        .of_match_table = nxp_simtemp_of_match,
+    },
+};
+
+
+static dev_t dev_number;
+static struct class *simtemp_class;
+static struct nxp_simtemp_data *device_data;
 
 /* Función para simular temperatura con onda sinusoidal */
 static int simulate_temperature(struct nxp_simtemp_data *data)
@@ -226,6 +244,29 @@ static ssize_t amplitude_store(struct device *dev, struct device_attribute *attr
 }
 static DEVICE_ATTR_RW(amplitude);
 
+static ssize_t base_temp_show(struct device *dev, struct device_attribute *attr, char *buf)
+{
+    struct nxp_simtemp_data *data = device_data;
+    return sprintf(buf, "%d\n", data->base_temp);
+}
+
+static ssize_t base_temp_store(struct device *dev, struct device_attribute *attr,
+                              const char *buf, size_t count)
+{
+    struct nxp_simtemp_data *data = device_data;
+    int new_base_temp;
+    
+    if (kstrtoint(buf, 10, &new_base_temp))
+        return -EINVAL;
+    
+    mutex_lock(&data->lock);
+    data->base_temp = new_base_temp;
+    data->wave_start_ns = ktime_get_ns();
+    mutex_unlock(&data->lock);
+    return count;
+}
+static DEVICE_ATTR_RW(base_temp);
+
 static ssize_t frequency_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
     struct nxp_simtemp_data *data = dev_get_drvdata(dev);
@@ -257,6 +298,7 @@ static struct attribute *nxp_simtemp_attrs[] = {
     &dev_attr_sampling_ms.attr,
     &dev_attr_amplitude.attr,
     &dev_attr_frequency.attr,
+    &dev_attr_base_temp.attr,
     NULL,
 };
 
@@ -265,8 +307,50 @@ static struct attribute_group nxp_simtemp_attr_group = {
     .name = NULL,
 };
 
-/* Función probe - CORREGIDA */
+/* === NUEVO: Platform Driver Functions === */
 static int nxp_simtemp_probe(struct platform_device *pdev)
+{
+    struct device *dev = &pdev->dev;
+    struct device_node *np = dev->of_node;
+    
+    printk(KERN_INFO "NXP SimTemp: Platform device probed (DT compatible)\n");
+    
+    /* Parsear Device Tree si existe */
+    if (np) {
+        u32 value;
+        if (!of_property_read_u32(np, "temp-base", &value))
+            device_data->base_temp = value;
+
+        if (!of_property_read_u32(np, "amplitude", &value))
+            device_data->amplitude_mC = value;
+
+        if (!of_property_read_u32(np, "frequency", &value))
+            device_data->frequency_hz = value;
+
+        if (!of_property_read_u32(np, "alarm-high", &value))
+            device_data->alarm_high = value;
+
+        if (!of_property_read_u32(np, "alarm-low", &value))
+            device_data->alarm_low = value;
+
+        if (!of_property_read_u32(np, "update-interval", &value))
+            device_data->update_interval_ms = value;
+            
+        printk(KERN_INFO "NXP SimTemp: Configurado desde Device Tree\n");
+    }
+    
+    return 0;
+}
+
+static int nxp_simtemp_remove(struct platform_device *pdev)
+{
+    printk(KERN_INFO "NXP SimTemp: Platform device removed\n");
+    return 0;
+}
+/* === FIN NUEVO === */
+
+/* Función de inicialización del módulo - MANTENIDA */
+static int __init nxp_simtemp_init(void)
 {
     struct nxp_simtemp_data *device_data;
     struct device *dev = &pdev->dev;
@@ -282,11 +366,10 @@ static int nxp_simtemp_probe(struct platform_device *pdev)
         printk(KERN_ERR "NXP SimTemp: Error reservando dispositivo\n");
         return ret;
     }
-    pr_info("nxp_simtemp: chrdev_region allocated major=%d minor=%d\n", 
-            MAJOR(dev_number), MINOR(dev_number));
-
-    //simtemp_class = class_create(THIS_MODULE, "nxp_simtemp");
-    simtemp_class = class_create("nxp_simtemp");
+    
+    /* Crear clase de dispositivo */
+    simtemp_class = class_create(THIS_MODULE, "nxp_simtemp");
+    //simtemp_class = class_create("nxp_simtemp");
     if (IS_ERR(simtemp_class)) {
         ret = PTR_ERR(simtemp_class);
          pr_err("nxp_simtemp: class_create failed: %d\n", ret);
@@ -346,8 +429,14 @@ static int nxp_simtemp_probe(struct platform_device *pdev)
     }
 
     device_data->wave_start_ns = ktime_get_ns();  
-    device_data->wave_period_us = 1000000 / device_data->frequency_hz;
-    device_data->current_temp = device_data->base_temp;
+    device_data->wave_period_us = 1000000 / DEFAULT_FREQUENCY;
+    device_data->base_temp = DEFAULT_BASE_TEMP;
+    device_data->amplitude_mC = DEFAULT_AMPLITUDE;
+    device_data->frequency_hz = DEFAULT_FREQUENCY;
+    device_data->alarm_high = DEFAULT_ALARM_HIGH;
+    device_data->alarm_low = DEFAULT_ALARM_LOW;
+    device_data->update_interval_ms = DEFAULT_UPDATE_MS;
+    device_data->current_temp = DEFAULT_BASE_TEMP;
     device_data->last_update = jiffies;
 
     mutex_init(&device_data->lock);
@@ -366,10 +455,10 @@ static int nxp_simtemp_probe(struct platform_device *pdev)
         printk(KERN_ERR "NXP SimTemp: Error agregando char device\n");
         goto error_cdev;
     }
-    pr_info("nxp_simtemp: cdev_add successful\n");
-
-    // CORREGIDO: Solo UNA llamada a device_create con device_data como drvdata
-    device_data->device = device_create(simtemp_class, NULL, dev_number, device_data, "simtemp");
+    
+    /* Crear dispositivo */
+    device_data->device = device_create(simtemp_class, NULL, dev_number, 
+                                       device_data, "simtemp");
     if (IS_ERR(device_data->device)) {
         ret = PTR_ERR(device_data->device);
         pr_err("nxp_simtemp: device_create failed: %d\n", ret);
@@ -386,10 +475,21 @@ static int nxp_simtemp_probe(struct platform_device *pdev)
         goto error_sysfs;
     }
 
-    platform_set_drvdata(pdev, device_data);
-    printk(KERN_INFO "NXP SimTemp: Driver inicializado desde DT\n");
+    /* === NUEVO: Registrar Platform Driver === */
+    ret = platform_driver_register(&nxp_simtemp_driver);
+    if (ret) {
+        printk(KERN_ERR "NXP SimTemp: Error registrando platform driver\n");
+        goto error_platform;
+    }
+    
+    printk(KERN_INFO "NXP SimTemp: Driver inicializado. Device: /dev/simtemp\n");
+    printk(KERN_INFO "NXP SimTemp: Temp inicial: %d mC, Intervalo: %u ms\n",
+           device_data->current_temp, device_data->update_interval_ms);
+    
     return 0;
 
+error_platform:
+    sysfs_remove_group(&device_data->device->kobj, &nxp_simtemp_attr_group);
 error_sysfs:
     device_destroy(simtemp_class, dev_number);
 error_device:
@@ -404,15 +504,14 @@ error_class:
     return ret;
 }
 
-/* Función remove */
-static int nxp_simtemp_remove(struct platform_device *pdev)
+/* Función de limpieza del módulo - MANTENIDA */
+static void __exit nxp_simtemp_exit(void)
 {
-    struct nxp_simtemp_data *device_data = platform_get_drvdata(pdev);
-    //struct class *simtemp_class = device_data->device->class;
-    struct class *simtemp_class = (struct class *)device_data->device->class;
-
-    printk(KERN_INFO "NXP SimTemp: Removing device...\n");
-
+    printk(KERN_INFO "NXP SimTemp: Descargando módulo...\n");
+    
+    /* === NUEVO: Unregister platform driver === */
+    platform_driver_unregister(&nxp_simtemp_driver);
+    
     if (device_data) {
         del_timer_sync(&device_data->timer);
         sysfs_remove_group(&device_data->device->kobj, &nxp_simtemp_attr_group);
