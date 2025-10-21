@@ -265,7 +265,7 @@ static struct attribute_group nxp_simtemp_attr_group = {
     .name = NULL,
 };
 
-/* Función probe */
+/* Función probe - CORREGIDA */
 static int nxp_simtemp_probe(struct platform_device *pdev)
 {
     struct nxp_simtemp_data *device_data;
@@ -274,7 +274,7 @@ static int nxp_simtemp_probe(struct platform_device *pdev)
     dev_t dev_number;
     struct class *simtemp_class;
     int ret;
-
+    pr_info("nxp_simtemp: probe() started\n");
     printk(KERN_INFO "NXP SimTemp: Probing device...\n");
 
     ret = alloc_chrdev_region(&dev_number, 0, 1, "nxp_simtemp");
@@ -282,14 +282,22 @@ static int nxp_simtemp_probe(struct platform_device *pdev)
         printk(KERN_ERR "NXP SimTemp: Error reservando dispositivo\n");
         return ret;
     }
+    pr_info("nxp_simtemp: chrdev_region allocated major=%d minor=%d\n", 
+            MAJOR(dev_number), MINOR(dev_number));
 
     //simtemp_class = class_create(THIS_MODULE, "nxp_simtemp");
     simtemp_class = class_create("nxp_simtemp");
     if (IS_ERR(simtemp_class)) {
         ret = PTR_ERR(simtemp_class);
+         pr_err("nxp_simtemp: class_create failed: %d\n", ret);
         goto error_class;
     }
-
+    pr_info("nxp_simtemp: class created successfully\n");
+    
+    // ELIMINADO: device_create duplicado
+    // device_create(simtemp_class, NULL, dev_number, NULL, "simtemp");
+    // pr_info("nxp_simtemp: device_create called\n");
+    
     device_data = kzalloc(sizeof(struct nxp_simtemp_data), GFP_KERNEL);
     if (!device_data) {
         ret = -ENOMEM;
@@ -352,17 +360,22 @@ static int nxp_simtemp_probe(struct platform_device *pdev)
     cdev_init(&device_data->cdev, &nxp_simtemp_fops);
     device_data->cdev.owner = THIS_MODULE;
 
+    // MOVIDO: cdev_add ANTES de device_create
     ret = cdev_add(&device_data->cdev, dev_number, 1);
     if (ret < 0) {
         printk(KERN_ERR "NXP SimTemp: Error agregando char device\n");
         goto error_cdev;
     }
+    pr_info("nxp_simtemp: cdev_add successful\n");
 
-    device_data->device = device_create(simtemp_class, NULL, dev_number, NULL, "simtemp");
+    // CORREGIDO: Solo UNA llamada a device_create con device_data como drvdata
+    device_data->device = device_create(simtemp_class, NULL, dev_number, device_data, "simtemp");
     if (IS_ERR(device_data->device)) {
         ret = PTR_ERR(device_data->device);
+        pr_err("nxp_simtemp: device_create failed: %d\n", ret);
         goto error_device;
     }
+    pr_info("nxp_simtemp: device_create successful\n");
 
     /* IMPORTANTE: Set driver data para sysfs */
     dev_set_drvdata(device_data->device, device_data);
