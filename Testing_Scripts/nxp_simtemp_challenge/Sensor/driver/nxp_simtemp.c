@@ -85,6 +85,9 @@ static void update_temperature(struct timer_list *t)
 /* Operaciones del char device */
 static int nxp_simtemp_open(struct inode *inode, struct file *filp)
 {
+    struct nxp_simtemp_data *data = container_of(inode->i_cdev, 
+                                                struct nxp_simtemp_data, cdev);
+    filp->private_data = data;
     printk(KERN_DEBUG "NXP SimTemp: Dispositivo abierto\n");
     return 0;
 }
@@ -98,7 +101,7 @@ static int nxp_simtemp_release(struct inode *inode, struct file *filp)
 static ssize_t nxp_simtemp_read(struct file *filp, char __user *buf, 
                                size_t count, loff_t *f_pos)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = filp->private_data;
     struct simtemp_sample sample;
     
     if (count < sizeof(sample)) 
@@ -122,7 +125,7 @@ static ssize_t nxp_simtemp_read(struct file *filp, char __user *buf,
 
 static __poll_t nxp_simtemp_poll(struct file *filp, poll_table *wait)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = filp->private_data;
     __poll_t mask = 0;
     
     poll_wait(filp, &data->wait_queue, wait);
@@ -144,24 +147,24 @@ static struct file_operations nxp_simtemp_fops = {
     .poll = nxp_simtemp_poll,
 };
 
-/* Sysfs attributes */
+/* Sysfs attributes - CORREGIDAS */
 static ssize_t temperature_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     return sprintf(buf, "%d\n", data->current_temp);
 }
 static DEVICE_ATTR_RO(temperature);
 
 static ssize_t threshold_high_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     return sprintf(buf, "%d\n", data->alarm_high);
 }
 
 static ssize_t threshold_high_store(struct device *dev, struct device_attribute *attr,
                                    const char *buf, size_t count)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     int new_threshold;
     
     if (kstrtoint(buf, 10, &new_threshold))
@@ -176,14 +179,14 @@ static DEVICE_ATTR_RW(threshold_high);
 
 static ssize_t threshold_low_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     return sprintf(buf, "%d\n", data->alarm_low);
 }
 
 static ssize_t threshold_low_store(struct device *dev, struct device_attribute *attr,
                                    const char *buf, size_t count)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     int new_threshold;
     
     if (kstrtoint(buf, 10, &new_threshold))
@@ -198,14 +201,14 @@ static DEVICE_ATTR_RW(threshold_low);
 
 static ssize_t sampling_ms_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     return sprintf(buf, "%u\n", data->update_interval_ms);
 }
 
 static ssize_t sampling_ms_store(struct device *dev, struct device_attribute *attr,
                                 const char *buf, size_t count)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     unsigned int new_interval;
     
     if (kstrtouint(buf, 10, &new_interval) || new_interval < 10 || new_interval > 10000)
@@ -221,14 +224,14 @@ static DEVICE_ATTR_RW(sampling_ms);
 
 static ssize_t amplitude_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     return sprintf(buf, "%d\n", data->amplitude_mC);
 }
 
 static ssize_t amplitude_store(struct device *dev, struct device_attribute *attr,
                               const char *buf, size_t count)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     int new_amplitude;
     
     if (kstrtoint(buf, 10, &new_amplitude) || new_amplitude < 0)
@@ -266,14 +269,14 @@ static DEVICE_ATTR_RW(base_temp);
 
 static ssize_t frequency_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     return sprintf(buf, "%d\n", data->frequency_hz);
 }
 
 static ssize_t frequency_store(struct device *dev, struct device_attribute *attr,
                               const char *buf, size_t count)
 {
-    struct nxp_simtemp_data *data = device_data;
+    struct nxp_simtemp_data *data = dev_get_drvdata(dev);
     int new_frequency;
     
     if (kstrtoint(buf, 10, &new_frequency) || new_frequency <= 0)
@@ -349,11 +352,15 @@ static int nxp_simtemp_remove(struct platform_device *pdev)
 /* Función de inicialización del módulo - MANTENIDA */
 static int __init nxp_simtemp_init(void)
 {
+    struct nxp_simtemp_data *device_data;
+    struct device *dev = &pdev->dev;
+    struct device_node *np = dev->of_node;
+    dev_t dev_number;
+    struct class *simtemp_class;
     int ret;
-    
-    printk(KERN_INFO "NXP SimTemp: Iniciando módulo...\n");
-    
-    /* Reservar número de dispositivo */
+    pr_info("nxp_simtemp: probe() started\n");
+    printk(KERN_INFO "NXP SimTemp: Probing device...\n");
+
     ret = alloc_chrdev_region(&dev_number, 0, 1, "nxp_simtemp");
     if (ret < 0) {
         printk(KERN_ERR "NXP SimTemp: Error reservando dispositivo\n");
@@ -365,17 +372,62 @@ static int __init nxp_simtemp_init(void)
     //simtemp_class = class_create("nxp_simtemp");
     if (IS_ERR(simtemp_class)) {
         ret = PTR_ERR(simtemp_class);
+         pr_err("nxp_simtemp: class_create failed: %d\n", ret);
         goto error_class;
     }
+    pr_info("nxp_simtemp: class created successfully\n");
     
-    /* Allocar estructura de datos */
+    // ELIMINADO: device_create duplicado
+    // device_create(simtemp_class, NULL, dev_number, NULL, "simtemp");
+    // pr_info("nxp_simtemp: device_create called\n");
+    
     device_data = kzalloc(sizeof(struct nxp_simtemp_data), GFP_KERNEL);
     if (!device_data) {
         ret = -ENOMEM;
         goto error_alloc;
     }
-    
-    /* Inicializar con valores por defecto */
+
+    /* Parsear Device Tree */
+    if (np) {
+        u32 value;
+        if (!of_property_read_u32(np, "temp-base", &value))
+            device_data->base_temp = value;
+        else
+            device_data->base_temp = DEFAULT_BASE_TEMP;
+
+        if (!of_property_read_u32(np, "amplitude", &value))
+            device_data->amplitude_mC = value;
+        else
+            device_data->amplitude_mC = DEFAULT_AMPLITUDE;
+
+        if (!of_property_read_u32(np, "frequency", &value))
+            device_data->frequency_hz = value;
+        else
+            device_data->frequency_hz = DEFAULT_FREQUENCY;
+
+        if (!of_property_read_u32(np, "alarm-high", &value))
+            device_data->alarm_high = value;
+        else
+            device_data->alarm_high = DEFAULT_ALARM_HIGH;
+
+        if (!of_property_read_u32(np, "alarm-low", &value))
+            device_data->alarm_low = value;
+        else
+            device_data->alarm_low = DEFAULT_ALARM_LOW;
+
+        if (!of_property_read_u32(np, "update-interval", &value))
+            device_data->update_interval_ms = value;
+        else
+            device_data->update_interval_ms = DEFAULT_UPDATE_MS;
+    } else {
+        device_data->base_temp = DEFAULT_BASE_TEMP;
+        device_data->amplitude_mC = DEFAULT_AMPLITUDE;
+        device_data->frequency_hz = DEFAULT_FREQUENCY;
+        device_data->alarm_high = DEFAULT_ALARM_HIGH;
+        device_data->alarm_low = DEFAULT_ALARM_LOW;
+        device_data->update_interval_ms = DEFAULT_UPDATE_MS;
+    }
+
     device_data->wave_start_ns = ktime_get_ns();  
     device_data->wave_period_us = 1000000 / DEFAULT_FREQUENCY;
     device_data->base_temp = DEFAULT_BASE_TEMP;
@@ -386,20 +438,18 @@ static int __init nxp_simtemp_init(void)
     device_data->update_interval_ms = DEFAULT_UPDATE_MS;
     device_data->current_temp = DEFAULT_BASE_TEMP;
     device_data->last_update = jiffies;
-    
-    /* Inicializar mutex y wait queue */
+
     mutex_init(&device_data->lock);
     init_waitqueue_head(&device_data->wait_queue);
-    
-    /* Configurar timer */
+
     timer_setup(&device_data->timer, update_temperature, 0);
     mod_timer(&device_data->timer, 
               jiffies + msecs_to_jiffies(device_data->update_interval_ms));
-    
-    /* Configurar char device */
+
     cdev_init(&device_data->cdev, &nxp_simtemp_fops);
     device_data->cdev.owner = THIS_MODULE;
-    
+
+    // MOVIDO: cdev_add ANTES de device_create
     ret = cdev_add(&device_data->cdev, dev_number, 1);
     if (ret < 0) {
         printk(KERN_ERR "NXP SimTemp: Error agregando char device\n");
@@ -411,10 +461,14 @@ static int __init nxp_simtemp_init(void)
                                        device_data, "simtemp");
     if (IS_ERR(device_data->device)) {
         ret = PTR_ERR(device_data->device);
+        pr_err("nxp_simtemp: device_create failed: %d\n", ret);
         goto error_device;
     }
-    
-    /* Crear sysfs attributes */
+    pr_info("nxp_simtemp: device_create successful\n");
+
+    /* IMPORTANTE: Set driver data para sysfs */
+    dev_set_drvdata(device_data->device, device_data);
+
     ret = sysfs_create_group(&device_data->device->kobj, &nxp_simtemp_attr_group);
     if (ret) {
         printk(KERN_ERR "NXP SimTemp: Error creando sysfs\n");
@@ -459,23 +513,27 @@ static void __exit nxp_simtemp_exit(void)
     platform_driver_unregister(&nxp_simtemp_driver);
     
     if (device_data) {
-        /* Limpieza en orden inverso */
         del_timer_sync(&device_data->timer);
         sysfs_remove_group(&device_data->device->kobj, &nxp_simtemp_attr_group);
-        device_destroy(simtemp_class, dev_number);
+        device_destroy(simtemp_class, device_data->cdev.dev);
         cdev_del(&device_data->cdev);
+        unregister_chrdev_region(device_data->cdev.dev, 1);
+        class_destroy(simtemp_class);
         kfree(device_data);
-        device_data = NULL;
     }
-    
-    class_destroy(simtemp_class);
-    unregister_chrdev_region(dev_number, 1);
-    
-    printk(KERN_INFO "NXP SimTemp: Driver descargado correctamente\n");
+    return 0;
 }
 
-module_init(nxp_simtemp_init);
-module_exit(nxp_simtemp_exit);
+/* Platform driver */
+static struct platform_driver nxp_simtemp_driver = {
+    .probe = nxp_simtemp_probe,
+    .remove = nxp_simtemp_remove,
+    .driver = {
+        .name = "nxp-simtemp",
+        .of_match_table = nxp_simtemp_of_match,
+    },
+};
+module_platform_driver(nxp_simtemp_driver);
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Tonatiuh Velazquez");

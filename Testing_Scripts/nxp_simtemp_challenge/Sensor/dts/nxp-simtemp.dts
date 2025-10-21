@@ -1,0 +1,20 @@
+/dts-v1/;
+/plugin/;
+
+/ {
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            nxp_simtemp: nxp-simtemp@0 {
+                compatible = "nxp,simtemp";
+                temp-base = <25000>;
+                amplitude = <0>;
+                frequency = <100>;
+                alarm-high = <30000>;
+                alarm-low = <20000>;
+                update-interval = <1000>;
+                status = "okay";
+            };
+        };
+    };
+};
