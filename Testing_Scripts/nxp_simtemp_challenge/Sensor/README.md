@@ -82,11 +82,11 @@ Scripts
 Parámetros del Sensor (vía Sysfs)
 bash
 # Sampling interval (ms)
-echo 500 > /sys/class/nxp_simtemp/simtemp/sampling_ms
+echo 500 | sudo tee /sys/class/nxp_simtemp/simtemp/sampling_ms
 
 # Temperature thresholds (°C)
-echo 30000 > /sys/class/nxp_simtemp/simtemp/threshold_high
-echo 20000 > /sys/class/nxp_simtemp/simtemp/threshold_low
+echo 30000 | sudo tee /sys/class/nxp_simtemp/simtemp/threshold_high
+echo 20000 | sudo tee /sys/class/nxp_simtemp/simtemp/threshold_low
 
 # Wave parameters
 echo 10000 | sudo tee /sys/class/nxp_simtemp/simtemp/amplitude
@@ -136,4 +136,5 @@ Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
 
