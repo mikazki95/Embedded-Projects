@@ -8,13 +8,28 @@
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 #include <linux/poll.h>  
-//#include <linux/math.h>
 #include "nxp_simtemp.h"
+
+/* Platform Driver Components === */
+static const struct of_device_id nxp_simtemp_of_match[] = {
+    { .compatible = "nxp,simtemp" },
+    { } /* Sentinel */
+};
+MODULE_DEVICE_TABLE(of, nxp_simtemp_of_match);
+
+static struct platform_driver nxp_simtemp_driver = {
+    .probe = nxp_simtemp_probe,
+    .remove = nxp_simtemp_remove,
+    .driver = {
+        .name = "nxp-simtemp",
+        .of_match_table = nxp_simtemp_of_match,
+    },
+};
+
 
 static dev_t dev_number;
 static struct class *simtemp_class;
 static struct nxp_simtemp_data *device_data;
-
 
 /* Función para simular temperatura con onda sinusoidal */
 static int simulate_temperature(struct nxp_simtemp_data *data)
@@ -26,22 +41,19 @@ static int simulate_temperature(struct nxp_simtemp_data *data)
         return data->base_temp;
     
     now_ns = ktime_get_ns();
-    
-    // Convertir nanosegundos a MICROSEGUNDOS (consistencia)
     elapsed_us = div_u64(now_ns - data->wave_start_ns, 1000);
-    
-    // Usar wave_period_US (no ms)
     position = elapsed_us;
     do_div(position, data->wave_period_us);  
     
     half_period = data->wave_period_us / 2;
     if (half_period == 0) {
-    half_period = 1;  // Evitar división por cero
+        half_period = 1;
     }
     variation = data->amplitude_mC * ((int)position - half_period) / half_period;
     
     return data->base_temp + variation;
 }
+
 /* Timer callback - actualiza temperatura y verifica alarmas */
 static void update_temperature(struct timer_list *t)
 {
@@ -49,17 +61,13 @@ static void update_temperature(struct timer_list *t)
     bool old_alarm_state;
     
     mutex_lock(&data->lock);
-    
-    /* Actualizar temperatura */
     data->current_temp = simulate_temperature(data);
     data->last_update = jiffies;
     
-    /* Verificar si cambió el estado de alarma */
     old_alarm_state = data->alarm_active;
     data->alarm_active = (data->current_temp >= data->alarm_high) || 
                          (data->current_temp <= data->alarm_low);
     
-    /* Despertar wait_queue si cambió el estado de alarma */
     if (data->alarm_active != old_alarm_state) {
         wake_up_interruptible(&data->wait_queue);
         printk(KERN_INFO "NXP SimTemp: Alarma %s - Temp: %d mC\n",
@@ -67,9 +75,7 @@ static void update_temperature(struct timer_list *t)
                data->current_temp);
     }
     
-    /* Reprogramar timer */
     mod_timer(&data->timer, jiffies + msecs_to_jiffies(data->update_interval_ms));
-    
     mutex_unlock(&data->lock);
 }
 
@@ -96,8 +102,6 @@ static ssize_t nxp_simtemp_read(struct file *filp, char __user *buf,
         return -EINVAL;
     
     mutex_lock(&data->lock);
-    
-    /* Llenar estructura de muestra */
     sample.timestamp_ns = ktime_get_ns();
     sample.temp_mC = data->current_temp;
     sample.flags = SIMTEMP_FLAG_NEW_SAMPLE;
@@ -107,7 +111,6 @@ static ssize_t nxp_simtemp_read(struct file *filp, char __user *buf,
     
     mutex_unlock(&data->lock);
     
-    /* Copiar a espacio de usuario */
     if (copy_to_user(buf, &sample, sizeof(sample))) 
         return -EFAULT;
     
@@ -120,18 +123,13 @@ static __poll_t nxp_simtemp_poll(struct file *filp, poll_table *wait)
     __poll_t mask = 0;
     
     poll_wait(filp, &data->wait_queue, wait);
-    
     mutex_lock(&data->lock);
-    
-    /* Siempre hay datos para leer (nueva muestra) */
     mask |= POLLIN | POLLRDNORM;
     
-    /* Alertas de threshold */
     if (data->alarm_active)
         mask |= POLLPRI;
     
     mutex_unlock(&data->lock);
-    
     return mask;
 }
 
@@ -169,7 +167,6 @@ static ssize_t threshold_high_store(struct device *dev, struct device_attribute 
     mutex_lock(&data->lock);
     data->alarm_high = new_threshold;
     mutex_unlock(&data->lock);
-    
     return count;
 }
 static DEVICE_ATTR_RW(threshold_high);
@@ -192,7 +189,6 @@ static ssize_t threshold_low_store(struct device *dev, struct device_attribute *
     mutex_lock(&data->lock);
     data->alarm_low = new_threshold;
     mutex_unlock(&data->lock);
-    
     return count;
 }
 static DEVICE_ATTR_RW(threshold_low);
@@ -214,10 +210,7 @@ static ssize_t sampling_ms_store(struct device *dev, struct device_attribute *at
     
     mutex_lock(&data->lock);
     data->update_interval_ms = new_interval;
-    
-    /* Reprogramar timer con nuevo intervalo */
     mod_timer(&data->timer, jiffies + msecs_to_jiffies(new_interval));
-    
     mutex_unlock(&data->lock);
     return count;
 }
@@ -241,12 +234,10 @@ static ssize_t amplitude_store(struct device *dev, struct device_attribute *attr
     mutex_lock(&data->lock);
     data->amplitude_mC = new_amplitude;
     mutex_unlock(&data->lock);
-    
     return count;
 }
 static DEVICE_ATTR_RW(amplitude);
 
-/* Sysfs para temperatura base */
 static ssize_t base_temp_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
     struct nxp_simtemp_data *data = device_data;
@@ -264,12 +255,8 @@ static ssize_t base_temp_store(struct device *dev, struct device_attribute *attr
     
     mutex_lock(&data->lock);
     data->base_temp = new_base_temp;
-    
-    // Reiniciar la onda para que empiece desde la nueva base
     data->wave_start_ns = ktime_get_ns();
-    
     mutex_unlock(&data->lock);
-    
     return count;
 }
 static DEVICE_ATTR_RW(base_temp);
@@ -291,12 +278,8 @@ static ssize_t frequency_store(struct device *dev, struct device_attribute *attr
     
     mutex_lock(&data->lock);
     data->frequency_hz = new_frequency;
-    
-    data->wave_period_us = 1000000 / new_frequency;  // CAMBIAR: Hz → us
-    
-    // Reiniciar contador de onda
+    data->wave_period_us = 1000000 / new_frequency;
     data->wave_start_ns = ktime_get_ns();
-    
     mutex_unlock(&data->lock);
     return count;
 }
@@ -318,7 +301,49 @@ static struct attribute_group nxp_simtemp_attr_group = {
     .name = NULL,
 };
 
-/* Función de inicialización del módulo */
+/* === NUEVO: Platform Driver Functions === */
+static int nxp_simtemp_probe(struct platform_device *pdev)
+{
+    struct device *dev = &pdev->dev;
+    struct device_node *np = dev->of_node;
+    
+    printk(KERN_INFO "NXP SimTemp: Platform device probed (DT compatible)\n");
+    
+    /* Parsear Device Tree si existe */
+    if (np) {
+        u32 value;
+        if (!of_property_read_u32(np, "temp-base", &value))
+            device_data->base_temp = value;
+
+        if (!of_property_read_u32(np, "amplitude", &value))
+            device_data->amplitude_mC = value;
+
+        if (!of_property_read_u32(np, "frequency", &value))
+            device_data->frequency_hz = value;
+
+        if (!of_property_read_u32(np, "alarm-high", &value))
+            device_data->alarm_high = value;
+
+        if (!of_property_read_u32(np, "alarm-low", &value))
+            device_data->alarm_low = value;
+
+        if (!of_property_read_u32(np, "update-interval", &value))
+            device_data->update_interval_ms = value;
+            
+        printk(KERN_INFO "NXP SimTemp: Configurado desde Device Tree\n");
+    }
+    
+    return 0;
+}
+
+static int nxp_simtemp_remove(struct platform_device *pdev)
+{
+    printk(KERN_INFO "NXP SimTemp: Platform device removed\n");
+    return 0;
+}
+/* === FIN NUEVO === */
+
+/* Función de inicialización del módulo - MANTENIDA */
 static int __init nxp_simtemp_init(void)
 {
     int ret;
@@ -333,8 +358,8 @@ static int __init nxp_simtemp_init(void)
     }
     
     /* Crear clase de dispositivo */
-    //simtemp_class = class_create(THIS_MODULE, "nxp_simtemp");
-    simtemp_class = class_create("nxp_simtemp");
+    simtemp_class = class_create(THIS_MODULE, "nxp_simtemp");
+    //simtemp_class = class_create("nxp_simtemp");
     if (IS_ERR(simtemp_class)) {
         ret = PTR_ERR(simtemp_class);
         goto error_class;
@@ -349,7 +374,7 @@ static int __init nxp_simtemp_init(void)
     
     /* Inicializar con valores por defecto */
     device_data->wave_start_ns = ktime_get_ns();  
-    device_data->wave_period_us = 1000000 / DEFAULT_FREQUENCY;  // CAMBIAR: Hz → us
+    device_data->wave_period_us = 1000000 / DEFAULT_FREQUENCY;
     device_data->base_temp = DEFAULT_BASE_TEMP;
     device_data->amplitude_mC = DEFAULT_AMPLITUDE;
     device_data->frequency_hz = DEFAULT_FREQUENCY;
@@ -380,7 +405,7 @@ static int __init nxp_simtemp_init(void)
     
     /* Crear dispositivo */
     device_data->device = device_create(simtemp_class, NULL, dev_number, 
-                                       NULL, "simtemp");
+                                       device_data, "simtemp");
     if (IS_ERR(device_data->device)) {
         ret = PTR_ERR(device_data->device);
         goto error_device;
@@ -392,6 +417,13 @@ static int __init nxp_simtemp_init(void)
         printk(KERN_ERR "NXP SimTemp: Error creando sysfs\n");
         goto error_sysfs;
     }
+
+    /* === NUEVO: Registrar Platform Driver === */
+    ret = platform_driver_register(&nxp_simtemp_driver);
+    if (ret) {
+        printk(KERN_ERR "NXP SimTemp: Error registrando platform driver\n");
+        goto error_platform;
+    }
     
     printk(KERN_INFO "NXP SimTemp: Driver inicializado. Device: /dev/simtemp\n");
     printk(KERN_INFO "NXP SimTemp: Temp inicial: %d mC, Intervalo: %u ms\n",
@@ -399,6 +431,8 @@ static int __init nxp_simtemp_init(void)
     
     return 0;
 
+error_platform:
+    sysfs_remove_group(&device_data->device->kobj, &nxp_simtemp_attr_group);
 error_sysfs:
     device_destroy(simtemp_class, dev_number);
 error_device:
@@ -413,10 +447,13 @@ error_class:
     return ret;
 }
 
-/* Función de limpieza del módulo */
+/* Función de limpieza del módulo - MANTENIDA */
 static void __exit nxp_simtemp_exit(void)
 {
     printk(KERN_INFO "NXP SimTemp: Descargando módulo...\n");
+    
+    /* === NUEVO: Unregister platform driver === */
+    platform_driver_unregister(&nxp_simtemp_driver);
     
     if (device_data) {
         /* Limpieza en orden inverso */
@@ -440,4 +477,4 @@ module_exit(nxp_simtemp_exit);
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Tonatiuh Velazquez");
 MODULE_DESCRIPTION("NXP Simulated Temperature Sensor Driver");
-MODULE_VERSION("1.0");
+MODULE_VERSION("2.0");
