@@ -1,23 +1,19 @@
 pegar aca 
 tona@UbuntuLTS:~/Desktop/Embedded-Projects/Testing_Scripts/nxp_simtemp_challenge
-/Sensor/driver$ sudo dmesg | tail -20
-[   55.988965] audit: type=1400 audit(1761014415.847:66): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snap-store.snap-store" pid=1276 comm="apparmor_parser"
-[   63.333355] audit: type=1400 audit(1761014423.190:67): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snap-store.ubuntu-software" pid=1359 comm="apparmor_parser"
-[   63.442074] audit: type=1400 audit(1761014423.300:68): apparmor="STATUS" operation="profile_replace" profile="unconfined" name="snap.snap-store.ubuntu-software-local-file" pid=1362 comm="apparmor_parser"
-[  236.278513] rfkill: input handler enabled
-[  244.138990] ISO 9660 Extensions: Microsoft Joliet Level 3
-[  244.139750] ISO 9660 Extensions: RRIP_1991A
-[  245.230932] rfkill: input handler disabled
-[  263.797145] audit: type=1326 audit(1761014623.660:69): auid=1000 uid=1000 gid=1000 ses=3 subj=snap.snap-store.ubuntu-software pid=1960 comm="snap-store" exe="/snap/snap-store/1216/usr/bin/snap-store" sig=0 arch=c000003e syscall=93 compat=0 ip=0x720e214cba9b code=0x50000
-[  263.897066] audit: type=1107 audit(1761014623.760:70): pid=628 uid=102 auid=4294967295 ses=4294967295 subj=unconfined msg='apparmor="DENIED" operation="dbus_method_call"  bus="system" path="/org/freedesktop/PolicyKit1/Authority" interface="org.freedesktop.DBus.Properties" member="GetAll" mask="send" name=":1.9" pid=1960 label="snap.snap-store.ubuntu-software" peer_pid=653 peer_label="unconfined"
-                exe="/usr/bin/dbus-daemon" sauid=102 hostname=? addr=? terminal=?'
-[  263.898050] audit: type=1107 audit(1761014623.761:71): pid=628 uid=102 auid=4294967295 ses=4294967295 subj=unconfined msg='apparmor="DENIED" operation="dbus_method_call"  bus="system" path="/org/freedesktop/PolicyKit1/Authority" interface="org.freedesktop.PolicyKit1.Authority" member="CheckAuthorization" mask="send" name=":1.9" pid=1960 label="snap.snap-store.ubuntu-software" peer_pid=653 peer_label="unconfined"
-                exe="/usr/bin/dbus-daemon" sauid=102 hostname=? addr=? terminal=?'
-[  263.911700] audit: type=1107 audit(1761014623.775:72): pid=628 uid=102 auid=4294967295 ses=4294967295 subj=unconfined msg='apparmor="DENIED" operation="dbus_method_call"  bus="system" path="/org/freedesktop/PolicyKit1/Authority" interface="org.freedesktop.DBus.Properties" member="GetAll" mask="send" name=":1.9" pid=1960 label="snap.snap-store.ubuntu-software" peer_pid=653 peer_label="unconfined"
-                exe="/usr/bin/dbus-daemon" sauid=102 hostname=? addr=? terminal=?'
-[  263.912742] audit: type=1107 audit(1761014623.776:73): pid=628 uid=102 auid=4294967295 ses=4294967295 subj=unconfined msg='apparmor="DENIED" operation="dbus_method_call"  bus="system" path="/org/freedesktop/PolicyKit1/Authority" interface="org.freedesktop.PolicyKit1.Authority" member="CheckAuthorization" mask="send" name=":1.9" pid=1960 label="snap.snap-store.ubuntu-software" peer_pid=653 peer_label="unconfined"
-                exe="/usr/bin/dbus-daemon" sauid=102 hostname=? addr=? terminal=?'
-[  265.260051] audit: type=1400 audit(1761014625.123:74): apparmor="DENIED" operation="open" class="file" profile="snap.snap-store.ubuntu-software" name="/etc/appstream.conf" pid=1960 comm="snap-store" requested_mask="r" denied_mask="r" fsuid=1000 ouid=0
-[  320.448607] audit: type=1326 audit(1761014680.311:75): auid=1000 uid=1000 gid=1000 ses=3 subj=snap.snap-store.ubuntu-software pid=1960 comm="pool-org.gnome." exe="/snap/snap-store/1216/usr/bin/snap-store" sig=0 arch=c000003e syscall=93 compat=0 ip=0x720e214cba9b code=0x50000
+/Sensor/driver$ git push origin main 
+Username for 'https://github.com': mikazki95
+Password for 'https://mikazki95@github.com': 
+remote: Invalid username or token. Password authentication is not supported for Git operations.
+fatal: Authentication failed for 'https://github.com/mikazki95/Embedded-Projects.git/'
+tona@UbuntuLTS:~/Desktop/Embedded-Projects/Testing_Scripts/nxp_simtemp_challenge
+/Sensor/driver$ sudo find /sys -name "*simtemp*" 2>/dev/null
+[sudo] password for tona: 
+/sys/bus/platform/drivers/nxp-simtemp
+/sys/module/nxp_simtemp
+tona@UbuntuLTS:~/Desktop/Embedded-Projects/Testing_Scripts/nxp_simtemp_challenge/Sensor/                                                                     
+tona@UbuntuLTS:~/Desktop/Embedded-Projects/Testing_Scripts/nxp_simtemp_challenge
+/Sensor/driver$ sudo dmesg | grep -i "simtemp\|class_crate\|device_create"
 [  445.473048] nxp_simtemp: loading out-of-tree module taints kernel.
 [  445.473069] nxp_simtemp: module verification failed: signature and/or required key missing - tainting kernel
+tona@UbuntuLTS:~/Desktop/Embedded-Projects/Testing_Scripts/nxp_simtemp_challenge
+/Sensor/driver$ 
