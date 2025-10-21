@@ -10,6 +10,9 @@
 #include <linux/poll.h>  
 #include "nxp_simtemp.h"
 
+static int nxp_simtemp_probe(struct platform_device *pdev);
+static int nxp_simtemp_remove(struct platform_device *pdev);
+
 /* Platform Driver Components === */
 static const struct of_device_id nxp_simtemp_of_match[] = {
     { .compatible = "nxp,simtemp" },
