@@ -246,6 +246,34 @@ static ssize_t amplitude_store(struct device *dev, struct device_attribute *attr
 }
 static DEVICE_ATTR_RW(amplitude);
 
+/* Sysfs para temperatura base */
+static ssize_t base_temp_show(struct device *dev, struct device_attribute *attr, char *buf)
+{
+    struct nxp_simtemp_data *data = device_data;
+    return sprintf(buf, "%d\n", data->base_temp);
+}
+
+static ssize_t base_temp_store(struct device *dev, struct device_attribute *attr,
+                              const char *buf, size_t count)
+{
+    struct nxp_simtemp_data *data = device_data;
+    int new_base_temp;
+    
+    if (kstrtoint(buf, 10, &new_base_temp))
+        return -EINVAL;
+    
+    mutex_lock(&data->lock);
+    data->base_temp = new_base_temp;
+    
+    // Reiniciar la onda para que empiece desde la nueva base
+    data->wave_start_ns = ktime_get_ns();
+    
+    mutex_unlock(&data->lock);
+    
+    return count;
+}
+static DEVICE_ATTR_RW(base_temp);
+
 static ssize_t frequency_show(struct device *dev, struct device_attribute *attr, char *buf)
 {
     struct nxp_simtemp_data *data = device_data;
@@ -281,6 +309,7 @@ static struct attribute *nxp_simtemp_attrs[] = {
     &dev_attr_sampling_ms.attr,
     &dev_attr_amplitude.attr,
     &dev_attr_frequency.attr,
+    &dev_attr_base_temp.attr,
     NULL,
 };
 
@@ -304,7 +333,8 @@ static int __init nxp_simtemp_init(void)
     }
     
     /* Crear clase de dispositivo */
-    simtemp_class = class_create(THIS_MODULE, "nxp_simtemp");
+    //simtemp_class = class_create(THIS_MODULE, "nxp_simtemp");
+    simtemp_class = class_create("nxp_simtemp");
     if (IS_ERR(simtemp_class)) {
         ret = PTR_ERR(simtemp_class);
         goto error_class;
