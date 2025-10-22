@@ -36,13 +36,13 @@ cd ../driver
 sudo rmmod nxp_simtemp
 📁 Estructura del Proyecto
 text
-simtemp/
-├── driver/                 # Kernel module
+Sensor/
+├── driver/                # Kernel module
 │   ├── nxp_simtemp.c      # Main driver source
 │   ├── nxp_simtemp.h      # Header file
 │   ├── Makefile
 │   └── dts/               # Device Tree sources
-├── /app/              # User space application
+├── /app/                  # User space application
 │   └── nxp_cli.py         # Python CLI tool
 ├── scripts/               # Build and demo scripts
 │   ├── build.sh
@@ -50,6 +50,9 @@ simtemp/
 └── docs/                  # Documentation
     ├── DESIGN.md
     └── AI_NOTES.md
+└── dts/                  # DTS
+    ├── nxp-simtemp.dts
+    └── nxp-simtemp.dtbo
 🎯 Características Implementadas
 Kernel Driver
 ✅ Platform driver con Device Tree binding
@@ -136,5 +139,6 @@ Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
 
 
