@@ -2,12 +2,13 @@
 
 ## 📋 Descripción
 Driver de kernel Linux que simula un sensor de temperatura virtual con capacidades de alerta y modificación de comportamiento, para esto hay funciones para modificar:
-- **Temperatura base.**: Driver de plataforma con binding Device Tree
-- **Frecuencia.**: `/dev/simtemp` para lectura de muestras
-- **Amplitud.**: Configuración en `/sys/class/nxp_simtemp/simtemp/`
-- **Alarma alta.**: Driver de plataforma con binding Device Tree
-- **Alarma baja.**: `/dev/simtemp` para lectura de muestras
-- Desarrollado como parte del challenge para Systems Software Engineer en NXP.
+- **Temperatura base.**: Para poder partir de cualquier punto deseado
+- **Frecuencia.**: Limitado de 1Hz a 1KHz, aunque puede cambiarse segun las necesidades
+- **Amplitud.**: Para una plasticidad de condiciones, con 0 no varía, lo cual es como modo normal, se podría modular la señal para una variación con ruido, el ruido podría hacerse en función o por datos aleatorios, pero la idea es la misma, así que por tiempos se dejo así.
+- **Alarma alta.**: 
+- **Alarma baja.**: 
+
+ Desarrollado como parte del challenge para Systems Software Engineer en NXP.
 
 
 ## 🏗️ Arquitectura
@@ -146,6 +147,7 @@ Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
 
 
 
