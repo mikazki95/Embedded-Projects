@@ -1,7 +1,14 @@
 # NXP Simulated Temperature Sensor Driver
 
 ## 📋 Descripción
-Driver de kernel Linux que simula un sensor de temperatura virtual con capacidades de alerta. Desarrollado como parte del challenge para Systems Software Engineer en NXP.
+Driver de kernel Linux que simula un sensor de temperatura virtual con capacidades de alerta y modificación de comportamiento, para esto hay funciones para modificar:
+Temperatura base.
+Frecuencia. 
+Amplitud. 
+Alarma alta.
+Alarma baja.
+Desarrollado como parte del challenge para Systems Software Engineer en NXP.
+
 
 ## 🏗️ Arquitectura
 - **Kernel Module**: Driver de plataforma con binding Device Tree
@@ -139,6 +146,7 @@ Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
 
 
 
