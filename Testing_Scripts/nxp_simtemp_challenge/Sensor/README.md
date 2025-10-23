@@ -3,7 +3,7 @@
 ## 📋 Descripción
 Driver de kernel Linux que simula un sensor de temperatura virtual con capacidades de alerta y modificación de comportamiento, para esto hay funciones para modificar:
 - **Temperatura base.**: Para poder partir de cualquier punto deseado
-- **Frecuencia.**: Limitado de 1Hz a 1KHz, aunque puede cambiarse segun las necesidades
+- **Frecuencia.**: Valores típicos 1Hz-1KHz. Límite superior depende de la resolución del timer del kernel.
 - **Amplitud.**: Para una plasticidad de condiciones, con 0 no varía, lo cual es como modo normal, se podría modular la señal para una variación con ruido, el ruido podría hacerse en función o por datos aleatorios, pero la idea es la misma, así que por tiempos se dejo así.
 - **Alarma alta.**: 
 - **Alarma baja.**: 
@@ -147,6 +147,7 @@ Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
 
 
 
