@@ -22,5 +22,7 @@ static struct platform_driver nxp_simtemp_driver = {
         .of_match_table = nxp_simtemp_of_match,
     },
 };
+```
 ``
 aca no va codigo 
+
