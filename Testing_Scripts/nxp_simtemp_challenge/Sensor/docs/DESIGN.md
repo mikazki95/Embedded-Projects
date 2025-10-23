@@ -23,6 +23,8 @@ static struct platform_driver nxp_simtemp_driver = {
     },
 };
 ``
+2. Binding Device Tree
+
 nxp_simtemp: nxp-simtemp@0 {
     compatible = "nxp,simtemp";
     temp-base = <25000>;       /* 25.0°C base */
@@ -89,5 +91,6 @@ data->alarm_active = (temp >= data->alarm_high) || (temp <= data->alarm_low);
 if (data->alarm_active != old_alarm_state) {
     wake_up_interruptible(&data->wait_queue); /* Despertar procesos en poll */
 }
+
 
 
