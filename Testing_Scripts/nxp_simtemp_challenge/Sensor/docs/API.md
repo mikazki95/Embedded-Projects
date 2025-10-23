@@ -13,27 +13,42 @@ nxp_simtemp: nxp-simtemp@0 {
     status = "okay";
 };
 ```
-Valores por Defecto
-🖥️ Character Device API
-Estructura de Datos
-Flags
-Operaciones Soportadas
-Abre el dispositivo en modo solo lectura.
+##Valores por Defecto
+
+##🖥️ Character Device API
+
+##Estructura de Datos
+
+##Flags
+
+##Operaciones Soportadas
+
+##Abre el dispositivo en modo solo lectura.
+
 read()
-Lectura bloqueante, retorna estructura de 16 bytes.
+
+##Lectura bloqueante, retorna estructura de 16 bytes.
+
 poll() / select()
+
 POLLIN: Nueva muestra disponible
+
 POLLPRI: Alerta de umbral activa
 
-close()🛠️ Sysfs Interface
-Path Base
+##close()🛠️ Sysfs Interface
 
-Atributos
+##Path Base
 
-Ejemplo:
+##Atributos
 
-🐚 Ejemplos de Uso
-Shell
-Python
-C
+##Ejemplo:
+
+##🐚 Ejemplos de Uso
+
+##Shell
+
+##Python
+
+##C
+
 
