@@ -86,36 +86,27 @@ mutex_unlock(&data->lock);
 
 ```
 
-📡 API Usuario-Kernel
+## 📡 API Usuario-Kernel
 
+### Dispositivo de carácter: `/dev/simtemp`
+- **Lectura bloqueante**: retorna muestras binarias (16 bytes) con:
+  - Timestamp monotónico (64 bits)
+  - Temperatura en miligrados Celsius (32 bits)
+  - Flags (32 bits) indicando tipo de muestra y alertas
+- **Soporte poll/select**:
+  - `POLLIN`: Nueva muestra disponible
+  - `POLLPRI`: Evento de cruce de umbral
 
-Dispositivo de carácter: /dev/simtemp
+### Interfaz Sysfs: `/sys/class/nxp_simtemp/simtemp/`
 
-Lectura bloqueante: muestras binarias (16 bytes)
-
-Timestamp (64 bits)
-Temperatura (32 bits)
-Flags (32 bits)
-
-
-Soporte poll/select:
-
-POLLIN: Nueva muestra
-POLLPRI: Cruce de umbral
-
-
-
-
-
-Interfaz Sysfs: /sys/class/nxp_simtemp/simtemp/
-
-
-├── temperature (ro)
-├── threshold_high (rw)
-├── threshold_low (rw)
-├── sampling_ms (rw)
-├── amplitude (rw)
-└── frequency (rw)
+```
+├── temperature (ro)       - Temperatura actual
+├── threshold_high (rw)    - Umbral de alarma alto
+├── threshold_low (rw)     - Umbral de alarma bajo
+├── sampling_ms (rw)       - Intervalo de actualización
+├── amplitude (rw)         - Amplitud de variación
+└── frequency (rw)         - Frecuencia de onda
+```
 
 
 ⚡ Manejo de Eventos
@@ -152,3 +143,4 @@ if (data->alarm_active != old_alarm_state) {
 - **Unitario**: carga/descarga, sysfs, poll/select  
 - **Integración**: script end-to-end  
 - **Estrés**: sampling máximo, cambios rápidos  
+
