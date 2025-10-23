@@ -163,8 +163,10 @@ if (data->alarm_active)
 
 ## 🎯 Decisiones de Diseño
 
-1. Platform Driver vs Módulo Simple
+### 1. Platform Driver vs Módulo Simple
+
 Decisión: Platform driver con soporte DT
+
 Razón:
 
 Sigue estándares del modelo de drivers Linux
@@ -173,18 +175,24 @@ Listo para despliegue en plataformas embebidas NXP
 
 Configuración via Device Tree como hardware real
 
-2. Onda Triangular vs Onda Senoidal
-Decisión: Generación de onda triangular
+### 2. Comportamiento normal, con ruido y sinodal vs implementación de variación de amplitud y frecuencia 
+
+Decisión: Generación de onda triangular variable
+
 Razón:
 
-Solo aritmética entera (sin FPU en kernel)
+- Solo aritmética entera (sin FPU en kernel)
 
-Comportamiento predecible y lineal
+- Comportamiento predecible y lineal
 
-Fácil de entender y debuggear
+- Fácil de entender y debuggear
 
-3. Sysfs vs IOCTL para Configuración
+- Puedes tener una onda plana con amplitud de 0 y variarla en amplitud y frecuencia según las necesidades, se me hace más maleable 
+
+### 3. Sysfs vs IOCTL para Configuración
+
 Decisión: Sysfs por simplicidad
+
 Razón:
 
 Legible/editable por humanos
@@ -193,40 +201,48 @@ Estándar para ajuste simple de parámetros
 
 Fácil integración con scripts de shell
 
-🚀 Consideraciones de Rendimiento
-Uso de Memoria
-Estructura de datos de tamaño fijo (sin allocación dinámica beyond probe)
+---
 
-Instancia única de timer del kernel
+## 🚀 Consideraciones de Rendimiento
 
-Uso mínimo de stack en callbacks
+- Uso de Memoria
 
-Uso de CPU
-Actualizaciones manejadas por timer (no por interrupciones)
+- Estructura de datos de tamaño fijo (sin allocación dinámica beyond probe)
 
-Aritmética entera eficiente para simulación
+- Instancia única de timer del kernel
 
-Mutex con secciones críticas cortas
+- Uso mínimo de stack en callbacks
 
-Escalabilidad
+- Uso de CPU
+
+- Actualizaciones manejadas por timer (no por interrupciones)
+
+- Aritmética entera eficiente para simulación
+
+- Mutex con secciones críticas cortas
+
+### Escalabilidad
+
 Límites actuales:
 
-Instancia única de dispositivo
+- Instancia única de dispositivo
 
-Período mínimo de sampling de 1ms
+- Período mínimo de sampling de 1ms
 
-Adecuado para tasas típicas de sensores (1-100Hz)
+- Adecuado para tasas típicas de sensores (1-100Hz)
 
-Cuellos de botella a 10kHz:
+- Cuellos de botella a 10kHz:
 
-Limitaciones de resolución del timer
+- Limitaciones de resolución del timer
 
-Contención de mutex
+- Contención de mutex
 
-Overhead de copia usuario-kernel
+- Overhead de copia usuario-kernel
 
-🔍 Estrategia de Testing
+### 🔍 Estrategia de Testing
+
 Testing Unitario
+
 Ciclos manuales de carga/descarga
 
 Validación de parámetros sysfs
@@ -234,6 +250,7 @@ Validación de parámetros sysfs
 Verificación de comportamiento poll/select
 
 Testing de Integración
+
 Script demo end-to-end
 
 Detección de cruce de umbrales
@@ -241,11 +258,13 @@ Detección de cruce de umbrales
 Patrones de acceso concurrente
 
 Testing de Estrés
+
 Tasas de sampling máximas
 
 Cambios rápidos de configuración
 
 Operación de larga duración
+
 
 
 
