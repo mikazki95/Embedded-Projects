@@ -10,31 +10,41 @@ Este documento describe la API del sistema de simulación de sensor de temperatu
 - Ruta: /dev/simtemp
 
 - Estructura de datos:
-'''c
+  
+```c
 struct simtemp_sample {
     __u64 timestamp_ns;   // Timestamp en nanosegundos (monotónico)
     __s32 temp_mC;        // Temperatura en mili-grados Celsius
     __u32 flags;          // Flags: 0x1 = NEW_SAMPLE, 0x2 = THRESHOLD_CROSS
 } __attribute__((packed));
-'''
+
+```
+
 
 ### 🛠️ Operaciones soportadas
 
-open()Abre el dispositivo en modo lectura.
+- open()
 
-Ejemplo: int fd = open("/dev/simtemp", O_RDONLY);
+    - Abre el dispositivo en modo lectura.
 
-read()Lectura bloqueante de una muestra.
+    - Ejemplo: int fd = open("/dev/simtemp", O_RDONLY);
 
-Ejemplo:
+- read()
 
+    - Lectura bloqueante de una muestra.
+
+    - Ejemplo:
+
+```c
 struct simtemp_sample sample;
 
 read(fd, &sample, sizeof(sample));
+```
 
-
-
-poll() / select()Soporta POLLIN (nueva muestra) y POLLPRI (alerta de umbral).
+    - poll() / select()
+    
+    - Soporta POLLIN (nueva muestra) y POLLPRI (alerta de umbral).
+    
 Ejemplo:
 struct pollfd pfd = {fd, POLLIN | POLLPRI, 0};
 poll(&pfd, 1, timeout);
@@ -124,5 +134,6 @@ Todos los ejemplos están basados en el código real del proyecto.
 Tonatiuh Velazquez Rojas
 📄 Licencia
 GPL v2
+
 
 
