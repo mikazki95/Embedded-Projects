@@ -23,10 +23,11 @@
                       └──────────────────┘
 ```
 
-🔧 Diseño del Driver del Kernel
-Componentes Principales
-1. Infraestructura Platform Driver
-c
+## 🔧 Diseño del Driver del Kernel
+
+- Infraestructura Platform Driver
+
+```c
 static struct platform_driver nxp_simtemp_driver = {
     .probe = nxp_simtemp_probe,
     .remove = nxp_simtemp_remove,
@@ -35,9 +36,11 @@ static struct platform_driver nxp_simtemp_driver = {
         .of_match_table = nxp_simtemp_of_match,
     },
 };
-Binding Device Tree:
+```
 
-dts
+- Device Tree Binding
+
+```dts
 nxp_simtemp: nxp-simtemp@0 {
     compatible = "nxp,simtemp";
     temp-base = <25000>;        /* 25.0°C base */
@@ -47,8 +50,11 @@ nxp_simtemp: nxp-simtemp@0 {
     alarm-low = <20000>;        /* 20.0°C umbral bajo */
     update-interval = <1000>;   /* 1 segundo sampling */
 };
-2. Operaciones de Dispositivo de Carácter
-c
+```
+
+- Operaciones de Dispositivo de Carácter
+  
+```c
 static struct file_operations nxp_simtemp_fops = {
     .owner = THIS_MODULE,
     .open = nxp_simtemp_open,
@@ -56,16 +62,21 @@ static struct file_operations nxp_simtemp_fops = {
     .read = nxp_simtemp_read,
     .poll = nxp_simtemp_poll,
 };
-Estructura de Datos:
+```
 
-c
+- Estructura de Datos:
+
+```c
 struct simtemp_sample {
     __u64 timestamp_ns;   /* timestamp monotónico */
     __s32 temp_mC;        /* temperatura en mili-grados */
     __u32 flags;          /* NEW_SAMPLE | THRESHOLD_CROSS */
 } __attribute__((packed));
-3. Motor de Simulación de Temperatura
-c
+```
+
+- Motor de Simulación de Temperatura
+
+```c
 static int simulate_temperature(struct nxp_simtemp_data *data)
 {
     /* Generación de onda triangular */
@@ -77,14 +88,22 @@ static int simulate_temperature(struct nxp_simtemp_data *data)
     
     return data->base_temp + variation;
 }
-🔒 Modelo de Concurrencia y Bloqueos
-Protección con Mutex
-data->lock: Protege todo el estado compartido en nxp_simtemp_data
+```
 
-Uso: Callbacks de timer, operaciones sysfs, operaciones de lectura
+## 🔒 Concurrencia y Bloqueos
 
-Jerarquía de Bloqueos
-c
+- Uso de mutex para proteger nxp_simtemp_data.
+
+- Sección crítica:
+
+```c
+mutex_lock(&data->lock);
+// cálculo de temperatura, verificación de umbrales, generación de muestras
+mutex_unlock(&data->lock);
+```
+- Jerarquía de Bloqueos
+
+```c
 mutex_lock(&data->lock);
 /* Sección crítica:
    - cálculo de temperatura
@@ -93,24 +112,27 @@ mutex_lock(&data->lock);
    - generación de muestras
 */
 mutex_unlock(&data->lock);
-📡 API Usuario-Kernel
-1. API de Dispositivo de Carácter (/dev/simtemp)
-Lectura bloqueante retorna muestras binarias de 16 bytes con:
+```
 
-Timestamp monotónico de 64 bits
+## 📡 API Usuario-Kernel
 
-Temperatura de 32 bits en mili-grados Celsius
+- Lectura bloqueante: 16 bytes con timestamp, temperatura y flags.
 
-Flags de 32 bits indicando tipo de muestra y alertas
+- Timestamp monotónico de 64 bits
 
-Soporte poll/select para:
+- Temperatura de 32 bits en mili-grados Celsius
 
-POLLIN: Nueva muestra disponible
+- Flags de 32 bits indicando tipo de muestra y alertas
 
-POLLPRI: Evento de cruce de umbral
+- Soporte poll/select para:
 
-2. Interfaz de Control Sysfs
-text
+  - POLLIN: Nueva muestra disponible
+
+  - POLLPRI: Evento de cruce de umbral
+
+- Interfaz de Control Sysfs
+
+```dts
 /sys/class/nxp_simtemp/simtemp/
 ├── temperature (ro)     - Temperatura actual
 ├── threshold_high (rw)  - Umbral de alarma alto
@@ -118,9 +140,13 @@ text
 ├── sampling_ms (rw)     - Intervalo de actualización
 ├── amplitude (rw)       - Amplitud de variación
 └── frequency (rw)       - Frecuencia de onda
-⚡ Manejo de Eventos
+dts
+
+## ⚡ Manejo de Eventos
+
 Mecanismo de Alertas
-c
+
+```c
 /* Callback del timer */
 data->alarm_active = (temp >= data->alarm_high) || (temp <= data->alarm_low);
 
@@ -132,7 +158,10 @@ c
 mask |= POLLIN | POLLRDNORM;          /* Siempre readable */
 if (data->alarm_active)
     mask |= POLLPRI;                   /* Alerta pendiente */
-🎯 Decisiones de Diseño
+```
+
+## 🎯 Decisiones de Diseño
+
 1. Platform Driver vs Módulo Simple
 Decisión: Platform driver con soporte DT
 Razón:
@@ -216,6 +245,7 @@ Tasas de sampling máximas
 Cambios rápidos de configuración
 
 Operación de larga duración
+
 
 
 
