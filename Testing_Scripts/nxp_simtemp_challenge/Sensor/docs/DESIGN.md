@@ -47,7 +47,7 @@ static struct file_operations nxp_simtemp_fops = {
     .poll = nxp_simtemp_poll,
 };
 ```
-### 4.
+### 4. Estructura de Datos
 
 ```c
 struct simtemp_sample {
@@ -56,7 +56,7 @@ struct simtemp_sample {
     __u32 flags;        /* NEW_SAMPLE | THRESHOLD_CROSS */
 } __attribute__((packed));
 ```
-### 5.
+### 5. Motor de Simulación
 
 ```c
 
@@ -130,23 +130,25 @@ if (data->alarm_active != old_alarm_state) {
 
 
 ```
-🎯 Decisiones de Diseño
+## 🎯 Decisiones de Diseño
 
-Platform Driver vs Módulo Simple: Platform driver con soporte DT
-Onda Triangular vs Senoidal: Triangular (sin FPU, fácil debug)
-Sysfs vs IOCTL: Sysfs (legible, estándar)
+- **Platform Driver vs Módulo Simple**: Platform driver con soporte DT  
+- **Onda Triangular vs Senoidal**: Triangular (sin FPU, fácil debug)  
+- **Sysfs vs IOCTL**: Sysfs (legible, estándar)  
 
+---
 
-🚀 Consideraciones de Rendimiento
+## 🚀 Consideraciones de Rendimiento
 
-Instancia única
-Timer eficiente
-Mutex con secciones críticas cortas
-Sampling mínimo: 1ms
+- Instancia única  
+- Timer eficiente  
+- Mutex con secciones críticas cortas  
+- Sampling mínimo: 1ms  
 
+---
 
-🔍 Estrategia de Testing
+## 🔍 Estrategia de Testing
 
-Unitario: carga/descarga, sysfs, poll/select
-Integración: script end-to-end
-Estrés: sampling máximo, cambios rápidos
+- **Unitario**: carga/descarga, sysfs, poll/select  
+- **Integración**: script end-to-end  
+- **Estrés**: sampling máximo, cambios rápidos  
