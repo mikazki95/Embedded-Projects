@@ -112,6 +112,7 @@ mutex_lock(&data->lock);
    - generación de muestras
 */
 mutex_unlock(&data->lock);
+
 ```
 
 ## 📡 API Usuario-Kernel
@@ -140,7 +141,7 @@ mutex_unlock(&data->lock);
 ├── sampling_ms (rw)     - Intervalo de actualización
 ├── amplitude (rw)       - Amplitud de variación
 └── frequency (rw)       - Frecuencia de onda
-dts
+```
 
 ## ⚡ Manejo de Eventos
 
@@ -245,6 +246,7 @@ Tasas de sampling máximas
 Cambios rápidos de configuración
 
 Operación de larga duración
+
 
 
 
