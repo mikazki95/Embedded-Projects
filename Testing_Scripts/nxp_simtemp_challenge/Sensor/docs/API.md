@@ -25,7 +25,7 @@ struct simtemp_sample {
 
 - open()
 
-    - Abre el dispositivo en modo lectura.
+  -  Abre el dispositivo en modo lectura.
 
     - Ejemplo: int fd = open("/dev/simtemp", O_RDONLY);
 
@@ -140,6 +140,7 @@ Todos los ejemplos están basados en el código real del proyecto.
 Tonatiuh Velazquez Rojas
 📄 Licencia
 GPL v2
+
 
 
 
