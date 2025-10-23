@@ -39,19 +39,25 @@ struct simtemp_sample {
 struct simtemp_sample sample;
 
 read(fd, &sample, sizeof(sample));
-```
 
-    - poll() / select()
+```
+# 
+  - poll() / select()
     
-    - Soporta POLLIN (nueva muestra) y POLLPRI (alerta de umbral).
+  - Soporta POLLIN (nueva muestra) y POLLPRI (alerta de umbral).
     
-Ejemplo:
+  - Ejemplo:
+
+```c
+    
 struct pollfd pfd = {fd, POLLIN | POLLPRI, 0};
 poll(&pfd, 1, timeout);
 
+```
 
+- close()
 
-close()Cierra el descriptor de archivo.
+-  Cierra el descriptor de archivo.
 Ejemplo: close(fd);
 
 
@@ -134,6 +140,7 @@ Todos los ejemplos están basados en el código real del proyecto.
 Tonatiuh Velazquez Rojas
 📄 Licencia
 GPL v2
+
 
 
 
