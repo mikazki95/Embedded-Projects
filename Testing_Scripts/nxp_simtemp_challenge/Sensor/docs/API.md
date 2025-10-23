@@ -57,46 +57,51 @@ poll(&pfd, 1, timeout);
 
 - close()
 
--  Cierra el descriptor de archivo.
-Ejemplo: close(fd);
+  -  Cierra el descriptor de archivo.
+  
+  - Ejemplo: close(fd);
 
+---
 
 ## ⚙️ 2. Sysfs Interface
 
 ### 📁 Ruta base
 
 /sys/class/nxp_simtemp/simtemp/
-🔧 Atributos disponibles
 
-temperature (ro): Temperatura actual
+### 🔧 Atributos disponibles
 
-threshold_high (rw): Umbral alto de alarma
+- temperature (ro): Temperatura actual
 
-threshold_low (rw): Umbral bajo de alarma
+- threshold_high (rw): Umbral alto de alarma
 
-sampling_ms (rw): Intervalo de actualización en milisegundos
+- threshold_low (rw): Umbral bajo de alarma
 
-amplitude (rw): Amplitud de variación
+- sampling_ms (rw): Intervalo de actualización en milisegundos
 
-frequency (rw): Frecuencia de onda
+- amplitude (rw): Amplitud de variación
 
-base_temp (rw): Temperatura base
+- frequency (rw): Frecuencia de onda
+
+- base_temp (rw): Temperatura base
 
 
 ## 🐚 Ejemplos de uso
 
-### Leer temperatura
+```c
+# Leer temperatura
 
 cat /sys/class/nxp_simtemp/simtemp/temperature
 
-### Configurar umbral alto
+# Configurar umbral alto
 
 echo 28000 | sudo tee /sys/class/nxp_simtemp/simtemp/threshold_high
 
-### Configurar frecuencia
+# Configurar frecuencia
 
 echo 50 | sudo tee /sys/class/nxp_simtemp/simtemp/frequency
-
+```
+---
 
 ## 🖥️ 3. CLI Python (Simulación en espacio de usuario)
 
@@ -106,28 +111,33 @@ app/nxp_cli.py
 
 ## 🧪 Comandos disponibles
 
-### Modo test automatizado (30 segundos)
+```c
+# Modo test automatizado (30 segundos)
 
 python3 nxp_cli.py test
 
-### Lectura continua por N segundos
+# Lectura continua por N segundos
 
 python3 nxp_cli.py read 10
 
-### Configuración de parámetros
+# Configuración de parámetros
 
 python3 nxp_cli.py config amplitude 5.0
 
 python3 nxp_cli.py config threshold_high 28.0
 
-### Mostrar configuración actual
+# Mostrar configuración actual
 
 python3 nxp_cli.py info
+```
 
+## ⚠️ Nota
 
-⚠️ Nota
-La CLI Python simula el comportamiento del sensor. No interactúa directamente con /dev/simtemp, aunque puede adaptarse para hacerlo.
-
+- La CLI Python simula el comportamiento del sensor. No interactúa directamente con /dev/simtemp, aunque puede adaptarse para hacerlo.
+  
+- Las funciones como open(), read(), poll(), close() son llamadas estándar de la API POSIX. Aunque no se implementan explícitamente en el código del usuario, están soportadas por el driver mediante las funciones correspondientes (.read, .poll, etc.) en el espacio kernel.
+  
+---
 
 ## 📌 Observaciones
 
@@ -140,6 +150,7 @@ Todos los ejemplos están basados en el código real del proyecto.
 Tonatiuh Velazquez Rojas
 📄 Licencia
 GPL v2
+
 
 
 
