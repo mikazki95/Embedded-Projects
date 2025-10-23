@@ -7,16 +7,16 @@ Este documento describe la API del sistema de simulación de sensor de temperatu
 
 ### 📁 Dispositivo de carácter
 
-Ruta: /dev/simtemp
+- Ruta: /dev/simtemp
 
-Estructura de datos:
-
+- Estructura de datos:
+'''c
 struct simtemp_sample {
     __u64 timestamp_ns;   // Timestamp en nanosegundos (monotónico)
     __s32 temp_mC;        // Temperatura en mili-grados Celsius
     __u32 flags;          // Flags: 0x1 = NEW_SAMPLE, 0x2 = THRESHOLD_CROSS
 } __attribute__((packed));
-
+'''
 
 ### 🛠️ Operaciones soportadas
 
@@ -124,4 +124,5 @@ Todos los ejemplos están basados en el código real del proyecto.
 Tonatiuh Velazquez Rojas
 📄 Licencia
 GPL v2
+
 
