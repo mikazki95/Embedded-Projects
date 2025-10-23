@@ -44,9 +44,9 @@ read(fd, &sample, sizeof(sample));
 # 
   - poll() / select()
     
-  - Soporta POLLIN (nueva muestra) y POLLPRI (alerta de umbral).
+    - Soporta POLLIN (nueva muestra) y POLLPRI (alerta de umbral).
     
-  - Ejemplo:
+    - Ejemplo:
 
 ```c
     
@@ -140,6 +140,7 @@ Todos los ejemplos están basados en el código real del proyecto.
 Tonatiuh Velazquez Rojas
 📄 Licencia
 GPL v2
+
 
 
 
