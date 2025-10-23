@@ -13,42 +13,160 @@ nxp_simtemp: nxp-simtemp@0 {
     status = "okay";
 };
 ```
-##Valores por Defecto
+## Valores por Defecto
 
-##🖥️ Character Device API
+```c
+#define DEFAULT_BASE_TEMP       25000   // 25.0°C
+#define DEFAULT_AMPLITUDE       0       // Sin variación
+#define DEFAULT_FREQUENCY       100     // 0.1 Hz
+#define DEFAULT_ALARM_HIGH      30000   // 30.0°C
+#define DEFAULT_ALARM_LOW       20000   // 20.0°C  
+#define DEFAULT_UPDATE_MS       1000    // 1 segundo
+```
 
-##Estructura de Datos
+## 🖥️ Character Device API
 
-##Flags
+Dispositivo
 
-##Operaciones Soportadas
+```dts
+/dev/simtemp
+```
 
-##Abre el dispositivo en modo solo lectura.
+## Estructura de Datos
+
+```c
+struct simtemp_sample {
+    __u64 timestamp_ns;   // Timestamp nanosegundos (monotónico)
+    __s32 temp_mC;        // Temperatura en mili-grados Celsius
+    __u32 flags;          // Flags (ver abajo)
+} __attribute__((packed));
+```
+
+## Flags
+
+```c
+#define SIMTEMP_FLAG_NEW_SAMPLE       0x1  // Nueva muestra disponible
+#define SIMTEMP_FLAG_THRESHOLD_CROSS  0x2  // Umbral cruzado
+```
+
+## Operaciones Soportadas
+
+open()
+
+```c
+int fd = open("/dev/simtemp", O_RDONLY);
+```
+
+Abre el dispositivo en modo solo lectura.
 
 read()
 
-##Lectura bloqueante, retorna estructura de 16 bytes.
+```c
+struct simtemp_sample sample;
+read(fd, &sample, sizeof(sample));
+```
+
+Lectura bloqueante, retorna estructura de 16 bytes.
 
 poll() / select()
 
-POLLIN: Nueva muestra disponible
+```c
+struct pollfd pfd = {fd, POLLIN | POLLPRI, 0};
+poll(&pfd, 1, timeout);
+```
 
-POLLPRI: Alerta de umbral activa
+- POLLIN: Nueva muestra disponible
 
-##close()🛠️ Sysfs Interface
+- POLLPRI: Alerta de umbral activa
 
-##Path Base
+close()
 
-##Atributos
+```c
+close(fd);
+```
 
-##Ejemplo:
+##🛠️ Sysfs Interface
 
-##🐚 Ejemplos de Uso
+Path Base
 
-##Shell
+```c
+/sys/class/nxp_simtemp/simtemp/
+```
 
-##Python
+## Atributos
 
-##C
+```c
+├── temperature (ro)       - Temperatura actual
+├── threshold_high (rw)    - Umbral de alarma alto
+├── threshold_low (rw)     - Umbral de alarma bajo
+├── sampling_ms (rw)       - Intervalo de actualización
+├── amplitude (rw)         - Amplitud de variación
+└── frequency (rw)         - Frecuencia de onda
+```
+
+## Ejemplo:
+
+```c
+
+```
+
+## 🐚 Ejemplos de Uso
+
+```c
+# Leer temperatura
+cat /sys/class/nxp_simtemp/simtemp/temperature
+
+# Configurar umbral alto
+echo 28000 sudo | tee /sys/class/nxp_simtemp/simtemp/threshold_high
+```
+
+## Shell
+
+```c
+sudo insmod nxp_simtemp.ko
+cat /sys/class/nxp_simtemp/simtemp/temperature
+sudo cat /dev/simtemp | hexdump -C
+echo 500 sudo | tee /sys/class/nxp_simtemp/simtemp/sampling_ms
+sudo rmmod nxp_simtemp
+```
+
+## Python
+
+```c
+import struct
+
+with open('/dev/simtemp', 'rb') as f:
+    data = f.read(16)
+    timestamp_ns, temp_mC, flags = struct.unpack('<QII', data)
+    temp_c = temp_mC / 1000.0
+    print(f"Temp: {temp_c:.1f}°C, Flags: 0x{flags:x}")
+```
+
+## C
+
+```c
+#include <fcntl.h>
+#include <unistd.h>
+#include <stdio.h>
+
+struct simtemp_sample {
+    unsigned long long timestamp_ns;
+    int temp_mC;
+    int flags;
+};
+
+int main() {
+    int fd = open("/dev/simtemp", O_RDONLY);
+    struct simtemp_sample sample;
+    
+    read(fd, &sample, sizeof(sample));
+    printf("Temp: %.1f C | Flags: 0x%x\n", 
+           sample.temp_mC / 1000.0, sample.flags);
+    
+    close(fd);
+    return 0;
+}
+```
+
 
 
