@@ -1,7 +1,8 @@
-🏗️ Arquitectura del Sistema
+# 🏗️ Arquitectura del Sistema
 
-Diagrama de Bloques
+## Diagrama de Bloques
 
+```asci
 ┌─────────────────┐    ┌──────────────────┐    ┌──────────────────┐
 │   Espacio de    │    │   Espacio del    │    │  Configuración   │
 │    Usuario      │    │     Kernel       │    │                  │
@@ -20,7 +21,7 @@ Diagrama de Bloques
                       │  Simulación de   │
                       │  Temperatura     │
                       └──────────────────┘
-
+```
 
 🔧 Diseño del Driver del Kernel
 Componentes Principales
@@ -215,5 +216,6 @@ Tasas de sampling máximas
 Cambios rápidos de configuración
 
 Operación de larga duración
+
 
 
