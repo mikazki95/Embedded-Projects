@@ -1,18 +1,25 @@
-📋 NXP Simulated Temperature Sensor
+#📋 NXP Simulated Temperature Sensor
+
 Compatible
-text
+
 "nxp,simtemp"
+
 Descripción
+
 Este binding describe un sensor de temperatura simulado para sistemas NXP. El driver genera lecturas de temperatura periódicas con variación de onda configurable y soporte para alertas por umbral.
 
 Nodo Requerido
+
 Un nodo hijo con el compatible "nxp,simtemp"
 
 Propiedades
+
 Propiedades Requeridas
+
 compatible: debe ser "nxp,simtemp"
 
 Propiedades Opcionales
+
 temp-base: Temperatura base en mili-grados Celsius
 
 Valor por defecto: 25000 (25.0°C)
@@ -55,15 +62,19 @@ Valores: "okay", "disabled"
 
 Valor por defecto: "okay"
 
+
 Ejemplos
+
 Ejemplo 1: Configuración Básica
-dts
+
+´´´dts
 &{/} {
     nxp_simtemp: nxp-simtemp@0 {
         compatible = "nxp,simtemp";
         status = "okay";
     };
 };
+´´´
 Ejemplo 2: Configuración Personalizada
 dts
 &{/} {
@@ -147,3 +158,4 @@ dtc -I fs /sys/firmware/devicetree/base
 
 # Verificar propiedades
 cat /proc/device-tree/nxp-simtemp@0/temp-base
+
