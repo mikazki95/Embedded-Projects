@@ -137,16 +137,18 @@ Verifica detección de alertas HIGH/LOW
 
 Reporta PASS/FAIL
 
-📞 Enlaces
-**Repositorio Git**: https://github.com/mikazki95/Embedded-Projects/tree/main/Testing_Scripts/nxp_simtemp_challenge/Sensor
+## 📞 Enlaces
 
-Demo Video: Video (https://drive.google.com/file/d/12H0Wb_Q9idkFtfszM4WbHKkk_xFJCnjt/view?usp=drive_link)
+- **🔗 Repositorio**: [github.com/mikazki95/Embedded-Projects](https://github.com/mikazki95/Embedded-Projects/tree/main/Testing_Scripts/nxp_simtemp_challenge/Sensor)
+
+- **🎥 Demo Video**: [Video demostración (Google Drive)](https://drive.google.com/file/d/12H0Wb_Q9idkFtfszM4WbHKkk_xFJCnjt/view?usp=drive_link)
 
 👤 Autor
 Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
 
 
 
