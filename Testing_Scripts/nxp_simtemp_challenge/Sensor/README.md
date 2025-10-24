@@ -23,14 +23,20 @@ Driver de kernel Linux que simula un sensor de temperatura virtual con capacidad
 ```bash
 sudo apt-get update
 sudo apt-get install linux-headers-$(uname -r) build-essential python3
+```
 Build
-bash
+
+```bash
 ./scripts/build.sh
+```
 Demo Completo
-bash
+
+```bash
 ./scripts/run_demo.sh
+```
 Uso Manual
-bash
+
+```bash
 # Cargar driver
 cd driver
 sudo insmod nxp_simtemp.ko
@@ -42,8 +48,10 @@ python3 nxp_cli.py test
 # Descargar driver
 cd ../driver
 sudo rmmod nxp_simtemp
-📁 Estructura del Proyecto
-text
+```
+
+## 📁 Estructura del Proyecto
+```ascii
 Sensor/
 ├── driver/                # Kernel module
 │   ├── nxp_simtemp.c      # Main driver source
@@ -61,8 +69,11 @@ Sensor/
 └── dts/                  # DTS
     ├── nxp-simtemp.dts
     └── nxp-simtemp.dtbo
+```
 🎯 Características Implementadas
+
 Kernel Driver
+
 ✅ Platform driver con Device Tree binding
 
 ✅ Character device con operaciones read/poll
@@ -153,6 +164,7 @@ Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
 
 
 
