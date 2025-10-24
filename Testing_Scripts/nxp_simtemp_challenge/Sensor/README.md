@@ -156,16 +156,14 @@ Reporta PASS/FAIL
 
 - [**🎥 Ver video demostración**] (https://drive.google.com/file/d/12H0Wb_Q9idkFtfszM4WbHKkk_xFJCnjt/view?usp=drive_link)
 
-## Recursos del proyecto
 
-- [**🔗 Ver repositorio completo**](https://github.com/mikazki95/Embedmented-Projects/treechallenge/Sensor
-- [**🎥 Ver video demostración**](https://drive.google.com/file/d/12H0Ww?usp=drive_link
 
 👤 Autor
 Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
 
 
 
