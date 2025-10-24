@@ -296,6 +296,7 @@ static struct attribute *nxp_simtemp_attrs[] = {
     &dev_attr_amplitude.attr,
     &dev_attr_frequency.attr,
     &dev_attr_base_temp.attr,
+    &dev_attr_base_temp.attr,
     NULL,
 };
 
