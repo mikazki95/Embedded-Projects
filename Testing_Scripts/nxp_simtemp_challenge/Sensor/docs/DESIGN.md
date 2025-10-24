@@ -43,12 +43,12 @@ static struct platform_driver nxp_simtemp_driver = {
 ```dts
 nxp_simtemp: nxp-simtemp@0 {
     compatible = "nxp,simtemp";
-    temp-base = <25000>;        /* 25.0°C base */
-    amplitude = <10000>;        /* ±10°C variación */
-    frequency = <50>;           /* 50 Hz */
-    alarm-high = <30000>;       /* 30.0°C umbral alto */
-    alarm-low = <20000>;        /* 20.0°C umbral bajo */
-    update-interval = <1000>;   /* 1 segundo sampling */
+    temp-base = <25000>;       /* 25.0°C base */
+    amplitude = <10000>;       /* ±10°C variación */
+    frequency = <50>;          /* 50 Hz */
+    alarm-high = <30000>;      /* 30.0°C umbral alto */
+    alarm-low = <20000>;       /* 20.0°C umbral bajo */
+    update-interval = <1000>;  /* 1 segundo sampling */
 };
 ```
 
@@ -68,9 +68,9 @@ static struct file_operations nxp_simtemp_fops = {
 
 ```c
 struct simtemp_sample {
-    __u64 timestamp_ns;   /* timestamp monotónico */
-    __s32 temp_mC;        /* temperatura en mili-grados */
-    __u32 flags;          /* NEW_SAMPLE | THRESHOLD_CROSS */
+    __u64 timestamp_ns; /* timestamp monotónico */
+    __s32 temp_mC;      /* temperatura en mili-grados */
+    __u32 flags;        /* NEW_SAMPLE | THRESHOLD_CROSS */
 } __attribute__((packed));
 ```
 
@@ -82,10 +82,10 @@ static int simulate_temperature(struct nxp_simtemp_data *data)
     /* Generación de onda triangular */
     u64 elapsed_us = div_u64(now_ns - data->wave_start_ns, 1000);
     u64 position = elapsed_us % data->wave_period_us;
-    
+
     int half_period = data->wave_period_us / 2;
     int variation = data->amplitude_mC * ((int)position - half_period) / half_period;
-    
+
     return data->base_temp + variation;
 }
 ```
@@ -107,10 +107,9 @@ mutex_unlock(&data->lock);
 mutex_lock(&data->lock);
 /* Sección crítica:
    - cálculo de temperatura
-   - verificación de umbrales  
+   - verificación de umbrales
    - actualización de estado de alarma
-   - generación de muestras
-*/
+   - generación de muestras */
 mutex_unlock(&data->lock);
 
 ```
@@ -150,9 +149,8 @@ Mecanismo de Alertas
 ```c
 /* Callback del timer */
 data->alarm_active = (temp >= data->alarm_high) || (temp <= data->alarm_low);
-
 if (data->alarm_active != old_alarm_state) {
-    wake_up_interruptible(&data->wait_queue);  /* Despertar procesos en poll */
+    wake_up_interruptible(&data->wait_queue); /* Despertar procesos en poll */
 }
 Implementación de Poll
 c
@@ -245,26 +243,29 @@ Testing Unitario
 
 Ciclos manuales de carga/descarga
 
-Validación de parámetros sysfs
 
-Verificación de comportamiento poll/select
+```
+## 🎯 Decisiones de Diseño
 
 Testing de Integración
 
 Script demo end-to-end
 
-Detección de cruce de umbrales
+---
 
-Patrones de acceso concurrente
+## 🚀 Consideraciones de Rendimiento
 
 Testing de Estrés
 
 Tasas de sampling máximas
 
-Cambios rápidos de configuración
+---
 
-Operación de larga duración
+## 🔍 Estrategia de Testing
 
+- **Unitario**: carga/descarga, sysfs, poll/select  
+- **Integración**: script end-to-end  
+- **Estrés**: sampling máximo, cambios rápidos  
 
 
 
