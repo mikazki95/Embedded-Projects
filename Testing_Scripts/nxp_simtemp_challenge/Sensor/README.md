@@ -20,9 +20,11 @@ Driver de kernel Linux que simula un sensor de temperatura virtual con capacidad
 ## 🚀 Quick Start
 
 ### Prerrequisitos
-```bash
+
+```cli
 sudo apt-get update
 sudo apt-get install linux-headers-$(uname -r) build-essential python3
+
 ```
 Build
 
@@ -164,6 +166,7 @@ Tonatiuh Velazquez
 
 📄 Licencia
 GPL v2
+
 
 
 
