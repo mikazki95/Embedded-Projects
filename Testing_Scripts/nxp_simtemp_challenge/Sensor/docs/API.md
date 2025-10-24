@@ -15,7 +15,7 @@ Este documento describe la API del sistema de simulación de sensor de temperatu
 struct simtemp_sample {
     __u64 timestamp_ns;   // Timestamp en nanosegundos (monotónico)
     __s32 temp_mC;        // Temperatura en mili-grados Celsius
-    __u32 flags;          // Flags: 0x1 = NEW_SAMPLE, 0x2 = THRESHOLD_CROSS
+    __u32 flags;          // Flags: 0x1 = SIMTEMP_FLAG_NEW_SAMPLE, 0x2 = SIMTEMP_FLAG_THRESHOLD_CROSS
 } __attribute__((packed));
 
 ```
@@ -150,6 +150,7 @@ Todos los ejemplos están basados en el código real del proyecto.
 Tonatiuh Velazquez Rojas
 📄 Licencia
 GPL v2
+
 
 
 
