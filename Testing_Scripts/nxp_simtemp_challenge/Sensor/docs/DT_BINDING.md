@@ -137,37 +137,7 @@ Si alguna propiedad no está presente en el DT, el driver usa:
 #define DEFAULT_UPDATE_MS       1000
 ```
 
-Soporte de Plataforma
 
-i.MX Series
-
-```dts
-/* Ejemplo para i.MX8 */
-&iomuxc {
-    nxp_simtemp {
-        compatible = "nxp,simtemp";
-        temp-base = <25000>;
-        amplitude = <5000>;
-        status = "okay";
-    };
-};
-```
-
-QEMU ARM64 virt
-
-```dts
-
-/* Para testing en QEMU */
-/ {
-    nxp_simtemp: nxp-simtemp@0 {
-        compatible = "nxp,simtemp";
-        temp-base = <25000>;
-        amplitude = <10000>;
-        frequency = <100>;
-        status = "okay";
-    };
-};
-```
 Validación
 
 El binding sigue el schema estándar de Linux kernel y puede ser validado con:
@@ -183,4 +153,5 @@ El binding sigue el schema estándar de Linux kernel y puede ser validado con:
 ```dtc
 cat /proc/device-tree/nxp-simtemp@0/temp-base
 ```
+
 
