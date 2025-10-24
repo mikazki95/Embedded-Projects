@@ -159,10 +159,13 @@ Reporta PASS/FAIL
 
 
 👤 Autor
+
 Tonatiuh Velazquez
 
 📄 Licencia
+
 GPL v2
+
 
 
 
