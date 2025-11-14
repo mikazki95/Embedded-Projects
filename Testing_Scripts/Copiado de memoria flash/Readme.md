@@ -1,0 +1,2 @@
+# Copiado de memoria flash  🛠️  
+Scripts usados para copiar una memoria flash en otra, esto se hizo porque no se conseguía el zócalo correspondiente así que propuse usar una memoria flash diferente y un atmega2560 para hacer el respaldo y con este leer y copiar el contenido de la flash  
