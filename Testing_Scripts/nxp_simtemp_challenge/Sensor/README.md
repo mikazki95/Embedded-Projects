@@ -1,7 +1,15 @@
 # NXP Simulated Temperature Sensor Driver
 
 ## 📋 Descripción
-Driver de kernel Linux que simula un sensor de temperatura virtual con capacidades de alerta. Desarrollado como parte del challenge para Systems Software Engineer en NXP.
+Driver de kernel Linux que simula un sensor de temperatura virtual con capacidades de alerta y modificación de comportamiento, para esto hay funciones para modificar:
+- **Temperatura base.**: Para poder partir de cualquier punto deseado
+- **Frecuencia.**: Valores típicos 1Hz-1KHz. Límite superior depende de la resolución del timer del kernel.
+- **Amplitud.**: Para una plasticidad de condiciones, con 0 no varía, lo cual es como modo normal, se podría modular la señal para una variación con ruido, el ruido podría hacerse en función o por datos aleatorios, pero la idea es la misma, así que por tiempos se dejo así.
+- **Alarma alta.**: 
+- **Alarma baja.**: 
+
+ Desarrollado como parte del challenge para Systems Software Engineer en NXP.
+
 
 ## 🏗️ Arquitectura
 - **Kernel Module**: Driver de plataforma con binding Device Tree
@@ -12,17 +20,25 @@ Driver de kernel Linux que simula un sensor de temperatura virtual con capacidad
 ## 🚀 Quick Start
 
 ### Prerrequisitos
-```bash
+
+```cli
 sudo apt-get update
 sudo apt-get install linux-headers-$(uname -r) build-essential python3
+
+```
 Build
-bash
+
+```bash
 ./scripts/build.sh
+```
 Demo Completo
-bash
+
+```bash
 ./scripts/run_demo.sh
+```
 Uso Manual
-bash
+
+```bash
 # Cargar driver
 cd driver
 sudo insmod nxp_simtemp.ko
@@ -34,15 +50,17 @@ python3 nxp_cli.py test
 # Descargar driver
 cd ../driver
 sudo rmmod nxp_simtemp
-📁 Estructura del Proyecto
-text
-simtemp/
-├── driver/                 # Kernel module
+```
+
+## 📁 Estructura del Proyecto
+```ascii
+Sensor/
+├── driver/                # Kernel module
 │   ├── nxp_simtemp.c      # Main driver source
 │   ├── nxp_simtemp.h      # Header file
 │   ├── Makefile
 │   └── dts/               # Device Tree sources
-├── /app/              # User space application
+├── /app/                  # User space application
 │   └── nxp_cli.py         # Python CLI tool
 ├── scripts/               # Build and demo scripts
 │   ├── build.sh
@@ -50,8 +68,14 @@ simtemp/
 └── docs/                  # Documentation
     ├── DESIGN.md
     └── AI_NOTES.md
+└── dts/                  # DTS
+    ├── nxp-simtemp.dts
+    └── nxp-simtemp.dtbo
+```
 🎯 Características Implementadas
+
 Kernel Driver
+
 ✅ Platform driver con Device Tree binding
 
 ✅ Character device con operaciones read/poll
@@ -82,11 +106,11 @@ Scripts
 Parámetros del Sensor (vía Sysfs)
 bash
 # Sampling interval (ms)
-echo 500 > /sys/class/nxp_simtemp/simtemp/sampling_ms
+echo 500 | sudo tee /sys/class/nxp_simtemp/simtemp/sampling_ms
 
 # Temperature thresholds (°C)
-echo 30000 > /sys/class/nxp_simtemp/simtemp/threshold_high
-echo 20000 > /sys/class/nxp_simtemp/simtemp/threshold_low
+echo 30000 | sudo tee /sys/class/nxp_simtemp/simtemp/threshold_high
+echo 20000 | sudo tee /sys/class/nxp_simtemp/simtemp/threshold_low
 
 # Wave parameters
 echo 10000 | sudo tee /sys/class/nxp_simtemp/simtemp/amplitude
@@ -126,14 +150,36 @@ Verifica detección de alertas HIGH/LOW
 
 Reporta PASS/FAIL
 
-📞 Enlaces
-Repositorio Git: https://github.com/tu-usuario/nxp-simtemp///revisar 
+## 📞 Enlaces
 
-Demo Video: Link al video//revisar
+- [**🔗 Ver repositorio completo**] (https://github.com/mikazki95/Embedmented-Projects/tree/main/Testing_Scripts/nxp_simtemp_challenge/Sensor)
+
+- [**🎥 Ver video demostración**] (https://drive.google.com/file/d/12H0Wb_Q9idkFtfszM4WbHKkk_xFJCnjt/view?usp=drive_link)
+
+
 
 👤 Autor
+
 Tonatiuh Velazquez
 
 📄 Licencia
+
 GPL v2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

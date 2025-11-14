@@ -1,219 +1,160 @@
-# NXP SimTemp - Documentación de API
+# NXP Simulated Temperature Sensor Driver - API Document
 
-## 📡 Device Tree Binding
+Este documento describe la API del sistema de simulación de sensor de temperatura desarrollado como driver de kernel Linux, junto con su interfaz de usuario en Python. Se divide en tres secciones principales:
 
-### Compatible String
-"nxp,simtemp"
 
-text
+## 🧠 1. Kernel Driver API
 
-### Propiedades Requeridas
-```dts
-nxp_simtemp: nxp-simtemp@0 {
-    compatible = "nxp,simtemp";
-    temp-base = <25000>;        /* Temperatura base en mili-grados */
-    amplitude = <10000>;        /* Amplitud de variación */
-    frequency = <50>;           /* Frecuencia en Hz */
-    alarm-high = <30000>;       /* Umbral alto de alarma */
-    alarm-low = <20000>;        /* Umbral bajo de alarma */
-    update-interval = <1000>;   /* Intervalo de actualización en ms */
-    status = "okay";
-};
-Valores por Defecto
-Si no se especifica Device Tree, el driver usa:
+### 📁 Dispositivo de carácter
 
-c
-#define DEFAULT_BASE_TEMP       25000   // 25.0°C
-#define DEFAULT_AMPLITUDE       0       // Sin variación
-#define DEFAULT_FREQUENCY       100     // 0.1 Hz
-#define DEFAULT_ALARM_HIGH      30000   // 30.0°C
-#define DEFAULT_ALARM_LOW       20000   // 20.0°C  
-#define DEFAULT_UPDATE_MS       1000    // 1 segundo
-🖥️ Character Device API
-Dispositivo
-text
-/dev/simtemp
-Estructura de Datos
-c
+- Ruta: /dev/simtemp
+
+- Estructura de datos:
+  
+```c
 struct simtemp_sample {
-    __u64 timestamp_ns;   // Timestamp nanosegundos (monotónico)
+    __u64 timestamp_ns;   // Timestamp en nanosegundos (monotónico)
     __s32 temp_mC;        // Temperatura en mili-grados Celsius
-    __u32 flags;          // Flags (ver abajo)
+    __u32 flags;          // Flags: 0x1 = SIMTEMP_FLAG_NEW_SAMPLE, 0x2 = SIMTEMP_FLAG_THRESHOLD_CROSS
 } __attribute__((packed));
-Flags
-c
-#define SIMTEMP_FLAG_NEW_SAMPLE       0x1  // Nueva muestra disponible
-#define SIMTEMP_FLAG_THRESHOLD_CROSS  0x2  // Umbral cruzado
-Operaciones Soportadas
-open()
-c
-int fd = open("/dev/simtemp", O_RDONLY);
-Abre el dispositivo en modo solo lectura
 
-read()
-c
+```
+
+
+### 🛠️ Operaciones soportadas
+
+- open()
+
+  -  Abre el dispositivo en modo lectura.
+
+    - Ejemplo: int fd = open("/dev/simtemp", O_RDONLY);
+
+- read()
+
+    - Lectura bloqueante de una muestra.
+
+    - Ejemplo:
+
+```c
 struct simtemp_sample sample;
+
 read(fd, &sample, sizeof(sample));
-Lectura bloqueante
 
-Retorna estructura de 16 bytes
+```
+# 
+  - poll() / select()
+    
+    - Soporta POLLIN (nueva muestra) y POLLPRI (alerta de umbral).
+    
+    - Ejemplo:
 
-Siempre retorna muestra completa
-
-poll() / select()
-c
+```c
+    
 struct pollfd pfd = {fd, POLLIN | POLLPRI, 0};
 poll(&pfd, 1, timeout);
-POLLIN: Nueva muestra disponible
 
-POLLPRI: Alerta de umbral activa
+```
 
-close()
-c
-close(fd);
-Cierra el dispositivo
+- close()
 
-🛠️ Sysfs Interface
-Path Base
-text
+  -  Cierra el descriptor de archivo.
+  
+  - Ejemplo: close(fd);
+
+---
+
+## ⚙️ 2. Sysfs Interface
+
+### 📁 Ruta base
+
 /sys/class/nxp_simtemp/simtemp/
-Atributos
-temperature (read-only)
-text
-cat /sys/class/nxp_simtemp/simtemp/temperature
-25000
-Temperatura actual en mili-grados Celsius
 
-threshold_high (read-write)
-text
-# Leer
-cat /sys/class/nxp_simtemp/simtemp/threshold_high
-30000
+### 🔧 Atributos disponibles
 
-# Escribir  
-echo 28000 > /sys/class/nxp_simtemp/simtemp/threshold_high
-Umbral alto de alarma en mili-grados
+- temperature (ro): Temperatura actual
 
-threshold_low (read-write)
-text
-# Leer
-cat /sys/class/nxp_simtemp/simtemp/threshold_low
-20000
+- threshold_high (rw): Umbral alto de alarma
 
-# Escribir
-echo 22000 > /sys/class/nxp_simtemp/simtemp/threshold_low
-Umbral bajo de alarma en mili-grados
+- threshold_low (rw): Umbral bajo de alarma
 
-sampling_ms (read-write)
-text
-# Leer
-cat /sys/class/nxp_simtemp/simtemp/sampling_ms
-1000
+- sampling_ms (rw): Intervalo de actualización en milisegundos
 
-# Escribir
-echo 500 > /sys/class/nxp_simtemp/simtemp/sampling_ms
-Intervalo de muestreo en milisegundos
+- amplitude (rw): Amplitud de variación
 
-Rango válido: 10-10000 ms
+- frequency (rw): Frecuencia de onda
 
-amplitude (read-write)
-text
-# Leer
-cat /sys/class/nxp_simtemp/simtemp/amplitude
-10000
+- base_temp (rw): Temperatura base
 
-# Escribir
-echo 5000 > /sys/class/nxp_simtemp/simtemp/amplitude
-Amplitud de variación en mili-grados
 
-Debe ser ≥ 0
+## 🐚 Ejemplos de uso
 
-frequency (read-write)
-text
-# Leer
-cat /sys/class/nxp_simtemp/simtemp/frequency
-50
+```c
+# Leer temperatura
 
-# Escribir
-echo 100 > /sys/class/nxp_simtemp/simtemp/frequency
-Frecuencia de onda en Hz
-
-Debe ser > 0
-
-🐚 Ejemplos de Uso
-Lectura Básica desde Shell
-bash
-# Cargar driver
-sudo insmod nxp_simtemp.ko
-
-# Leer temperatura actual
 cat /sys/class/nxp_simtemp/simtemp/temperature
 
-# Leer muestra binaria
-sudo cat /dev/simtemp | hexdump -C
+# Configurar umbral alto
 
-# Configurar parámetros
-echo 500 > /sys/class/nxp_simtemp/simtemp/sampling_ms
-echo 26000 > /sys/class/nxp_simtemp/simtemp/threshold_high
+echo 28000 | sudo tee /sys/class/nxp_simtemp/simtemp/threshold_high
 
-# Descargar driver
-sudo rmmod nxp_simtemp
-Uso con Python
-python
-import struct
+# Configurar frecuencia
 
-with open('/dev/simtemp', 'rb') as f:
-    data = f.read(16)
-    timestamp_ns, temp_mC, flags = struct.unpack('<QII', data)
-    temp_c = temp_mC / 1000.0
-    print(f"Temp: {temp_c:.1f}°C, Flags: 0x{flags:x}")
-Uso con C
-c
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdio.h>
+echo 50 | sudo tee /sys/class/nxp_simtemp/simtemp/frequency
+```
+---
 
-struct simtemp_sample {
-    unsigned long long timestamp_ns;
-    int temp_mC;
-    int flags;
-};
+## 🖥️ 3. CLI Python (Simulación en espacio de usuario)
 
-int main() {
-    int fd = open("/dev/simtemp", O_RDONLY);
-    struct simtemp_sample sample;
-    
-    read(fd, &sample, sizeof(sample));
-    printf("Temp: %.1f C | Flags: 0x%x\n", 
-           sample.temp_mC / 1000.0, sample.flags);
-    
-    close(fd);
-    return 0;
-}
-⚠️ Códigos de Error
-Character Device
--ENODEV: Dispositivo no encontrado
+### 📁 Archivo
 
--EINVAL: Parámetros inválidos
+app/nxp_cli.py
 
--EFAULT: Error copiando a espacio de usuario
+## 🧪 Comandos disponibles
 
-Sysfs Interface
--EINVAL: Valor fuera de rango o inválido
+```c
+# Modo test automatizado (30 segundos)
 
--EACCES: Permiso denegado (escritura sin root)
+python3 nxp_cli.py test
 
-🔄 Comportamiento de Alarms
-Activación de Alarmas
-La alarma se activa cuando temp ≥ threshold_high O temp ≤ threshold_low
+# Lectura continua por N segundos
 
-El flag THRESHOLD_CROSS se establece en la muestra
+python3 nxp_cli.py read 10
 
-Los procesos en poll() son despertados con POLLPRI
+# Configuración de parámetros
 
-Notificaciones
-Solo se notifica cuando el estado de alarma cambia
+python3 nxp_cli.py config amplitude 5.0
 
-Transición: OK → ALARM o ALARM → OK
+python3 nxp_cli.py config threshold_high 28.0
 
-Múltiples lecturas en estado de alarma no generan notificaciones adicionales
+# Mostrar configuración actual
+
+python3 nxp_cli.py info
+```
+
+## ⚠️ Nota
+
+- La CLI Python simula el comportamiento del sensor. No interactúa directamente con /dev/simtemp, aunque puede adaptarse para hacerlo.
+  
+- Las funciones como open(), read(), poll(), close() son llamadas estándar de la API POSIX. Aunque no se implementan explícitamente en el código del usuario, están soportadas por el driver mediante las funciones correspondientes (.read, .poll, etc.) en el espacio kernel.
+  
+---
+
+## 📌 Observaciones
+
+El documento original mezclaba funciones del driver, funciones POSIX y simulaciones Python.
+Esta versión separa claramente cada capa para evitar confusión.
+Todos los ejemplos están basados en el código real del proyecto.
+
+
+👤 Autor
+Tonatiuh Velazquez Rojas
+📄 Licencia
+GPL v2
+
+
+
+
+
+
+
+

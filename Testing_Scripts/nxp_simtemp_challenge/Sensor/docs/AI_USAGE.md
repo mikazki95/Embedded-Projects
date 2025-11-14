@@ -1,5 +1,6 @@
 🤖 Asistente Utilizado
-ChatGPT/Asistente AI para desarrollo y debugging
+
+Deepseek/Asistente AI para desarrollo y debugging
 
 💬 Prompts y Asistencia Solicitada
 1. Estructura Inicial del Proyecto
@@ -99,3 +100,4 @@ Toma de decisiones arquitectónicas finales
 
 📝 Conclusión
 El uso de IA aceleró significativamente el desarrollo mientras se mantuvo la calidad y corrección del código mediante validación humana continua. El proyecto resultante cumple con todos los requisitos del challenge y sigue las mejores prácticas de desarrollo para drivers Linux.
+
