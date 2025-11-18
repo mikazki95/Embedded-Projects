@@ -13,6 +13,7 @@
 #include <stdlib.h>
 
 #include "USART0.h"
+#include "S29GL256P.h"
 
 char		comando='0';
 char		funcion_RW = '0';
@@ -20,6 +21,7 @@ char		valor_m[15]={0};
 uint32_t	size = 33554432;
 char		texto_info[10]		= {"I:Flash,"};
 char		version[10]	= {"1.0.0"};
+int			error =	0;
 
 ISR(USART0_RX_vect)
 {
@@ -45,6 +47,8 @@ ISR(USART0_RX_vect)
 	
 }
 
+uint16_t flash_read(uint32_t addr);
+
 int main(void)
 {
     /* Replace with your application code */
@@ -55,6 +59,8 @@ int main(void)
 	UCSR0B =  (1<<RXEN0) | (1<<TXEN0)|(1<<RXCIE0);
 	
 	sei();
+	
+	Flash_init();
 	
 	send_string(texto_info);
 	send_string(version);
@@ -70,7 +76,38 @@ int main(void)
 			send_string("bytes");
 			send_char('\n');
 			send_char('\r');
-			funcion_RW = '0';
+			funcion_RW = '0';		
+			///////////////////////////////////////////////////////
+			for(uint8_t pagina = 0; pagina < 16; pagina++) {
+				uint32_t base_addr = pagina * 8;  // Cada página son 8 palabras
+				
+				send_string("Página ");
+				dtostrf(pagina,10,0,valor_m);
+				send_string(valor_m);
+				send_char('\n');
+				send_string("Pos\t| Addr\t| Data\n");
+				send_string("-----|-------|------\n");
+				
+				// Leer las 8 palabras de la página
+				for(uint8_t pos = 0; pos < 8; pos++) {
+					uint32_t addr = base_addr + pos;
+					uint16_t data = flash_read(addr);
+										
+					dtostrf(pos,10,0,valor_m);
+					send_string(valor_m);
+					send_string(" | ");
+					dtostrf(addr,10,0,valor_m);
+					send_string(valor_m);
+					send_string(" | ");
+					dtostrf(data,10,0,valor_m);
+					send_string(valor_m);
+					send_string(" | ");
+					send_char('\n');
+										
+				}
+				send_char('\n');
+			}
+			//////////////////////////////////////////
 		} 
 		else if (funcion_RW == 'W')
 		{
@@ -94,3 +131,19 @@ int main(void)
     }
 }
 
+uint16_t flash_read(uint32_t addr)
+{
+	error = dir_dato("read");
+	if (error == 0)
+	{
+		send_string("error de comando");
+		send_char('\n');
+		send_char('\r');
+		return 0;
+	}
+	low_address = (addr & 0x0000FF);
+	mid_address = ((addr>>8) & 0x0000FF);
+	high_address = ((addr>>16) & 0x0000FF);
+	
+	
+}
