@@ -15,6 +15,8 @@
 #define high_address	PORTL
 #define low_Data		PINA
 #define high_Data		PINJ
+#define low_Data_O		PORTA
+#define high_Data_O		PORTJ
 #define ctrl_port		PORTH
 #define ctrl_pin		PINH
 
@@ -61,6 +63,8 @@ int dir_dato(char funcion[5]){
 	{
 		DDRA = 0x00;
 		DDRJ = 0x00;
+		low_Data_O = 0XFF;
+		high_Data_O = 0XFF;
 		return 1;
 	} 
 	else if (strcmp(funcion, "write") == 0)

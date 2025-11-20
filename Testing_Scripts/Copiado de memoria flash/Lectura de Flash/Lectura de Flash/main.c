@@ -22,9 +22,12 @@ uint32_t	size = 33554432;
 char		texto_info[10]		= {"I:Flash,"};
 char		version[10]	= {"1.0.0"};
 int			error =	0;
-uint8_t		checksum = 0;
+uint32_t		checksum = 0;
 uint16_t	Dato = 0;
 uint8_t		Aux_dato = 0;
+uint32_t	base_addr  = 0;
+uint32_t	Aux_addr  = 0;
+uint8_t		char_dato = 0;
 
 ISR(USART0_RX_vect)
 {
@@ -51,6 +54,8 @@ ISR(USART0_RX_vect)
 }
 
 void flash_read(uint32_t addr);
+void flash_write(uint32_t addr, uint16_t data);
+void wait_ready(void);
 
 int main(void)
 {
@@ -80,24 +85,27 @@ int main(void)
 		if (funcion_RW == 'R')
 		{
 
-			funcion_RW = '0';		
+			funcion_RW = '0';
+			base_addr = 0X0;		
 			///////////////////////////////////////////////////////
-			for(uint8_t pagina = 0; pagina < 40; pagina++) {
-				uint32_t base_addr = pagina * 8;  // Cada página son 8 palabras
+			for(uint8_t pagina = 0; pagina < 16; pagina++) {
+				base_addr = pagina * 8;  // Cada página son 8 palabras
 				checksum = 0;				
 				// ? INCLUIR DIRECCIÓN en el checksum (los 3 bytes)
 				checksum += (base_addr >> 16) & 0xFF;
 				checksum += (base_addr >> 8) & 0xFF;
-				checksum += base_addr & 0xFF;
-				
-				
+				checksum += base_addr & 0xFF;				
 				mid_address = ((base_addr>>8) & 0xFF);
 				high_address = ((base_addr>>16) & 0xFF);
 				low_address = (base_addr & 0xFF);
 				
-				send_char(high_address);
-				send_char(mid_address);
-				send_char(low_address);
+				Aux_addr = base_addr>>3;
+				char_dato = ((Aux_addr>>16) & 0xFF);
+				send_char(char_dato);
+				char_dato = ((Aux_addr>>8) & 0xFF);
+				send_char(char_dato);
+				char_dato = ((Aux_addr) & 0xFF);
+				send_char(char_dato);
 				
 				ctrl_port &= ~(1 << ce);
 				ctrl_port &= ~(1 << oe);
@@ -123,6 +131,9 @@ int main(void)
 			send_string("bytes");
 			send_char('\n');
 			send_char('\r');
+			base_addr = 0;
+			Dato = 0xA5A5;
+			flash_write(base_addr,Dato);
 			funcion_RW = '0';
 		}
 		else if(funcion_RW == 'E')
@@ -152,13 +163,87 @@ void flash_read(uint32_t addr)
 	//Dato = low_Data | (high_Data << 8); 
 	//Dato = 0x3031
 	Aux_dato = low_Data;
+	checksum+=Aux_dato;
 	Dato = Aux_dato&0xFF;
 	send_char((Aux_dato));
 	Aux_dato = high_Data;
+	checksum+=Aux_dato;
 	Dato=(Dato>>8&0XFF);
 	Dato += Aux_dato&0xFF;
 	send_char((Aux_dato));
-	checksum+=Aux_dato;
-	Aux_dato = (Dato&0XFF);
-	checksum+=Aux_dato;	
+	Aux_dato = (Dato&0XFF);	
+}
+
+void flash_write(uint32_t addr, uint16_t data) {
+	// Secuencia de escritura estándar
+	error = dir_dato("write");
+	if (error == 0)
+	{
+		send_string("error de comando");
+		send_char('\n');
+		send_char('\r');
+		return 0;
+	}  // Puerto como salida
+	
+	// Comando de escritura: 2 ciclos de unlock + program
+	// Dirección 0x555 + 0xAA, Dirección 0x2AA + 0x55, Dirección 0x555 + 0xA0
+	
+	write_command(0x555, 0xAA);
+	write_command(0x2AA, 0x55);
+	write_command(0x555, 0xA0);
+	
+	// Escribir datos
+	write_command(addr, data);
+	
+	// Esperar fin de escritura
+	wait_ready();
+	
+	error = dir_dato("read");
+	if (error == 0)
+	{
+		send_string("error de comando");
+		send_char('\n');
+		send_char('\r');
+		return 0;
+	} // Volver a lectura
+}
+
+void write_command(uint32_t addr, uint16_t cmd) {
+	// Secuencia CE#
+	ctrl_port &= ~(1 << ce);
+	// Establecer dirección
+	low_address = (addr & 0xFF);
+	mid_address = ((addr >> 8) & 0xFF);
+	high_address = ((addr >> 16) & 0xFF);
+	
+	// Establecer datos
+	low_Data_O = (cmd & 0xFF);
+	Aux_dato=low_Data;
+	send_string("LOW: ");
+	dtostrf(Aux_dato,3,0,valor_m);
+	send_string(valor_m);
+	send_char('\n');
+	send_char('\r');
+	high_Data_O = ((cmd >> 8) & 0xFF);
+	
+	// Secuencia WE#
+	ctrl_port &= ~(1 << we);
+	//_delay_us(1);
+	ctrl_port |= (1 << we);
+	//_delay_us(1);
+	ctrl_port |= (1 << ce);
+}
+
+void wait_ready(void) {
+	uint32_t timeout = 1000000;  // Timeout por seguridad
+	while(((ctrl_pin & (1 << rby)) == 0) && timeout--) {
+		asm("nop");
+		asm("nop");
+		asm("nop");
+		asm("nop");
+	}
+	if(timeout == 0) {
+		// Error de timeout
+		send_string("ERROR: Timeout escritura\n");
+	}
 }
