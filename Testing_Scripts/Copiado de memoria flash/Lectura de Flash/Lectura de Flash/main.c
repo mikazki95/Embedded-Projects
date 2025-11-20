@@ -22,14 +22,17 @@ uint32_t	size = 33554432;
 char		texto_info[10]		= {"I:Flash,"};
 char		version[10]	= {"1.0.0"};
 int			error =	0;
+uint8_t		checksum = 0;
+uint16_t	Dato = 0;
+uint8_t		Aux_dato = 0;
 
 ISR(USART0_RX_vect)
 {
 	comando=UDR0;
 	if (comando =='R')
 	{
-		send_char('R');
-		send_char('\n');
+		//send_char('R');
+		//send_char('\n');
 		funcion_RW = 'R';
 	}
 	else if (comando =='W')
@@ -47,7 +50,7 @@ ISR(USART0_RX_vect)
 	
 }
 
-uint16_t flash_read(uint32_t addr);
+void flash_read(uint32_t addr);
 
 int main(void)
 {
@@ -65,47 +68,50 @@ int main(void)
 	send_string(texto_info);
 	send_string(version);
 	send_char('\n');
+	// Verificar estado WP#
+	if(ctrl_port & (1 << wp)) {
+		printf("SA0 DESPROTEGIDO\n");
+		} else {
+		printf("SA0 PROTEGIDO - no se puede escribir en 0x000000-0x01FFFF\n");
+	}
 	
     while (1) 
     {
 		if (funcion_RW == 'R')
 		{
-			send_string("preparando para leer: ");
-			dtostrf(size,10,0,valor_m);
-			send_string(valor_m);
-			send_string("bytes");
-			send_char('\n');
-			send_char('\r');
+
 			funcion_RW = '0';		
 			///////////////////////////////////////////////////////
-			for(uint8_t pagina = 0; pagina < 16; pagina++) {
+			for(uint8_t pagina = 0; pagina < 40; pagina++) {
 				uint32_t base_addr = pagina * 8;  // Cada página son 8 palabras
+				checksum = 0;				
+				// ? INCLUIR DIRECCIÓN en el checksum (los 3 bytes)
+				checksum += (base_addr >> 16) & 0xFF;
+				checksum += (base_addr >> 8) & 0xFF;
+				checksum += base_addr & 0xFF;
 				
-				send_string("Página ");
-				dtostrf(pagina,10,0,valor_m);
-				send_string(valor_m);
-				send_char('\n');
-				send_string("Pos\t| Addr\t| Data\n");
-				send_string("-----|-------|------\n");
+				
+				mid_address = ((base_addr>>8) & 0xFF);
+				high_address = ((base_addr>>16) & 0xFF);
+				low_address = (base_addr & 0xFF);
+				
+				send_char(high_address);
+				send_char(mid_address);
+				send_char(low_address);
+				
+				ctrl_port &= ~(1 << ce);
+				ctrl_port &= ~(1 << oe);
 				
 				// Leer las 8 palabras de la página
 				for(uint8_t pos = 0; pos < 8; pos++) {
 					uint32_t addr = base_addr + pos;
-					uint16_t data = flash_read(addr);
-										
-					dtostrf(pos,10,0,valor_m);
-					send_string(valor_m);
-					send_string(" | ");
-					dtostrf(addr,10,0,valor_m);
-					send_string(valor_m);
-					send_string(" | ");
-					dtostrf(data,10,0,valor_m);
-					send_string(valor_m);
-					send_string(" | ");
-					send_char('\n');
-										
+					flash_read(addr);									
 				}
-				send_char('\n');
+				ctrl_port |= (1 << oe);
+				ctrl_port |= (1 << ce);
+				checksum=(0x100 - checksum) & 0xFF;
+				send_char(checksum);
+				//send_char('\n');							
 			}
 			//////////////////////////////////////////
 		} 
@@ -131,7 +137,7 @@ int main(void)
     }
 }
 
-uint16_t flash_read(uint32_t addr)
+void flash_read(uint32_t addr)
 {
 	error = dir_dato("read");
 	if (error == 0)
@@ -141,9 +147,18 @@ uint16_t flash_read(uint32_t addr)
 		send_char('\r');
 		return 0;
 	}
-	low_address = (addr & 0x0000FF);
-	mid_address = ((addr>>8) & 0x0000FF);
-	high_address = ((addr>>16) & 0x0000FF);
+	low_address = (addr & 0xFF);
 	
-	
+	//Dato = low_Data | (high_Data << 8); 
+	//Dato = 0x3031
+	Aux_dato = low_Data;
+	Dato = Aux_dato&0xFF;
+	send_char((Aux_dato));
+	Aux_dato = high_Data;
+	Dato=(Dato>>8&0XFF);
+	Dato += Aux_dato&0xFF;
+	send_char((Aux_dato));
+	checksum+=Aux_dato;
+	Aux_dato = (Dato&0XFF);
+	checksum+=Aux_dato;	
 }
