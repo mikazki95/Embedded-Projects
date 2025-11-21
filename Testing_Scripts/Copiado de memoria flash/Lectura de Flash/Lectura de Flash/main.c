@@ -25,9 +25,13 @@ int			error =	0;
 uint32_t		checksum = 0;
 uint16_t	Dato = 0;
 uint8_t		Aux_dato = 0;
+uint8_t		Top_addr = 0;
 uint32_t	base_addr  = 0;
 uint32_t	Aux_addr  = 0;
 uint8_t		char_dato = 0;
+uint32_t	size_flash = 128;
+uint32_t	offset = 0X00; //0x7FFFEF;
+uint8_t		flag_ok = 0;
 
 ISR(USART0_RX_vect)
 {
@@ -44,9 +48,17 @@ ISR(USART0_RX_vect)
 		send_char('\n');
 		funcion_RW = 'W';
 	}
+	else if (comando =='b')
+	{
+		flag_ok = 1;
+	}
+	else if (comando =='E')
+	{
+		flag_ok = 2;
+	}
 	else 
 	{
-		send_char('E');
+		send_char('X');
 		send_char('\n');
 		funcion_RW = 'E';
 	}
@@ -69,7 +81,8 @@ int main(void)
 	sei();
 	
 	Flash_init();
-	
+	size_flash = size/16;
+	//size_flash = 56;
 	send_string(texto_info);
 	send_string(version);
 	send_char('\n');
@@ -88,8 +101,8 @@ int main(void)
 			funcion_RW = '0';
 			base_addr = 0X0;		
 			///////////////////////////////////////////////////////
-			for(uint32_t pagina = 0; pagina < 160; pagina++) {
-				base_addr = pagina * 8;  // Cada página son 8 palabras
+			for(uint32_t pagina = 0; pagina < size_flash; pagina++) {
+				base_addr = pagina * 8 + offset;  // Cada página son 8 palabras
 				checksum = 0;				
 				// ? INCLUIR DIRECCIÓN en el checksum (los 3 bytes)		
 				mid_address = ((base_addr>>8) & 0xFF);
@@ -97,9 +110,13 @@ int main(void)
 				low_address = (base_addr & 0xFF);
 				
 				Aux_addr = base_addr<<1;
+				//Aux_addr = base_addr>>3;
+				checksum += (Aux_addr >> 24) & 0xFF;
 				checksum += (Aux_addr >> 16) & 0xFF;
 				checksum += (Aux_addr >> 8) & 0xFF;
 				checksum += Aux_addr & 0xFF;
+				char_dato = ((Aux_addr>>24) & 0xFF);
+				send_char(char_dato);
 				char_dato = ((Aux_addr>>16) & 0xFF);
 				send_char(char_dato);
 				char_dato = ((Aux_addr>>8) & 0xFF);
@@ -119,6 +136,16 @@ int main(void)
 				ctrl_port |= (1 << ce);
 				checksum=(0x100 - checksum) & 0xFF;
 				send_char(checksum);
+				while(flag_ok == 0)
+				{
+					if (flag_ok == 2)
+					{
+						pagina--;
+					}
+					//asm("nop");
+				}
+				
+				flag_ok = 0;
 				//send_char('\n');							
 			}
 			//////////////////////////////////////////
