@@ -88,18 +88,18 @@ int main(void)
 			funcion_RW = '0';
 			base_addr = 0X0;		
 			///////////////////////////////////////////////////////
-			for(uint8_t pagina = 0; pagina < 16; pagina++) {
+			for(uint32_t pagina = 0; pagina < 160; pagina++) {
 				base_addr = pagina * 8;  // Cada página son 8 palabras
 				checksum = 0;				
-				// ? INCLUIR DIRECCIÓN en el checksum (los 3 bytes)
-				checksum += (base_addr >> 16) & 0xFF;
-				checksum += (base_addr >> 8) & 0xFF;
-				checksum += base_addr & 0xFF;				
+				// ? INCLUIR DIRECCIÓN en el checksum (los 3 bytes)		
 				mid_address = ((base_addr>>8) & 0xFF);
 				high_address = ((base_addr>>16) & 0xFF);
 				low_address = (base_addr & 0xFF);
 				
-				Aux_addr = base_addr>>3;
+				Aux_addr = base_addr<<1;
+				checksum += (Aux_addr >> 16) & 0xFF;
+				checksum += (Aux_addr >> 8) & 0xFF;
+				checksum += Aux_addr & 0xFF;
 				char_dato = ((Aux_addr>>16) & 0xFF);
 				send_char(char_dato);
 				char_dato = ((Aux_addr>>8) & 0xFF);
