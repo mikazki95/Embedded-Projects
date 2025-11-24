@@ -15,23 +15,24 @@
 #include "USART0.h"
 #include "S29GL256P.h"
 
-char		comando='0';
-char		funcion_RW = '0';
-char		valor_m[15]={0};
-uint32_t	size = 33554432;
+char		comando		='0';
+char		funcion_RW	= '0';
+char		valor_m[15]	={0};
+uint32_t	size		= 33554432;
 char		texto_info[10]		= {"I:Flash,"};
 char		version[10]	= {"1.0.0"};
-int			error =	0;
-uint32_t		checksum = 0;
-uint16_t	Dato = 0;
-uint8_t		Aux_dato = 0;
-uint8_t		Top_addr = 0;
-uint32_t	base_addr  = 0;
-uint32_t	Aux_addr  = 0;
-uint8_t		char_dato = 0;
-uint32_t	size_flash = 128;
-uint32_t	offset = 0X00; //0x7FFFEF;
-uint8_t		flag_ok = 0;
+int			error		=	0;
+uint32_t	checksum	= 0;
+uint16_t	Dato		= 0;
+uint8_t		Aux_dato	= 0;
+uint8_t		Top_addr	= 0;
+uint32_t	base_addr	= 0;
+uint32_t	Aux_addr	= 0;
+uint8_t		char_dato	= 0;
+uint32_t	size_flash	= 128;
+uint32_t	offset		= 0X00; //0XEF7FFF; //0x7FFFEF;
+uint8_t		flag_ok		= 0;
+uint8_t		flag_val	= 1;
 
 ISR(USART0_RX_vect)
 {
@@ -56,6 +57,14 @@ ISR(USART0_RX_vect)
 	{
 		flag_ok = 2;
 	}
+	else if (comando =='V')
+	{
+		flag_val ^= 1;
+		send_string("validacion: ");
+		dtostrf(flag_val,3,0,valor_m);
+		send_string(valor_m);
+		send_char('\n');
+	}
 	else 
 	{
 		send_char('X');
@@ -67,6 +76,7 @@ ISR(USART0_RX_vect)
 
 void flash_read(uint32_t addr);
 void flash_write(uint32_t addr, uint16_t data);
+void write_command(uint32_t addr, uint16_t cmd);
 void wait_ready(void);
 
 int main(void)
@@ -81,10 +91,14 @@ int main(void)
 	sei();
 	
 	Flash_init();
-	size_flash = size/16;
-	//size_flash = 56;
+	//size_flash = size/16;
+	size_flash = 5;
 	send_string(texto_info);
 	send_string(version);
+	send_char('\n');
+	send_string("validacion: ");
+	dtostrf(flag_val,3,0,valor_m);
+	send_string(valor_m);
 	send_char('\n');
 	// Verificar estado WP#
 	if(ctrl_port & (1 << wp)) {
@@ -136,6 +150,12 @@ int main(void)
 				ctrl_port |= (1 << ce);
 				checksum=(0x100 - checksum) & 0xFF;
 				send_char(checksum);
+				
+				if (flag_val == 0)
+				{
+					flag_ok =1;
+					_delay_us(.06);
+				}
 				while(flag_ok == 0)
 				{
 					if (flag_ok == 2)
@@ -144,7 +164,14 @@ int main(void)
 					}
 					//asm("nop");
 				}
-				
+				/*
+				asm("nop");
+				asm("nop");
+				asm("nop");
+				asm("nop");
+				asm("nop");
+				asm("nop");
+				*/
 				flag_ok = 0;
 				//send_char('\n');							
 			}
@@ -161,7 +188,19 @@ int main(void)
 			base_addr = 0;
 			Dato = 0xA5A5;
 			flash_write(base_addr,Dato);
-			funcion_RW = '0';
+			while(flag_ok == 0)
+			{
+				if (flag_ok == 2)
+				{
+					funcion_RW == 0;
+				}
+				//asm("nop");
+			}
+			flag_ok = 0;
+			base_addr = 1;
+			Dato = 0x5A5A;
+			flash_write(base_addr,Dato);
+			//funcion_RW = '0';
 		}
 		else if(funcion_RW == 'E')
 		{
@@ -209,7 +248,7 @@ void flash_write(uint32_t addr, uint16_t data) {
 		send_string("error de comando");
 		send_char('\n');
 		send_char('\r');
-		return 0;
+		return;
 	}  // Puerto como salida
 	
 	// Comando de escritura: 2 ciclos de unlock + program
@@ -231,12 +270,13 @@ void flash_write(uint32_t addr, uint16_t data) {
 		send_string("error de comando");
 		send_char('\n');
 		send_char('\r');
-		return 0;
+		return;
 	} // Volver a lectura
 }
 
 void write_command(uint32_t addr, uint16_t cmd) {
 	// Secuencia CE#
+	uint8_t		aux_cmd = 0;
 	ctrl_port &= ~(1 << ce);
 	// Establecer dirección
 	low_address = (addr & 0xFF);
@@ -244,15 +284,18 @@ void write_command(uint32_t addr, uint16_t cmd) {
 	high_address = ((addr >> 16) & 0xFF);
 	
 	// Establecer datos
-	low_Data_O = (cmd & 0xFF);
-	Aux_dato=low_Data;
+	aux_cmd = (cmd & 0xFF);
+	low_Data_O = aux_cmd;
 	send_string("LOW: ");
-	dtostrf(Aux_dato,3,0,valor_m);
+	dtostrf(aux_cmd,3,0,valor_m);
 	send_string(valor_m);
 	send_char('\n');
-	send_char('\r');
-	high_Data_O = ((cmd >> 8) & 0xFF);
-	
+	aux_cmd = ((cmd >> 8) & 0xFF);
+	high_Data_O = aux_cmd;
+	send_string("HIGTH: ");
+	dtostrf(aux_cmd,3,0,valor_m);
+	send_string(valor_m);
+	send_char('\n');
 	// Secuencia WE#
 	ctrl_port &= ~(1 << we);
 	//_delay_us(1);
