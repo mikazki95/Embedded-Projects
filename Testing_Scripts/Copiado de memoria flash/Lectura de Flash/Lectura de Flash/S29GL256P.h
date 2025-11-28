@@ -27,7 +27,7 @@
 #define bye 3  // BYTE# (0=8bit, 1=16bit)
 #define rst 4  // Reset
 #define rby 5  // Ready/Busy (INPUT)
-#define wp   6  // ? AGREGADO: WP#/ACC
+#define wp   6  // AGREGADO: WP#/ACC
 
 void Flash_init(); 
 
@@ -47,7 +47,7 @@ void Flash_init(){
 	// Estado inicial
 	ctrl_port |= (1<<ce) | (1<<oe) | (1<<we);  // Inactivos
 	ctrl_port |= (1<<bye);  // Modo 16 bits
-	ctrl_port |= (1 << wp);   // ? WP#
+	ctrl_port |= (1 << wp);   // 1 WP#
 	
 	// Reset
 	ctrl_port &= ~(1<<rst);
