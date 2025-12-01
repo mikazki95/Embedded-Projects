@@ -33,8 +33,9 @@ uint32_t	size_flash	= 128;
 uint32_t	offset		= 0x00; //0X770000; //0XEF7FFF; //0x7FFFEF;
 uint8_t		flag_ok		= 0;
 uint8_t		flag_val	= 1;
+uint8_t     flag_impr	= 0;
 volatile uint8_t reception_mode		= 0;
-volatile uint8_t data_buffer		[64]={0};    // Buffer para trama
+volatile uint32_t data_buffer	[64]={0};    // Buffer para trama
 volatile uint8_t data_index			= 0;     // Índice del buffer
 volatile uint8_t expected_bytes		= 0; // Bytes esperados
 
@@ -52,10 +53,11 @@ ISR(USART0_RX_vect)
 		}
 		else if (comando =='W')
 		{
-			send_char('W');
-			send_char('\n');
+			//send_char('W');
+			//send_char('\n');
 			funcion_RW = 'W';
 			reception_mode = 1;
+			data_index = 0;
 		}
 		else if (comando =='X')
 		{
@@ -126,7 +128,9 @@ int main(void)
 	
 	Flash_init();
 	//size_flash = size/16;
-	size_flash = 6;
+	size_flash = 4095;
+	//size_flash = 25 ;
+	//offset = 0x7FF0/2;
 	send_string(texto_info);
 	send_string(version);
 	send_char('\n');
@@ -184,15 +188,18 @@ int main(void)
 				ctrl_port &= ~(1 << oe);
 				//send_string("datos: ");
 				// Leer las 8 palabras de la página
+				flag_impr = 0;
+				//flash_read(pagina);
+				
 				for(uint8_t pos = 0; pos < 8; pos++) {
 					uint32_t addr = 0;
 					addr = base_addr + pos;
-					//dtostrf(pos,3,0,valor_m);
-					//send_string(valor_m);	
+					low_address = (addr & 0xFF);
+					//_delay_ms(100);
 					flash_read(addr);
-					//send_string(",");
-					//_delay_us(1);									
+												
 				}
+				
 				//send_string("check sum: ");
 				//_delay_us(1);
 				ctrl_port |= (1 << oe);
@@ -219,40 +226,46 @@ int main(void)
 		} 
 		else if (funcion_RW == 'W')
 		{
-			send_string("preparando para escribir: ");
-			dtostrf(size,3,0,valor_m);
-			send_string(valor_m);
-			send_string("bytes");
-			send_char('\n');
 			flag_ok = 0;
 			while (reception_mode == 1)
 			{
-				send_string("esperando trama ");
-				_delay_ms(100);
+				//send_string("esperando trama ");
+				//_delay_ms(100);
+				asm("nop");
 			}
 			process_received_frame();
-			//flash_write(base_addr,Dato);
-			//Dato = (data_buffer[4]<<8)|data_buffer[5];
-			Aux_addr = base_addr>>1;
+			//flash_write(0,0x0123);
+			Dato = (data_buffer[4]<<8)|data_buffer[5];
+			Aux_addr = (base_addr>>1);//&(0x01FFFFFF);
+			/*
+			send_string("Direccion de array: ");
+			dtostrf(base_addr,3,0,valor_m);
+			send_string(valor_m);
+			send_string(", en la direccion: ");
+			dtostrf(Aux_addr,3,0,valor_m);
+			send_string(valor_m);
+			send_char('\n');
+			*/
 			if (flag_ok == 1)
 			{
-				send_string("enviar trama \n");
+				//send_string("enviar trama \n");
 				for (uint8_t i =0; i<8; i++)
 				{
 					uint8_t aux_index = 4 + 2*i;
 					uint32_t aux2_addr = Aux_addr +i;
 					Dato = (data_buffer[aux_index]<<8)|data_buffer[aux_index + 1];
-					send_string("dato: ");
-					dtostrf(Dato,3,0,valor_m);
-					send_string(valor_m);
-					send_string(", direccion: ");
-					dtostrf(aux2_addr,3,0,valor_m);
-					send_string(valor_m);
-					send_char('\n');
-					
-					flash_write(aux2_addr,Dato);
-					
+					if (aux2_addr<0XFFE010)
+					{
+						flash_write(aux2_addr,Dato);
+						//asm("nop");
+					}
+					else
+					{						
+						send_string("E");
+						break;			
+					}					
 				}
+				send_string("b");
 			} 			
 			
 			funcion_RW = '0';
@@ -260,10 +273,9 @@ int main(void)
 		}
 		else if(funcion_RW == 'X')
 		{
-			send_string("Preparando para borrar");
-			send_char('\n');
-			send_char('\r');
+			send_string("Preparando para borrar \n");
 			flash_erase();
+			send_string("borrado \n");
 			funcion_RW = '0';
 		}
 		else if(funcion_RW == 'E')
@@ -288,10 +300,6 @@ void flash_read(uint32_t addr)
 		send_char('\r');
 		return 0;
 	}
-	low_address = (addr & 0xFF);
-	
-	//Dato = low_Data | (high_Data << 8); 
-	//Dato = 0x3031
 	Aux_dato = low_Data;
 	checksum+=Aux_dato;
 	Dato = Aux_dato&0xFF;
@@ -302,6 +310,7 @@ void flash_read(uint32_t addr)
 	Dato += Aux_dato&0xFF;
 	send_char((Aux_dato));
 	Aux_dato = (Dato&0XFF);	
+	
 }
 
 void flash_write(uint32_t addr, uint16_t data) {
@@ -325,12 +334,21 @@ void flash_write(uint32_t addr, uint16_t data) {
 	write_command(0x555, 0xA0);
 	
 	//addr = 0x0;
-	//Aux_send = 0x1234;
 	Aux_send = data;
+	//Aux_send = 0x1234;
 	aux_high = (Aux_send>>8)|(Aux_send<<8);
 	// Escribir datos
+	/*
+	send_string("dato: ");
+	dtostrf(Aux_send,3,0,valor_m);
+	send_string(valor_m);
+	send_string(", direccion: ");
+	dtostrf(addr,3,0,valor_m);
+	send_string(valor_m);
+	send_char('\n');
+	*/
 	write_command(addr, aux_high);
-	_delay_us(1);
+	//_delay_us(1);
 	// Esperar fin de escritura
 	wait_ready();	
 	error = dir_dato("read");
@@ -360,6 +378,7 @@ void write_command(uint32_t addr, uint16_t cmd) {
 	low_Data_O = aux_cmd;
 	aux_cmd = ((cmd >> 8) & 0xFF);
 	high_Data_O = aux_cmd;
+	_delay_us(10);
 	// Secuencia CE#
 	ctrl_port &= ~(1 << ce);
 	//_delay_us(1);
@@ -367,9 +386,9 @@ void write_command(uint32_t addr, uint16_t cmd) {
 	ctrl_port &= ~(1 << we);
 	//_delay_us(1);
 	ctrl_port |= (1 << we);
-	_delay_us(1);
+	//_delay_us(1);
 	ctrl_port |= (1 << ce);
-	_delay_us(1);
+	//_delay_us(1);
 }
 
 void wait_ready(void) {
@@ -382,8 +401,8 @@ void wait_ready(void) {
 	send_string(valor_m);
 	send_char('\n');
 	*/
-	send_string("espera");
-	send_char('\n');
+	//send_string("espera");
+	//send_char('\n');
 	while(((ctrl_pin & (1 << rby)) == 0) && timeout--) {
 		asm("nop");
 		asm("nop");
@@ -394,8 +413,8 @@ void wait_ready(void) {
 		// Error de timeout
 		send_string("ERROR: Timeout escritura\n");
 	}
-	send_string("Listo");
-	send_char('\n');
+	//send_string("Listo");
+	//send_char('\n');
 }
 
 void flash_erase(){
@@ -412,28 +431,51 @@ void flash_erase(){
 	write_command(0x555, 0x80); //555 80
 	write_command(0x555, 0xAA); //555 AA 
 	write_command(0x2AA, 0x55); //2AA 55 
-	//write_command(0x555, 0x10);	//555 10
-	write_command(0x00, 0x30);	//555 10
-	_delay_us(1);
+	//write_command(0x555, 0x10);	//555 10//borrado completo 
+	write_command(0x00, 0x30);	//555 10   // borrado por seccion 
+	_delay_us(10);
 	// Esperar fin de escritura
 	wait_ready();
 }
 
 void process_received_frame(void) {
 	// 1. Extraer dirección (primeros 4 bytes: 00 00 00 10)
+	base_addr = 0;
+	/*for (int8_t i0=3;i0>=0;i0--)
+	{
+		int8_t corrimiento = i0*8;
+		send_string("array ");
+		dtostrf(i0,3,0,valor_m);
+		send_string(valor_m);
+		send_string(" dato ");
+		dtostrf(data_buffer[i0],3,0,valor_m);
+		send_string(valor_m);
+		send_string(" corrimiento ");
+		dtostrf(corrimiento,3,0,valor_m);
+		send_string(valor_m);
+		send_string(" direccion ");
+		base_addr = data_buffer[i0]*256;
+		dtostrf(base_addr,3,0,valor_m);
+		send_string(valor_m);
+		send_char('\n');
+	}*/
+	
+	
 	base_addr = (data_buffer[0] << 24) | (data_buffer[1] << 16) |
 	(data_buffer[2] << 8) | data_buffer[3];
 	
 	// 2. Calcular checksum
 	uint8_t calculated_checksum = 0;
 	for(uint8_t i = 0; i < data_index - 1; i++) {
-		calculated_checksum = calculated_checksum+data_buffer[i]; // XOR checksum
+		calculated_checksum = calculated_checksum+data_buffer[i]; // 
 	}
 	calculated_checksum=(0x100 - calculated_checksum) & 0xFF;
 	// 3. Verificar checksum
 	uint8_t received_checksum = data_buffer[data_index - 1];
 	
 	if(calculated_checksum != received_checksum) {
+		send_string("E");
+		
 		send_string("ERROR: Checksum incorrecto\n\r");
 		send_string("calculated_checksum: ");
 		dtostrf(calculated_checksum,3,0,valor_m);
@@ -443,7 +485,7 @@ void process_received_frame(void) {
 		dtostrf(received_checksum,3,0,valor_m);
 		send_string(valor_m);
 		send_char('\n');
-		//send_char('\n');
+		
 		return;
 	}
 	flag_ok = 1;
