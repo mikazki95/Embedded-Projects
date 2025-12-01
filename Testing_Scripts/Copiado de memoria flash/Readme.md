@@ -1,2 +1,3 @@
 # Copiado de memoria flash  🛠️  
 Scripts usados para copiar una memoria flash en otra, esto se hizo porque no se conseguía el zócalo correspondiente así que propuse usar una memoria flash diferente y un atmega2560 para hacer el respaldo y con este leer y copiar el contenido de la flash, se pretende usar una s29al032d70tfi04 vpara respaldar la gl256p10fa102
+por cuestiones de tamaño se opto por hacerlo por comunicacion uart asi que bueno veremos si duplicando la velocidad mejoramos cosas, aun podemos depurar algunas cuestiones 
