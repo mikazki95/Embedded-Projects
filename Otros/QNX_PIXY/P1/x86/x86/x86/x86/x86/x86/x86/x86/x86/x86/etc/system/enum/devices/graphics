@@ -1,0 +1,384 @@
+#
+# Definitions for graphics devices
+#
+# Format is <match> [ { <match> } ] <action> [ { <action } ]
+# Only one group of actions will be performed.  Try to match on exact
+# pci/vendor string first, otherwise match on PCI display class.
+# Defaults to "all" if no PCI display devices in system.
+#
+
+device(pci, ven=$(PCI_VEND_3DFX), dev=0003)		# 3Dfx VooDoo Banshee
+device(pci, ven=$(PCI_VEND_3DFX), dev=0004)		# 3Dfx VooDoo 3
+device(pci, ven=$(PCI_VEND_3DFX), dev=0005)		# 3Dfx VooDoo 3
+device(pci, ven=$(PCI_VEND_3DFX), dev=0009)		# 3Dfx VooDoo 5
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-banshee.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=$(PCI_VEND_ATI), dev=4144)		# ATI Radeon 9500
+device(pci, ven=$(PCI_VEND_ATI), dev=4145)		# ATI Radeon R300-4P 
+device(pci, ven=$(PCI_VEND_ATI), dev=4146)		# ATI Radeon R300-4P 
+device(pci, ven=$(PCI_VEND_ATI), dev=4147)		# ATI Radeon R300-4P 
+device(pci, ven=$(PCI_VEND_ATI), dev=4148)		# ATI Radeon 9800 
+device(pci, ven=$(PCI_VEND_ATI), dev=4149)		# ATI Radeon 9500
+device(pci, ven=$(PCI_VEND_ATI), dev=4150)		# ATI Radeon 9600
+device(pci, ven=$(PCI_VEND_ATI), dev=4151)		# ATI Radeon 9600
+device(pci, ven=$(PCI_VEND_ATI), dev=4152)		# ATI Radeon 9600 XT
+device(pci, ven=$(PCI_VEND_ATI), dev=4242)		# ATI Radeon 8500 AIW
+device(pci, ven=$(PCI_VEND_ATI), dev=4964)		# ATI Radeon 9000 
+device(pci, ven=$(PCI_VEND_ATI), dev=4965)		# ATI Radeon 9000 
+device(pci, ven=$(PCI_VEND_ATI), dev=4966)		# ATI Radeon 9000 
+device(pci, ven=$(PCI_VEND_ATI), dev=4967)		# ATI Radeon 9000 
+device(pci, ven=$(PCI_VEND_ATI), dev=4c57)		# ATI Radeon M7
+device(pci, ven=$(PCI_VEND_ATI), dev=4c58)		# ATI Radeon M7
+device(pci, ven=$(PCI_VEND_ATI), dev=4c59)		# ATI Radeon M6
+device(pci, ven=$(PCI_VEND_ATI), dev=4c5a)		# ATI Radeon M6
+device(pci, ven=$(PCI_VEND_ATI), dev=4c64)		# ATI Radeon M9
+device(pci, ven=$(PCI_VEND_ATI), dev=4c65)		# ATI Radeon M9 
+device(pci, ven=$(PCI_VEND_ATI), dev=4c66)		# ATI Radeon M9 
+device(pci, ven=$(PCI_VEND_ATI), dev=4c67)		# ATI Radeon M9 
+device(pci, ven=$(PCI_VEND_ATI), dev=4e44)		# ATI Radeon 9700 
+device(pci, ven=$(PCI_VEND_ATI), dev=4e45)		# ATI Radeon 9700 
+device(pci, ven=$(PCI_VEND_ATI), dev=4e46)		# ATI Radeon 9700 
+device(pci, ven=$(PCI_VEND_ATI), dev=4e47)		# ATI Radeon 9700 
+device(pci, ven=$(PCI_VEND_ATI), dev=4e48)		# ATI Radeon 9800 
+device(pci, ven=$(PCI_VEND_ATI), dev=4e49)		# ATI Radeon 9800 
+device(pci, ven=$(PCI_VEND_ATI), dev=4e4a)		# ATI Radeon 9800 XT 
+device(pci, ven=$(PCI_VEND_ATI), dev=4e50)		# ATI Mobility Radeon 9600
+device(pci, ven=$(PCI_VEND_ATI), dev=4e52)		# ATI Mobility Radeon 9600
+device(pci, ven=$(PCI_VEND_ATI), dev=5144)		# ATI Radeon QD
+device(pci, ven=$(PCI_VEND_ATI), dev=5145)		# ATI Radeon QE (7200)
+device(pci, ven=$(PCI_VEND_ATI), dev=5146)		# ATI Radeon QF (7200)
+device(pci, ven=$(PCI_VEND_ATI), dev=5147)		# ATI Radeon QG (7200)
+device(pci, ven=$(PCI_VEND_ATI), dev=514d)		# ATI Radeon 9100
+device(pci, ven=$(PCI_VEND_ATI), dev=5159)		# ATI Radeon RV100 (VE) (7000)
+device(pci, ven=$(PCI_VEND_ATI), dev=515a)		# ATI Radeon RV100 (VE) (7000) 
+device(pci, ven=$(PCI_VEND_ATI), dev=5157)		# ATI Radeon R7500
+device(pci, ven=$(PCI_VEND_ATI), dev=5158)		# ATI Radeon R7500
+device(pci, ven=$(PCI_VEND_ATI), dev=514c)		# ATI Radeon 8500
+device(pci, ven=$(PCI_VEND_ATI), dev=514d)		# ATI Radeon 8500
+device(pci, ven=$(PCI_VEND_ATI), dev=514e)		# ATI Radeon 8500
+device(pci, ven=$(PCI_VEND_ATI), dev=514f)		# ATI Radeon 8500
+device(pci, ven=$(PCI_VEND_ATI), dev=5960)		# ATI Radeon 9200
+device(pci, ven=$(PCI_VEND_ATI), dev=5961)		# ATI Radeon 9200
+device(pci, ven=$(PCI_VEND_ATI), dev=5964)		# ATI Radeon 9200
+device(pci, ven=$(PCI_VEND_ATI), dev=5c61)		# ATI Mobility 9200
+device(pci, ven=$(PCI_VEND_ATI), dev=5c63)		# ATI Mobility 9200
+device(pci, ven=$(PCI_VEND_ATI), dev=5460)              # ATI Mobility M22 (X300) 
+device(pci, ven=$(PCI_VEND_ATI), dev=5b60)              # ATI Radeon X300
+device(pci, ven=$(PCI_VEND_ATI), dev=3e50)              # ATI Radeon X600
+device(pci, ven=$(PCI_VEND_ATI), dev=515e)              # ATI ES1000
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-radeon.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+# Observe how this stanza must appear after the previous one
+device(pci, ven=$(PCI_VEND_ATI), dev=4164)		# ATI Radeon 9500 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4168)		# ATI Radeon 9800 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4169)		# ATI Radeon 9500 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4170)		# ATI Radeon 9600 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4171)		# ATI Radeon 9600 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4172)		# ATI Radeon 9600 XT (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=496e)		# ATI Radeon 9000 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=496f)		# ATI Radeon 9000 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4c6f)		# ATI Radeon 9000 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4e64)		# ATI Radeon 9700 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4e65)		# ATI Radeon 9700 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4e66)		# ATI Radeon 9600 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4e68)		# ATI Radeon 9800 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4e69)		# ATI Radeon 9800 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=4e6a)		# ATI Radeon 9800 XT (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=516d)		# ATI Radeon 9100 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=5940)		# ATI Radeon 9200 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=5941)		# ATI Radeon 9200 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=5d44)		# ATI Radeon 9200 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=5b70)              # ATI Radeon X300 (Secondary)
+device(pci, ven=$(PCI_VEND_ATI), dev=3e70)              # ATI Radeon X600 (Secondary)
+        cfgfile(fname, /etc/system/config/graphics-traplist)
+        echo("# $(ven),$(dev) ATI Radeon secondary device ", $(fname))
+
+device(pci, ven=$(PCI_VEND_ATI), dev=5245)		# ATI Rage 128 GL
+device(pci, ven=$(PCI_VEND_ATI), dev=5246)		# ATI Rage 128 GL
+device(pci, ven=$(PCI_VEND_ATI), dev=534b)		# ATI Rage 128 GL
+device(pci, ven=$(PCI_VEND_ATI), dev=534c)		# ATI Rage 128 GL
+device(pci, ven=$(PCI_VEND_ATI), dev=534d)		# ATI Rage 128 GL
+device(pci, ven=$(PCI_VEND_ATI), dev=534e)		# ATI Rage 128 4X 
+device(pci, ven=$(PCI_VEND_ATI), dev=524b)		# ATI Rage 128 VR 
+device(pci, ven=$(PCI_VEND_ATI), dev=524c)		# ATI Rage 128 VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5345)		# ATI Rage 128 VR 
+device(pci, ven=$(PCI_VEND_ATI), dev=5346)		# ATI Rage 128 VR 
+device(pci, ven=$(PCI_VEND_ATI), dev=5347)		# ATI Rage 128 VR 
+device(pci, ven=$(PCI_VEND_ATI), dev=5348)		# ATI Rage 128 VR 
+device(pci, ven=$(PCI_VEND_ATI), dev=5041)		# ATI Rage 128 PRO GL
+device(pci, ven=$(PCI_VEND_ATI), dev=5042)		# ATI Rage 128 PRO GL
+device(pci, ven=$(PCI_VEND_ATI), dev=5043)		# ATI Rage 128 PRO GL
+device(pci, ven=$(PCI_VEND_ATI), dev=5044)		# ATI Rage 128 PRO GL
+device(pci, ven=$(PCI_VEND_ATI), dev=5045)		# ATI Rage 128 PRO GL
+device(pci, ven=$(PCI_VEND_ATI), dev=5046)		# ATI Rage 128 PRO GL
+device(pci, ven=$(PCI_VEND_ATI), dev=5047)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5048)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5049)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=504a)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=504b)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=504c)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=504d)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=504e)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=504f)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5050)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5051)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5052)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5053)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5054)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5055)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5056)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5057)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5058)		# ATI Rage 128 PRO VR
+device(pci, ven=$(PCI_VEND_ATI), dev=5446)		# ATI Rage 128 PRO ULTRA (Expert Pro 2000) 
+device(pci, ven=$(PCI_VEND_ATI), dev=544C)		# ATI Rage 128 PRO ULTRA 
+device(pci, ven=$(PCI_VEND_ATI), dev=5452)		# ATI Rage 128 PRO ULTRA  
+device(pci, ven=$(PCI_VEND_ATI), dev=5453)		# ATI Rage 128 PRO ULTRA  
+device(pci, ven=$(PCI_VEND_ATI), dev=5454)		# ATI Rage 128 PRO ULTRA  
+device(pci, ven=$(PCI_VEND_ATI), dev=5455)		# ATI Rage 128 PRO ULTRA  
+device(pci, ven=$(PCI_VEND_ATI), dev=4c45)		# ATI Rage 128 Mobility M3
+device(pci, ven=$(PCI_VEND_ATI), dev=4c46)		# ATI Rage 128 Mobility M3
+device(pci, ven=$(PCI_VEND_ATI), dev=4d46)		# ATI Rage 128 Mobility M4
+device(pci, ven=$(PCI_VEND_ATI), dev=4d4c)		# ATI Rage 128 Mobility M4
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-ati_rage128.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+# Observe how this stanza must appear after the previous one
+device(pci, ven=$(PCI_VEND_ATI), dev=5046, subven=$(PCI_VEND_ATI), subsys=2001)		# ATI Rage Fury MaXX
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo("# $(ven),$(dev) ATI Rage Fury Maxx second processor", $(fname))
+
+device(pci, ven=$(PCI_VEND_ATI), dev=4354)		# ATI Mach64 CT
+device(pci, ven=$(PCI_VEND_ATI), dev=4358)		# ATI Mach64 CX
+device(pci, ven=$(PCI_VEND_ATI), dev=4554)		# ATI Mach64 ET
+device(pci, ven=$(PCI_VEND_ATI), dev=4758)		# ATI Mach64 GX
+device(pci, ven=$(PCI_VEND_ATI), dev=5654)		# ATI Mach64 VT
+device(pci, ven=$(PCI_VEND_ATI), dev=5655)		# ATI Mach64 VTB
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-mach64.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=$(PCI_VEND_ATI), dev=4754)		# ATI 3D Rage II (GT)
+device(pci, ven=$(PCI_VEND_ATI), dev=4755)		# ATI 3D Rage II+ (GTB)
+device(pci, ven=$(PCI_VEND_ATI), dev=4756)		# ATI 3D Rage IIC PCI
+device(pci, ven=$(PCI_VEND_ATI), dev=4765)		# ATI 3D Rage IIC PCI
+device(pci, ven=$(PCI_VEND_ATI), dev=4757)		# ATI 3D Rage IIC AGP
+device(pci, ven=$(PCI_VEND_ATI), dev=4759)		# ATI 3D Rage IIC AGP
+device(pci, ven=$(PCI_VEND_ATI), dev=475a)		# ATI 3D Rage IIC AGP
+device(pci, ven=$(PCI_VEND_ATI), dev=4742)		# ATI 3D Rage PRO AGP
+device(pci, ven=$(PCI_VEND_ATI), dev=4744)		# ATI 3D Rage PRO AGP
+device(pci, ven=$(PCI_VEND_ATI), dev=4749)		# ATI 3D Rage PRO PCI
+device(pci, ven=$(PCI_VEND_ATI), dev=4750)		# ATI 3D Rage PRO PCI
+device(pci, ven=$(PCI_VEND_ATI), dev=4751)		# ATI 3D Rage PRO PCI
+device(pci, ven=$(PCI_VEND_ATI), dev=4c42)		# ATI 3D Rage LT-PRO
+device(pci, ven=$(PCI_VEND_ATI), dev=4c47)		# ATI 3D Rage LT
+device(pci, ven=$(PCI_VEND_ATI), dev=4c49)		# ATI 3D Rage LT-PRO
+device(pci, ven=$(PCI_VEND_ATI), dev=4c50)		# ATI 3D Rage LT-PRO
+device(pci, ven=$(PCI_VEND_ATI), dev=4c4d)		# ATI 3D Rage Mobility M/M1/P
+device(pci, ven=$(PCI_VEND_ATI), dev=4c52)		# ATI 3D Rage Mobility M/M1/P
+device(pci, ven=$(PCI_VEND_ATI), dev=474d)		# ATI 3D Rage XL
+device(pci, ven=$(PCI_VEND_ATI), dev=474f)		# ATI 3D Rage XL
+device(pci, ven=$(PCI_VEND_ATI), dev=4752)		# ATI 3D Rage XL
+device(pci, ven=$(PCI_VEND_ATI), dev=474c)		# ATI 3D Rage XC
+device(pci, ven=$(PCI_VEND_ATI), dev=474e)		# ATI 3D Rage XC
+device(pci, ven=$(PCI_VEND_ATI), dev=5656)		# ATI Rage IIC  
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-rage.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=1078, dev=0104)				# Media GX
+device(pci, ven=100b, dev=0504)				# Geode Dorado 
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-geode.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=$(PCI_VEND_MATROX), dev=051a)		# MATROX Mystique
+device(pci, ven=$(PCI_VEND_MATROX), dev=1001)		# MATROX G100 AGP
+device(pci, ven=$(PCI_VEND_MATROX), dev=0519)		# MATROX Millenium PCI
+device(pci, ven=$(PCI_VEND_MATROX), dev=051f)		# MATROX Millenium II
+device(pci, ven=$(PCI_VEND_MATROX), dev=051b)		# MATROX Millenium II
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-matrox.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=$(PCI_VEND_MATROX), dev=0520)		# MATROX G200 PCI
+device(pci, ven=$(PCI_VEND_MATROX), dev=0521)		# MATROX G200 AGP
+device(pci, ven=$(PCI_VEND_MATROX), dev=0525)		# MATROX G400/G450 AGP
+device(pci, ven=$(PCI_VEND_MATROX), dev=2527)		# MATROX G550 AGP
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-matroxg.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=102c, dev=00c0)		# Chips and Technologies 69000
+device(pci, ven=102c, dev=00e5)		# Chips and Technologies 65555
+device(pci, ven=102c, dev=00e4)		# Chips and Technologies 65554
+device(pci, ven=102c, dev=00e0)		# Chips and Technologies 65550
+device(pci, ven=102c, dev=0c30)		# Chips and Technologies 69030
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-chips.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=$(PCI_VEND_S3), dev=8811)		# S3 Trio 64
+device(pci, ven=$(PCI_VEND_S3), dev=88c0)		# S3 Vision 864
+device(pci, ven=$(PCI_VEND_S3), dev=88c1)		# S3 Vision 864
+device(pci, ven=$(PCI_VEND_S3), dev=8880)		# S3 Vision 868
+device(pci, ven=$(PCI_VEND_S3), dev=88f0)		# S3 Vision 968
+device(pci, ven=$(PCI_VEND_S3), dev=5631)		# S3 ViRGE
+device(pci, ven=$(PCI_VEND_S3), dev=883d)		# S3 ViRGE VX
+device(pci, ven=$(PCI_VEND_S3), dev=8a01)		# S3 ViRGE GX
+device(pci, ven=$(PCI_VEND_S3), dev=8c01)		# S3 ViRGE MX
+device(pci, ven=$(PCI_VEND_S3), dev=8901)		# S3 Trio 64V2 
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-s3.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=$(PCI_VEND_S3), dev=8a22)		# S3 Savage 4 
+device(pci, ven=$(PCI_VEND_S3), dev=8a25)		# ProSavage PM133 
+device(pci, ven=$(PCI_VEND_S3), dev=8d01)		# Twister (ProSavage PN133) 
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-s3_savage.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=12d2, dev=0018)				# nVidia / SGS Thomson Riva 128
+device(pci, ven=12d2, dev=0019)				# nVidia / SGS Thomson Riva 128
+device(pci, ven=10de, dev=0020)				# nVidia Riva TNT
+device(pci, ven=10de, dev=0028)				# nVidia Riva TNT2
+device(pci, ven=10de, dev=0029)				# nVidia Riva TNT2
+device(pci, ven=10de, dev=002a)				# nVidia Riva TNT2
+device(pci, ven=10de, dev=002b)				# nVidia Riva TNT2
+device(pci, ven=10de, dev=002c)				# nVidia Riva TNT2
+device(pci, ven=10de, dev=002d)				# nVidia Riva TNT2
+device(pci, ven=10de, dev=002e)				# nVidia Riva TNT2
+device(pci, ven=10de, dev=002f)				# nVidia Riva TNT2
+device(pci, ven=10de, dev=00a0)				# nVidia Riva TNT2
+device(pci, ven=10de, dev=0100)				# nVidia GeForce SDR
+device(pci, ven=10de, dev=0101)				# nVidia GeForce DDR
+device(pci, ven=10de, dev=0102)				# nVidia GeForce
+device(pci, ven=10de, dev=0103)				# nVidia GeForce QUADRO
+device(pci, ven=10de, dev=0110)				# nVidia GeForce
+device(pci, ven=10de, dev=0111)				# nVidia GeForce
+device(pci, ven=10de, dev=0112)				# nVidia GeForce
+device(pci, ven=10de, dev=0113)				# nVidia GeForce
+device(pci, ven=10de, dev=0150)				# nVidia GeForce2 GTS
+device(pci, ven=10de, dev=0151)				# nVidia GeForce2 GTS
+device(pci, ven=10de, dev=0152)				# nVidia GeForce2 GTS
+device(pci, ven=10de, dev=0153)				# nVidia GeForce2
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-tnt.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=104a, dev=0209)				# STPC Consumer 
+device(pci, ven=104a, dev=020a)				# STPC Consumer II 
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-stpc.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=8086, dev=7121)				# Intel 82810
+device(pci, ven=8086, dev=7123)				# Intel 82810 DC100
+device(pci, ven=8086, dev=7125)				# Intel 82810E
+device(pci, ven=8086, dev=1132)				# Intel 82815
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-i810.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=8086, dev=3577, index=0)		# Intel 82830
+device(pci, ven=8086, dev=3582, index=0)		# Intel 82852/82855
+device(pci, ven=8086, dev=358e, index=0)		# Intel 82854
+device(pci, ven=8086, dev=2562)				# Intel 82845
+device(pci, ven=8086, dev=2572)				# Intel 82865
+device(pci, ven=8086, dev=2582)				# Intel 915G
+device(pci, ven=8086, dev=2592)				# Intel 915GM
+device(pci, ven=8086, dev=2772)				# Intel 945G
+device(pci, ven=8086, dev=27a2)				# Intel 945GM
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-i830.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=8086, dev=3577, index=1)		# Intel 82830 "clone" device
+device(pci, ven=8086, dev=3582, index=1)		# Intel 82852/82855 "clone" device
+device(pci, ven=8086, dev=358e, index=1)		# Intel 82854 "clone" device
+device(pci, ven=8086, dev=2782)				# Intel 915G "clone" device
+device(pci, ven=8086, dev=2792)				# Intel 915GM "clone" device
+device(pci, ven=8086, dev=2776)				# Intel 945G "clone" device
+device(pci, ven=8086, dev=27a6)				# Intel 945GM "clone" device
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo("# $(ven),$(dev) Intel 82830/82852/82855 clone device", $(fname))
+
+device(pci, ven=10c8, dev=0005)				# NeoMagic MagicMedia256AV
+device(pci, ven=10c8, dev=0025)				# NeoMagic MagicMedia256AV+
+device(pci, ven=10c8, dev=0006)				# NeoMagic MagicMedia256ZX
+device(pci, ven=10c8, dev=0016)				# NeoMagic MagicMedia256XL+
+device(pci, ven=10c8, dev=0003)				# NeoMagic MagicGraph128ZV
+device(pci, ven=10c8, dev=0083)				# NeoMagic MagicGraph128ZV+
+device(pci, ven=10c8, dev=0004)				# NeoMagic MagicGraph128XD
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-neomagic.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=10ea, dev=5000)				# IGS CyberPro 50xx 
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-igs5000.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=10ea, dev=5300)				# IGS CyberPro 53xx 
+device(pci, ven=10ea, dev=5200)				# IGS CyberPro 52xx 
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-tvia.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=4d51, dev=0200)				# MediaQ M200 
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-mq200.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=10cf, dev=2019)				# Fujitsu Coral-P  
+device(pci, ven=10cf, dev=201e)				# Fujitsu Coral-PA  
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-coral.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=1033, dev=0111)				# NEC RavinE 
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-ravin.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=15ad, dev=0405)				# VMWare graphics driver (PCI SVGA)
+device(pci, ven=15ad, dev=0710)				# VMWare graphics driver (Legacy SVGA)
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-vmware.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=1039, dev=6300)				# SiS630  
+device(pci, ven=1039, dev=0300)				# SiS300  
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-sis630.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=126f, dev=0712)				# SM712 
+device(pci, ven=126f, dev=0720)				# SM722 
+device(pci, ven=126f, dev=0730)				# SM731
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-smi7xx.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, ven=126f, dev=0501)				# SM501 Voyager GX
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-smi5xx.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+device(pci, .class=$(PCI_CLASS_DISPLAY))		# Unaccelerated VESA 2.00
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-svga.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so -I$(index) "-d0x$(ven),0x$(dev)", $(fname))
+
+all	# No PCI display device found, so probe for non-pci devices
+	cfgfile(fname, /etc/system/config/graphics-traplist)
+	echo(devgt-iographics -dldevg-geode.so, $(fname))
+	echo(devgt-iographics -dldevg-svga.so, $(fname))
+	echo(devgt-iographics -dldevg-vesabios.so, $(fname))
+

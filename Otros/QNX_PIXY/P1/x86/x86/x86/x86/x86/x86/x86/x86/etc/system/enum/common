@@ -1,0 +1,7 @@
+#
+# common drivers
+#
+all
+	config(include)
+	config(devices)
+	enumerator(pnpbios)

@@ -1,0 +1,71 @@
+#ifdef __USAGE
+#
+#%C
+#
+# /etc/rc.d/rc.cafinit
+#
+# This script sets up your environment & starts system services
+#
+# Author: Markus Mueller
+# Company: Gersys GmbH
+#
+# Version: 1.0
+# Date: 2009-07-09
+#
+# Modifications:
+#
+# - Date: 2009-09-07
+# - Added: QNX_TARGET Environment variable (for mkifs)
+#
+# -
+# -
+#
+#endif
+
+export VRCCAFINIT=1.0
+export TERM=qansi-m
+
+# Start Message with Version
+echo "\n/etc/rc.d/rc.cafinit: Environment Setup & System Services - Version $VRCCAFINIT"
+
+# Setup timezone
+# --------------
+TZ=cet-1cest-2,M3.5.0/2,M9.5.0/2
+
+# The following sets the timezone. Instead of using the TZ envar, we
+# use a confstr to allow changing this dynamicly.
+export TZ
+typeset +x TZ
+
+# Setup the realtime clock (usually if the rtc is localtime)
+if test -x /etc/rc.d/rc.rtc; then
+	. /etc/rc.d/rc.rtc
+	print "RTC set up"
+fi
+
+# If no hostname is configured, look in /usr/caf/etc/HOSTNAME
+# -----------------------------------------------------------
+if test -x /usr/caf/etc/hostname; then
+  hostname $(cat /usr/caf/etc/hostname)
+else
+  HOSTNAME=$(hostname -s)
+fi
+
+# Starting Random
+random -t
+echo "Random started"
+
+# Exporting PHOTON and SYSTEM Vars
+# --------------------------------
+export LOGNAME=root
+export HOME=/root
+export PATH=$PATH:/usr/photon/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/photon/lib:/usr/photon/dll
+export PHOTON_PATH=/usr/photon
+export QNX_TARGET=/
+
+# Start CAF Specific Start
+# ------------------------
+if test -x /etc/rc.d/rc.local; then
+  exec     /etc/rc.d/rc.local
+fi

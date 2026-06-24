@@ -1,0 +1,27 @@
+[ UC_LOCAL_t ]
+#
+# cf_save(): Mon Jul 20 14:55:21 2009
+#
+# Description:
+# This is the User's Configuration (UC) Data File.
+#
+# Keyword           Comment/{Values}/[Default]
+# ============      ============================================================
+# language        - PhAB language, the associated lang_id is saved in $HOME/.ph/.ABLANG
+#                   The language must be defined in /usr/photon/translations/uc_language_t
+#                   [US English]
+# keyboard        - Keyboard mapping for Photon, the associated keyboard file is saved in $HOME/.ph/.KEYBOARD
+#                   The keyboard must be defined in /usr/photon/keyboard/uc_keyboard_t
+#                   [US English]
+# tz              - The current time zone, the associated TZ string is saved in /etc/TIMEZONE file
+#                   TZ must be defined in /etc/timezone/uc_tz_t.
+#                   [Greenwich Mean Time]
+# dst             - Indicates Daylight Saving Time Mode
+#                   { DST_ON=1, DST_OFF=0 }
+#                   [DST_ON]
+#
+
+language = Spanish
+keyboard = Spanish
+tz       = "Spain	GMT +1:00	GMT +2:00"
+dst      = DST_ON

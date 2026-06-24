@@ -1,0 +1,217 @@
+;
+; fontdir config file, Wed Apr 11 15:15:18 2001
+;
+char08,.phf,Charter,8,,0020-00FF,MIp,10x10,4K
+char08b,.phf,Charter,8,B,0020-00FF,MIp,10x11,4K
+char08bi,.phf,Charter,8,BI,0020-00FF,MIp,12x10,4K
+char08i,.phf,Charter,8,I,0020-00FF,MIp,10x10,4K
+char10,.phf,Charter,10,,0020-00FF,MIp,12x12,4K
+char10b,.phf,Charter,10,B,0020-00FF,MIp,13x12,4K
+char10bi,.phf,Charter,10,BI,0020-00FF,MIp,14x12,4K
+char10i,.phf,Charter,10,I,0020-00FF,MIp,13x13,4K
+char12,.phf,Charter,12,,0020-00FF,MIp,14x15,4K
+char12b,.phf,Charter,12,B,0020-00FF,MIp,15x15,5K
+char12bi,.phf,Charter,12,BI,0020-00FF,MIp,16x15,5K
+char12i,.phf,Charter,12,I,0020-00FF,MIp,15x15,5K
+char14,.phf,Charter,14,,0020-00FF,MIp,15x17,5K
+char14b,.phf,Charter,14,B,0020-00FF,MIp,17x17,5K
+char14bi,.phf,Charter,14,BI,0020-00FF,MIp,19x17,6K
+char14i,.phf,Charter,14,I,0020-00FF,MIp,17x18,5K
+char18,.phf,Charter,18,,0020-00FF,MIp,19x22,6K
+char18b,.phf,Charter,18,B,0020-00FF,MIp,21x22,7K
+char18bi,.phf,Charter,18,BI,0020-00FF,MIp,23x22,7K
+char18i,.phf,Charter,18,I,0020-00FF,MIp,22x23,7K
+char24,.phf,Charter,24,,0020-00FF,MIp,26x30,8K
+char24b,.phf,Charter,24,B,0020-00FF,MIp,29x30,9K
+char24bi,.phf,Charter,24,BI,0020-00FF,MIp,31x30,10K
+char24i,.phf,Charter,24,I,0020-00FF,MIp,29x30,9K
+cour08,.phf,Courier,8,,0020-00FF,MIf,6x10,4K
+cour08b,.phf,Courier,8,B,0020-00FF,MIf,6x10,4K
+cour08bi,.phf,Courier,8,BI,0020-00FF,MIf,6x10,4K
+cour08i,.phf,Courier,8,I,0020-00FF,MIf,6x10,4K
+cour10,.phf,Courier,10,,0020-00FF,MIf,7x11,4K
+cour10b,.phf,Courier,10,B,0020-00FF,MIf,7x11,4K
+cour10bi,.phf,Courier,10,BI,0020-00FF,MIf,7x11,4K
+cour10i,.phf,Courier,10,I,0020-00FF,MIf,7x11,4K
+cour12,.phf,Courier,12,,0020-00FF,MIf,8x14,4K
+cour12b,.phf,Courier,12,B,0020-00FF,MIf,8x14,4K
+cour12bi,.phf,Courier,12,BI,0020-00FF,MIf,8x14,4K
+cour12i,.phf,Courier,12,I,0020-00FF,MIf,8x14,4K
+cour14,.phf,Courier,14,,0020-00FF,MIf,11x16,5K
+cour14b,.phf,Courier,14,B,0020-00FF,MIf,12x16,5K
+cour14bi,.phf,Courier,14,BI,0020-00FF,MIf,13x16,5K
+cour14i,.phf,Courier,14,I,0020-00FF,MIf,13x16,5K
+cour18,.phf,Courier,18,,0020-00FF,MIf,13x19,6K
+cour18b,.phf,Courier,18,B,0020-00FF,MIf,14x20,6K
+cour18bi,.phf,Courier,18,BI,0020-00FF,MIf,15x19,7K
+cour18i,.phf,Courier,18,I,0020-00FF,MIf,14x19,6K
+cour24,.phf,Courier,24,,0020-00FF,MIf,17x24,8K
+cour24b,.phf,Courier,24,B,0020-00FF,MIf,18x25,8K
+cour24bi,.phf,Courier,24,BI,0020-00FF,MIf,20x25,8K
+cour24i,.phf,Courier,24,I,0020-00FF,MIf,19x24,8K
+lu08,.phf,Lucida,8,,0020-00FF,MIp,13x10,4K
+lu08b,.phf,Lucida,8,B,0020-00FF,MIp,17x10,4K
+lu08bi,.phf,Lucida,8,BI,0020-00FF,MIp,18x10,4K
+lu08i,.phf,Lucida,8,I,0020-00FF,MIp,16x11,4K
+lu10,.phf,Lucida,10,,0020-00FF,MIp,12x11,4K
+lu10b,.phf,Lucida,10,B,0020-00FF,MIp,15x11,4K
+lu10bi,.phf,Lucida,10,BI,0020-00FF,MIp,15x11,4K
+lu10i,.phf,Lucida,10,I,0020-00FF,MIp,13x11,4K
+lu12,.phf,Lucida,12,,0020-00FF,MIp,13x13,4K
+lu12b,.phf,Lucida,12,B,0020-00FF,MIp,17x13,4K
+lu12bi,.phf,Lucida,12,BI,0020-00FF,MIp,18x13,5K
+lu12i,.phf,Lucida,12,I,0020-00FF,MIp,16x13,4K
+lu14,.phf,Lucida,14,,0020-00FF,MIp,16x15,5K
+lu14b,.phf,Lucida,14,B,0020-00FF,MIp,19x15,5K
+lu14bi,.phf,Lucida,14,BI,0020-00FF,MIp,19x15,5K
+lu14i,.phf,Lucida,14,I,0020-00FF,MIp,17x15,5K
+lu18,.phf,Lucida,18,,0020-00FF,MIp,20x19,6K
+lu18b,.phf,Lucida,18,B,0020-00FF,MIp,27x19,7K
+lu18bi,.phf,Lucida,18,BI,0020-00FF,MIp,28x19,7K
+lu18i,.phf,Lucida,18,I,0020-00FF,MIp,25x19,7K
+lu19,.phf,Lucida,19,,0020-00FF,MIp,33x22,7K
+lu19b,.phf,Lucida,19,B,0020-00FF,MIp,38x21,7K
+lu19bi,.phf,Lucida,19,BI,0020-00FF,MIp,40x20,7K
+lu19i,.phf,Lucida,19,I,0020-00FF,MIp,35x22,7K
+lu24,.phf,Lucida,24,,0020-00FF,MIp,40x27,8K
+lu24b,.phf,Lucida,24,B,0020-00FF,MIp,50x27,9K
+lu24bi,.phf,Lucida,24,BI,0020-00FF,MIp,83x27,10K
+lu24i,.phf,Lucida,24,I,0020-00FF,MIp,47x27,9K
+lub08,.phf,Lucida Bright,8,,0020-00FF,MIp,14x10,4K
+lub08b,.phf,Lucida Bright,8,B,0020-00FF,MIp,13x10,4K
+lub08bi,.phf,Lucida Bright,8,BI,0020-00FF,MIp,14x10,4K
+lub08i,.phf,Lucida Bright,8,I,0020-00FF,MIp,14x10,4K
+lub10,.phf,Lucida Bright,10,,0020-00FF,MIp,17x12,4K
+lub10b,.phf,Lucida Bright,10,B,0020-00FF,MIp,17x11,4K
+lub10bi,.phf,Lucida Bright,10,BI,0020-00FF,MIp,18x11,4K
+lub10i,.phf,Lucida Bright,10,I,0020-00FF,MIp,17x12,4K
+lub12,.phf,Lucida Bright,12,,0020-00FF,MIp,19x14,4K
+lub12b,.phf,Lucida Bright,12,B,0020-00FF,MIp,21x14,5K
+lub12bi,.phf,Lucida Bright,12,BI,0020-00FF,MIp,23x14,5K
+lub12i,.phf,Lucida Bright,12,I,0020-00FF,MIp,21x15,5K
+lub14,.phf,Lucida Bright,14,,0020-00FF,MIp,23x16,5K
+lub14b,.phf,Lucida Bright,14,B,0020-00FF,MIp,24x16,5K
+lub14bi,.phf,Lucida Bright,14,BI,0020-00FF,MIp,25x16,5K
+lub14i,.phf,Lucida Bright,14,I,0020-00FF,MIp,23x16,5K
+lub18,.phf,Lucida Bright,18,,0020-00FF,MIp,30x20,6K
+lub18b,.phf,Lucida Bright,18,B,0020-00FF,MIp,32x20,7K
+lub18bi,.phf,Lucida Bright,18,BI,0020-00FF,MIp,35x20,7K
+lub18i,.phf,Lucida Bright,18,I,0020-00FF,MIp,30x20,7K
+lub19,.phf,Lucida Bright,19,,0020-00FF,MIp,33x22,7K
+lub19b,.phf,Lucida Bright,19,B,0020-00FF,MIp,35x22,7K
+lub19bi,.phf,Lucida Bright,19,BI,0020-00FF,MIp,35x22,7K
+lub19i,.phf,Lucida Bright,19,I,0020-00FF,MIp,32x22,7K
+lub24,.phf,Lucida Bright,24,,0020-00FF,MIp,40x26,8K
+lub24b,.phf,Lucida Bright,24,B,0020-00FF,MIp,45x27,9K
+lub24bi,.phf,Lucida Bright,24,BI,0020-00FF,MIp,45x27,9K
+lub24i,.phf,Lucida Bright,24,I,0020-00FF,MIp,41x27,9K
+lut08,.phf,Lucida Terminal,8,,0020-00FF,MIf,6x10,4K
+lut08b,.phf,Lucida Terminal,8,B,0020-00FF,MIf,6x10,4K
+lut10,.phf,Lucida Terminal,10,,0020-00FF,MIf,7x11,4K
+lut10b,.phf,Lucida Terminal,10,B,0020-00FF,MIf,7x11,4K
+lut12,.phf,Lucida Terminal,12,,0020-00FF,MIf,8x13,4K
+lut12b,.phf,Lucida Terminal,12,B,0020-00FF,MIf,8x13,4K
+lut14,.phf,Lucida Terminal,14,,0020-00FF,MIf,10x15,5K
+lut14b,.phf,Lucida Terminal,14,B,0020-00FF,MIf,10x15,5K
+lut18,.phf,Lucida Terminal,18,,0020-00FF,MIf,12x19,6K
+lut18b,.phf,Lucida Terminal,18,B,0020-00FF,MIf,12x19,7K
+lut19,.phf,Lucida Terminal,19,,0020-00FF,MIf,12x22,7K
+lut19b,.phf,Lucida Terminal,19,B,0020-00FF,MIf,12x22,7K
+lut24,.phf,Lucida Terminal,24,,0020-00FF,MIf,15x27,8K
+lut24b,.phf,Lucida Terminal,24,B,0020-00FF,MIf,15x26,8K
+ncen08,.phf,New Century Schoolbook,8,,0020-00FF,MIp,14x10,4K
+ncen08b,.phf,New Century Schoolbook,8,B,0020-00FF,MIp,17x10,4K
+ncen08bi,.phf,New Century Schoolbook,8,BI,0020-00FF,MIp,18x10,4K
+ncen08i,.phf,New Century Schoolbook,8,I,0020-00FF,MIp,15x10,4K
+ncen10,.phf,New Century Schoolbook,10,,0020-00FF,MIp,13x13,4K
+ncen10b,.phf,New Century Schoolbook,10,B,0020-00FF,MIp,17x13,4K
+ncen10bi,.phf,New Century Schoolbook,10,BI,0020-00FF,MIp,18x13,4K
+ncen10i,.phf,New Century Schoolbook,10,I,0020-00FF,MIp,14x13,4K
+ncen12,.phf,New Century Schoolbook,12,,0020-00FF,MIp,18x15,5K
+ncen12b,.phf,New Century Schoolbook,12,B,0020-00FF,MIp,21x15,5K
+ncen12bi,.phf,New Century Schoolbook,12,BI,0020-00FF,MIp,21x15,5K
+ncen12i,.phf,New Century Schoolbook,12,I,0020-00FF,MIp,18x15,5K
+ncen14,.phf,New Century Schoolbook,14,,0020-00FF,MIp,21x17,5K
+ncen14b,.phf,New Century Schoolbook,14,B,0020-00FF,MIp,21x18,6K
+ncen14bi,.phf,New Century Schoolbook,14,BI,0020-00FF,MIp,22x17,6K
+ncen14i,.phf,New Century Schoolbook,14,I,0020-00FF,MIp,20x17,5K
+ncen18,.phf,New Century Schoolbook,18,,0020-00FF,MIp,23x22,7K
+ncen18b,.phf,New Century Schoolbook,18,B,0020-00FF,MIp,24x22,7K
+ncen18bi,.phf,New Century Schoolbook,18,BI,0020-00FF,MIp,26x22,7K
+ncen18i,.phf,New Century Schoolbook,18,I,0020-00FF,MIp,22x22,7K
+ncen24,.phf,New Century Schoolbook,24,,0020-00FF,MIp,29x28,9K
+ncen24b,.phf,New Century Schoolbook,24,B,0020-00FF,MIp,29x29,10K
+ncen24bi,.phf,New Century Schoolbook,24,BI,0020-00FF,MIp,31x29,10K
+ncen24i,.phf,New Century Schoolbook,24,I,0020-00FF,MIp,29x28,9K
+pcs08,.phf,PC Serif,8,,0000-00FF,Nf,8x8,12K
+pcs10,.phf,PC Serif,10,,0000-00FF,Nf,8x10,12K
+pcs12,.phf,PC Serif,12,,0000-00FF,Nf,8x12,13K
+pcs14,.phf,PC Serif,14,,0000-00FF,Nf,8x14,13K
+pcs16,.phf,PC Serif,16,,0000-00FF,Nf,8x16,14K
+pcss08,.phf,PC Sanserif,8,,0000-00FF,Nf,8x8,12K
+pcss10,.phf,PC Sanserif,10,,0000-00FF,Nf,8x10,12K
+pcss12,.phf,PC Sanserif,12,,0000-00FF,Nf,8x11,12K
+pcss14,.phf,PC Sanserif,14,,0000-00FF,Nf,8x14,13K
+pcss16,.phf,PC Sanserif,16,,0000-00FF,Nf,8x16,14K
+pcterm12,.phf,PC Terminal,12,,0000-00FF,Nf,6x12,13K
+pcterm14,.phf,PC Terminal,14,,0000-00FF,Nf,8x14,13K
+pcterm20,.phf,PC Terminal,20,,0000-00FF,Nf,10x19,18K
+phcursor,.phf,Photon Cursor,0,,E900-E921,Np,32x32,3K
+symb08,.phf,Symbol,8,,0020-00FE,Np,10x11,10K
+symb10,.phf,Symbol,10,,0020-00FE,Np,12x14,10K
+symb12,.phf,Symbol,12,,0020-00FE,Np,15x16,10K
+symb14,.phf,Symbol,14,,0020-00FE,Np,17x19,11K
+symb18,.phf,Symbol,18,,0020-00FE,Np,21x24,12K
+symb24,.phf,Symbol,24,,0020-00FE,Np,27x32,14K
+tech14,.phf,Technical,14,,0020-00FE,Nf,9x15,10K
+tech14b,.phf,Technical,14,B,0020-00FE,Nf,9x15,10K
+time08,.phf,Times,8,,0020-00FF,MIp,12x10,4K
+time08b,.phf,Times,8,B,0020-00FF,MIp,12x10,4K
+time08bi,.phf,Times,8,BI,0020-00FF,MIp,17x10,4K
+time08i,.phf,Times,8,I,0020-00FF,MIp,11x10,4K
+time10,.phf,Times,10,,0020-00FF,MIp,12x12,4K
+time10b,.phf,Times,10,B,0020-00FF,MIp,13x13,4K
+time10bi,.phf,Times,10,BI,0020-00FF,MIp,17x13,4K
+time10i,.phf,Times,10,I,0020-00FF,MIp,13x13,4K
+time12,.phf,Times,12,,0020-00FF,MIp,15x15,5K
+time12b,.phf,Times,12,B,0020-00FF,MIp,15x15,5K
+time12bi,.phf,Times,12,BI,0020-00FF,MIp,18x15,5K
+time12i,.phf,Times,12,I,0020-00FF,MIp,17x15,5K
+time14,.phf,Times,14,,0020-00FF,MIp,16x17,5K
+time14b,.phf,Times,14,B,0020-00FF,MIp,17x17,5K
+time14bi,.phf,Times,14,BI,0020-00FF,MIp,19x17,5K
+time14i,.phf,Times,14,I,0020-00FF,MIp,18x18,5K
+time18,.phf,Times,18,,0020-00FF,MIp,21x21,6K
+time18b,.phf,Times,18,B,0020-00FF,MIp,22x21,6K
+time18bi,.phf,Times,18,BI,0020-00FF,MIp,23x21,7K
+time18i,.phf,Times,18,I,0020-00FF,MIp,22x21,6K
+time24,.phf,Times,24,,0020-00FF,MIp,27x27,8K
+time24b,.phf,Times,24,B,0020-00FF,MIp,28x27,9K
+time24bi,.phf,Times,24,BI,0020-00FF,MIp,32x27,9K
+time24i,.phf,Times,24,I,0020-00FF,MIp,31x29,9K
+uselss01,.phf,Useless,1,,0020-007E,MIf,2x2,2K
+uselss02,.phf,Useless,2,,0020-007E,MIf,2x2,2K
+uselss04,.phf,Useless,4,,0020-007E,MIf,4x4,2K
+utop08b,.phf,Utopia,8,B,0020-00FF,MIp,10x11,4K
+utop10b,.phf,Utopia,10,B,0020-00FF,MIp,12x13,4K
+utop12b,.phf,Utopia,12,B,0020-00FF,MIp,14x15,5K
+utop14b,.phf,Utopia,14,B,0020-00FF,MIp,16x18,5K
+utop18b,.phf,Utopia,18,B,0020-00FF,MIp,20x23,7K
+utop24b,.phf,Utopia,24,B,0020-00FF,MIp,27x30,9K
+utop28b,.phf,Utopia,28,B,0020-00FF,MIp,31x34,11K
+utop32b,.phf,Utopia,32,B,0020-00FF,MIp,35x39,14K
+utop36b,.phf,Utopia,36,B,0020-00FF,MIp,40x44,16K
+utop40b,.phf,Utopia,40,B,0020-00FF,MIp,44x50,19K
+utop48b,.phf,Utopia,48,B,0020-00FF,MIp,53x59,26K
+utop54b,.phf,Utopia,54,B,0020-00FF,MIp,59x66,31K
+utop64b,.phf,Utopia,64,B,0020-00FF,MIp,70x77,42K
+primasansbts,0@tt2001m_.ttf,PrimaSans BT,0,,0020-F002,MIp,133x129,75K
+primasansbtsi,0@tt2002m_.ttf,PrimaSans BT,0,I,0020-F002,MIp,134x129,77K
+primasansbtsb,0@tt2003m_.ttf,PrimaSans BT,0,B,0020-F002,MIp,143x130,70K
+primasansbtsbi,0@tt2004m_.ttf,PrimaSans BT,0,BI,0020-F002,MIp,145x129,81K
+primasansmonobts,0@tt2009m_.ttf,PrimaSansMono BT,0,,0020-F002,MIf,60x129,55K
+primasansmonobtsb,0@tt2011m_.ttf,PrimaSansMono BT,0,B,0020-F002,MIf,60x130,58K
+courier10bts,0@tt0419m_.ttf,Courier10 BT,0,,0020-F002,MIf,60x115,94K
+courier10btsi,0@tt0582m_.ttf,Courier10 BT,0,I,0020-F002,MIf,60x117,113K
+courier10btsb,0@tt0583m_.ttf,Courier10 BT,0,B,0020-F002,MIf,60x120,92K
+courier10btsbi,0@tt0611m_.ttf,Courier10 BT,0,BI,0020-F002,MIf,60x120,120K

@@ -1,0 +1,18 @@
+#!/bin/ksh
+
+# Serial line driver
+devc-ser8250  -b 9600 -F -u1 3f8,4 -u2 2f8,3 -u3 3e8,10 -u4 2e8,11
+# For Half duplex RS485 must use this other cmd?:
+#  devc-ser8250ex  -b 9600 -F -u1 3f8,4 -u2 2f8,3 -u3 3e8,10 -u4 -x -w 20000 2e8,11
+
+# Network
+io-net -d speedo vid=0x8086,did=0x103a,duplex=1 -p tcpip -p qnet
+
+# Exports for phcaf (graphics, touchscreen)(this cmds needs Photon to be launched)
+export PHOTON_GRAPHIC_SERVER_CMD="io-graphics -g640x480x8 -dldevg-svga.so -I0 -d0x0,0x0 -cT &"
+export PHOTON_TOUCHSCREEN_DRIVER_CMD="/usr/photon/bin/devi-elo smartset fd -d/dev/ser2 abs -f /etc/system/trap/calib.$HOSTNAME"
+
+# Exports for Initializer
+export INITIALIZER_COMMSRV=/home/traintic/bin/XCommSrv_SIEPC104
+export INITIALIZER_HMIBOOT=/home/traintic/bin/HMIBootPixy_H8COM
+export MVB_HW_OPT="INCP0012EMD"

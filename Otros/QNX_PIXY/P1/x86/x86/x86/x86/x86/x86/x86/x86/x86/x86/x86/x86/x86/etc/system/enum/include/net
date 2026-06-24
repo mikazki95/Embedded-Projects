@@ -1,0 +1,7 @@
+#
+# macro definitions for network
+#
+	
+all
+	set(IONET_CMD, io-net -ptcpip)
+

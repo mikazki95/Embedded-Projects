@@ -1,0 +1,2 @@
+devgt-iographics -dldevg-svga.so -I0 -d0x1106,0x3157
+devgt-iographics -dldevg-vesabios.so -I0 -d0x1106,0x3157

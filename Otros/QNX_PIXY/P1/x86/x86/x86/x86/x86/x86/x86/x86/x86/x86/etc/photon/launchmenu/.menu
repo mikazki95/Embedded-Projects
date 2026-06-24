@@ -1,0 +1,10 @@
+[*]
+[&Utilities]
+[&Configure]
+[-]
+[&Shutdown]
+target=bc3poweroff
+sicon=/usr/share/icons/power.bmp
+[&Reboot]
+target=bc3reboot
+sicon=/usr/share/icons/refresh.bmp

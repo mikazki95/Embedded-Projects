@@ -1,0 +1,114 @@
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=640,yres=480,bitpp=16 -pphoton ;#640,480,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=640,yres=480,bitpp=8 -pphoton ;#640,480,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=640,bitpp=8 -pphoton ;#480,640,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=640,yres=480,bitpp=16 -pphoton ;#640,480,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=640,bitpp=16 -pphoton ;#480,640,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=480,bitpp=8 -pphoton ;#800,480,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=800,bitpp=8 -pphoton ;#480,800,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=480,bitpp=16 -pphoton ;#800,480,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=800,bitpp=16 -pphoton ;#480,800,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=600,bitpp=8 -pphoton ;#800,600,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=600,yres=800,bitpp=8 -pphoton ;#600,800,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=600,bitpp=16 -pphoton ;#800,600,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=600,yres=800,bitpp=16 -pphoton ;#600,800,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=848,yres=480,bitpp=8 -pphoton ;#848,480,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=848,bitpp=8 -pphoton ;#480,848,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=848,yres=480,bitpp=16 -pphoton ;#848,480,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=848,bitpp=16 -pphoton ;#480,848,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=512,bitpp=8 -pphoton ;#1024,512,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=512,yres=1024,bitpp=8 -pphoton ;#512,1024,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=512,bitpp=16 -pphoton ;#1024,512,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=512,yres=1024,bitpp=16 -pphoton ;#512,1024,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=768,bitpp=8 -pphoton ;#1024,768,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1024,bitpp=8 -pphoton ;#768,1024,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=768,bitpp=16 -pphoton ;#1024,768,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1024,bitpp=16 -pphoton ;#768,1024,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=768,bitpp=8 -pphoton ;#1280,768,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1280,bitpp=8 -pphoton ;#768,1280,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=768,bitpp=16 -pphoton ;#1280,768,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1280,bitpp=16 -pphoton ;#768,1280,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=800,bitpp=8 -pphoton ;#1280,800,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=800,yres=1280,bitpp=8 -pphoton ;#800,1280,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=800,bitpp=16 -pphoton ;#1280,800,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=800,yres=1280,bitpp=16 -pphoton ;#800,1280,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=1024,bitpp=8 -pphoton ;#1280,1024,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1024,yres=1280,bitpp=8 -pphoton ;#1024,1280,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=1024,bitpp=16 -pphoton ;#1280,1024,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1024,yres=1280,bitpp=16 -pphoton ;#1024,1280,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1600,yres=1200,bitpp=8 -pphoton ;#1600,1200,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1200,yres=1600,bitpp=8 -pphoton ;#1200,1600,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=1600,yres=1200,bitpp=16 -pphoton ;#1600,1200,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1200,yres=1600,bitpp=16 -pphoton ;#1200,1600,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=320,yres=240,bitpp=8 -pphoton ;#320,240,8,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=240,yres=320,bitpp=8 -pphoton ;#240,320,8,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,xres=320,yres=240,bitpp=16 -pphoton ;#320,240,16,100,0D,svga - unaccelerated driver for Super VGA devices
+io-graphics -dsvga vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=240,yres=320,bitpp=16 -pphoton ;#240,320,16,100,0D,svga_90 - unaccelerated driver for Super VGA devices
+io-graphics -dvga xres=640,yres=480,bitpp=8,,photon -pphoton ;#640,480,4,100,0,vga - safe mode
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=640,yres=480,bitpp=8,refresh=60 -pphoton ;#640,480,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=640,bitpp=8,refresh=60 -pphoton ;#480,640,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=640,yres=480,bitpp=16,refresh=60 -pphoton ;#640,480,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=640,bitpp=16,refresh=60 -pphoton ;#480,640,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=640,yres=480,bitpp=32,refresh=60 -pphoton ;#640,480,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=640,bitpp=32,refresh=60 -pphoton ;#480,640,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=480,bitpp=8,refresh=60 -pphoton ;#800,480,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=800,bitpp=8,refresh=60 -pphoton ;#480,800,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=480,bitpp=16,refresh=60 -pphoton ;#800,480,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=800,bitpp=16,refresh=60 -pphoton ;#480,800,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=480,bitpp=32,refresh=60 -pphoton ;#800,480,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=800,bitpp=32,refresh=60 -pphoton ;#480,800,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=600,bitpp=8,refresh=60 -pphoton ;#800,600,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=600,yres=800,bitpp=8,refresh=60 -pphoton ;#600,800,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=600,bitpp=16,refresh=60 -pphoton ;#800,600,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=600,yres=800,bitpp=16,refresh=60 -pphoton ;#600,800,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=800,yres=600,bitpp=32,refresh=60 -pphoton ;#800,600,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=600,yres=800,bitpp=32,refresh=60 -pphoton ;#600,800,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=848,yres=480,bitpp=8,refresh=60 -pphoton ;#848,480,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=848,bitpp=8,refresh=60 -pphoton ;#480,848,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=848,yres=480,bitpp=16,refresh=60 -pphoton ;#848,480,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=848,bitpp=16,refresh=60 -pphoton ;#480,848,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=848,yres=480,bitpp=32,refresh=60 -pphoton ;#848,480,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=480,yres=848,bitpp=32,refresh=60 -pphoton ;#480,848,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=512,bitpp=8,refresh=60 -pphoton ;#1024,512,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=512,yres=1024,bitpp=8,refresh=60 -pphoton ;#512,1024,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=512,bitpp=16,refresh=60 -pphoton ;#1024,512,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=512,yres=1024,bitpp=16,refresh=60 -pphoton ;#512,1024,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=512,bitpp=32,refresh=60 -pphoton ;#1024,512,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=512,yres=1024,bitpp=32,refresh=60 -pphoton ;#512,1024,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=768,bitpp=8,refresh=60 -pphoton ;#1024,768,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1024,bitpp=8,refresh=60 -pphoton ;#768,1024,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=768,bitpp=16,refresh=60 -pphoton ;#1024,768,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1024,bitpp=16,refresh=60 -pphoton ;#768,1024,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1024,yres=768,bitpp=32,refresh=60 -pphoton ;#1024,768,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1024,bitpp=32,refresh=60 -pphoton ;#768,1024,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=768,bitpp=8,refresh=60 -pphoton ;#1280,768,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1280,bitpp=8,refresh=60 -pphoton ;#768,1280,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=768,bitpp=16,refresh=60 -pphoton ;#1280,768,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1280,bitpp=16,refresh=60 -pphoton ;#768,1280,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=768,bitpp=32,refresh=60 -pphoton ;#1280,768,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=768,yres=1280,bitpp=32,refresh=60 -pphoton ;#768,1280,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=800,bitpp=8,refresh=60 -pphoton ;#1280,800,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=800,yres=1280,bitpp=8,refresh=60 -pphoton ;#800,1280,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=800,bitpp=16,refresh=60 -pphoton ;#1280,800,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=800,yres=1280,bitpp=16,refresh=60 -pphoton ;#800,1280,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=800,bitpp=32,refresh=60 -pphoton ;#1280,800,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=800,yres=1280,bitpp=32,refresh=60 -pphoton ;#800,1280,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=1024,bitpp=8,refresh=60 -pphoton ;#1280,1024,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1024,yres=1280,bitpp=8,refresh=60 -pphoton ;#1024,1280,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=1024,bitpp=16,refresh=60 -pphoton ;#1280,1024,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1024,yres=1280,bitpp=16,refresh=60 -pphoton ;#1024,1280,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1280,yres=1024,bitpp=32,refresh=60 -pphoton ;#1280,1024,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1024,yres=1280,bitpp=32,refresh=60 -pphoton ;#1024,1280,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1600,yres=1200,bitpp=8,refresh=60 -pphoton ;#1600,1200,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1200,yres=1600,bitpp=8,refresh=60 -pphoton ;#1200,1600,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1600,yres=1200,bitpp=16,refresh=60 -pphoton ;#1600,1200,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1200,yres=1600,bitpp=16,refresh=60 -pphoton ;#1200,1600,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=1600,yres=1200,bitpp=32,refresh=60 -pphoton ;#1600,1200,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=1200,yres=1600,bitpp=32,refresh=60 -pphoton ;#1200,1600,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=320,yres=240,bitpp=8,refresh=60 -pphoton ;#320,240,8,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=240,yres=320,bitpp=8,refresh=60 -pphoton ;#240,320,8,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=320,yres=240,bitpp=16,refresh=60 -pphoton ;#320,240,16,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=240,yres=320,bitpp=16,refresh=60 -pphoton ;#240,320,16,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,xres=320,yres=240,bitpp=32,refresh=60 -pphoton ;#320,240,32,100,0Dr,vesa - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvesabios vid=0x1106,did=0x3157,index=0,photon,hook=devg-rotate90.so,xres=240,yres=320,bitpp=32,refresh=60 -pphoton ;#240,320,32,100,0Dr,vesa_90 - unaccelerated driver for VESA 2.00 compliant adapters
+io-graphics -dvga xres=640,yres=480,bitpp=8,,photon -pphoton ;#640,480,4,100,0,vga - safe mode
+# checksum 3 21 108

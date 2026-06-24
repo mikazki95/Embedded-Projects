@@ -1,0 +1,120 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:RDF="http://www.w3.org" xmlns:QPM="http://www.qnx.com">
+   <RDF:Description about="http://www.qnx.com">
+      <QPM:PackageManifest>
+         <QPM:PackageDescription>
+            <QPM:PackageName>Core Dependencies</QPM:PackageName>
+            <QPM:PackageSize>1</QPM:PackageSize>
+            <QPM:PackageReleaseNumber>1</QPM:PackageReleaseNumber>
+            <QPM:PackageReleaseDate>2004/01/01</QPM:PackageReleaseDate>
+            <QPM:PackageType>Library</QPM:PackageType>
+            <QPM:PackageReleaseNotes></QPM:PackageReleaseNotes>
+            <QPM:PackageReleaseUrgency>Low</QPM:PackageReleaseUrgency>
+            <QPM:PackageModel>slib</QPM:PackageModel>
+            <QPM:FileVersion>1.00</QPM:FileVersion>
+         </QPM:PackageDescription>
+
+         <QPM:ProductDescription>
+            <QPM:ProductSize>1</QPM:ProductSize>
+            <QPM:InstallPath>qnx/depend/core-1.0</QPM:InstallPath>
+            <QPM:VendorName>QNX Software Systems Ltd.</QPM:VendorName>
+            <QPM:VendorInstallName>qnx</QPM:VendorInstallName>
+            <QPM:VendorEmbedURL>www.qnx.com</QPM:VendorEmbedURL>
+            <QPM:VendorURL>www.qnx.com</QPM:VendorURL>
+            <QPM:ProductName>Shared library dependencies for x86</QPM:ProductName>
+            <QPM:ProductIdentifier>depend-core-1.0</QPM:ProductIdentifier>
+            <QPM:ProductDescriptionShort>Core Dependencies</QPM:ProductDescriptionShort>
+         </QPM:ProductDescription>
+
+         <QPM:ReleaseDescription>
+            <QPM:ReleaseDate>2004/01/01</QPM:ReleaseDate>
+            <QPM:ReleaseUrgency>Low</QPM:ReleaseUrgency>
+            <QPM:ReleaseStability>Stable</QPM:ReleaseStability>
+            <QPM:ReleaseVersion>1.0</QPM:ReleaseVersion>
+         </QPM:ReleaseDescription>
+
+         <QPM:RelationshipDescription>
+            <QPM:RelationshipType>core</QPM:RelationshipType>
+            <QPM:ComponentType>Required</QPM:ComponentType>
+         </QPM:RelationshipDescription>
+
+         <QPM:ContentDescription>
+            <QPM:Processor>x86</QPM:Processor>
+            <QPM:TargetProcessor/>
+            <QPM:ProvidesLibrary>fpemu.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libAp.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libAp.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libAplib.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libPtPlugin.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libPtWeb.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libasound.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libasound.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libasyncmsg.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libbessel.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libc.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libc.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libcam.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libcam.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libcpp-ne.so.3</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libcpp-ne.so.4</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libcpp.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libcpp.so.2a</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libcpp.so.3</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libcpp.so.4</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libdisputil.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libdisputil.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libecpp-ne.so.3</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libecpp-ne.so.4</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libecpp.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libecpp.so.3</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libecpp.so.4</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libexpat.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libexpat.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libextproc.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libffb.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libffb.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libglide2x.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libhiddi.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libjpeg.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libjpeg.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libm.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libm.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libmalloc.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libmalloc_g.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libmedia.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libmq.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libph.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libph.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libphexlib.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libphexlib.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libphimg.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libphoton.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libphrender.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>librpc.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>librpc.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libsocket.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libsocket.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libsocks.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libstdc++.so.2.10</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libstdc++.so.2.10.0</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libstdc++.so.2.2.10.0</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libstdc++.so.5</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libstdc++.so.5.0.7</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libusbdi.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libvpiplugin.so.2</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libz.so.1</QPM:ProvidesLibrary>
+            <QPM:ProvidesLibrary>libz.so.2</QPM:ProvidesLibrary>
+            <QPM:ContentTopic>QNX Realtime Platform/System/Shared Libraries</QPM:ContentTopic>
+         </QPM:ContentDescription>
+         <QPM:LicenseUrl/>
+      </QPM:PackageManifest>
+
+      <QPM:FileManifest>
+	<QPM:Listing>
+          <QPM:Dir name="">
+              <QPM:Dir name="x86"/>
+	  </QPM:Dir>
+        </QPM:Listing>
+      </QPM:FileManifest>
+   </RDF:Description>
+</RDF:RDF>

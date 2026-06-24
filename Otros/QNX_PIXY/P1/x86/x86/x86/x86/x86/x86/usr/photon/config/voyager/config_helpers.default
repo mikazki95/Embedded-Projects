@@ -1,0 +1,23 @@
+# as to be install with voyager under /usr/photon/config/voyager/config_helpers.default
+
+[Application_Helpers]
+helper19 = video/smi^.smi^realplay "%s" 
+helper18 = application/x-qnx-repository^.qrm^pkg-installer -u "%s" 
+helper17 = application/x-qnx-repository^.qpr^qnxinstall -r "%s" 
+helper16 = audio/mpeg^.mp3^phplay -u "%s" 
+helper15 = audio/x-mpeg^.mp3^phplay -u "%s" 
+helper14 = audio/x-scpls^.pls^phplay -u "%s" 
+helper13 = audio/x-mpegurl^.m3u^phplay -u "%s" 
+helper12 = audio/mpa^.mpa^phplay -u "%s" 
+helper11 = audio/mp1^.mp1^phplay -u "%s" 
+helper10 = audio/mp2^.mp2^phplay -u "%s" 
+helper9 = audio/mp3^.mp3^phplay -u "%s" 
+helper8 = video/mpv^.mpv^phplay -u "%s" 
+helper7 = video/m2v^.m2v^phplay -u "%s" 
+helper6 = video/mpeg^.mpg .mpeg^phplay -u "%s" 
+helper5 = audio/x-aiff^.aif .aif .iff^phplay -u "%s" 
+helper4 = audio/basic^.au^phplay -u "%s" 
+helper3 = audio/x-wav^.wav^phplay -u "%s" 
+helper2 = audio/wav^.wav^phplay -u "%s" 
+helper1 = audio/x-pn-realaudio^.ra .rm .ram^realplay "%s" 
+helper0 = audio/vnd.rn-realaudio^.ra .rm .ram^realplay "%s" 

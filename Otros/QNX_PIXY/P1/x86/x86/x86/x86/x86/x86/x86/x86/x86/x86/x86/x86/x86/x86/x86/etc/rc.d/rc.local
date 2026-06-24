@@ -1,0 +1,81 @@
+#ifdef __USAGE
+#
+#%C
+#
+# /etc/rc.d/rc.local
+#
+# Launch the CAF Human Machine Interface (HMI) 
+#
+# This script sets up your environment & starts system services
+#
+# - It exports the Following Traintic Environment System Settings
+#   * TTIC ............ /home/traintic 
+#   * TTICHIST ........ /var/traintic/hist
+#   * TTICCONFIG ...... /home/traintic/config
+#
+# Author: Markus Mueller
+# Company: Gersys GmbH
+#
+# Version: 1.0
+# Date: 2009-07-10
+#
+# Modifications:
+# - 
+# - 
+#
+#endif
+
+export VRCLOCAL=1.0
+export TERM=qansi-m
+
+# Start Message with Version
+echo "\n/etc/rc.d/rc.local: Start customized services - Version $VRCLOCAL"
+
+# Exporting TTIC paths
+# --------------------
+export PATH=$PATH:/home/traintic/bin:/var/traintic/hist:/home/traintic/config:/home/traintic/etc:/home/traintic/utils:/home/common/scripts
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/traintic/bin
+
+# Find the hostname
+# -----------------
+if test -z $HOSTNAME; then
+   HOSTNAME=$(hostname -s)
+   if test $HOSTNAME == localhost; then
+      unset HOSTNAME
+   fi
+fi
+
+# Start Dumper Service (The dumper utility runs in the background 
+# and provides a postmortem dump service for all processes. Whenever 
+# a program terminates abnormally, a dump of the current state of 
+# the program is written to disk)
+# -------------------------------
+if test -d /var/traintic/dumps; then
+   dumper -d /var/traintic/dumps
+   echo "Dumper service started"
+fi
+
+# Exports TTIC Specific Environment Settings
+# ------------------------------------------
+export TTIC=/home/traintic
+export TTICBIN=/home/traintic/bin
+export TTICHIST=/var/traintic/hist
+export TTICCONFIG=/home/traintic/config
+export TTICUTILS=/home/traintic/utils
+export TTICETC=/home/traintic/etc
+
+# Export LOGNAME to disable Photon Desktop Manager
+# ------------------------------------------------
+export PHPDM_DISABLE=1
+
+# Launching HMIBoot
+# -----------------
+if test -f $TTICBIN/check_update.ksh; then
+   echo "Launching update Script ... "
+   . $TTICBIN/check_update.ksh
+fi
+
+if test -f $TTICBIN/caf_start.ksh; then
+   echo "Launching caf_start Script ... "
+   exec caf_start.ksh 
+fi

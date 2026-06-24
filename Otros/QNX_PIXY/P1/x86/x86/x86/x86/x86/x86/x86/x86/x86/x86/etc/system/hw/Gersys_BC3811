@@ -1,0 +1,46 @@
+#!/bin/ksh
+
+#COM1: /dev/ser1, 9600Bd, 8N1, no HW-FC => RS232
+devc-ser8250 -b9600 -F -u1 3f8,4 &
+print "COM1: RS232: /dev/ser1 (9600 Baud, 8N1, no HW Flow Control) initialized"
+
+#COM2: /dev/ser2, 9600Bd, 8N1, no HW-FC => Environment Controller
+devc-ser8250 -b9600 -F -u2 2f8,3 &
+print "COM2: EC: /dev/ser2 (9600 Baud, 8N1, no HW Flow Control) initialized"
+
+#COM3: /dev/ser3, 9600Bd, 8N1, no HW-FC => RS485
+devc-ser8250ex -b9600 -F -x -w20000 -u3 3e8,10 &
+#devc-ser8250 -b9600 -F -u3 3e8,10 &
+print "COM3: RS485: /dev/ser3 (9600 Baud, 8N1, RTS RX/TX-Control) initialized"
+
+#COM4: /dev/ser4, 9600Bd, 8N1, no HW-FC => Touch-Screen
+devc-ser8250 -b9600 -F -u4 2e8,9 &
+print "COM4: Touch: /dev/ser4 (9600 Baud, 8N1, no HW Flow Control) initialized"
+
+#COM5: /dev/ser5, 115200Bd, 8N1 => MVB-Interface
+devc-ser8250 -f -b115200 -u5 390,11 &
+print "COM5: MVB: /dev/ser5 (115200 Baud, 8N1) initialized"
+#	Just to check if there is a Init Message of the MVB-Card...
+#	cat /dev/ser5 &
+
+io-net -dspeedo -ptcpip
+print "Network I/O support with TCP/IP-Protocol started"
+
+# Exports for Initializer
+export INITIALIZER_COMMSRV=/home/traintic/bin/XCommSrv_D113
+export INITIALIZER_HMIBOOT=/home/traintic/bin/HMIBootGersys_BC_Env
+export MVB_HW_OPT="DUAGOND113"
+
+# This needs Photon to be launched so we declare the command and posterior script take the responsability to launch (phcaf)
+export PHOTON_GRAPHIC_SERVER_CMD="io-graphics -g640x480x16 -dldevg-svga.so -I0 -d0x1106,0x3157 -cT &"
+
+# el $HOSTNAME creo que producia problemas en algunas configuraciones y en Pixy se utilizaba un fichero fijo:
+# Pixy => /usr/photon/bin/devi-elo smartset fd -d/dev/ser2 abs -f /etc/system/trap/calib.qnx_hmi_1 
+typeset -i10 i1=$(GetIOPort 512)
+typeset -i10 i2=64
+GFGTouch=$(( i1 & i2 ))
+if [[ $GFGTouch -eq 0 ]] ; then
+  export PHOTON_TOUCHSCREEN_DRIVER_CMD="/usr/photon/bin/devi-tsharc tsharc -b9600 fd -d/dev/ser4 abs -f/etc/system/trap/calib.$HOSTNAME "
+else
+  export PHOTON_TOUCHSCREEN_DRIVER_CMD="/usr/photon/bin/devi-tsharc tsharc -b9600 fd -d/dev/ser4 abs -f/etc/system/trap/calib.GFG.$HOSTNAME "
+fi

@@ -1,0 +1,20 @@
+#!/bin/sh
+#ifdef __USAGE
+#Regenerates dynamic font trap file in /etc/system/config, and relaunches font manager.
+#
+# Usage:  font_install
+#
+#endif
+
+case $SYSNAME in
+nto)    if test -z "$HOSTNAME"; then
+            export HOSTNAME=$(uname -n)
+        fi
+        file_unique=.$HOSTNAME;;
+
+qnx4)  file_unique=.$NODE;;
+esac
+
+$PHOTON_PATH/bin/mkfontdir -i /tmp/list$file_unique -d $PHOTON_PATH/font_repository
+$PHOTON_PATH/bin/do_font $PHOTON_PATH/font_repository/fontdir /tmp/list$file_unique
+rm -f /tmp/list$file_unique

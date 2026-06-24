@@ -1,0 +1,18 @@
+= Desktop Menu
+<Configure		C	C
+PWM Menu 		w	phmenu
+Appearance		W	pwmopts
+Graphics		G	phgrafx
+Mouse		M	input-cfg
+Network		N	phlip
+Screen Saver		v	savercfg
+Shelf		S	shelf -c
+Users		U	phuser
+>
+Terminal		T	pterm
+QConn		H	qconn
+Shelf		c	shelf
+-4
+Slay Photon		c	slay Photon
+Reboot...		c	bc3reboot
+Shutdown...		u	bc3poweroff

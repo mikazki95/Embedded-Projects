@@ -1,0 +1,107 @@
+#!/bin/sh
+#
+# /etc/system/sysinit_alt
+#
+# This is the first script run by the system in the alternative
+# boot mode. It should start qnet and a shell.
+#
+# Author: Jon Bolado
+# Company: Caf P&A
+#
+# Version: 1.0
+# Date: 2013-09-11
+#
+
+# Change the path to get everything from the /bin and /sbin
+export PATH=/sbin:/usr/sbin:/sbin:/usr/sbin:/bin:/usr/bin:/usr/local/bin:/opt/bin:/opt/sbin:/usr/photon/bin:/usr/photon/appbuilder:/opt/X11R6/bin:/usr/X11R6/bin
+export LD_LIBRARY_PATH=/proc/boot:/lib:/usr/lib:/lib/dll:/opt/lib:/usr/photon/lib:/usr/photon/dll:/usr/local/lib:/opt/X11R6/lib:/usr/X11R6/lib
+
+# These are integers
+typeset -i VERBOSE SAFEMODE NO_ETC
+
+# Don't pass on these envirnment vars...
+typeset +x BOOTSRC SAFEMODE VERBOSE ROOTDEV NO_ETC
+
+# Display some info if requested
+if test 0$VERBOSE -ge 1; then
+	print VSCRIPT=$VSCRIPT
+	print BOOTSRC=$BOOTSRC
+	print SAFEMODE=$SAFEMODE
+	print VERBOSE=$VERBOSE
+	print ROOTDEV=$ROOTDEV
+	print NO_ETC=$NO_ETC
+	if test 0$VERBOSE -ge 2; then
+		set -x
+	fi
+	sleep 2
+fi
+
+# Start the slog resmgr
+if ! test /dev/slog -ef /dev/slog; then
+ 	slogger
+fi
+
+# Start the pipe manager. It is needed for sub-shelling...
+if ! test /dev/pipe -ef /dev/pipe; then
+	if pipe; then
+		typeset -i i=0
+		while test $i -lt 60 -a ! /dev/pipe -ef /dev/pipe ; do
+			sleep 1;
+			let i=i+1;
+		done
+		unset i
+	fi
+	if ! test /dev/pipe -ef /dev/pipe; then
+		print Unable to start pipe manager...
+		exec sh
+		exec fesh
+	fi
+fi
+
+# Start the POSIX message queue/named semaphore manager
+mqueue
+ 
+# Mount extended partitions
+if test -r /dev/hd0t78; then
+	mount -w -t qnx4 /dev/hd0t78 /home/traintic
+	print "...mounted QNX Partition /dev/hd0t78 read/write at /home/traintic"
+fi
+if test -r /dev/hd0t79; then
+	mount -w -t qnx4 /dev/hd0t79 /var/traintic
+	print "...mounted QNX Partition /dev/hd0t79 read/write at /var/traintic"
+fi
+
+# Start the pseudo-tty manager (probably should let users fiddle the parm)
+devc-pty -n 16
+
+# Keyboard
+io-hid -d ps2ser kbd:kbddev
+devc-con-hid -n 2
+waitfor /dev/con1
+waitfor /dev/con2
+
+# Run Hardware detection script
+if test -x /etc/system/sysdetect.ksh; then
+	. /etc/system/sysdetect.ksh
+fi
+
+# By default the hostname will be the name of the hardware. This usually afect to the keyboard and touchscreen calibration config files.
+#if test -x /tmp/target; then
+  hostname $(cat /tmp/target)
+  export HOSTNAME=$(hostname)
+#fi
+
+# Executes Hardware dependant script that loads drivers.
+. /etc/system/hw/$HW
+
+# Boots Qnet
+setconf _CS_HOSTNAME CAFPA_HMI
+setconf _CS_DOMAIN qnx.debug.cafpower.com
+echo .
+echo "... QNet (Hostname=CAFPA_HMI Domain=qnx.debug.cafpower.com)"
+ifconfig en0 172.20.154.251 netmask 255.255.0.0
+qconn &
+echo "... QConn (IP=172.20.154.251)"
+
+# Boots a shell on the second console (Alt+Ctrl+2)
+on -t/dev/con2 sh

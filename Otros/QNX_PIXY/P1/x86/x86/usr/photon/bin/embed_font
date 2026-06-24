@@ -1,0 +1,53 @@
+#!/bin/sh
+#ifdef __USAGE
+#Installs font subsystem to target directory.
+#Only 'root' user can effectively execute this
+#script, otherwise the chown/chmod commands will fail.
+#
+# Usage:  embed_font target_directory
+#
+#endif
+
+if test "$USER" = "root"; then
+
+cp -cR -Munix /lib/dll/phfont.so $1/lib/dll/
+cp -cR -Munix /lib/dll/font/*.so $1/lib/dll/font/
+
+cp -cR -Munix /lib/libFF-T2K.so.2 $1/lib/
+ln -s $1/lib/libFF-T2K.so.2 $1/lib/libFF-T2K.so
+
+cp -cR -Munix /lib/libFF-T2K-fm.so.1 $1/lib/
+ln -s $1/lib/libFF-T2K-fm.so.1 $1/lib/libFF-T2K-fm.so
+
+cp -cR -Munix /lib/libFF-T2K-cache.so.2 $1/lib/
+ln -s $1/lib/libFF-T2K-cache.so.2 $1/lib/libFF-T2K-cache.so
+
+cp -cR -Munix /lib/libblkcache.so.2 $1/lib/
+ln -s $1/lib/libblkcache.so.2 $1/lib/libblkcache.so
+
+cp -cR -Munix /lib/libfontharnessutils.so.1 $1/lib/
+ln -s $1/lib/libfontharnessutils.so.1 $1/lib/libfontharnessutils.so
+
+cp -cR -Munix /lib/libfontutils.so.1 $1/lib/
+ln -s $1/lib/libfontutils.so.1 $1/lib/libfontutils.so
+
+cp -cR -Munix /lib/libfont.so.1 $1/lib/
+ln -s $1/lib/libfont.so.1 $1/lib/libfont.so
+
+cp -cR -Munix /usr/photon/bin/phfont $1/usr/photon/bin/
+chown root $1/usr/photon/bin/phfont
+chmod u+s $1/usr/photon/bin/phfont
+
+cp -cR -Munix /usr/photon/bin/fontsleuth $1/usr/photon/bin/
+chown root $1/usr/photon/bin/fontsleuth
+chmod u+s $1/usr/photon/bin/fontsleuth
+
+cp -cR -Munix /usr/photon/bin/mkfontdir $1/usr/photon/bin/
+
+cp -cR -Munix /usr/photon/bin/fontadmin $1/usr/photon/bin/
+
+else
+
+echo "User must be root to execute this script, otherwise chown/chmod will fail."
+
+fi

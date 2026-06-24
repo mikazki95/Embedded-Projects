@@ -1,0 +1,96 @@
+###########################################################################
+#
+#     Example build file for booting QNX6 from M-Systems' DiskOnChip.
+#
+###########################################################################
+
+[+compress]
+[linker="ntox86-ld -T$QNX_TARGET/x86/lib/nto.link %(h!=0, -Ttext 0x%t%)%(d!=0, -Tdata 0x%d%) -o%o %i %[M -L%^i -uinit_%n -lmod_%n%]"]
+
+[virtual=x86,bios] .bootstrap = {
+    startup-bios -Nmachine-name
+     PATH=/proc/boot:/bin:/sbin LD_LIBRARY_PATH=/proc/boot:/dev/shmem:/lib:/lib/dll procnto 
+}
+[+script] .script = {
+# Start up some consoles
+	devc-con -n4 &
+	reopen /dev/con1
+
+	display_msg QNX6 boots from M-Systems DiskOnChip 
+	
+# Start the pci server
+	seedres	
+	pci-bios &
+	waitfor /dev/pci
+
+# DiskOnChip G3 driver
+	devb-doc3 blk automount=hd0t77:/ &
+
+# Wait for a bin for the rest of the commands (up to 60 secs)
+	waitfor /bin 60
+
+# Some common servers
+	pipe &
+	mqueue &
+	devc-ser8250 &
+	devc-pty &
+
+# Start a debug server for debugging programs
+	waitfor /dev/ser1
+
+# These env variables inherited by all the programs which follow
+    SYSNAME=nto
+    TERM=vt100
+
+# Start some extra shells on other consoles
+	reopen /dev/con2
+	[+session] sh &
+	reopen /dev/con3
+	[+session] sh &
+
+# Start a high priority shell just in case....
+	reopen /dev/con4
+	[pri=25 +session] sh &
+
+# Start the main shell
+	reopen /dev/con1
+	[+session] sh
+#	[+session] login -p
+}
+
+# Cheat and make the /tmp point to the shared memory area...
+[type=link] /tmp=/dev/shmem
+
+# Programs require the runtime linker (ldqnx.so) to be at a fixed location
+[type=link] /usr/lib/ldqnx.so.2=/proc/boot/libc.so
+
+# We use the "c" shared lib (which also contains the runtime linker)
+libc.so
+
+# Just incase someone needs floating point...
+fpemu.so.2
+
+# Include the socket library
+libsocket.so
+
+# Include the disk files so we can access files on DiskOnChip
+libcam.so
+io-blk.so
+
+# filesystem required shared libs
+cam-disk.so
+fs-qnx4.so
+
+# Include a console driver
+devc-con
+
+# Include DiskOnChip G3 driver
+devb-doc3
+
+# uncomment to include IDE hard disk driver, so you can access files on hard disk
+# devb-eide
+
+# Include pci server
+pci-bios
+seedres
+

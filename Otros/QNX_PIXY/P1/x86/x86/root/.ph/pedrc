@@ -1,0 +1,33 @@
+[font]
+style = TextFont09
+
+[colors]
+background = 0xFFFFFF
+foreground = 0x0
+
+[formatting]
+tabsize = 4
+autoindent = ON
+wrap = none
+encoding = Unicode (UTF-8)
+functionalpha = ON
+headerfile = OFF
+loadblock = 1
+saveblock = 4
+
+[file]
+spec = *
+
+[search]
+ignorecase = YES
+direction = forward
+search = 
+replace = 
+
+[importing]
+replacechar = 0x7E
+
+[settings]
+window_width = 590
+window_height = 430
+

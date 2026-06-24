@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<QPF:configuration>
+   <QPF:mapping vfsroot="/" spillroot="/var/pkg/spill">
+	  <QPF:repositories>
+		 <QPF:item name="User Software">/pkgs/repository</QPF:item>
+		 <QPF:item name="Core Software" type="Read-only">/pkgs/base</QPF:item>
+	  </QPF:repositories>
+
+	  <QPF:packages>
+		 <QPF:item>qnx/depend/core-1.0</QPF:item>
+	  </QPF:packages>
+   </QPF:mapping>
+</QPF:configuration>

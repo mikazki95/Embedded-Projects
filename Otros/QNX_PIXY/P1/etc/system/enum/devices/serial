@@ -1,0 +1,12 @@
+#
+# Definitions for serial devices
+#
+
+#device(pci, ven=$(PCI_VEND_VIA), dev=3038)
+#	driver(devu-via $(DEVU_OPTIONS), pci=$(index))
+
+#	Handle any serial type device that doesn't match...
+device(pnpbios, .type=$(PNPBIOS_TYPE_SERIAL))
+	echo(serial bus=pnpbios devid=$(devid) type=$(type) subclass=$(subtype) progif=$(progif), /etc/system/trap/unknown)
+device(pci, .class=$(PCI_CLASS_SERIAL))
+	echo(serial bus=pci ven=$(ven) dev=$(dev) class=$(class) subclass=$(subclass) progif=$(progif) subven=$(subven) subsys=$(subsys), /etc/system/trap/unknown)

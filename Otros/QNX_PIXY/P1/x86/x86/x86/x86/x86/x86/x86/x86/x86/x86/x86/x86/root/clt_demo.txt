@@ -1,0 +1,27 @@
+gf_open_device()
+gf_open_device()=0
+gf_init_device()
+gf_init_device()=0
+gf_get_server_info()
+- target_number    =d-001531
+- info_boot_loader =d-000683-005203 (V0.0.0)
+- info_pld_firmware=d-000685-005927 (V0.0.0)
+- info_mvb_server  =d-000710-003333 (V0.0.0)
+gf_get_mvb_api_info()
+- hardware_id=113 (GF_HW_ID_D113)
+- software_id=  2 (GF_SW_ID_ACTIVE)
+- software_version_info=d-001931-005051 (V0.0.0)
+gf_mvb_init()
+pd_init()
+pd_prt_init()
+lp_init()
+pd_var_init_dataset1()
+pd_var_init_dataset2()
+pd_var_init_dataset3()
+pd_var_init_cluster()
+gf_mvb_start()
+ERROR: ap_get_variable(ds1_var6_enum4)=2
+ERROR: pd_var_dataset1_get()=2
+ERROR: pd_var_cycle()=2
+demo()=2
+ERROR: device_status=0x1000

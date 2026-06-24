@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<qnxSystemDefinition>
+  <installation>
+   <name>QNX Neutrino RTOS x86 Runtime Kit 6.3.2</name>
+   <base>/</base>
+   <host>/</host>
+   <target>/</target>
+  </installation>
+</qnxSystemDefinition>

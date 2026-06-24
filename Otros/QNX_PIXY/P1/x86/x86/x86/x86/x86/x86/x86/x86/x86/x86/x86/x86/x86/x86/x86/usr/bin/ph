@@ -1,0 +1,407 @@
+#!/bin/sh
+#set -x
+#exec >/dev/con1 
+#ifdef __USAGE
+#Launch the Photon Windowing System
+#
+#%C [options]
+#    -n ...  Name of server to start
+#    -s ...  Start Photon safely
+#    -x      Do not initialize Xphoton and paths for X11 applications
+#    -v      verbose
+
+#  Sequence of events:
+#  1)  Check if photon is already running, 
+#      if so, start a ditto session...
+#  2)  Determine the current environment
+#  3)  Start Photon.
+#      -  Photon
+#      -  Phfont
+#      -  Possibly an input device
+#      -  Graphics driver
+#  4)  Start optional programs:
+#      - pwm, shelf, and $HOME/.ph/phapps
+# 
+#endif
+# Test if photon is already running:
+if test ! -z "$PHSTART"; then
+	exec phditto
+	exit 1
+fi
+
+# Test is X is running
+if test ! -z "$PHSTART" -a ! -z "$DISPLAY"; then
+	echo "Your 'DISPLAY' environment variable is set."
+	echo "If running photon in an X environment, please use the 'phx' command"
+	exit 1
+fi
+
+if test -z "$SYSNAME"; then
+    case $(uname -sr) in
+	procnto*|QNX\ [0123456789]*)    export SYSNAME=nto;;
+	QNX\ *)                         export SYSNAME=qnx4;;
+	esac
+fi
+
+case $SYSNAME in
+nto)	package_root=/usr
+		if test -z "$HOSTNAME"; then
+			export HOSTNAME=$(uname -n)
+		fi
+		file_unique=.$HOSTNAME;;
+qnx4)	package_root=/qnx4
+		file_unique=.$NODE;;
+esac
+export PHOTON_PATH=${PHOTON_PATH:-$package_root/photon}
+export PHOTON2_PATH=${PHOTON_PATH:-$package_root/photon}
+export PHTK_PATH=${PHTK_PATH:-$package_root/photon}
+graphics_root=${GRAPHICS_PATH:-$package_root/photon}
+PHFONT_USE_EXTERNAL=${PHFONT_USE_EXTERNAL:-0}
+
+if test ! -d $PHOTON_PATH; then
+	echo "Can't find the photon directory $PHOTON_PATH."
+	echo "Make sure you're running fs-pkg."
+	exit 1
+fi 
+
+function add_path {
+	case $PATH in
+	*:$1:*|$1:*|*:$1)	;;
+	*)		PATH=$PATH:$1;;
+	esac
+}
+
+function add_libpath {
+	case $LD_LIBRARY_PATH in
+	*:$1:*|$1:*|*:$1)	;;
+	*)		LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$1;;
+	esac
+}
+
+add_path $PHOTON_PATH/bin
+add_path $PHTK_PATH/appbuilder
+
+case $SYSNAME in
+qnx4)	add_path /usr/bin/photon;;
+nto) 	export LD_LIBRARY_PATH=${LD_LIBRARY_PATH:-$(getconf CS_LIBPATH)}
+		add_libpath $PHOTON_PATH/lib
+		add_libpath $PHOTON_PATH/dll
+		add_libpath /opt/lib
+		add_libpath /usr/local/lib
+		;;
+esac
+
+export PHOTON=${PHOTON:-/dev/photon}
+export PHWM=${PHWM:-pwm}
+export PHFONT=${PHFONT:-/dev/phfont}
+export FONTSLEUTH=${FONTSLEUTH:-/dev/fontsleuthctrl}
+export ABLPATH=${ABLPATH:-$PHOTON_PATH/translations}
+
+# Placeholder for entered name (via -n)
+export USER_NAME=${PHOTON}
+
+# start Photon the best way 
+let phsafe=0
+let didcrttrap=0
+let xphoton=1
+let export_on=1
+
+while getopts n:svcNx  opt $*
+do
+	case $opt in
+		n)	export USER_NAME=$OPTARG;
+			export PHOTON=$USER_NAME;;
+		s)	let phsafe=1;
+			PHWMSAFE=-n;;
+		x)	xphoton=0;;
+		X)  export_on=0;;
+		v)	set -x;;
+		*)	echo; echo
+			use $0
+			exit 1;;
+	esac
+done
+
+# These must be added regardless of Xphoton's status so they are available
+# if Xphoton is newly installed
+if [ $xphoton = 1 ] ; then
+	X11_PATH=/opt/X11R6
+	X11_PATH2=/usr/X11R6
+	add_path $X11_PATH/bin
+	add_libpath $X11_PATH/lib
+	add_path $X11_PATH2/bin
+	add_libpath $X11_PATH2/lib
+	if test -z "$DISPLAY"; then
+		export DISPLAY=127.1:0
+	fi
+fi
+
+if test -z "$PHINX" -a -z "$BAUD" -a -z "$PHGFX"; then
+	TRAPFILE=`crttrap locate`
+	crttrap chksum
+	if test $? -ne 0; then
+		crttrap clear >/dev/null 2>&1
+	fi
+	if test ! -r $TRAPFILE ; then
+		print "Running crttrap, please wait..."
+		crttrap trap
+		let didcrttrap=1
+		if test ! -r $TRAPFILE ; then
+			exit 1
+	    fi
+	fi
+fi
+
+# Read in global ABLANG setting, but not if ABLANG is already defined
+
+if test -z $ABLANG; then
+	if test -r /etc/photon/ABLANG; then
+		export ABLANG=`cat /etc/photon/ABLANG`
+	fi
+fi
+
+if test ! $PHOTON -ef $PHOTON; then
+	if test ! -z "$LOGNAME"; then
+		Photon &
+	else
+		if test -x $PHOTON_PATH/bin/phlogin2 ; then
+			if test $didcrttrap -eq 1 ; then
+				Photon -g -l'phlogin2 -pphgrafx-startup "-Sphshutdown -l"' &
+			else
+				Photon -g -l'phlogin2 "-Sphshutdown -l"' &
+			fi
+		else
+			if test $didcrttrap -eq 1 ; then
+				Photon -g -l'phlogin -pphgrafx-startup "-Sphshutdown -l"' &
+			else
+				Photon -g -l'phlogin "-Sphshutdown -l"' &
+			fi
+		fi
+	fi
+	
+	if test $? -ne 0; then
+		exit 1
+	fi
+	
+	typeset -i i=0
+	while test ! $PHOTON -ef $PHOTON -a $i -lt 5; do
+		sleep 1
+		let i=i+1
+	done
+	unset i
+
+	if test ! $PHOTON -ef $PHOTON; then
+		print "Unable to start windowing kernel. Please check the installation"
+		print "instructions for more information."
+        unset USER_NAME
+		exit 1
+    fi
+fi
+
+FONT_TRAPFILE=`do_font locate`
+
+if is_modified $PHOTON_PATH/font_repository $FONT_TRAPFILE; then
+  print "Optimizing dynamic font subsystem ... Please wait ..."
+  mkfontdir -i /tmp/list$file_unique -d $PHOTON_PATH/font_repository
+  do_font $PHOTON_PATH/font_repository/fontdir /tmp/list$file_unique
+  rm -f /tmp/list$file_unique
+else
+  if ! test -e $FONT_TRAPFILE; then
+    print "Optimizing dynamic font subsystem ... Please wait ..."
+    mkfontdir -i /tmp/list$file_unique -d $PHOTON_PATH/font_repository
+    do_font $PHOTON_PATH/font_repository/fontdir /tmp/list$file_unique
+    rm -f /tmp/list$file_unique
+  fi
+fi
+
+#if test "$PHFONT_USE_EXTERNAL" = "1"; then
+	if test ! $PHFONT -ef $PHFONT; then
+	   phfont -d $PHOTON_PATH/font_repository $PHFONTOPTS &
+
+	   typeset -i i=0
+	   while test ! $PHFONT -ef $PHFONT -a $i -lt 30; do
+	       sleep 1
+	       let i=i+1
+	   done
+	   unset i
+
+	   if test ! $PHFONT -ef $PHFONT; then
+	       print "Unable to start font server"
+	       print "Please confirm that Photon installed properly"
+	       unset USER_NAME
+	       exit 1
+	   fi
+	fi
+#fi
+
+if test ! $FONTSLEUTH -ef $FONTSLEUTH; then 
+   fontsleuth -d $PHOTON_PATH/font_repository &
+
+   typeset -i i=0
+   while test ! $FONTSLEUTH -ef $FONTSLEUTH -a $i -lt 5; do
+       sleep 1
+       let i=i+1
+   done
+   unset i
+ 
+   if test ! $FONTSLEUTH -ef $FONTSLEUTH; then
+       print "Unable to start fontsleuth"
+       print "Please confirm that Photon installed properly"
+       unset USER_NAME
+       exit 1
+   fi
+fi
+
+# only use config file for local machine 
+if [ "$PHOTON" = "$USER_NAME" ]
+then
+	if [ $phsafe = 0 ]; then
+		if test -z "$PHGFX"; then
+			phin -TG -q && crttrap start
+		else
+			phin -TG -q && $PHGFX
+		fi
+
+		if test -z "$PHINPUT"; then
+			phin -TPK -q && inputtrap start
+		else
+			phin -TPK -q && $PHINPUT
+		fi
+	else
+		if test -z "$PHGFX"; then
+			phin -TG -q && crttrap safe
+		else
+			phin -TG -q && $PHGFX
+		fi
+
+		if test -z "$PHINPUT"; then
+			phin -TK -q && inputtrap -s start
+		else
+			phin -TK -q && $PHINPUT
+		fi
+	fi
+	if test "$PHAUDIO"; then 
+		(phin -TA -q && $PHAUDIO) &
+	fi
+fi
+
+if [ $didcrttrap != 0 ] ; then
+	if test "$LOGNAME"; then
+		phgrafx-startup
+	fi
+fi
+
+if test "$START_A_CONSOLE"; then 
+    (exec $START_A_CONSOLE) &
+    unset START_A_CONSOLE
+fi
+
+if test $PHOTON -ef $PHOTON; then
+	if test "$LOGNAME"; then
+		if test ! -r $HOME/.ph; then
+			mkdir $HOME/.ph
+		else
+			# Allow user to override system setting for ABLANG
+			
+			if test -r $HOME/.ph/.ABLANG; then
+				export ABLANG=`cat $HOME/.ph/.ABLANG`
+			fi
+		fi
+
+		export PHSTART=1
+
+		phin -qPpwm 
+		if [ $? -eq 0 ]; then 
+			$PHWM $PHWMOPTS $PHWMSAFE & 
+		fi
+
+		# Wait for the mouse driver to startup...
+		typeset -i i=0
+		while test $i -lt 15; do
+			phin -TK -q
+			if [ $? -gt 0 ]; then break; fi
+			echo "# Waiting for the Input driver to startup..."
+			sleep 1
+			let i=i+1
+		done
+
+		# Wait for the window manager to startup...
+		unset i
+
+		typeset -i i=0
+		while test $i -lt 30; do
+			phin -qPpwm
+			if [ $? -gt 0 ]; then break; fi
+			sleep 1
+			let i=i+1
+		done
+		unset i
+
+		if [ "$PHSHELF_DISABLE" = "" ]; then
+			phin -qPshelf  
+			if [ $? -eq 0 ]; then
+				shelf &
+			fi
+
+			# Wait for the desktop manager to startup...
+			unset i
+
+			typeset -i i=0
+			while test $i -lt 30; do
+				phin -qPshelf
+				if [ $? -gt 0 ]; then break; fi
+				sleep 1
+				let i=i+1
+			done
+			unset i
+		fi
+
+		phin -qPbkgdmgr
+		if [ $? -eq 0 ]; then
+			bkgdmgr &
+		fi
+
+		wmswitch &
+		saver &
+		prjobs -r &
+
+		if test -r /etc/runinstall -a $(id -ru) = 0; then
+			if test ! -r /etc/TIMEZONE; then
+				phlocale 
+			fi
+			rm /etc/runinstall
+		fi
+
+
+#		if test -r /etc/config/trap/run$file_unique ; then
+#			rm -f /etc/config/trap/run$file_unique
+#		fi
+
+		if [ $phsafe = 0 ]; then
+			if test -x $HOME/.ph/phapps ; then
+				. $HOME/.ph/phapps
+			fi
+		fi
+
+		if [ $xphoton = 1 ] ; then
+			if test -x $X11_PATH/bin/XPhoton -a -d $X11_PATH/lib/X11/fonts ; then
+				XPhoton &
+			else
+				if test -x $X11_PATH2/bin/Xphoton -a -d $X11_PATH2/lib/X11/fonts ; then
+					Xphoton -once &
+					gtwm >/dev/null 2>&1 &
+				fi
+  	    	fi
+		fi
+	fi
+fi
+
+
+if test "$SYSNAME" = "nto"; then
+	export SYSNAME=pkg
+fi
+
+print "\f\f\f"
+
+unset USER_NAME
+exit 0

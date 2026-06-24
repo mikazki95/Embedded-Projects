@@ -1,0 +1,6 @@
+@HEADER @VERS_ID=2 @DEFAULT=1 @SRV_NODE=172.20.154.23 @SRV_MOUNT_PT="/nfs_hmi" @SRV_EXP_DIR="/nfs_hmi" @NETMASK=255.255.0.0 @ROUTE=172.20.154.101 @MACHINE_IP=172.20.154.250 @NET_DRIVER="speedo" @CABINE_ID=0 
+@COMMAND @COMM="Lanza Aplicacion Gráfica"         @EXEC="/home/traintic/bin/Initializer /home/traintic/config/HMIInit.ini"  @WINDOWS=true
+@COMMAND @COMM="Lanza Aplicacion Gráfica (Debug)" @EXEC="/home/traintic/bin/Initializer /home/traintic/config/HMIInitD.ini" @WINDOWS=true
+@SERVER  @COMM="Entorno Photon y Comunicaciones (Compiler)" @SRV_NODE=172.20.154.23 @WINDOWS=true
+@COMMAND @COMM="Photon" @WINDOWS=true @EXEC="echo Done"
+@EXIT    @PIPE_NM="boot"

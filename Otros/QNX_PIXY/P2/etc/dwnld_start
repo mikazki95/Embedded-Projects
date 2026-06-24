@@ -1,0 +1,11 @@
+# Lanzar red
+# No se lanza la red solo se configura para que puedas ser lanzado el protocolo
+# del Servidor de MVB Generico.
+#io-net -d speedo vid=0x8086,did=0x103a -p tcpip -p qnet
+#io-net -d speedo -p tcpip -p qnet
+#sleep 6 
+#ifconfig en0 172.20.154.251 netmask 255.255.0.0
+#route add default 172.20.154.101
+
+# Lanza servicio ftp
+#inetd &

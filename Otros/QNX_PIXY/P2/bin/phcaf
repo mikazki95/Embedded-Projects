@@ -1,0 +1,40 @@
+#!/bin/sh
+
+echo Starting Photon GUI
+
+echo -n Photon...
+Photon &
+waitfor /dev/photon 10
+echo done.
+
+echo -n Input Devices...
+/usr/photon/bin/devi-hid mouse kbd
+echo done.
+
+echo -n Fontserver...
+phfont -d$PHOTON_PATH/font_repository &
+waitfor /dev/phfont 10
+fontsleuth -d $PHOTON_PATH/font_repository &
+waitfor /dev/fontsleuthctrl &
+echo done.
+
+echo -n Graphics driver...
+# The command to launch the Photon grafics server is Hw dependant (resolution, driver, etc) 
+# so the command to launch it, its configured in the harware dependant file
+$PHOTON_GRAPHIC_SERVER_CMD
+echo done.
+
+echo -n Touchscreen...
+# The command to launch the TouchScreen driver is Hw dependant (calib_file, driver, etc) 
+# so the command to launch it, its configured in the harware dependant file
+$PHOTON_TOUCHSCREEN_DRIVER_CMD
+echo done.
+
+echo -n Window manager...
+pwm &
+( sleep 4; wmswitch ) &
+echo done
+
+echo -n Background manager...
+bkgdmgr &
+echo done.

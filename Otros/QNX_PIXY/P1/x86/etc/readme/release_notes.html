@@ -1,0 +1,555 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.ord/TR/html4/loose.dtd">
+<html>
+
+<head>
+
+<title>QNX&reg; Neutrino&reg; RTOS x86 Runtime Kit 6.3.2 Release Notes</title>
+
+<meta content="rel_nto_rt_kit.sgm Rev: 151489 " name="IQ" />
+<meta name="description" content="QNX&reg; Neutrino&reg; RTOS x86 Runtime Kit 6.3.2 Release Notes" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body bgcolor="#ffffff" text="#000000" class="notepage">
+
+<h1><a name="id1" id="id1">QNX<sup>&reg;</sup> Neutrino<sup>&reg;</sup> RTOS x86 Runtime Kit 6.3.2 Release Notes</a></h1>
+
+
+
+
+
+<p><b>Date of this edition:</b> August 20, 2007
+
+</p>
+<p><b>OS version</b>: QNX<sup>&reg;</sup> Neutrino<sup>&reg;</sup> 6.3.2
+
+</p>
+
+<div class="note"><hr />
+<table>
+<tr><td valign="top"><img src="pointing.gif" alt="Note:" /></td>
+<td>For the most up-to-date version of these notes, go to our website, 
+<a href="http://www.qnx.com" class="xref"><tt class="url">www.qnx.com</tt></a>,
+log into your myQNX account, and then go to the Download area.</td></tr>
+</table>
+<hr /></div>
+
+
+
+<div class="caution"><hr />
+<table>
+<tr><td valign="top"><img src="caution.gif" alt="Caution:" /></td>
+<td>Make sure that <b>Plug and Play OS</b> is disabled in the BIOS before you
+run QNX Neutrino.</td></tr>
+</table>
+<hr /></div>
+
+
+
+<h1 class="h1"><a name="id3" id="id3">Contents...</a></h1>
+
+<ul>
+<li><a href="#Fixed" class="xref">Fixed issues</a></li>
+<li><a href="#BUGS" class="xref">Known issues</a>
+
+  <ul>
+<li><a href="#Issues_Audio" class="xref">Audio</a>
+  </li>
+<li><a href="#Issues_devb" class="xref">Block-oriented drivers</a>
+  </li>
+<li><a href="#Issues_booting" class="xref">Booting</a>
+  </li>
+<li><a href="#Issues_CoreOS" class="xref">Core OS</a>
+  </li>
+<li><a href="#Issues_filesystems" class="xref">Filesystems</a>
+  </li>
+<li><a href="#Issues_IO" class="xref">I/O devices</a>
+  </li>
+<li><a href="#Issues_Networking" class="xref">Networking</a>
+  </li>
+<li><a href="#Issues_Photon" class="xref">Photon</a>
+  </li>
+</ul></li>
+</ul>
+<p>Throughout this document, you may see <em>reference numbers</em>
+associated with particular issues, changes, etc. When
+corresponding with our Technical Support staff about a given
+issue, please quote the relevant reference number. You might
+also find the reference numbers useful for tracking issues
+as they become fixed.
+
+</p>
+
+<div class="note"><hr />
+<table>
+<tr><td valign="top"><img src="pointing.gif" alt="Note:" /></td>
+<td>We don't provide any support for this software in the form that you
+have licensed it.
+In order to obtain support from QNX Software Systems, you must purchase
+a QNX Momentics development system and associated support plan.
+For information about documentation and other sources of technical help,
+see the x86 Runtime Kit <cite>Installation Guide</cite>.</td></tr>
+</table>
+<hr /></div>
+
+
+
+<h1 class="h1"><a name="Fixed" id="Fixed">Fixed issues</a></h1>
+
+<ul>
+<li>QNX Neutrino 6.3.2 includes <tt class="fname">deva-ctrl-ymfds1.so</tt>.
+  (Ref# 24662)
+
+</li>
+<li>When a child process terminates, <tt class="cmd">procnto-smp</tt> now
+    correctly notifies the parent process.
+    (Ref# 15756)
+
+</li>
+<li><tt class="cmd">fs-cifs</tt> now responds, even if left idle for several hours.
+  (Ref# 22226)
+
+</li>
+<li>The <tt class="cmd">devu-kbd</tt> and <tt class="cmd">devu-mouse</tt> drivers for USB
+  keyboards and mice are now documented.
+  (Ref# 22528)
+
+  </li>
+<li>When you mount and unmount a NFS mountpoint repeatedly for hundreds of
+    iterations, there's no longer a potential for a resource to be unreleased,
+    causing all further mount attempts to fail.
+    There's still a timeout period that must expire before mounts can
+    continue.
+    Unless you're doing this operation in a loop, you aren't likely to
+    encounter this timeout.
+    (Ref# 15078)
+
+  </li>
+<li><tt class="cmd">fs-nfs3</tt> now supports values greater than 8096 for the
+    <tt class="opt"><b>-B</b></tt> option.
+    (Ref# 20810)
+
+</li>
+<li>Slinger used to allow a remote user to access files outside of its root
+  directory (as identified by the <b class="envar">HTTPD_ROOT_DIR</b> environment
+  variable) by including <tt class="lit">../</tt> in the URI of the request sent to
+  <tt class="cmd">slinger</tt>  (e.g. <tt class="url">http://hostname/././../../etc/passwd</tt>).
+
+  <p>  Slinger tried to keep track of how far into the directory tree
+  it went, but this wasn't reliable and could be defeated by adding
+  <tt class="lit">./</tt> before the <tt class="lit">../</tt> in the path.
+  Slinger doesn't provide support to write to the filesystem, and accesses
+  files as user ID -2.
+  It now removes any <tt class="lit">../</tt> strings from the URI before processing.
+  (Ref# 21825)
+
+</p></li>
+<li>A large <tt class="cmd">HTTP GET</tt> request-URI (greater than the value of
+  <b class="envar">PATH_MAX</b>) formerly could overflow Slinger's internal buffer
+  and cause a fault.
+  This has been fixed.
+  (Ref# 21965)
+
+</li>
+<li>During the initialization of the <tt class="cmd">telnet</tt> link, if the
+  client sent a large number of parameters to negotiate, <tt class="cmd">telnetd</tt>
+  used to overrun its reply buffer with the responses to all of the
+  request's parameters.
+  The <tt class="cmd">telnetd</tt> daemon now flushes the buffer if it becomes full.
+  (Ref# 21965)
+
+</li>
+<li>The TCP/IP stack could formerly fault if you tried to get
+  file-descriptor information
+  (e.g. by executing <tt class="cmd">sin fd</tt>) on a system where a process had
+  called <i class="func">shutdown()</i> for a TCP/IP socket descriptor, but the
+  socket hadn't yet been closed.
+  This has been fixed.
+  You also now get more diagnostic information when you use <tt class="cmd">sin fd</tt>
+  to view information on socket file descriptors.
+  (Ref# 21549)
+
+</li>
+<li>If you <i class="func">connect()</i> on an unlinked or nonexistent 
+  <span class="const">AF_LOCAL</span> socket, <i class="var">errno</i> used to be
+  incorrectly set to
+  <span class="const">ECONNREFUSED</span> instead of <span class="const">ENOENT</span>.
+  This has been fixed.
+  (Ref# 21664)
+
+</li>
+<li>If a program called <i class="func">bind()</i> for an <span class="const">AF_LOCAL</span>
+  socket, and the path namespace entry was created, the TCP/IP stack used to
+  leak a small amount of memory, even if the path were unlinked.
+  This has been fixed.
+  (Ref# 21639)
+
+</li>
+<li>The TCP/IP stack obtains a timer, which starts at time 0, from the
+  process manager.
+  If the TCP/IP stack and a TCP/IP application that tries to connect to
+  a remote host start executing too soon, the TCP/IP stack may apply a
+  time of 0 seconds to ARP cache entry structures.
+
+  <p>  If this occurs, you may end up with a permanent ARP entry (i.e. one that
+  never times out).
+  You can also end up with permanent, incomplete ARP entries that never
+  time out and that the TCP/IP stack doesn't attempt to resolve.
+  If this happens, your host won't be able to communicate with one or
+  (possibly) more remote hosts (i.e. the ones the TCP/IP application in
+  the OS image is trying to reach).
+
+  </p><p>  You can check for permanent ARP entries by running the <tt class="cmd">arp -an</tt>
+  command and examining the output.
+  The only permanent entries listed should be for the IP addresses assigned
+  to your host's interfaces; there shouldn't be any permanent, incomplete
+  entries.
+  If you find a permanent entry that isn't for the IP address of an
+  interface on your host, and you didn't explicitly create a permanent
+  entry, then you could be encountering this problem.
+  A workaround for your OS image was to delay the start of the TCP/IP stack
+  or the first TCP/IP application by at least one second, by using the
+  <tt class="cmd">sleep</tt> command (e.g. <tt class="cmd">sleep 1</tt>) or some other delay
+  mechanism.
+  This has been fixed, so this workaround is no longer necessary.
+  (Ref# 21395)
+
+</p></li>
+<li>If you're using <tt class="cmd">fs-nfs3</tt> with asynchronous writes,
+  and the server is using root-squashing (i.e. it maps <tt class="uid">root</tt>
+  to <tt class="uid">anonymous</tt> or <tt class="uid">nobody</tt>),
+  you can now create directories and files correctly.
+  (Ref# 25113)
+
+</li>
+<li>The pipe manager no longer faults when there are multiple
+  readers and writers to a pipe, and reader/writer processes
+  terminate repeatedly. (Ref# 20128)
+
+</li>
+</ul>
+
+<h1 class="h1"><a name="BUGS" id="BUGS">Known issues</a></h1>
+
+<p>The x86 Runtime Kit contains known issues in these areas:
+
+</p>
+<ul>
+<li><a href="#Issues_Audio" class="xref">Audio</a></li>
+<li><a href="#Issues_devb" class="xref">Block-oriented drivers</a></li>
+<li><a href="#Issues_booting" class="xref">Booting</a></li>
+<li><a href="#Issues_CoreOS" class="xref">Core OS</a></li>
+<li><a href="#Issues_filesystems" class="xref">Filesystems</a></li>
+<li><a href="#Issues_IO" class="xref">I/O devices</a></li>
+<li><a href="#Issues_Networking" class="xref">Networking</a></li>
+<li><a href="#Issues_Photon" class="xref">Photon</a></li>
+</ul>
+<p>We're actively investigating all known issues.
+
+</p>
+
+<h2 class="h2"><a name="Issues_Audio" id="Issues_Audio">Audio</a></h2>
+
+<ul>
+<li>The graphics drivers run at a higher priority than applications, but they
+shouldn't run at a higher priority than the audio, or else breaks
+in the audio occur.
+(Ref# 4026)
+
+<p><b>Workaround:</b> Use the <tt class="cmd">on</tt> command to adjust the priorities of
+the audio and graphics drivers.
+
+</p></li>
+</ul>
+
+<h2 class="h2"><a name="Issues_devb" id="Issues_devb">Block-oriented drivers</a></h2>
+
+<dl>
+
+<dt><tt class="cmd">devb-*</tt></dt>
+<dd>High-priority threads can get starved off by lower ones
+via <tt class="cmd">devb-*</tt> because the filesystem uses
+<i class="func">sleepon_*()</i> functions, which don't inherit priorities.
+(Ref# 2109)
+
+  
+
+</dd>
+<dt><tt class="cmd">devb-adpu320</tt></dt>
+<dd>Reading DVD-RAM causes <tt class="cmd">devb-adpu320</tt> to become blocked on
+  a CONDVAR.
+  (Ref# 19772)
+
+</dd>
+<dt><tt class="cmd">devb-doc</tt>, <tt class="cmd">devb-doc3</tt>, <tt class="cmd">dformat</tt>,
+  <tt class="cmd">dformat3</tt></dt>
+<dd>The Disk On Chip drivers were provided by the vendor.
+  If you run <tt class="cmd">use -i</tt> on them, the state is given as
+  <tt class="lit">Experimental</tt>.
+  (Ref# 23101) 
+
+</dd>
+</dl>
+
+
+<h2 class="h2"><a name="Issues_booting" id="Issues_booting">Booting</a></h2>
+
+<p>The combination of <span class="key" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-weight: bold;"><b>F1</b></span> and <span class="key" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-weight: bold;"><b>F4</b></span> for
+<tt class="cmd">diskboot</tt> (Safe Mode, Don't mount filesystems) doesn't work.
+(Ref# 21876)
+
+</p>
+<p><b>Workaround:</b> Press <span class="key" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-weight: bold;"><b>F5</b></span> to start the debug shell;
+it simply starts <tt class="cmd">fesh</tt> just after mounting the filesystems.
+If you want to run a consistency check a filesystem, run
+<tt class="cmd">/sbin/chkfsys</tt> after the shell starts.
+
+</p>
+
+<h2 class="h2"><a name="Issues_CoreOS" id="Issues_CoreOS">Core OS</a></h2>
+
+<dl>
+
+<dt><tt class="cmd">procnto</tt></dt>
+<dd>Creating threads over and over can exhaust memory.
+  When creating a thread, the OS uses <i class="func">_smalloc()</i> to allocate
+  memory for various internal data structures, but it can't return
+  the memory to the free pool of general memory (the memory is held in the
+  <i class="func">_smalloc()</i> heap) for future allocations by the kernel or a user.
+  Memory gets very fragmented with all these
+  little objects holding onto memory; eventually large (4 MB
+  and greater) contiguous allocations could start to fail.
+  (Ref# 16405) 
+
+</dd>
+</dl>
+
+
+<h2 class="h2"><a name="Issues_filesystems" id="Issues_filesystems">Filesystems</a></h2>
+
+<dl>
+
+<dt><tt class="cmd">fs-pkg</tt></dt>
+<dd>This filesystem isn't designed to let you use
+    <tt class="cmd">chmod</tt> or <tt class="cmd">chown</tt> on
+<span class="quote">"virtual"</span> <tt class="cmd">fs-pkg</tt> directories. (Ref# 9552)
+
+  
+
+</dd>
+</dl>
+
+
+<h2 class="h2"><a name="Issues_IO" id="Issues_IO">I/O devices</a></h2>
+
+<dl>
+
+<dt><tt class="cmd">io-usb</tt></dt>
+<dd><ul>
+<li>In some cases when unmounting DLLs and running the <tt class="cmd">usb</tt>
+  utility at the same time, some memory allocated by <tt class="cmd">io-usb</tt>
+  isn't freed. This is a rare situation.
+  (Ref# 21716)
+
+  </li>
+<li>The <tt class="cmd">io-usb</tt> server crashes if you repeatedly <tt class="cmd">mount</tt>
+    and <tt class="cmd">umount</tt> and plug and unplug devices attached to the port.
+     
+  (Ref# 21556)
+
+  </li>
+</ul>
+
+</dd>
+</dl>
+
+
+<h2 class="h2"><a name="Issues_Networking" id="Issues_Networking">Networking</a></h2>
+
+<dl>
+
+<dt><tt class="fname">npm-qnet.so</tt></dt>
+<dd>Redundant GNS servers have a window where service could be lost.
+  If connectivity is lost to a <tt class="cmd">gns</tt> process
+in server mode while it's acting as a redundant server, and while client
+<tt class="cmd">gns</tt> processes running on other nodes are registering services,
+  the server may become out of sync with the other redundant servers.
+  (Ref# 20008)
+
+</dd>
+<dt><tt class="fname">npm-qnet-l4_lite.so</tt></dt>
+<dd><ul>
+<li>This DLL has many options to alter how Qnet functions (e.g. timeouts, retries, 
+and idle times). You shouldn't use these options unless you're trying to
+overcome an issue related to your environment.
+Qnet is optimized to function with its default settings.
+  (Ref# 21298) 
+
+  </li>
+<li>Before 6.3.0, you could <tt class="cmd">mount</tt> and <tt class="cmd">umount</tt>
+    the Qnet DLL (<tt class="fname">npm-qnet.so</tt>).
+    Starting with 6.3.0, you can't unmount <tt class="fname">npm-qnet-l4_lite.so</tt>.
+    The documentation needs to mention this.
+    (Ref# 22231)
+
+  </li>
+</ul>
+
+</dd>
+<dt><tt class="cmd">gns</tt></dt>
+<dd>A <tt class="cmd">gns</tt> daemon can't act as both
+a client and server at the same time. If a local service 
+is registered with a GNS client,  the client can forward that information
+to redundant or backup servers; a server can't forward the information.
+  (Ref# 21037)
+
+</dd>
+<dt><tt class="cmd">fs-nfs2</tt></dt>
+<dd>If a path ends in a slash, it must be a directory. When 
+accessing a link with a trailing slash, <tt class="cmd">fs-nfs2</tt> immediately
+returns <span class="const">EINVAL</span>, instead of resolving the link 
+and reporting errors such as <span class="const">EPERM</span> (permission denied) or
+<span class="const">ENOTDIR</span> (not a directory) before returning 
+<span class="const">EINVAL</span> (invalid argument).
+This behavior was seen as an 
+optimization to reduce network traffic, because this kind of file access
+will ultimately fail.  Strict POSIX 
+behavior will be added in a future release. (Ref# 20877, 20878)
+
+</dd>
+<dt><tt class="cmd">slinger</tt></dt>
+<dd>When <tt class="cmd">slinger</tt> is executing a CGI script and setting the
+environment variables to be passed to the 
+script, the environment variable <b class="envar">SERVER_ROOT</b> is set to
+<tt class="fname">/</tt> instead of to the directory specified by
+<b class="envar">HTTPD_SCRIPTALIAS</b>.
+The actual current working directory of <tt class="cmd">slinger</tt> is correct;
+it's just the environment variable that's wrong.
+  (Ref# 20795)
+
+</dd>
+<dt><tt class="cmd">tftp</tt></dt>
+<dd><ul>
+<li><tt class="cmd">tftp</tt> can terminate with a floating-point exception when
+  printing statistics from a <tt class="cmd">get</tt> or <tt class="cmd">put</tt> command when
+  you're using verbose mode.
+  (Ref# 20615)
+
+</li>
+<li><tt class="cmd">tftp</tt> can fault if you press <span class="key" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-weight: bold;"><b>Enter</b></span> at the 
+<span class="quote">"To"</span> prompt without supplying the <tt class="opt"><b>host</b></tt> parameter.  
+(Ref# 20064)
+
+  </li>
+</ul>
+
+</dd>
+<dt>TCP/IP stack (<tt class="fname">npm-tcpip-v4.so</tt> or
+<tt class="fname">npm-tcpip-v6.so</tt>)</dt>
+<dd>If a packet is smaller than the minimum Ethernet packet size,
+    the packet may be padded with random data, rather than zeroes.
+    (Ref# 21460)
+
+</dd>
+<dt><tt class="cmd">devn-smc9000</tt></dt>
+<dd>Not all IPv6 multicast protocols function properly with this
+    driver.
+    (Ref# 21720)
+
+</dd>
+<dt><tt class="cmd">rcp</tt></dt>
+<dd>This utility sets its user ID to <tt class="cmd">root</tt>.
+  It was reported that you can overrun the source/target file argument
+  buffers in the utility, giving yourself <tt class="uid">root</tt> access.
+  Under QNX Neutrino, <tt class="cmd">rcp</tt> spawns the <tt class="cmd">cp</tt> utility
+  for local file-copying operations;
+  it's the <tt class="cmd">cp</tt> utility that faults.
+  When <tt class="cmd">rcp</tt> spawns <tt class="cmd">cp</tt>, it does so with the credentials
+  of the user who launched <tt class="cmd">rcp</tt>, rather than <tt class="uid">root</tt>'s.
+  (Ref# 22002)
+
+</dd>
+</dl>
+
+
+<h2 class="h2"><a name="Issues_Photon" id="Issues_Photon">Photon</a></h2>
+
+<dl>
+
+<dt><tt class="cmd">ptermcs</tt></dt>
+<dd>This utility core-dumps when saving. The
+problem is in <i class="func">PxTerminalBuildCharsets()</i>: if the
+<span class="quote">"internal"</span> charset is NULL but the <span class="quote">"font
+charset"</span> is specified, it builds a bad data structure
+that causes <i class="func">PxTerminalSaveCharsets()</i> to crash. (Ref# 19568)
+
+  
+
+</dd>
+<dt><tt class="cmd">io-graphics</tt></dt>
+<dd><ul>
+<li>If you don't specify a plugin, <tt class="cmd">io-graphics</tt> fails.
+    (Ref# 22489)
+
+    <p>    <b>Workaround:</b> Always specify the <tt class="opt"><b>-pphoton</b></tt> option
+    (<tt class="fname">gri-photon.so</tt> is currently the only plugin available).
+
+  </p></li>
+<li>If you specify the <tt class="opt"><b>-d</b></tt> and <tt class="opt"><b>-p</b></tt> options 
+    for <tt class="cmd">io-graphics</tt>, you must put the <tt class="opt"><b>-d</b></tt> option
+    before the <tt class="opt"><b>-p</b></tt>, or else <tt class="cmd">io-graphics</tt> fails.
+    (Ref# 22670)
+
+  </li>
+</ul>
+
+</dd>
+<dt><tt class="cmd">ped</tt></dt>
+<dd>If you use <tt class="cmd">ped</tt>, and you use a phf font
+    such as <tt class="lit">pcs* PC Serif</tt>, <tt class="lit">pcss* PC SansSerif</tt>,
+    <tt class="lit">pcterm* PC terminal</tt>, <tt class="lit">symb* Symbol</tt>, or
+    <tt class="lit">tech* Technical</tt>, you'll see an extra unreadable character
+    at the end of each line.
+    (Ref# 22190)
+
+</dd>
+<dt><tt class="cmd">phditto</tt></dt>
+<dd>If you run <tt class="cmd">gbd</tt> over <tt class="cmd">phditto</tt>,
+    <tt class="cmd">gbd</tt> hangs, because
+    the Photon server spawned by <tt class="cmd">phrelay</tt> inherits
+    <tt class="cmd">phrelay</tt>'s set of ignored signals including 
+    <span class="const">SIGUSR1</span>, which <tt class="cmd">gdb</tt> relies on.
+    (Ref# 24817)
+
+    <p>    <b>Workaround:</b> Launch <tt class="cmd">pterm</tt> windows using <tt class="cmd">pwm</tt>'s
+    Desktop Menu (press <span class="keychord"><span class="key" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-weight: bold;"><b>Alt</b></span>-<span class="key" style="font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif; font-weight: bold;"><b>Enter</b></span></span>
+    or right-click on the desktop background)
+    instead of using the Terminal button on the shelf.
+    Only <tt class="cmd">pterm</tt> windows started by shelf inherit the ignored
+    <span class="const">SIGUSR1</span>.
+
+    </p><p>    Another option is to write a wrapper around <tt class="cmd">gdb</tt> to reset
+    <span class="const">SIGUSR1</span>.
+    
+
+</p></dd>
+</dl>
+
+
+</body>
+
+</html>
+
+
+<!-- Copyright 2007, QNX Software Systems GmbH & Co. KG. All rights reserved.   -->
+<!-- Published under license by QNX Software Systems International Corporation. -->
+
+<!-- QNX, Neutrino, Photon, Photon microGUI, Momentics, and "Build a More -->
+<!-- Reliable World" are trademarks, registered in certain jurisdictions, -->
+<!-- of QNX Software Systems GmbH & Co. KG and are used under license by  -->
+<!-- QNX Software Systems International Corporation. All other trademarks -->
+<!-- belong to their respective owners.                                   -->
+
+<!-- Document processed on August 20, 2007 (03:09:40 PM) -->
+
+
+

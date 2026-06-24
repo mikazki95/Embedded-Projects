@@ -1,0 +1,2 @@
+#!/bin/sh
+qtalk -o other_se=xtx -o other_re=xrx -t other $*

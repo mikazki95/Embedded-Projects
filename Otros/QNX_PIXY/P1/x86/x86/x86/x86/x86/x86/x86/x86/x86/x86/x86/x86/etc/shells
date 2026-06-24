@@ -1,0 +1,10 @@
+#
+# List of available shells
+#
+/bin/sh
+/bin/ksh
+/bin/pdksh
+/bin/esh
+/bin/fesh
+/bin/uesh
+

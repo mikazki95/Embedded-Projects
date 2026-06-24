@@ -1,0 +1,30 @@
+;
+; fontmap config file, Tue Jan 18 15:34:42 2000
+;
+BalloonFont = primasansbts
+FixedFont = primasansmonobts
+HeadingFont = primasansbts
+MenuFont = primasansbts
+MessageFont = primasansbts
+TextFont = primasansbts
+TitleFont = primasansbts
+Helvetica = swis721bts
+Verdana = primasansbts
+monospace = primasansmonobts
+sans-serif = swis721bts
+serif = dutch801rmbts
+web = webs
+arial = swis721bts
+term = pcterm
+geneva = swis721bts
+monaco = courier10bts
+ny = dutch801rmbts
+courier = couriers
+dutch = dutchs
+swiss = swisss
+times = time
+wingbats = wingbatss
+helv = *swisss
+ncen = *dutchs
+time = *dutchs
+? = courier10bts

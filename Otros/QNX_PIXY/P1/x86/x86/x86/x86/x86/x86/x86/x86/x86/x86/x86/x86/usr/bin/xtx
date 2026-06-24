@@ -1,0 +1,3 @@
+#!/bin/sh
+lsz -X $FILENAME < $MODEM > $MODEM
+

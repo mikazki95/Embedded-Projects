@@ -1,0 +1,72 @@
+#ifdef __USAGE
+#
+#%C
+#
+# /etc/rc.d/rc.sysinit
+#
+# This script sets up your environment & starts system services
+#
+# Author: Markus Mueller
+# Company: Gersys GmbH
+#
+# Version: 1.0
+# Date: 2009-07-09
+#
+# Modifications:
+# - TimeZone and RTC is set up here (instead of sysinit)
+#
+#endif
+
+export VRCSYSINIT=1.0
+
+# Start Message with Version
+echo "\n/etc/rc.d/rc.sysinit: Environment Setup & System Services - Version $VRCSYSINIT"
+
+unset VRCSYSINIT
+
+# Setup timezone
+if test -z "$TZ"; then
+	TZ=$(cat /etc/TIMEZONE 2>/dev/null)
+	if test -z "$TZ"; then
+		TZ=UTC
+	fi
+fi
+
+# The following sets the timezone. Instead of using the TZ envar, we
+# use a confstr to allow changing this dynamicly.
+#
+#export TZ
+typeset +x TZ
+
+getconf -s CS_TIMEZONE $TZ
+
+# Setup the realtime clock (usually if the rtc is localtime)
+if test -x /etc/rc.d/rc.rtc; then
+	. /etc/rc.d/rc.rtc
+fi
+
+# Start random, this is needed for things like OpenSSH
+#random -t
+
+# Find the hostname
+if test -z $HOSTNAME; then
+	HOSTNAME=$(hostname -s)
+	if test $HOSTNAME == localhost; then
+		unset HOSTNAME
+	fi
+fi
+
+# See if there is a host specifiy etc directory
+if ! test -z "$HOSTNAME"; then
+	if test -x /etc/host_cfg/$HOSTNAME; then
+		etc_host=/etc/host_cfg/$HOSTNAME;
+	fi
+fi
+
+if test ! -z "$etc_host" -a -x $etc_host/rc.d/rc.local; then
+	echo "Starting extra run commands for $(hostname)"
+	. $etc_host/rc.d/rc.local
+elif test -x /etc/rc.d/rc.local; then
+	echo "Starting extra run commands"
+	. /etc/rc.d/rc.local
+fi

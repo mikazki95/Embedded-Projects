@@ -1,0 +1,11 @@
+phcursor,.phf,Photon Cursor,0,,E900-E921,Np,32x31,3K
+swis721bts,0@tt0003m_.ttf,Swis721 BT,0,,0020-F002,p,171x156,148K
+swis721btsi,0@tt0004m_.ttf,Swis721 BT,0,I,0020-F002,p,167x156,90K
+swis721btsb,0@tt0005m_.ttf,Swis721 BT,0,B,0020-F002,p,175x156,139K
+swis721btsbi,0@tt0006m_.ttf,Swis721 BT,0,BI,0020-F002,p,168x156,81K
+dutch801rmbts,0@tt0011m_.ttf,Dutch801 Rm BT,0,,0020-F002,p,200x159,211K
+dutch801rmbtsi,0@tt0012m_.ttf,Dutch801 Rm BT,0,I,0020-F002,p,178x156,102K
+dutch801rmbtsb,0@tt0013m_.ttf,Dutch801 Rm BT,0,B,0020-F002,p,184x154,201K
+dutch801rmbtsbi,0@tt0014m_.ttf,Dutch801 Rm BT,0,BI,0020-F002,p,160x156,95K
+symbolsetbts,0@tt3012z_.ttf,Symbol Set BT,0,,F020-F0FE,pS,137x148,63K
+webs,0@web.ttf,Web,0,,0020-2122,p,132x131,7K

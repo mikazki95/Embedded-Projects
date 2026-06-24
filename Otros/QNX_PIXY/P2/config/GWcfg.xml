@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--ENPRESA: Traintic-CAF -->
+<!--Proiektua: Gasteizeko tranbia-->
+<!--Izena: GWcfg-->
+<!--Deskribapena: HMI bakoitzeko Gatewaya konfiguratzeko XML fitxategia-->
+<!--Bertsioa: 0.3 (2009_05_26)-->
+<!--Egilea: Egoitz Lizaso-->
+<GW_CFG>
+  <DEVICE Id="HMI1">
+    <!--Dispositibo bakoitzaren ID-a, HMI bakoitza bereizteko. Adbdz: HMI1-->
+    <MVBETH>
+      <!-- Por ahora PortId y ProducerIP no se utilizan-->
+      <PORTETH PortId="00" ConsumerIP="192.168.0.5" ConsumerEthPort="5000" Period="1024" PortSize="80" ProtocolType="0" ProducerIP="80.36.14.151" PortAddr="8">
+        <VARMVBETH VarType="UNSIGNED16">
+          <!-- el MVBPort tiene que ser en Decimal -->
+          <IN MVBVarName="IHM1_popupAlRecon" MVBPort="21" MVBPortOffset="0"></IN>
+          <OUT EthVarName="CCU_LIFEWORD" EthPortOffset="0" SndAntivalent="0" SndAntivalentOffset="" />
+        </VARMVBETH>
+      </PORTETH>
+    </MVBETH>
+    <ETHMVB STS_max="5">
+      <!-- Trama "MCE_param1" -->
+      <PORTETH PortId="00" ConsumerIP="172.20.154.251" ConsumerEthPort="5000" Period="512" PortSize="128" ProtocolType="0" ProducerIP="172.20.154.251" PortAddr="1">
+        <VARETHMVB VarType="UNSIGNED16">
+          <IN EthVarName="COD_MENSAJE_SGT_TREN" EthPortOffset="0"></IN>
+          <OUT MVBVarName="IHM1_popupAlRecon" MVBPort="60" MVBPortOffset="0" SndCheckVar="0" SndCheckVarName="" />
+        </VARETHMVB>
+      </PORTETH>
+    </ETHMVB>
+    <RedundancyMngr EthPeriod="512">
+      <!--Erredundatzia kontrolatzeko, GW bakoitzak bai Ehernet bai MVB bidez, jaso eta bidali behar dituen aldagaien datuak konfiguratzeko erabiliko da.-->
+      <OUT ConsumerIP="172.20.154.150" ConsumerEthPort="2222" MyMVBLWName="IHM1_popupAlRecon"></OUT>
+      <IN EthPort="2222" EthMaxTimeout="5" MVBCCULWName="CCU_LifeWord" MVBCCULWSize="16" MVBCCULWPort="21" MVBCCULWPortOffset="0" OtherMVBLWName="IHM1_popupAlRecon"></IN>
+    </RedundancyMngr>
+  </DEVICE>
+  <DEVICE Id="HMI2">
+    <!--Dispositibo bakoitzaren ID-a, HMI bakoitza bereizteko. Adbdz: HMI1-->
+    <MVBETH>
+      <PORTETH PortId="00" ConsumerIP="172.20.154.150" ConsumerEthPort="5000" Period="1024" PortSize="80" ProtocolType="0" ProducerIP="172.20.154.150" PortAddr="8">
+        <VARMVBETH VarType="UNSIGNED16">
+          <!-- el MVBPort tiene que ser en Decimal -->
+          <IN MVBVarName="IHM1_popupAlRecon" MVBPort="21" MVBPortOffset="0"></IN>
+          <OUT EthVarName="CCU_LIFEWORD" EthPortOffset="0" SndAntivalent="0" SndAntivalentOffset="" />
+        </VARMVBETH>
+      </PORTETH>
+    </MVBETH>
+    <ETHMVB STS_max="5">
+      <!-- Trama "MCE_param1" -->
+      <PORTETH PortId="00" ConsumerIP="172.20.154.150" ConsumerEthPort="5000" Period="512" PortSize="128" ProtocolType="0" ProducerIP="172.20.154.150" PortAddr="1">
+        <VARETHMVB VarType="UNSIGNED16">
+          <IN EthVarName="COD_MENSAJE_SGT_TREN" EthPortOffset="0"></IN>
+          <OUT MVBVarName="IHM1_popupAlRecon" MVBPort="60" MVBPortOffset="0" SndCheckVar="0" SndCheckVarName="" />
+        </VARETHMVB>
+      </PORTETH>
+    </ETHMVB>
+    <RedundancyMngr EthPeriod="512">
+      <!--Erredundatzia kontrolatzeko, GW bakoitzak bai Ehernet bai MVB bidez, jaso eta bidali behar dituen aldagaien datuak konfiguratzeko erabiliko da.-->
+      <OUT ConsumerIP="172.20.154.151" ConsumerEthPort="2222" MyMVBLWName="IHM1_popupAlRecon"></OUT>
+      <IN EthPort="2222" EthMaxTimeout="5" MVBCCULWName="CCU_LifeWord" MVBCCULWSize="16" MVBCCULWPort="21" MVBCCULWPortOffset="0" OtherMVBLWName="IHM1_popupAlRecon"></IN>
+    </RedundancyMngr>
+  </DEVICE>
+</GW_CFG>

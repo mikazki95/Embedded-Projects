@@ -1,0 +1,2 @@
+#slay -f inetd
+#slay -f io-net

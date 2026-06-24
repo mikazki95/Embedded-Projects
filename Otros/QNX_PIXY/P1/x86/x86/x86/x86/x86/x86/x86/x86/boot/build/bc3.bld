@@ -1,0 +1,71 @@
+#
+# The build file for QNX Neutrino booting on a PC
+#
+[linker="ntox86-ld -T$QNX_TARGET/x86/lib/nto.link %(h!=0, -Ttext 0x%t%)%(d!=0, -Tdata 0x%d%) -o%o %i %[M -L%^i -uinit_%n -lmod_%n%]"]
+
+[virtual=x86,bios +compress] boot = {
+	# Reserve 64k of video memory to handle multiple video cards 
+	startup-bios -s64k
+
+	# PATH is the *safe* path for executables (confstr(_CS_PATH...))
+	# LD_LIBRARY_PATH is the *safe* path for libraries (confstr(_CS_LIBPATH))
+	#    i.e. This is the path searched for libs in setuid/setgid executables.
+	PATH=/proc/boot:/bin:/usr/bin:/opt/bin LD_LIBRARY_PATH=/proc/boot:/lib:/usr/lib:/lib/dll:/opt/lib procnto-instr
+}
+
+[+script] startup-script = {
+	# To save memory make everyone use the libc in the boot image!
+	# For speed (less symbolic lookups) we point to libc.so.2 instead of libc.so
+	procmgr_symlink ../../proc/boot/libc.so.2 /usr/lib/ldqnx.so.2
+
+	display_msg "."
+	display_msg ""
+	display_msg "Welcome to QNX RTK 6.3.2 on Gersys BC3510!!!"
+	display_msg ""
+
+	seedres &
+	pci-bios & 
+
+	# Tell devb-eide commit level is medium (commit=medium) 
+	# Tell devb-eide to automount flash disk (automount=hd0t77:/:qnx4)  
+	devb-eide cam quiet blk commit=medium,automount=hd0t77:/:qnx4:ro &
+	
+	# Wait until the disk manifests itself 
+	waitfor /dev/hd0t77 10 
+	
+	# Do all the system init from /etc/system/sysinit including 
+	# creation of consoles via tinit. 
+	sh /etc/system/sysinit
+	
+}
+
+# Include the current "libc.so". It will be created as a real file using
+# its internal "SONAME", with "libc.so" being a symlink to it. The symlink
+# will point to the last "libc.so.*" so if an earlier libc is needed
+# (e.g. libc.so.1) add it before the this line.
+libc.so
+
+# Include all tie files for the default filesystems
+libcam.so
+io-blk.so
+cam-disk.so
+fs-qnx4.so
+
+
+# These programs only need to be run once from the boot image.
+# "data=uip" will waste less memory as the ram from the boot
+# image will be used directly without making a copy of the data
+# (i.e. as the default "data=cpy" does). When they have been
+# run once, they will be unlinked from /proc/boot.
+[data=copy]
+seedres
+pci-bios
+devb-eide
+
+# These files will be unlinked after the system has started
+# to release the memory back to the system. They are only
+# needed during boot. If needed later on, they will be loaded
+# from the boot device.
+unlink_list={
+/proc/boot/devb-*
+}

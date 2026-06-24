@@ -132,7 +132,7 @@ int main(void)
 	Flash_init();
 	size_flash = size/16;
 	//size_flash = 4095;
-	size_flash = 25 ;
+	//size_flash = 25 ;
 	//offset = 0x20000/2;
 	send_string(texto_info);
 	send_string(version);
@@ -457,7 +457,18 @@ void process_received_frame(void) {
 	uint8_t calculated_checksum = 0;
 	for(uint8_t i = 0; i < data_index - 1; i++) {
 		calculated_checksum = calculated_checksum+data_buffer[i]; // 
+		/*
+		send_string("bit ");
+		dtostrf(data_buffer[i],3,0,valor_m);
+		send_string(valor_m);
+		send_char('\n');
+		send_string(" sumatoria_checksum: ");
+		dtostrf(calculated_checksum,3,0,valor_m);
+		send_string(valor_m);
+		send_char('\n');
+		*/
 	}
+	
 	calculated_checksum=(0x100 - calculated_checksum) & 0xFF;
 	// 3. Verificar checksum
 	uint8_t received_checksum = data_buffer[data_index - 1];
@@ -476,6 +487,8 @@ void process_received_frame(void) {
 		send_string(valor_m);
 		send_char('\n');
 		*/
+		reception_mode = 0;
+		comando = 0;
 		return;
 	}
 	flag_ok = 1;

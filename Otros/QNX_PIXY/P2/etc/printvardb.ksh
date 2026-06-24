@@ -1,0 +1,1 @@
+/usr/caf/bin/CIVIA2Tester PRINT > /usr/caf/hist/VarDBStatus.dat

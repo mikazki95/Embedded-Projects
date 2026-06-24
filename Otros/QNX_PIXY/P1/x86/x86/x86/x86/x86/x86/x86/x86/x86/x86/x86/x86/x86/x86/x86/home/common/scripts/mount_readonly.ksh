@@ -1,0 +1,1 @@
+mount -ur /home/traintic

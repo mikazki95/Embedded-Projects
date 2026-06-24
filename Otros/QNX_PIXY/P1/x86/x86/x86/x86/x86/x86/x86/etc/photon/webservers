@@ -1,0 +1,7 @@
+# default server for "online" browsing (Voyager client by default uses this)
+#online = vserver,VoyagerServer-2
+#online = netfront,NetfrontServer
+online = /opt/Mozilla/mozilla/run-mozilla.sh /opt/Mozilla/mozilla/mozserver,MozillaServer
+
+# default server for help browsing
+help = vserver.file,VoyagerFile

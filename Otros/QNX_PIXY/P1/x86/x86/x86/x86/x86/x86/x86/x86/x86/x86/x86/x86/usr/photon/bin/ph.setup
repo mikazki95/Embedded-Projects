@@ -1,0 +1,77 @@
+#!/bin/ksh
+#set +x
+#ifdef __USAGE
+#Setup the Photon Environment
+#
+#This script will install the Photon shared library
+#and font server
+#
+#endif
+#export PHOTON_PATH=${PHOTON_PATH:-$package_root/photon}
+export PHOTON_PATH=${PHOTON_PATH:-/usr/photon}
+export PHOTON=/dev/photon
+export PATH=/usr/bin/photon:$PATH
+export PHFONT=${PHFONT:-/dev/phfont}
+export FONTSLEUTH=${FONTSLEUTH:-/dev/fontsleuthctrl}
+
+# start Photon 1.1 shared library
+#if [ ! -r /dev/shmem/phlib_s11 ]; then
+#    SAVE_old_umask=`umask`
+#    umask 0
+#	Photon.slib11
+#	umask $SAVE_old_umask
+#fi
+
+if $PHOTON_PATH/font_repository /etc/config/trap/fontdynamic$file_unique; then
+  print "Optimizing dynamic font subsystem ... Please wait ..."
+  mkfontdir -i /tmp/list$file_unique -d $PHOTON_PATH/font_repository
+  do_font $PHOTON_PATH/font_repository/fontdir /tmp/list$file_unique
+  rm -f /tmp/list$file_unique
+else
+  if test -e /etc/config/trap/fontdynamic$file_unique; then
+    printf "Dynamic font subsystem already optimized, proceeding."
+  else
+    print "Optimizing dynamic font subsystem ... Please wait ..."
+    mkfontdir -i /tmp/list$file_unique -d $PHOTON_PATH/font_repository
+    do_font $PHOTON_PATH/font_repository/fontdir /tmp/list$file_unique
+    rm -f /tmp/list$file_unique
+  fi
+fi
+
+# start the Photon font server
+if test ! $PHFONT -ef $PHFONT; then 
+   phfont $PHFONTOPTS &
+
+   typeset -i i=0
+   while test ! $PHFONT -ef $PHFONT -a $i -lt 5; do
+       sleep 1
+       let i=i+1
+   done
+   unset i
+ 
+   if test ! $PHFONT -ef $PHFONT; then
+       print "Unable to start font server"
+       print "Please confirm that Photon installed properly"
+       exit 1
+   fi
+fi
+
+# DO NOT START FONTSLEUTH HERE, IT NEEDS PHOTON, AND
+# PHRELAY STARTS PHOTON AT A LATER POINT.
+#if test ! $FONTSLEUTH -ef $FONTSLEUTH; then
+#   fontsleuth -d $PHOTON_PATH/font_repository &
+#
+#   typeset -i i=0
+#   while test ! $FONTSLEUTH -ef $FONTSLEUTH -a $i -lt 5; do
+#       sleep 1
+#       let i=i+1
+#   done
+#   unset i
+#
+#   if test ! $FONTSLEUTH -ef $FONTSLEUTH; then
+#       print "Unable to start fontsleuth"
+#       print "Please confirm that Photon installed properly"
+#       unset USER_NAME
+#       exit 1
+#   fi
+#fi
