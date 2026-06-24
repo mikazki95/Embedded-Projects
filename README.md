@@ -8,7 +8,7 @@ Este repositorio contiene proyectos personales y pruebas de desarrollo en sistem
 📂 `Testing_Scripts/` → Scripts de prueba de hardware y validación de periféricos.  
 
 ## 📌 **Destacado**  
-- Implementación de redes neuronales en AM6442 sin necesidad de Linux.  
+- Implementación de DBSCAN multietapa en Linux embebido (AM6442, SDK de TI) para detección de 14 arritmias en tiempo real con calibración adaptativa por paciente.  
 - Diseño y testeo de tarjetas electrónicas con ensamblador (8051).  
 - Pruebas y análisis de señales biomédicas en sistemas embebidos.  
 - Programación de FPGA con VHDL y diseño esquemático.  
